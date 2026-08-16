@@ -5,6 +5,9 @@ export const GITHUB_REPO = "E-Fisher-515/NoPuntIntendedSite";
 export const EDITORIAL_PATH = "public/editorial.json";
 const TOKEN_KEY = "npi-admin-token";
 
+export const DEFAULT_ADMIN_PIN_HASH = "90ef794f5ced4199fdfad5278673de115167bfe12d90787a5f33fb279a3deb61";
+const UNLOCKED_KEY = "npi-admin-ok";
+
 export const emptyEditorial = (): Editorial => ({
   banner: {
     enabled: false,
@@ -17,6 +20,9 @@ export const emptyEditorial = (): Editorial => ({
   rejectedHofIds: [],
   timeline: [],
   customAwards: [],
+  adminPinHash: DEFAULT_ADMIN_PIN_HASH,
+  newsletters: [],
+  newsletterRecipients: "",
 });
 
 export function normalizeEditorial(data: Partial<Editorial> | null | undefined): Editorial {
@@ -29,6 +35,9 @@ export function normalizeEditorial(data: Partial<Editorial> | null | undefined):
     rejectedHofIds: data?.rejectedHofIds ?? [],
     timeline: data?.timeline ?? [],
     customAwards: data?.customAwards ?? [],
+    newsletters: data?.newsletters ?? [],
+    newsletterRecipients: data?.newsletterRecipients ?? "",
+    adminPinHash: data?.adminPinHash || fallback.adminPinHash,
     constitution: data?.constitution || fallback.constitution,
   };
 }
@@ -92,6 +101,75 @@ export function setAdminToken(token: string) {
 
 export function clearAdminToken() {
   sessionStorage.removeItem(TOKEN_KEY);
+}
+
+export function markAdminUnlocked() {
+  sessionStorage.setItem(UNLOCKED_KEY, "1");
+}
+
+export function isAdminUnlocked(): boolean {
+  if (typeof window === "undefined") return false;
+  return sessionStorage.getItem(UNLOCKED_KEY) === "1" || Boolean(getAdminToken());
+}
+
+export function clearAdminSession() {
+  sessionStorage.removeItem(UNLOCKED_KEY);
+  clearAdminToken();
+}
+
+export async function sha256Hex(text: string): Promise<string> {
+  const bytes = new TextEncoder().encode(text.trim());
+  const hash = await crypto.subtle.digest("SHA-256", bytes);
+  return Array.from(new Uint8Array(hash))
+    .map((value) => value.toString(16).padStart(2, "0"))
+    .join("");
+}
+
+export async function passwordUnlocksAdmin(password: string, pinHash: string): Promise<"token" | "pin" | null> {
+  setAdminToken(password);
+  if (await verifyAdminToken()) return "token";
+  clearAdminToken();
+  const hash = await sha256Hex(password);
+  if (hash === (pinHash || DEFAULT_ADMIN_PIN_HASH)) return "pin";
+  return null;
+}
+
+async function githubFile(path: string) {
+  const token = getAdminToken();
+  if (!token) throw new Error("Publishing needs the access key.");
+  const url = `https://api.github.com/repos/${GITHUB_REPO}/contents/${path}`;
+  const response = await fetch(url, {
+    headers: {
+      Accept: "application/vnd.github+json",
+      Authorization: `Bearer ${token}`,
+    },
+  });
+  if (response.status === 404) return null;
+  if (!response.ok) throw new Error(`GitHub could not read ${path} (${response.status}).`);
+  return response.json() as Promise<{ sha: string }>;
+}
+
+export async function saveRepoFile(path: string, content: string, message: string): Promise<void> {
+  const token = getAdminToken();
+  if (!token) throw new Error("Publishing needs the access key.");
+  const current = await githubFile(path);
+  const response = await fetch(`https://api.github.com/repos/${GITHUB_REPO}/contents/${path}`, {
+    method: "PUT",
+    headers: {
+      Accept: "application/vnd.github+json",
+      Authorization: `Bearer ${token}`,
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({
+      message,
+      content: utf8ToBase64(content),
+      sha: current?.sha,
+    }),
+  });
+  if (!response.ok) {
+    const text = await response.text();
+    throw new Error(`GitHub save failed (${response.status}): ${text.slice(0, 200)}`);
+  }
 }
 
 function utf8ToBase64(text: string): string {

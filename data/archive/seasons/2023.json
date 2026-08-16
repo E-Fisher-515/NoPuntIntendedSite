@@ -296,24 +296,30 @@
     "highestScoringWeek": {
       "teamName": "Dsm Tittsburgh ",
       "teamId": 17,
+      "ownerName": "Marc",
       "points": 186.1,
       "opponentName": "Double D's and TD's",
+      "opponentOwner": "Trent",
       "opponentPoints": 102.82,
       "week": 3
     },
     "lowestScoringWeek": {
       "teamName": "Simp Henry",
       "teamId": 4,
+      "ownerName": "Ace",
       "points": 53.82,
       "opponentName": "Purple PPR Eaters",
+      "opponentOwner": "Zakk",
       "opponentPoints": 81.08,
       "week": 5
     },
     "biggestBlowout": {
       "teamName": "Team Carr",
       "teamId": 8,
+      "ownerName": "Robert",
       "points": 165.1,
       "opponentName": "Team Lehman",
+      "opponentOwner": "Dillon",
       "opponentPoints": 80.28,
       "week": 8,
       "margin": 84.82
@@ -322,6 +328,10 @@
       "week": 14,
       "homeTeamName": "Simp Henry",
       "awayTeamName": "Dsm Tittsburgh ",
+      "homeTeamId": 4,
+      "awayTeamId": 17,
+      "homeOwnerName": "Ace",
+      "awayOwnerName": "Marc",
       "homeScore": 122.0,
       "awayScore": 121.94,
       "margin": 0.06
@@ -444,6 +454,229 @@
     "combined": 202.7,
     "margin": 3.18,
     "winner": "away"
+  },
+  "championshipRosters": {
+    "week": 17,
+    "winner": {
+      "teamId": 18,
+      "teamName": "CHASE N TUDDYS",
+      "ownerName": "derek",
+      "score": 102.94,
+      "players": [
+        {
+          "name": "Jordan Love",
+          "slot": "QB",
+          "position": "QB",
+          "points": 28.44
+        },
+        {
+          "name": "Amon-Ra St. Brown",
+          "slot": "WR",
+          "position": "WR",
+          "points": 22.1
+        },
+        {
+          "name": "Aaron Jones",
+          "slot": "RB",
+          "position": "RB",
+          "points": 17.0
+        },
+        {
+          "name": "Michael Pittman Jr.",
+          "slot": "WR",
+          "position": "WR",
+          "points": 9.6
+        },
+        {
+          "name": "Jake Moody",
+          "slot": "K",
+          "position": "K",
+          "points": 9.0
+        },
+        {
+          "name": "Gerald Everett",
+          "slot": "TE",
+          "position": "TE",
+          "points": 7.7
+        },
+        {
+          "name": "Rashid Shaheed",
+          "slot": "RB/WR/TE",
+          "position": "WR",
+          "points": 3.4
+        },
+        {
+          "name": "Eagles D/ST",
+          "slot": "D/ST",
+          "position": "D/ST",
+          "points": 3.0
+        },
+        {
+          "name": "AJ Dillon",
+          "slot": "RB/WR/TE",
+          "position": "RB",
+          "points": 2.7
+        },
+        {
+          "name": "Khalil Herbert",
+          "slot": "BE",
+          "position": "RB",
+          "points": 23.9
+        },
+        {
+          "name": "Packers D/ST",
+          "slot": "BE",
+          "position": "D/ST",
+          "points": 13.0
+        },
+        {
+          "name": "Logan Thomas",
+          "slot": "BE",
+          "position": "TE",
+          "points": 5.0
+        },
+        {
+          "name": "Alexander Mattison",
+          "slot": "BE",
+          "position": "RB",
+          "points": 5.0
+        },
+        {
+          "name": "Mark Andrews",
+          "slot": "IR",
+          "position": "TE",
+          "points": 0.0
+        },
+        {
+          "name": "Christian Kirk",
+          "slot": "BE",
+          "position": "WR",
+          "points": 0.0
+        },
+        {
+          "name": "Joshua Palmer",
+          "slot": "BE",
+          "position": "WR",
+          "points": 0.0
+        },
+        {
+          "name": "Jahan Dotson",
+          "slot": "BE",
+          "position": "WR",
+          "points": 0.0
+        }
+      ]
+    },
+    "loser": {
+      "teamId": 4,
+      "teamName": "Simp Henry",
+      "ownerName": "Ace",
+      "score": 99.76,
+      "players": [
+        {
+          "name": "Harrison Butker",
+          "slot": "K",
+          "position": "K",
+          "points": 24.0
+        },
+        {
+          "name": "Baker Mayfield",
+          "slot": "QB",
+          "position": "QB",
+          "points": 19.26
+        },
+        {
+          "name": "David Montgomery",
+          "slot": "RB/WR/TE",
+          "position": "RB",
+          "points": 12.5
+        },
+        {
+          "name": "Ezekiel Elliott",
+          "slot": "RB/WR/TE",
+          "position": "RB",
+          "points": 11.5
+        },
+        {
+          "name": "Adam Thielen",
+          "slot": "WR",
+          "position": "WR",
+          "points": 9.8
+        },
+        {
+          "name": "Rachaad White",
+          "slot": "RB",
+          "position": "RB",
+          "points": 8.6
+        },
+        {
+          "name": "Ja'Marr Chase",
+          "slot": "WR",
+          "position": "WR",
+          "points": 7.1
+        },
+        {
+          "name": "Rams D/ST",
+          "slot": "D/ST",
+          "position": "D/ST",
+          "points": 7.0
+        },
+        {
+          "name": "Cole Kmet",
+          "slot": "TE",
+          "position": "TE",
+          "points": 0.0
+        },
+        {
+          "name": "Kyler Murray",
+          "slot": "BE",
+          "position": "QB",
+          "points": 23.68
+        },
+        {
+          "name": "Kenneth Walker III",
+          "slot": "BE",
+          "position": "RB",
+          "points": 16.5
+        },
+        {
+          "name": "Jameson Williams",
+          "slot": "BE",
+          "position": "WR",
+          "points": 9.5
+        },
+        {
+          "name": "Ravens D/ST",
+          "slot": "BE",
+          "position": "D/ST",
+          "points": 8.0
+        },
+        {
+          "name": "Justin Watson",
+          "slot": "BE",
+          "position": "WR",
+          "points": 5.1
+        },
+        {
+          "name": "Cowboys D/ST",
+          "slot": "BE",
+          "position": "D/ST",
+          "points": 2.0
+        },
+        {
+          "name": "Anthony Richardson",
+          "slot": "IR",
+          "position": "QB",
+          "points": 0.0
+        },
+        {
+          "name": "Hunter Henry",
+          "slot": "BE",
+          "position": "TE",
+          "points": 0.0
+        }
+      ]
+    }
   },
   "weeklyMatchupCount": {
     "1": 7,

@@ -296,24 +296,30 @@
     "highestScoringWeek": {
       "teamName": "Sutton My Chubb",
       "teamId": 18,
+      "ownerName": "andrew",
       "points": 210.6,
       "opponentName": "401k- Investments",
+      "opponentOwner": "Kodi",
       "opponentPoints": 129.86,
       "week": 5
     },
     "lowestScoringWeek": {
       "teamName": "Team Lehman",
       "teamId": 2,
+      "ownerName": "Dillon",
       "points": 56.54,
       "opponentName": "Boston  Clam Chowda",
+      "opponentOwner": "Zakk",
       "opponentPoints": 137.54,
       "week": 14
     },
     "biggestBlowout": {
       "teamName": "Boston  Clam Chowda",
       "teamId": 10,
+      "ownerName": "Zakk",
       "points": 191.08,
       "opponentName": "Team Lehman",
+      "opponentOwner": "Dillon",
       "opponentPoints": 63.4,
       "week": 17,
       "margin": 127.68
@@ -322,6 +328,10 @@
       "week": 9,
       "homeTeamName": "Tight End Team",
       "awayTeamName": "Silver Bullet",
+      "homeTeamId": 8,
+      "awayTeamId": 9,
+      "homeOwnerName": "Robert",
+      "awayOwnerName": "chaz",
       "homeScore": 97.98,
       "awayScore": 97.74,
       "margin": 0.24
@@ -444,6 +454,223 @@
     "combined": 209.32,
     "margin": 5.8,
     "winner": "home"
+  },
+  "championshipRosters": {
+    "week": 17,
+    "winner": {
+      "teamId": 9,
+      "teamName": "Silver Bullet",
+      "ownerName": "chaz",
+      "score": 107.56,
+      "players": [
+        {
+          "name": "Brandin Cooks",
+          "slot": "RB/WR/TE",
+          "position": "WR",
+          "points": 19.6
+        },
+        {
+          "name": "Saints D/ST",
+          "slot": "D/ST",
+          "position": "D/ST",
+          "points": 17.0
+        },
+        {
+          "name": "Joe Mixon",
+          "slot": "RB",
+          "position": "RB",
+          "points": 15.6
+        },
+        {
+          "name": "Matt Prater",
+          "slot": "K",
+          "position": "K",
+          "points": 15.0
+        },
+        {
+          "name": "Jalen Hurts",
+          "slot": "QB",
+          "position": "QB",
+          "points": 12.96
+        },
+        {
+          "name": "Tyler Conklin",
+          "slot": "TE",
+          "position": "TE",
+          "points": 9.7
+        },
+        {
+          "name": "CeeDee Lamb",
+          "slot": "WR",
+          "position": "WR",
+          "points": 8.1
+        },
+        {
+          "name": "DJ Moore",
+          "slot": "WR",
+          "position": "WR",
+          "points": 5.9
+        },
+        {
+          "name": "Ronald Jones II",
+          "slot": "RB/WR/TE",
+          "position": "RB",
+          "points": 3.7
+        },
+        {
+          "name": "Rashaad Penny",
+          "slot": "BE",
+          "position": "RB",
+          "points": 35.5
+        },
+        {
+          "name": "Bears D/ST",
+          "slot": "BE",
+          "position": "D/ST",
+          "points": 21.0
+        },
+        {
+          "name": "Tyler Boyd",
+          "slot": "BE",
+          "position": "WR",
+          "points": 13.6
+        },
+        {
+          "name": "Saquon Barkley",
+          "slot": "BE",
+          "position": "RB",
+          "points": 13.2
+        },
+        {
+          "name": "Justin Jackson",
+          "slot": "BE",
+          "position": "RB",
+          "points": 9.1
+        },
+        {
+          "name": "Austin Hooper",
+          "slot": "BE",
+          "position": "TE",
+          "points": 4.8
+        },
+        {
+          "name": "Lamar Jackson",
+          "slot": "BE",
+          "position": "QB",
+          "points": 0.0
+        },
+        {
+          "name": "Irv Smith Jr.",
+          "slot": "IR",
+          "position": "TE",
+          "points": 0.0
+        }
+      ]
+    },
+    "loser": {
+      "teamId": 12,
+      "teamName": "new year new me",
+      "ownerName": "Jared",
+      "score": 101.76,
+      "players": [
+        {
+          "name": "Cooper Kupp",
+          "slot": "WR",
+          "position": "WR",
+          "points": 21.5
+        },
+        {
+          "name": "Matthew Stafford",
+          "slot": "QB",
+          "position": "QB",
+          "points": 17.26
+        },
+        {
+          "name": "Chris Boswell",
+          "slot": "K",
+          "position": "K",
+          "points": 17.0
+        },
+        {
+          "name": "Keenan Allen",
+          "slot": "WR",
+          "position": "WR",
+          "points": 14.4
+        },
+        {
+          "name": "Tyler Lockett",
+          "slot": "RB/WR/TE",
+          "position": "WR",
+          "points": 12.1
+        },
+        {
+          "name": "Dalton Schultz",
+          "slot": "TE",
+          "position": "TE",
+          "points": 11.4
+        },
+        {
+          "name": "Dalvin Cook",
+          "slot": "RB",
+          "position": "RB",
+          "points": 4.3
+        },
+        {
+          "name": "Marquise Brown",
+          "slot": "RB/WR/TE",
+          "position": "WR",
+          "points": 3.8
+        },
+        {
+          "name": "Dolphins D/ST",
+          "slot": "D/ST",
+          "position": "D/ST",
+          "points": 0.0
+        },
+        {
+          "name": "Jaret Patterson",
+          "slot": "BE",
+          "position": "RB",
+          "points": 20.8
+        },
+        {
+          "name": "Michael Gallup",
+          "slot": "BE",
+          "position": "WR",
+          "points": 12.6
+        },
+        {
+          "name": "Mike Gesicki",
+          "slot": "BE",
+          "position": "TE",
+          "points": 9.1
+        },
+        {
+          "name": "Colts D/ST",
+          "slot": "BE",
+          "position": "D/ST",
+          "points": 6.0
+        },
+        {
+          "name": "Raheem Mostert",
+          "slot": "IR",
+          "position": "RB",
+          "points": 0.0
+        },
+        {
+          "name": "Cowboys D/ST",
+          "slot": "BE",
+          "position": "D/ST",
+          "points": 0.0
+        },
+        {
+          "name": "Cam Akers",
+          "slot": "BE",
+          "position": "RB",
+          "points": 0.0
+        }
+      ]
+    }
   },
   "weeklyMatchupCount": {
     "1": 7,

@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fantasy Football Newsletter</title>
+    <style>
+        @media print {
+            body {
+                background: white !important;
+                padding: 0 !important;
+            }
+            .newsletter-container {
+                box-shadow: none !important;
+                margin: 0 !important;
+                max-width: none !important;
+            }
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            margin: 0;
+            padding: 20px;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        .newsletter-container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            color: white;
+            padding: 30px;
+            text-align: center;
+        }
+        
+        @media print {
+            .header {
+                background: #1e3c72 !important;
+                -webkit-print-color-adjust: exact;
+                color-adjust: exact;
+            }
+        }
+        
+        .header h1 {
+            margin: 0;
+            font-size: 2.5em;
+            font-weight: bold;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        
+        .header p {
+            margin: 10px 0 0 0;
+            font-size: 1.2em;
+            opacity: 0.9;
+        }
+        
+        .content {
+            padding: 30px;
+        }
+        
+        .section {
+            margin-bottom: 30px;
+            page-break-inside: avoid;
+        }
+        
+        @media print {
+            .section {
+                page-break-inside: avoid;
+                break-inside: avoid;
+            }
+            h1, h2, h3 {
+                page-break-after: avoid;
+            }
+            .matchup {
+                page-break-inside: avoid;
+            }
+        }
+        
+        .section h2 {
+            color: #1e3c72;
+            font-size: 1.8em;
+            margin-bottom: 15px;
+            border-bottom: 3px solid #667eea;
+            padding-bottom: 10px;
+        }
+        
+        .section h3 {
+            color: #2a5298;
+            font-size: 1.4em;
+            margin: 20px 0 10px 0;
+        }
+        
+        .matchup {
+            background: #f8f9fa;
+            border-left: 4px solid #667eea;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+        
+        .matchup-title {
+            font-weight: bold;
+            font-size: 1.1em;
+            color: #1e3c72;
+            margin-bottom: 5px;
+        }
+        
+        .matchup-commentary {
+            font-style: italic;
+            color: #666;
+            margin: 5px 0;
+        }
+        
+        .matchup-score {
+            font-weight: bold;
+            color: #2a5298;
+        }
+        
+        .highlight-box {
+            background: linear-gradient(135deg, #ffeaa7 0%, #fab1a0 100%);
+            padding: 20px;
+            border-radius: 10px;
+            margin: 15px 0;
+            text-align: center;
+        }
+        
+        .highlight-box h3 {
+            margin: 0 0 10px 0;
+            color: #2d3436;
+        }
+        
+        .highlight-box .score {
+            font-size: 2em;
+            font-weight: bold;
+            color: #e17055;
+        }
+        
+        .player-list {
+            background: #f8f9fa;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 10px 0;
+        }
+        
+        .player-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 8px 0;
+            border-bottom: 1px solid #dee2e6;
+        }
+        
+        .player-item:last-child {
+            border-bottom: none;
+        }
+        
+        .player-name {
+            font-weight: bold;
+            color: #1e3c72;
+        }
+        
+        .player-score {
+            font-weight: bold;
+            color: #e17055;
+        }
+        
+        .power-ranking {
+            background: linear-gradient(135deg, #74b9ff 0%, #0984e3 100%);
+            color: white;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 10px 0;
+        }
+        
+        .power-ranking h4 {
+            margin: 0 0 10px 0;
+            font-size: 1.2em;
+        }
+        
+        .ranking-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 5px 0;
+        }
+        
+        .comedy-section {
+            background: linear-gradient(135deg, #fd79a8 0%, #e84393 100%);
+            color: white;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 15px 0;
+        }
+        
+        .comedy-section h3 {
+            color: white;
+            margin: 0 0 15px 0;
+        }
+        
+        .footer {
+            background: #2d3436;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        
+        .emoji {
+            font-size: 1.2em;
+        }
+        
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin: 20px 0;
+        }
+        
+        .stat-box {
+            background: #f8f9fa;
+            padding: 15px;
+            border-radius: 8px;
+            text-align: center;
+            border: 2px solid #e9ecef;
+        }
+        
+        .stat-box h4 {
+            margin: 0 0 10px 0;
+            color: #1e3c72;
+        }
+        
+        .stat-value {
+            font-size: 1.5em;
+            font-weight: bold;
+            color: #e17055;
+        }
+    </style>
+</head>
+<body>
+    <div class="newsletter-container">
+        <div class="header">
+            <h1>🏈 No Punt Intended - Week 10 Championship Chronicles 🏈</h1>
+            <p>Fully powered by AI-driven analysis</p>
+        </div>
+        
+        <div class="content">
+            <!-- This will be populated by the Python script -->
+            <div id="newsletter-content"><h1>🏈 <strong>No Punt Intended - Week 10 Championship Chronicles</strong> 🏈</h1><br>
+<br>
+<div class="section"><h2>🎬 <strong>This Week's Big Storyline</strong></h2><br>
+<br>
+In a thrilling Week 10 of "No Punt Intended," Jacob's Just Josh delivered a jaw-dropping performance, racking up an astonishing 197.37 points, the highest score of the season, to take down Kodi's No Josh or Drake, who managed 132.67 points. This victory not only boosts Just Josh's record to 5-5 but also highlights their offensive prowess, as they now average 140 points per game. Meanwhile, Brenden's Home Improvement continued their dominance, defeating Nick's Nacua Matata with a robust score of 157.22, solidifying their position at the top of the standings with an impressive 8-2 record.<br>
+<br>
+</div><div class="section"><h2>⚔️ <strong>Game Recaps: AI-Powered Analysis</strong></h2><br>
+<br>
+<strong>Trent's JAKE BOBO</strong> @ <strong>Dillon's Team Lehman</strong>  <br>
+In a clash that had fans on the edge of their seats, Trent's JAKE BOBO snatched victory from the jaws of defeat, edging out Dillon's Team Lehman with a score of 101.79 to 93.9. The game was a rollercoaster, as both teams struggled to meet their projected scores but delivered a nail-biting finish nonetheless. With Dillon's squad projected to soar higher, they couldn't quite take flight, leaving the door open for Trent to swoop in and secure the win. <strong>Final:</strong> Trent's JAKE BOBO 101.79 - 93.9 Dillon's Team Lehman<br>
+<br>
+<strong>Brenden's Home Improvement</strong> @ <strong>Nick's Nacua Matata</strong>  <br>
+Brenden's Home Improvement delivered a dazzling performance, demolishing Nick's Nacua Matata 157.22 to 133.15 in a show of sheer offensive might. It was a high-scoring affair, with Brenden's team exceeding their projections and leaving Nick scrambling to keep pace. The disparity in points showcased Brenden's dominance this week, as he not only took the win but also left a lasting impression on the standings. <strong>Final:</strong> Brenden's Home Improvement 157.22 - 133.15 Nick's Nacua Matata<br>
+<br>
+<strong>Derek's Calvin and the chipmunks</strong> @ <strong>Alaina's Trophy Wife</strong>  <br>
+In a battle that had all the excitement of a close race, Alaina's Trophy Wife triumphed over Derek's Calvin and the chipmunks with a score of 114.5 to 99.84. The game proved to be a test of strategy, as Alaina's team managed to secure crucial points when it mattered most. Despite falling short of their projections, Alaina's squad displayed resilience, ultimately claiming victory in a competitive matchup. <strong>Final:</strong> Alaina's Trophy Wife 114.5 - 99.84 Derek's Calvin and the chipmunks<br>
+<br>
+<strong>Kodi's No Josh or Drake</strong> @ <strong>Jacob's Just Josh</strong>  <br>
+In a stunning blowout, Jacob's Just Josh showcased their firepower, obliterating Kodi's No Josh or Drake with a staggering score of 197.37 to 132.67. Jacob's team was a well-oiled machine, surpassing their projections and leaving Kodi's squad in the dust. The high-flying performance highlighted the strength of Jacob's roster, as they dominated play and sent a clear message to the league. <strong>Final:</strong> Jacob's Just Josh 197.37 - 132.67 Kodi's No Josh or Drake<br>
+<br>
+<strong>Chaz's Silver Bullet</strong> @ <strong>Erik's Ceedeez nuts</strong>  <br>
+In a thrilling encounter, Erik's Ceedeez nuts narrowly outpaced Chaz's Silver Bullet, clinching a 124.39 to 119.08 victory. This match was a close duel, with both teams fighting tooth and nail to secure every point, but Erik's squad managed to pull ahead just in time. The tension was palpable as the game unfolded, with each play adding to the drama, ultimately favoring Erik in the end. <strong>Final:</strong> Erik's Ceedeez nuts 124.39 - 119.08 Chaz's Silver Bullet<br>
+<br>
+<strong>Colby's Boomstick</strong> @ <strong>Ace's Maye I Digg In Yo Boutte?</strong>  <br>
+In a match that felt more like a tactical chess game than a football showdown, Ace's Maye I Digg In Yo Boutte? bested Colby's Boomstick with a score of 106.75 to 84.62. While Colby's team fell short of expectations, Ace's squad executed their game plan to perfection, capitalizing on every opportunity to secure the win. It was a gritty performance that showcased Ace's strategic prowess in a week that left Colby scratching his head. <strong>Final:</strong> Ace's Maye I Digg In Yo Boutte? 106.75 - 84.62 Colby's Boomstick<br>
+<br>
+<strong>Zakk's Boston Clam Chowda</strong> @ <strong>Marc's Dsm Tittsburgh</strong>  <br>
+In a clash of titans, Marc's Dsm Tittsburgh edged out Zakk's Boston Clam Chowda with a final score of 128.37 to 115.83. The game unfolded as a fierce contest, with both teams battling fiercely for supremacy, but Marc's squad was able to pull away just enough to secure the victory. Zakk's team fought valiantly but couldn't quite keep pace, falling short of their projected total in a hard-fought battle. <strong>Final:</strong> Marc's Dsm Tittsburgh 128.37 - 115.83 Zakk's Boston Clam Chowda<br>
+<br>
+</div><div class="section"><h2>⭐ <strong>Player Spotlights: Heroes and Villains</strong></h2><br>
+<br>
+<h3>Top 3 Heroes  </h3><br>
+<strong>Jonathan Taylor (IND)</strong>: 54.6 points for Home Improvement—an explosive performance!  <br>
+<strong>De'Von Achane (MIA)</strong>: 43.5 points for Boston Clam Chowda—showing he’s a dynamic playmaker.  <br>
+<strong>Jahmyr Gibbs (DET)</strong>: 41.2 points for Just Josh—stepping up big when needed!<br>
+<br>
+<h3>Worst Underperformer  </h3><br>
+<strong>Bo Nix (DEN)</strong>: Just 7.8 points for Trophy Wife, falling drastically short of his 23.93 projection. A rough week for the QB left his team in a lurch.<br>
+<br>
+<h3>Biggest Bench Blunder  </h3><br>
+<strong>Jared Goff (DET)</strong>: A staggering 33.8 points sitting on the bench for Just Josh. That’s a game-changing decision that could haunt them!<br>
+<br>
+</div><div class="section"><h2>📈 <strong>Trends Watch: The Plot Thickens</strong></h2><br>
+<br>
+In Week 10, "Home Improvement" and "Ceedeez nuts" are on hot streaks, each with 7+ wins, while "Trophy Wife" is struggling with only 2 wins, indicating a cold streak. "Home Improvement" leads the league with 8 wins and a significant points differential of +305, showcasing consistent offensive performance. Conversely, "Maye I Digg In Yo Boutte?" and "Trophy Wife" have low points scored (1206.78 and 1058.84 respectively) relative to their losses, indicating a luck factor against them.<br>
+<br>
+Playoff implications are critical as "Home Improvement" is likely securing a top seed with its strong record and scoring. Meanwhile, "Just Josh" and "Silver Bullet," both at 5-5, are vying for a playoff spot, making their upcoming matches crucial for postseason contention.<br>
+<br>
+</div><div class="section"><h2>📚 <strong>League History Deep Dive</strong></h2><br>
+<br>
+<strong>📊 This Season vs. League History:</strong><br>
+<em>This season is on fire!</em> The league is averaging 125.4 PPG per team, which is 10.5 points higher than the historical average of 114.9 PPG. This could be the highest-scoring season in league history!<br>
+<br>
+<strong>🎯 This Week's High Score Context:</strong><br>
+<em>Historic Performance!</em> This week's high score of 197.4 points ranks #2 all-time out of 958 single games, putting it in the top 99.9% of all league performances!<br>
+The honor belongs to Jacob's Just Josh after dropping 197.4 against Kodi's No Josh or Drake (132.7).<br>
+The all-time benchmark is still andrew's Sutton My Chubb with 210.6 back in Week 5 of 2021 against Kodi's 401k- Investments (129.9).<br>
+<br>
+<strong>💥 This Week's Beatdown Analysis:</strong><br>
+<em>MASSIVE BEATDOWN!</em> This week featured a 64.7-point margin of victory, one of the most lopsided games we've seen in recent memory. This kind of domination doesn't happen often!<br>
+<br>
+<strong>📅 Historical Data Scope:</strong><br>
+<em>Analysis based on 4 seasons</em> (2021-2024) with 958 total games analyzed. This gives us a comprehensive view of league trends over time.<br>
+<br>
+</div><div class="section"><h2>🏆 <strong>Power Rankings & Playoff Outlook</strong></h2><br>
+<br>
+<h3>Week 10 Power Rankings</h3><br>
+<br>
+<div class="ranking-item"><span>1.</span> <span><strong>Home Improvement (Brenden) - 8-2, PF: 1437.32</strong>  </span></div><br>
+   Home Improvement leads the pack with the best record and impressive points scored.<br>
+<br>
+<div class="ranking-item"><span>2.</span> <span><strong>Team Lehman (Dillon) - 7-3, PF: 1395.45</strong>  </span></div><br>
+   Team Lehman is solidly in contention with a strong offensive output and a solid record.<br>
+<br>
+<div class="ranking-item"><span>3.</span> <span><strong>Ceedeez nuts (Erik) - 7-3, PF: 1329.64</strong>  </span></div><br>
+   Ceedeez nuts is keeping pace with the top teams thanks to consistent scoring and a strong record.<br>
+<br>
+<div class="ranking-item"><span>4.</span> <span><strong>Dsm Tittsburgh (Marc) - 7-3, PF: 1270.11</strong>  </span></div><br>
+   Dsm Tittsburgh rounds out the trio of 7-win teams, showcasing competitive scoring despite a lower point total.<br>
+<br>
+<div class="ranking-item"><span>5.</span> <span><strong>No Josh or Drake (Kodi) - 6-4, PF: 1338.83</strong>  </span></div><br>
+   No Josh or Drake remains a playoff contender with a decent record and respectable points for.<br>
+<br>
+<h3>Playoff Outlook</h3><br>
+The standings are tight, especially with three teams sitting at 7 wins, and only the top 7 teams will qualify for the playoffs. Currently, teams like Just Josh and Silver Bullet, both at 5 wins, need to secure victories soon to break into the playoff contention amidst a crowded middle tier.<br>
+<br>
+</div><div class="section"><h2>🎭 <strong>Comedy Corner: The Roast is Real</strong></h2><br>
+<br>
+<div class="ranking-item"><span>1.</span> <span>Colby, your team scored so low, even the scoreboard asked for a nap! I didn't know "Boomstick" meant it only fires blanks!  </span></div><br>
+<br>
+<div class="ranking-item"><span>2.</span> <span>Jacob, with Jared Goff sitting on your bench, it's like having a golden ticket and using it to buy a Happy Meal.  </span></div><br>
+<br>
+<div class="ranking-item"><span>3.</span> <span>Brenden, your team "Home Improvement" is like Tim Taylor—full of potential but still can't seem to fix that woeful defense; more tools are needed!</span></div><br>
+<br>
+</div><div class="section"><h2>🔮 <strong>Next Week Preview: The Saga Continues</strong></h2><br>
+<br>
+<strong>🔥 Game of the Week:</strong><br>
+<em>Calvin and the chipmunks</em> @ <em>JAKE BOBO</em><br>
+Projected: Calvin and the chipmunks 125.1 - 120.4 JAKE BOBO<br>
+<em>This is going to be a nail-biter! Both teams are projected within 5 points of each other.</em><br>
+<br>
+<strong>🎯 Upset Watch:</strong><br>
+<em>The biggest upset potential lies with Boomstick against Just Josh. With a 45.5-point projected deficit, this could be the week's biggest shocker if the underdog pulls it off.</em><br>
+<br>
+---<br>
+<br>
+🏈 <strong>Until next week, may your lineups be stacked and your opponents be weak!</strong> 🏈<br>
+<br>
+<em>Fully powered by AI analysis - finding real trends in your league data.</em></div></div>
+        </div>
+        
+        <div class="footer">
+            <p>This newsletter was automatically generated for your fantasy football enjoyment.</p>
+            <p>🏈 Good luck this week! 🏈</p>
+        </div>
+    </div>
+</body>
+</html>

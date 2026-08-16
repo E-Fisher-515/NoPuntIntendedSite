@@ -5,9 +5,10 @@ import { points, recordLine } from "@/lib/format";
 type Props = {
   teams: TeamSeason[];
   year?: number;
+  showYearOnTeams?: boolean;
 };
 
-export function StandingsTable({ teams, year }: Props) {
+export function StandingsTable({ teams, year, showYearOnTeams = true }: Props) {
   const rows = [...teams].sort((a, b) => (a.finalStanding || 99) - (b.finalStanding || 99));
   return (
     <div>
@@ -41,7 +42,7 @@ export function StandingsTable({ teams, year }: Props) {
                 </td>
                 <td className="px-3 py-2 text-ink/70">
                   {team.teamName}
-                  {year ? ` · ${year}` : ""}
+                  {showYearOnTeams && year ? ` · ${year}` : ""}
                 </td>
                 <td className="px-3 py-2">{recordLine(team.wins, team.losses, team.ties)}</td>
                 <td className="px-3 py-2">{points(team.pointsFor)}</td>

@@ -28,7 +28,7 @@ export function SeasonAwards({
       {awards.length ? (
         <div className="grid gap-4 md:grid-cols-2">
           {awards.map((award) => (
-            <AwardCard key={award.id} award={award} managers={managers} />
+            <AwardCard key={award.id} award={award} managers={managers} showYear={false} />
           ))}
         </div>
       ) : (

@@ -296,24 +296,30 @@
     "highestScoringWeek": {
       "teamName": "We Young  \ud83d\ude33",
       "teamId": 3,
+      "ownerName": "Kodi",
       "points": 197.9,
       "opponentName": "RUN CMC",
+      "opponentOwner": "Daniel",
       "opponentPoints": 148.68,
       "week": 2
     },
     "lowestScoringWeek": {
       "teamName": "Dsm Tittsburgh ",
       "teamId": 17,
+      "ownerName": "Marc",
       "points": 55.3,
       "opponentName": "Boston Brees an A Younghoe",
+      "opponentOwner": "Robert",
       "opponentPoints": 87.9,
       "week": 15
     },
     "biggestBlowout": {
       "teamName": "Dee jay Chark Doo Doo Doo Doo",
       "teamId": 19,
+      "ownerName": "Nick",
       "points": 194.58,
       "opponentName": "Silver Bullet",
+      "opponentOwner": "chaz",
       "opponentPoints": 92.1,
       "week": 4,
       "margin": 102.48
@@ -322,6 +328,10 @@
       "week": 10,
       "homeTeamName": "Minshew  Mania",
       "awayTeamName": "Boston Brees an A Younghoe",
+      "homeTeamId": 4,
+      "awayTeamId": 8,
+      "homeOwnerName": "Jordan",
+      "awayOwnerName": "Robert",
       "homeScore": 60.88,
       "awayScore": 60.84,
       "margin": 0.04
@@ -444,6 +454,241 @@
     "combined": 284.88,
     "margin": 42.84,
     "winner": "home"
+  },
+  "championshipRosters": {
+    "week": 15,
+    "winner": {
+      "teamId": 3,
+      "teamName": "We Young  \ud83d\ude33",
+      "ownerName": "Kodi",
+      "score": 163.86,
+      "players": [
+        {
+          "name": "Josh Allen",
+          "slot": "QB",
+          "position": "QB",
+          "points": 40.66
+        },
+        {
+          "name": "Calvin Ridley",
+          "slot": "WR",
+          "position": "WR",
+          "points": 35.3
+        },
+        {
+          "name": "Aaron Jones",
+          "slot": "RB",
+          "position": "RB",
+          "points": 27.8
+        },
+        {
+          "name": "Justin Jefferson",
+          "slot": "WR",
+          "position": "WR",
+          "points": 21.4
+        },
+        {
+          "name": "Mark Andrews",
+          "slot": "TE",
+          "position": "TE",
+          "points": 17.6
+        },
+        {
+          "name": "Austin Ekeler",
+          "slot": "RB",
+          "position": "RB",
+          "points": 11.9
+        },
+        {
+          "name": "Cam Akers",
+          "slot": "RB/WR/TE",
+          "position": "RB",
+          "points": 7.2
+        },
+        {
+          "name": "Jason Sanders",
+          "slot": "K",
+          "position": "K",
+          "points": 1.0
+        },
+        {
+          "name": "49ers D/ST",
+          "slot": "D/ST",
+          "position": "D/ST",
+          "points": 1.0
+        },
+        {
+          "name": "Kirk Cousins",
+          "slot": "BE",
+          "position": "QB",
+          "points": 19.34
+        },
+        {
+          "name": "Hunter Henry",
+          "slot": "BE",
+          "position": "TE",
+          "points": 17.5
+        },
+        {
+          "name": "Tee Higgins",
+          "slot": "BE",
+          "position": "WR",
+          "points": 6.1
+        },
+        {
+          "name": "Jamaal Williams",
+          "slot": "BE",
+          "position": "RB",
+          "points": 4.0
+        },
+        {
+          "name": "Jerry Jeudy",
+          "slot": "BE",
+          "position": "WR",
+          "points": 2.9
+        },
+        {
+          "name": "John Brown",
+          "slot": "IR",
+          "position": "WR",
+          "points": 0.0
+        },
+        {
+          "name": "Devonta Freeman",
+          "slot": "IR",
+          "position": "RB",
+          "points": 0.0
+        },
+        {
+          "name": "Ezekiel Elliott",
+          "slot": "BE",
+          "position": "RB",
+          "points": 0.0
+        },
+        {
+          "name": "Julian Edelman",
+          "slot": "IR",
+          "position": "WR",
+          "points": 0.0
+        },
+        {
+          "name": "Raiders D/ST",
+          "slot": "BE",
+          "position": "D/ST",
+          "points": -3.0
+        }
+      ]
+    },
+    "loser": {
+      "teamId": 16,
+      "teamName": "Iowa Kittle Corn",
+      "ownerName": "Erik",
+      "score": 121.02,
+      "players": [
+        {
+          "name": "David Montgomery",
+          "slot": "RB",
+          "position": "RB",
+          "points": 32.2
+        },
+        {
+          "name": "Deshaun Watson",
+          "slot": "QB",
+          "position": "QB",
+          "points": 26.42
+        },
+        {
+          "name": "Noah Fant",
+          "slot": "TE",
+          "position": "TE",
+          "points": 20.8
+        },
+        {
+          "name": "J.K. Dobbins",
+          "slot": "RB",
+          "position": "RB",
+          "points": 15.1
+        },
+        {
+          "name": "Davante Adams",
+          "slot": "WR",
+          "position": "WR",
+          "points": 11.2
+        },
+        {
+          "name": "Rodrigo Blankenship",
+          "slot": "K",
+          "position": "K",
+          "points": 11.0
+        },
+        {
+          "name": "Amari Cooper",
+          "slot": "WR",
+          "position": "WR",
+          "points": 2.3
+        },
+        {
+          "name": "Washington D/ST",
+          "slot": "D/ST",
+          "position": "D/ST",
+          "points": 2.0
+        },
+        {
+          "name": "Tyler Boyd",
+          "slot": "RB/WR/TE",
+          "position": "WR",
+          "points": 0.0
+        },
+        {
+          "name": "Russell Gage",
+          "slot": "BE",
+          "position": "WR",
+          "points": 17.8
+        },
+        {
+          "name": "Matthew Stafford",
+          "slot": "BE",
+          "position": "QB",
+          "points": 15.28
+        },
+        {
+          "name": "Rashard Higgins",
+          "slot": "BE",
+          "position": "WR",
+          "points": 11.6
+        },
+        {
+          "name": "Packers D/ST",
+          "slot": "BE",
+          "position": "D/ST",
+          "points": 5.0
+        },
+        {
+          "name": "Darrell Henderson Jr.",
+          "slot": "BE",
+          "position": "RB",
+          "points": 1.3
+        },
+        {
+          "name": "George Kittle",
+          "slot": "IR",
+          "position": "TE",
+          "points": 0.0
+        },
+        {
+          "name": "Mark Ingram II",
+          "slot": "BE",
+          "position": "RB",
+          "points": 0.0
+        },
+        {
+          "name": "Duke Johnson",
+          "slot": "BE",
+          "position": "RB",
+          "points": 0.0
+        }
+      ]
+    }
   },
   "weeklyMatchupCount": {
     "1": 7,

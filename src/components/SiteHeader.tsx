@@ -10,6 +10,8 @@ const links = [
   { href: "/seasons", label: "Seasons" },
   { href: "/managers", label: "Managers" },
   { href: "/records", label: "Records" },
+  { href: "/rivalries", label: "Rivalries" },
+  { href: "/newsletters", label: "Newsletters" },
   { href: "/hall-of-fame", label: "Hall of Fame" },
   { href: "/rules", label: "Rules" },
   { href: "/predictions", label: "Predictions" },
@@ -49,6 +51,14 @@ export function SiteHeader() {
               </Link>
             );
           })}
+          <Link
+            href="/admin"
+            className={`text-[11px] uppercase tracking-[0.16em] ${
+              pathname.startsWith("/admin") ? "text-forest border-b border-gold pb-0.5" : "text-gold-muted hover:text-forest"
+            }`}
+          >
+            Admin
+          </Link>
         </nav>
       </div>
       {open ? (
@@ -63,6 +73,9 @@ export function SiteHeader() {
               {link.label}
             </Link>
           ))}
+          <Link href="/admin" onClick={() => setOpen(false)} className="py-1 text-sm uppercase tracking-[0.14em] text-gold-muted">
+            Admin
+          </Link>
         </nav>
       ) : null}
     </header>

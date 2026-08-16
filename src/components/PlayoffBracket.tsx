@@ -39,7 +39,7 @@ export function PlayoffBracket({
             <h3 className="mb-2 text-[11px] uppercase tracking-[0.18em] text-gold-muted">Playoff week {week}</h3>
             <div className="grid gap-2">
               {games.map((game) => (
-                <MatchupCard key={`${game.week}-${game.homeTeamId}-${game.awayTeamId}`} matchup={game} teams={teams} />
+                <MatchupCard key={`${game.week}-${game.homeTeamId}-${game.awayTeamId}`} matchup={game} teams={teams} showYear={false} />
               ))}
             </div>
           </section>

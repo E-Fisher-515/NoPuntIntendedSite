@@ -296,24 +296,30 @@
     "highestScoringWeek": {
       "teamName": "Joe 4 The Win!",
       "teamId": 3,
+      "ownerName": "Kodi",
       "points": 185.74,
       "opponentName": "Chase'n Gould",
+      "opponentOwner": "Brenden",
       "opponentPoints": 71.92,
       "week": 9
     },
     "lowestScoringWeek": {
       "teamName": "So Hardman It Hurst",
       "teamId": 18,
+      "ownerName": "andrew",
       "points": 56.86,
       "opponentName": "Zach Wilson's  Cougars",
+      "opponentOwner": "Erik",
       "opponentPoints": 103.46,
       "week": 14
     },
     "biggestBlowout": {
       "teamName": "Joe 4 The Win!",
       "teamId": 3,
+      "ownerName": "Kodi",
       "points": 185.74,
       "opponentName": "Chase'n Gould",
+      "opponentOwner": "Brenden",
       "opponentPoints": 71.92,
       "week": 9,
       "margin": 113.82
@@ -322,6 +328,10 @@
       "week": 12,
       "homeTeamName": "Team Lehman",
       "awayTeamName": "Dsm Tittsburgh ",
+      "homeTeamId": 2,
+      "awayTeamId": 17,
+      "homeOwnerName": "Dillon",
+      "awayOwnerName": "Marc",
       "homeScore": 93.3,
       "awayScore": 93.36,
       "margin": 0.06
@@ -444,6 +454,217 @@
     "combined": 220.5,
     "margin": 49.9,
     "winner": "home"
+  },
+  "championshipRosters": {
+    "week": 17,
+    "winner": {
+      "teamId": 3,
+      "teamName": "Joe 4 The Win!",
+      "ownerName": "Kodi",
+      "score": 135.2,
+      "players": [
+        {
+          "name": "Mike Evans",
+          "slot": "WR",
+          "position": "WR",
+          "points": 53.7
+        },
+        {
+          "name": "Austin Ekeler",
+          "slot": "RB",
+          "position": "RB",
+          "points": 35.1
+        },
+        {
+          "name": "Kenneth Walker III",
+          "slot": "RB/WR/TE",
+          "position": "RB",
+          "points": 18.2
+        },
+        {
+          "name": "T.J. Hockenson",
+          "slot": "TE",
+          "position": "TE",
+          "points": 12.9
+        },
+        {
+          "name": "Jaylen Waddle",
+          "slot": "WR",
+          "position": "WR",
+          "points": 8.2
+        },
+        {
+          "name": "Buccaneers D/ST",
+          "slot": "D/ST",
+          "position": "D/ST",
+          "points": 5.0
+        },
+        {
+          "name": "Christian Watson",
+          "slot": "RB/WR/TE",
+          "position": "WR",
+          "points": 2.1
+        },
+        {
+          "name": "Joe Burrow",
+          "slot": "QB",
+          "position": "QB",
+          "points": 0.0
+        },
+        {
+          "name": "Tyler Bass",
+          "slot": "K",
+          "position": "K",
+          "points": 0.0
+        },
+        {
+          "name": "Kirk Cousins",
+          "slot": "BE",
+          "position": "QB",
+          "points": 7.9
+        },
+        {
+          "name": "Hassan Haskins",
+          "slot": "BE",
+          "position": "RB",
+          "points": 7.3
+        },
+        {
+          "name": "George Pickens",
+          "slot": "BE",
+          "position": "WR",
+          "points": 4.9
+        },
+        {
+          "name": "Michael Carter",
+          "slot": "BE",
+          "position": "RB",
+          "points": 2.5
+        },
+        {
+          "name": "Hayden Hurst",
+          "slot": "BE",
+          "position": "TE",
+          "points": 0.0
+        },
+        {
+          "name": "Derrick Henry",
+          "slot": "BE",
+          "position": "RB",
+          "points": 0.0
+        },
+        {
+          "name": "James Cook",
+          "slot": "BE",
+          "position": "RB",
+          "points": 0.0
+        }
+      ]
+    },
+    "loser": {
+      "teamId": 9,
+      "teamName": "Silver Bullet",
+      "ownerName": "chaz",
+      "score": 85.3,
+      "players": [
+        {
+          "name": "Cam Akers",
+          "slot": "RB/WR/TE",
+          "position": "RB",
+          "points": 17.3
+        },
+        {
+          "name": "Tyreek Hill",
+          "slot": "WR",
+          "position": "WR",
+          "points": 15.7
+        },
+        {
+          "name": "Giants D/ST",
+          "slot": "D/ST",
+          "position": "D/ST",
+          "points": 15.0
+        },
+        {
+          "name": "James Conner",
+          "slot": "RB/WR/TE",
+          "position": "RB",
+          "points": 14.0
+        },
+        {
+          "name": "Gerald Everett",
+          "slot": "TE",
+          "position": "TE",
+          "points": 10.5
+        },
+        {
+          "name": "Saquon Barkley",
+          "slot": "RB",
+          "position": "RB",
+          "points": 7.3
+        },
+        {
+          "name": "Tyler Lockett",
+          "slot": "WR",
+          "position": "WR",
+          "points": 3.5
+        },
+        {
+          "name": "Jason Sanders",
+          "slot": "K",
+          "position": "K",
+          "points": 2.0
+        },
+        {
+          "name": "Josh Allen",
+          "slot": "QB",
+          "position": "QB",
+          "points": 0.0
+        },
+        {
+          "name": "Treylon Burks",
+          "slot": "BE",
+          "position": "WR",
+          "points": 12.6
+        },
+        {
+          "name": "Juwan Johnson",
+          "slot": "BE",
+          "position": "TE",
+          "points": 11.2
+        },
+        {
+          "name": "Zack Moss",
+          "slot": "BE",
+          "position": "RB",
+          "points": 7.4
+        },
+        {
+          "name": "Jets D/ST",
+          "slot": "BE",
+          "position": "D/ST",
+          "points": 4.0
+        },
+        {
+          "name": "D'Onta Foreman",
+          "slot": "BE",
+          "position": "RB",
+          "points": 3.5
+        },
+        {
+          "name": "Laquon Treadwell",
+          "slot": "BE",
+          "position": "WR",
+          "points": 3.5
+        },
+        {
+          "name": "Demarcus Robinson",
+          "slot": "BE",
+          "position": "WR",
+          "points": 1.9
+        }
+      ]
+    }
   },
   "weeklyMatchupCount": {
     "1": 7,

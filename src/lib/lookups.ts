@@ -70,13 +70,14 @@ export function teamIdentity(
   teams: TeamSeason[],
   year: number,
   notable?: { teamName?: string; teamId?: number; ownerName?: string } | null,
+  includeYear = true,
 ): string {
   if (!notable) return "—";
   const team =
     notable.teamId != null
       ? teams.find((row) => row.teamId === notable.teamId)
       : teams.find((row) => row.teamName === notable.teamName);
-  return identity(notable.ownerName || team?.ownerName, notable.teamName || team?.teamName, year);
+  return identity(notable.ownerName || team?.ownerName, notable.teamName || team?.teamName, includeYear ? year : undefined);
 }
 
 export function matchupSideIdentity(

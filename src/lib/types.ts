@@ -82,6 +82,28 @@ export type SeasonArchive = {
   runnerUp: TeamSeason | null;
   thirdPlace: TeamSeason | null;
   championshipMatchup: Matchup | null;
+  championshipRosters?: ChampionshipRosters | null;
+};
+
+export type RosterPlayer = {
+  name: string;
+  slot: string;
+  position: string;
+  points: number;
+};
+
+export type ChampionshipSide = {
+  teamId: number;
+  teamName: string;
+  ownerName?: string;
+  score: number;
+  players: RosterPlayer[];
+};
+
+export type ChampionshipRosters = {
+  week: number;
+  winner: ChampionshipSide;
+  loser: ChampionshipSide;
 };
 
 export type ManagerSeason = {
@@ -201,6 +223,14 @@ export type BannerSettings = {
   message: string;
 };
 
+export type NewsletterIssue = {
+  id: string;
+  year: number;
+  week: number | "eoy";
+  title: string;
+  path: string;
+};
+
 export type Editorial = {
   banner: BannerSettings;
   constitution: string;
@@ -208,6 +238,9 @@ export type Editorial = {
   rejectedHofIds: string[];
   timeline: TimelineEvent[];
   customAwards: Award[];
+  adminPinHash: string;
+  newsletters: NewsletterIssue[];
+  newsletterRecipients: string;
 };
 
 export type HofSuggestion = {

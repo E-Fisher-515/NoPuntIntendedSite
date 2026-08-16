@@ -8,7 +8,7 @@ export function SeasonHeader({ season }: { season: SeasonArchive }) {
       <p className="text-[11px] uppercase tracking-[0.28em] text-gold">{season.year} season</p>
       <h1 className="mt-2 font-serif text-5xl">{season.complete ? "Champion" : "League leader"}</h1>
       <p className="mt-3 font-serif text-3xl text-gold">
-        {headline ? identity(headline.ownerName, headline.teamName, season.year) : "TBD"}
+        {headline ? identity(headline.ownerName, headline.teamName) : "TBD"}
       </p>
       {headline ? (
         <dl className="mt-6 flex flex-wrap gap-8 text-sm">

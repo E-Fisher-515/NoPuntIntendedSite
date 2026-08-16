@@ -296,24 +296,30 @@
     "highestScoringWeek": {
       "teamName": "Bortle-Line Retarded",
       "teamId": 9,
+      "ownerName": "chaz",
       "points": 189.28,
       "opponentName": "Too Breesy",
+      "opponentOwner": "Kodi",
       "opponentPoints": 135.34,
       "week": 12
     },
     "lowestScoringWeek": {
       "teamName": "Team Lee",
       "teamId": 11,
+      "ownerName": "Kasi",
       "points": 48.24,
       "opponentName": "SeaThem LynchThem",
+      "opponentOwner": "andrew",
       "opponentPoints": 92.02,
       "week": 17
     },
     "biggestBlowout": {
       "teamName": "Too Breesy",
       "teamId": 3,
+      "ownerName": "Kodi",
       "points": 178.44,
       "opponentName": "Team Lee",
+      "opponentOwner": "Kasi",
       "opponentPoints": 90.98,
       "week": 9,
       "margin": 87.46
@@ -322,6 +328,10 @@
       "week": 11,
       "homeTeamName": "Too Breesy",
       "awayTeamName": "SeaThem LynchThem",
+      "homeTeamId": 3,
+      "awayTeamId": 14,
+      "homeOwnerName": "Kodi",
+      "awayOwnerName": "andrew",
       "homeScore": 149.02,
       "awayScore": 148.9,
       "margin": 0.12
@@ -445,6 +455,7 @@
     "margin": 39.88,
     "winner": "away"
   },
+  "championshipRosters": null,
   "weeklyMatchupCount": {
     "1": 7,
     "2": 7,

@@ -35,9 +35,9 @@
     "name": "Biggest Blowout",
     "category": "matchup",
     "source": "espn",
-    "winnerName": "Too Breesy",
-    "winnerId": null,
-    "detail": "Week 9: 178.44-90.98 (margin 87.46)"
+    "winnerName": "Kodi",
+    "winnerId": "437742f0-e2a6-4492-b742-f0e2a6c49263",
+    "detail": "Kodi \u00b7 Too Breesy \u00b7 2018 Week 9: 178.44-90.98 (margin 87.46)"
   },
   {
     "id": "closest-2018",
@@ -45,9 +45,9 @@
     "name": "Closest Game",
     "category": "matchup",
     "source": "espn",
-    "winnerName": "Too Breesy vs SeaThem LynchThem",
+    "winnerName": "Kodi vs andrew",
     "winnerId": null,
-    "detail": "Week 11: 149.02-148.9"
+    "detail": "Too Breesy vs SeaThem LynchThem \u00b7 2018 Week 11: 149.02-148.9"
   },
   {
     "id": "champion-2019",
@@ -85,9 +85,9 @@
     "name": "Biggest Blowout",
     "category": "matchup",
     "source": "espn",
-    "winnerName": "new year new me",
-    "winnerId": null,
-    "detail": "Week 9: 199.92-98.64 (margin 101.28)"
+    "winnerName": "Jared",
+    "winnerId": "6d011778-180a-447b-9ca3-012936e0fcef",
+    "detail": "Jared \u00b7 new year new me \u00b7 2019 Week 9: 199.92-98.64 (margin 101.28)"
   },
   {
     "id": "closest-2019",
@@ -95,9 +95,9 @@
     "name": "Closest Game",
     "category": "matchup",
     "source": "espn",
-    "winnerName": "You Belichick Yo Self vs Boston  Clam Chowda",
+    "winnerName": "Ace vs Zakk",
     "winnerId": null,
-    "detail": "Week 14: 119.26-119.18"
+    "detail": "You Belichick Yo Self vs Boston  Clam Chowda \u00b7 2019 Week 14: 119.26-119.18"
   },
   {
     "id": "champion-2020",
@@ -135,9 +135,9 @@
     "name": "Biggest Blowout",
     "category": "matchup",
     "source": "espn",
-    "winnerName": "Dee jay Chark Doo Doo Doo Doo",
-    "winnerId": null,
-    "detail": "Week 4: 194.58-92.1 (margin 102.48)"
+    "winnerName": "Nick",
+    "winnerId": "8515684e-7a4d-4aaf-9568-4e7a4dcaaff3",
+    "detail": "Nick \u00b7 Dee jay Chark Doo Doo Doo Doo \u00b7 2020 Week 4: 194.58-92.1 (margin 102.48)"
   },
   {
     "id": "closest-2020",
@@ -145,9 +145,9 @@
     "name": "Closest Game",
     "category": "matchup",
     "source": "espn",
-    "winnerName": "Minshew  Mania vs Boston Brees an A Younghoe",
+    "winnerName": "Jordan vs Robert",
     "winnerId": null,
-    "detail": "Week 10: 60.88-60.84"
+    "detail": "Minshew  Mania vs Boston Brees an A Younghoe \u00b7 2020 Week 10: 60.88-60.84"
   },
   {
     "id": "champion-2021",
@@ -185,9 +185,9 @@
     "name": "Biggest Blowout",
     "category": "matchup",
     "source": "espn",
-    "winnerName": "Boston  Clam Chowda",
-    "winnerId": null,
-    "detail": "Week 17: 191.08-63.4 (margin 127.68)"
+    "winnerName": "Zakk",
+    "winnerId": "cc7c35aa-669c-4730-a0b5-9b9e6837e8fc",
+    "detail": "Zakk \u00b7 Boston  Clam Chowda \u00b7 2021 Week 17: 191.08-63.4 (margin 127.68)"
   },
   {
     "id": "closest-2021",
@@ -195,9 +195,9 @@
     "name": "Closest Game",
     "category": "matchup",
     "source": "espn",
-    "winnerName": "Tight End Team vs Silver Bullet",
+    "winnerName": "Robert vs chaz",
     "winnerId": null,
-    "detail": "Week 9: 97.98-97.74"
+    "detail": "Tight End Team vs Silver Bullet \u00b7 2021 Week 9: 97.98-97.74"
   },
   {
     "id": "champion-2022",
@@ -235,9 +235,9 @@
     "name": "Biggest Blowout",
     "category": "matchup",
     "source": "espn",
-    "winnerName": "Joe 4 The Win!",
-    "winnerId": null,
-    "detail": "Week 9: 185.74-71.92 (margin 113.82)"
+    "winnerName": "Kodi",
+    "winnerId": "437742f0-e2a6-4492-b742-f0e2a6c49263",
+    "detail": "Kodi \u00b7 Joe 4 The Win! \u00b7 2022 Week 9: 185.74-71.92 (margin 113.82)"
   },
   {
     "id": "closest-2022",
@@ -245,9 +245,9 @@
     "name": "Closest Game",
     "category": "matchup",
     "source": "espn",
-    "winnerName": "Team Lehman vs Dsm Tittsburgh ",
+    "winnerName": "Dillon vs Marc",
     "winnerId": null,
-    "detail": "Week 12: 93.3-93.36"
+    "detail": "Team Lehman vs Dsm Tittsburgh  \u00b7 2022 Week 12: 93.3-93.36"
   },
   {
     "id": "champion-2023",
@@ -285,9 +285,9 @@
     "name": "Biggest Blowout",
     "category": "matchup",
     "source": "espn",
-    "winnerName": "Team Carr",
-    "winnerId": null,
-    "detail": "Week 8: 165.1-80.28 (margin 84.82)"
+    "winnerName": "Robert",
+    "winnerId": "4601a707-1ca5-4416-9e3c-9f282205bc36",
+    "detail": "Robert \u00b7 Team Carr \u00b7 2023 Week 8: 165.1-80.28 (margin 84.82)"
   },
   {
     "id": "closest-2023",
@@ -295,9 +295,9 @@
     "name": "Closest Game",
     "category": "matchup",
     "source": "espn",
-    "winnerName": "Simp Henry vs Dsm Tittsburgh ",
+    "winnerName": "Ace vs Marc",
     "winnerId": null,
-    "detail": "Week 14: 122.0-121.94"
+    "detail": "Simp Henry vs Dsm Tittsburgh  \u00b7 2023 Week 14: 122.0-121.94"
   },
   {
     "id": "champion-2024",
@@ -335,9 +335,9 @@
     "name": "Biggest Blowout",
     "category": "matchup",
     "source": "espn",
-    "winnerName": "Boston Clam Chowda",
-    "winnerId": null,
-    "detail": "Week 5: 189.68-80.64 (margin 109.04)"
+    "winnerName": "Zakk",
+    "winnerId": "cc7c35aa-669c-4730-a0b5-9b9e6837e8fc",
+    "detail": "Zakk \u00b7 Boston Clam Chowda \u00b7 2024 Week 5: 189.68-80.64 (margin 109.04)"
   },
   {
     "id": "closest-2024",
@@ -345,9 +345,9 @@
     "name": "Closest Game",
     "category": "matchup",
     "source": "espn",
-    "winnerName": "Brenden's Team vs Boomstick",
+    "winnerName": "Kodi vs Colby",
     "winnerId": null,
-    "detail": "Week 1: 108.04-108.0"
+    "detail": "Brenden's Team vs Boomstick \u00b7 2024 Week 1: 108.04-108.0"
   },
   {
     "id": "champion-2025",
@@ -385,9 +385,9 @@
     "name": "Biggest Blowout",
     "category": "matchup",
     "source": "espn",
-    "winnerName": "Home Improvement",
-    "winnerId": null,
-    "detail": "Week 14: 155.69-47.3 (margin 108.39)"
+    "winnerName": "Brenden",
+    "winnerId": "7001b1f9-65a1-4cc3-81b1-f965a12cc356",
+    "detail": "Brenden \u00b7 Home Improvement \u00b7 2025 Week 14: 155.69-47.3 (margin 108.39)"
   },
   {
     "id": "closest-2025",
@@ -395,8 +395,8 @@
     "name": "Closest Game",
     "category": "matchup",
     "source": "espn",
-    "winnerName": "Just Josh vs Silver Bullet",
+    "winnerName": "Jacob vs chaz",
     "winnerId": null,
-    "detail": "Week 4: 131.36-131.5"
+    "detail": "Just Josh vs Silver Bullet \u00b7 2025 Week 4: 131.36-131.5"
   }
 ]

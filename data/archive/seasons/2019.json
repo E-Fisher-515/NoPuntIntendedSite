@@ -296,24 +296,30 @@
     "highestScoringWeek": {
       "teamName": "new year new me",
       "teamId": 12,
+      "ownerName": "Jared",
       "points": 199.92,
       "opponentName": "Country roads, Take Mahomes ",
+      "opponentOwner": "Erik",
       "opponentPoints": 98.64,
       "week": 9
     },
     "lowestScoringWeek": {
       "teamName": "Finally Got My Team Back!",
       "teamId": 8,
+      "ownerName": "Robert",
       "points": 50.46,
       "opponentName": "Silver Bullet",
+      "opponentOwner": "chaz",
       "opponentPoints": 112.38,
       "week": 7
     },
     "biggestBlowout": {
       "teamName": "new year new me",
       "teamId": 12,
+      "ownerName": "Jared",
       "points": 199.92,
       "opponentName": "Country roads, Take Mahomes ",
+      "opponentOwner": "Erik",
       "opponentPoints": 98.64,
       "week": 9,
       "margin": 101.28
@@ -322,6 +328,10 @@
       "week": 14,
       "homeTeamName": "You Belichick Yo Self",
       "awayTeamName": "Boston  Clam Chowda",
+      "homeTeamId": 6,
+      "awayTeamId": 10,
+      "homeOwnerName": "Ace",
+      "awayOwnerName": "Zakk",
       "homeScore": 119.26,
       "awayScore": 119.18,
       "margin": 0.08
@@ -444,6 +454,217 @@
     "combined": 279.1,
     "margin": 2.74,
     "winner": "home"
+  },
+  "championshipRosters": {
+    "week": 17,
+    "winner": {
+      "teamId": 3,
+      "teamName": "McCaffrey Backpacks Me",
+      "ownerName": "Kodi",
+      "score": 140.92,
+      "players": [
+        {
+          "name": "Joe Mixon",
+          "slot": "RB",
+          "position": "RB",
+          "points": 33.6
+        },
+        {
+          "name": "Christian McCaffrey",
+          "slot": "RB",
+          "position": "RB",
+          "points": 22.8
+        },
+        {
+          "name": "Matt Ryan",
+          "slot": "QB",
+          "position": "QB",
+          "points": 17.52
+        },
+        {
+          "name": "George Kittle",
+          "slot": "TE",
+          "position": "TE",
+          "points": 16.3
+        },
+        {
+          "name": "Russell Gage",
+          "slot": "RB/WR/TE",
+          "position": "WR",
+          "points": 13.8
+        },
+        {
+          "name": "Buccaneers D/ST",
+          "slot": "D/ST",
+          "position": "D/ST",
+          "points": 13.0
+        },
+        {
+          "name": "Kenny Golladay",
+          "slot": "WR",
+          "position": "WR",
+          "points": 10.2
+        },
+        {
+          "name": "Michael Thomas",
+          "slot": "WR",
+          "position": "WR",
+          "points": 7.7
+        },
+        {
+          "name": "Nick Folk",
+          "slot": "K",
+          "position": "K",
+          "points": 6.0
+        },
+        {
+          "name": "Jared Goff",
+          "slot": "BE",
+          "position": "QB",
+          "points": 28.16
+        },
+        {
+          "name": "Hunter Henry",
+          "slot": "BE",
+          "position": "TE",
+          "points": 15.2
+        },
+        {
+          "name": "Travis Homer",
+          "slot": "BE",
+          "position": "RB",
+          "points": 14.2
+        },
+        {
+          "name": "Kerryon Johnson",
+          "slot": "BE",
+          "position": "RB",
+          "points": 11.3
+        },
+        {
+          "name": "Bears D/ST",
+          "slot": "BE",
+          "position": "D/ST",
+          "points": 8.0
+        },
+        {
+          "name": "Emmanuel Sanders",
+          "slot": "BE",
+          "position": "WR",
+          "points": 5.5
+        },
+        {
+          "name": "Alexander Mattison",
+          "slot": "BE",
+          "position": "RB",
+          "points": 0.0
+        }
+      ]
+    },
+    "loser": {
+      "teamId": 8,
+      "teamName": "Finally Got My Team Back!",
+      "ownerName": "Robert",
+      "score": 138.18,
+      "players": [
+        {
+          "name": "Davante Adams",
+          "slot": "WR",
+          "position": "WR",
+          "points": 22.3
+        },
+        {
+          "name": "David Montgomery",
+          "slot": "RB",
+          "position": "RB",
+          "points": 20.3
+        },
+        {
+          "name": "Ravens D/ST",
+          "slot": "D/ST",
+          "position": "D/ST",
+          "points": 20.0
+        },
+        {
+          "name": "Ryquell Armstead",
+          "slot": "RB",
+          "position": "RB",
+          "points": 19.5
+        },
+        {
+          "name": "Christian Kirk",
+          "slot": "WR",
+          "position": "WR",
+          "points": 13.6
+        },
+        {
+          "name": "Randall Cobb",
+          "slot": "RB/WR/TE",
+          "position": "WR",
+          "points": 13.1
+        },
+        {
+          "name": "Jake Elliott",
+          "slot": "K",
+          "position": "K",
+          "points": 12.0
+        },
+        {
+          "name": "Drew Lock",
+          "slot": "QB",
+          "position": "QB",
+          "points": 11.98
+        },
+        {
+          "name": "Travis Kelce",
+          "slot": "TE",
+          "position": "TE",
+          "points": 5.4
+        },
+        {
+          "name": "Kyler Murray",
+          "slot": "BE",
+          "position": "QB",
+          "points": 16.0
+        },
+        {
+          "name": "Marshawn Lynch",
+          "slot": "BE",
+          "position": "RB",
+          "points": 9.4
+        },
+        {
+          "name": "Eagles D/ST",
+          "slot": "BE",
+          "position": "D/ST",
+          "points": 8.0
+        },
+        {
+          "name": "Jacob Hollister",
+          "slot": "BE",
+          "position": "TE",
+          "points": 6.5
+        },
+        {
+          "name": "Chris Thompson",
+          "slot": "BE",
+          "position": "RB",
+          "points": 2.1
+        },
+        {
+          "name": "Sammy Watkins",
+          "slot": "BE",
+          "position": "WR",
+          "points": 1.8
+        },
+        {
+          "name": "Matt Breida",
+          "slot": "BE",
+          "position": "RB",
+          "points": 1.6
+        }
+      ]
+    }
   },
   "weeklyMatchupCount": {
     "1": 7,

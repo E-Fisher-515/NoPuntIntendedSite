@@ -296,24 +296,30 @@
     "highestScoringWeek": {
       "teamName": "Team Lehman",
       "teamId": 2,
+      "ownerName": "Dillon",
       "points": 209.7,
       "opponentName": "Just Josh",
+      "opponentOwner": "Jacob",
       "opponentPoints": 119.26,
       "week": 16
     },
     "lowestScoringWeek": {
       "teamName": "Dsm Tittsburgh ",
       "teamId": 17,
+      "ownerName": "Marc",
       "points": 47.3,
       "opponentName": "Home Improvement",
+      "opponentOwner": "Brenden",
       "opponentPoints": 155.69,
       "week": 14
     },
     "biggestBlowout": {
       "teamName": "Home Improvement",
       "teamId": 1,
+      "ownerName": "Brenden",
       "points": 155.69,
       "opponentName": "Dsm Tittsburgh ",
+      "opponentOwner": "Marc",
       "opponentPoints": 47.3,
       "week": 14,
       "margin": 108.39
@@ -322,6 +328,10 @@
       "week": 4,
       "homeTeamName": "Just Josh",
       "awayTeamName": "Silver Bullet",
+      "homeTeamId": 6,
+      "awayTeamId": 9,
+      "homeOwnerName": "Jacob",
+      "awayOwnerName": "chaz",
       "homeScore": 131.36,
       "awayScore": 131.5,
       "margin": 0.14
@@ -444,6 +454,217 @@
     "combined": 268.29,
     "margin": 12.05,
     "winner": "home"
+  },
+  "championshipRosters": {
+    "week": 17,
+    "winner": {
+      "teamId": 3,
+      "teamName": "Alaina's Team",
+      "ownerName": "Kodi",
+      "score": 140.17,
+      "players": [
+        {
+          "name": "Chase Brown",
+          "slot": "RB/WR/TE",
+          "position": "RB",
+          "points": 32.1
+        },
+        {
+          "name": "Tyler Shough",
+          "slot": "QB",
+          "position": "QB",
+          "points": 28.92
+        },
+        {
+          "name": "Seahawks D/ST",
+          "slot": "D/ST",
+          "position": "D/ST",
+          "points": 15.35
+        },
+        {
+          "name": "Amon-Ra St. Brown",
+          "slot": "WR",
+          "position": "WR",
+          "points": 14.8
+        },
+        {
+          "name": "Juwan Johnson",
+          "slot": "TE",
+          "position": "TE",
+          "points": 13.5
+        },
+        {
+          "name": "Ka'imi Fairbairn",
+          "slot": "K",
+          "position": "K",
+          "points": 10.0
+        },
+        {
+          "name": "Nico Collins",
+          "slot": "WR",
+          "position": "WR",
+          "points": 8.7
+        },
+        {
+          "name": "Woody Marks",
+          "slot": "RB/WR/TE",
+          "position": "RB",
+          "points": 8.5
+        },
+        {
+          "name": "Bucky Irving",
+          "slot": "RB",
+          "position": "RB",
+          "points": 8.3
+        },
+        {
+          "name": "Parker Washington",
+          "slot": "BE",
+          "position": "WR",
+          "points": 22.0
+        },
+        {
+          "name": "Chimere Dike",
+          "slot": "BE",
+          "position": "WR",
+          "points": 10.2
+        },
+        {
+          "name": "Brian Robinson Jr.",
+          "slot": "BE",
+          "position": "RB",
+          "points": 3.8
+        },
+        {
+          "name": "Jalen Coker",
+          "slot": "BE",
+          "position": "WR",
+          "points": 3.6
+        },
+        {
+          "name": "49ers D/ST",
+          "slot": "BE",
+          "position": "D/ST",
+          "points": 1.15
+        },
+        {
+          "name": "Sean Tucker",
+          "slot": "BE",
+          "position": "RB",
+          "points": 0.8
+        },
+        {
+          "name": "Patrick Mahomes",
+          "slot": "IR",
+          "position": "QB",
+          "points": 0.0
+        }
+      ]
+    },
+    "loser": {
+      "teamId": 17,
+      "teamName": "Dsm Tittsburgh ",
+      "ownerName": "Marc",
+      "score": 128.12,
+      "players": [
+        {
+          "name": "Brock Purdy",
+          "slot": "QB",
+          "position": "QB",
+          "points": 45.92
+        },
+        {
+          "name": "Christian McCaffrey",
+          "slot": "RB",
+          "position": "RB",
+          "points": 31.1
+        },
+        {
+          "name": "Steelers D/ST",
+          "slot": "D/ST",
+          "position": "D/ST",
+          "points": 15.0
+        },
+        {
+          "name": "Jauan Jennings",
+          "slot": "WR",
+          "position": "WR",
+          "points": 12.2
+        },
+        {
+          "name": "Chris Boswell",
+          "slot": "K",
+          "position": "K",
+          "points": 7.0
+        },
+        {
+          "name": "Mark Andrews",
+          "slot": "RB/WR/TE",
+          "position": "TE",
+          "points": 6.8
+        },
+        {
+          "name": "Darius Slayton",
+          "slot": "RB/WR/TE",
+          "position": "WR",
+          "points": 5.6
+        },
+        {
+          "name": "DeVonta Smith",
+          "slot": "WR",
+          "position": "WR",
+          "points": 4.5
+        },
+        {
+          "name": "Taysom Hill",
+          "slot": "TE",
+          "position": "TE",
+          "points": 0.0
+        },
+        {
+          "name": "Devin Singletary",
+          "slot": "BE",
+          "position": "RB",
+          "points": 17.0
+        },
+        {
+          "name": "Samaje Perine",
+          "slot": "BE",
+          "position": "RB",
+          "points": 8.3
+        },
+        {
+          "name": "DK Metcalf",
+          "slot": "BE",
+          "position": "WR",
+          "points": 0.0
+        },
+        {
+          "name": "George Kittle",
+          "slot": "BE",
+          "position": "TE",
+          "points": 0.0
+        },
+        {
+          "name": "J.K. Dobbins",
+          "slot": "BE",
+          "position": "RB",
+          "points": 0.0
+        },
+        {
+          "name": "Miles Sanders",
+          "slot": "BE",
+          "position": "RB",
+          "points": 0.0
+        },
+        {
+          "name": "Marcus Mariota",
+          "slot": "BE",
+          "position": "QB",
+          "points": 0.0
+        }
+      ]
+    }
   },
   "weeklyMatchupCount": {
     "1": 7,

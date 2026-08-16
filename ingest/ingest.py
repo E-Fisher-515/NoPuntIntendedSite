@@ -271,6 +271,64 @@ def championship_from_teams(teams: list[dict], matchups: list[dict], complete: b
     }
 
 
+def lineup_players(players) -> list[dict]:
+    rows = []
+    for player in players or []:
+        rows.append(
+            {
+                "name": getattr(player, "name", "Unknown"),
+                "slot": getattr(player, "slot_position", "") or "",
+                "position": getattr(player, "position", "") or "",
+                "points": round2(getattr(player, "points", 0)),
+            }
+        )
+    rows.sort(key=lambda row: (row["slot"] in {"BE", "IR", "Bench"}, -row["points"]))
+    return rows
+
+
+def championship_rosters(league: League, placement: dict, teams: list[dict]) -> dict | None:
+    matchup = placement.get("championshipMatchup")
+    if not matchup:
+        return None
+    try:
+        boxes = league.box_scores(int(matchup["week"]))
+    except Exception as exc:
+        print(f"  championship roster skipped: {exc}")
+        return None
+    target = {matchup["homeTeamId"], matchup["awayTeamId"]}
+    for box in boxes:
+        home = getattr(box, "home_team", None)
+        away = getattr(box, "away_team", None)
+        if not home or not away or {home.team_id, away.team_id} != target:
+            continue
+        by_id = {
+            home.team_id: {
+                "teamId": home.team_id,
+                "teamName": matchup["homeTeamName"] if home.team_id == matchup["homeTeamId"] else matchup["awayTeamName"],
+                "ownerName": next((t.get("ownerName") for t in teams if t["teamId"] == home.team_id), ""),
+                "score": matchup["homeScore"] if home.team_id == matchup["homeTeamId"] else matchup["awayScore"],
+                "players": lineup_players(getattr(box, "home_lineup", [])),
+            },
+            away.team_id: {
+                "teamId": away.team_id,
+                "teamName": matchup["awayTeamName"] if away.team_id == matchup["awayTeamId"] else matchup["homeTeamName"],
+                "ownerName": next((t.get("ownerName") for t in teams if t["teamId"] == away.team_id), ""),
+                "score": matchup["awayScore"] if away.team_id == matchup["awayTeamId"] else matchup["homeScore"],
+                "players": lineup_players(getattr(box, "away_lineup", [])),
+            },
+        }
+        winner_id = matchup["homeTeamId"] if matchup.get("winner") == "home" else matchup["awayTeamId"]
+        loser_id = matchup["awayTeamId"] if matchup.get("winner") == "home" else matchup["homeTeamId"]
+        if winner_id not in by_id or loser_id not in by_id:
+            continue
+        return {
+            "week": matchup["week"],
+            "winner": by_id[winner_id],
+            "loser": by_id[loser_id],
+        }
+    return None
+
+
 def write_json(path: Path, payload) -> None:
     path.parent.mkdir(parents=True, exist_ok=True)
     path.write_text(json.dumps(payload, indent=2), encoding="utf-8")
@@ -309,6 +367,7 @@ def ingest_year(league_id: int, year: int, espn_s2: str, swid: str) -> dict:
         "teams": teams,
         "notables": notables,
         **placement,
+        "championshipRosters": championship_rosters(league, placement, teams),
         "weeklyMatchupCount": {str(week): len(games) for week, games in weekly.items()},
     }
     write_json(SEASONS_DIR / f"{year}.json", season)

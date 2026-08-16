@@ -115,3 +115,22 @@ export function getEspnTimeline(): TimelineEvent[] {
 export function getTimeline(): TimelineEvent[] {
   return [...getEspnTimeline(), ...getEditorialTimeline()].sort((a, b) => a.year - b.year);
 }
+
+export function getAllSeasons(): SeasonArchive[] {
+  return getLeague().seasons.map((year) => getSeason(year));
+}
+
+export function getAllMatchups(): Matchup[] {
+  return getLeague().seasons.flatMap((year) => getMatchups(year));
+}
+
+export function getChampionshipStories() {
+  if (!archiveReady()) return [];
+  return getLeague().championships.map((champ) => {
+    const season = getSeason(champ.year);
+    return {
+      ...champ,
+      rosters: season.championshipRosters ?? null,
+    };
+  });
+}

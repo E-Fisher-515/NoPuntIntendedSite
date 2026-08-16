@@ -5,23 +5,27 @@ import { ConstitutionBody } from "@/components/ConstitutionBody";
 import { PageShell } from "@/components/PageShell";
 import { SectionHeader } from "@/components/SectionHeader";
 import {
-  clearAdminToken,
+  clearAdminSession,
   getAdminToken,
-  GITHUB_REPO,
   inducteeFromManager,
+  isAdminUnlocked,
+  markAdminUnlocked,
+  passwordUnlocksAdmin,
   saveEditorial,
+  saveRepoFile,
   setAdminToken,
+  sha256Hex,
   suggestHallOfFame,
   verifyAdminToken,
 } from "@/lib/editorial";
-import type { Award, Editorial, HofInductee, Manager, TimelineEvent } from "@/lib/types";
+import type { Award, Editorial, HofInductee, Manager, NewsletterIssue, TimelineEvent } from "@/lib/types";
 
 const field = "mt-1 w-full border border-rule bg-cream px-3 py-2 text-sm text-ink";
 const label = "text-[11px] uppercase tracking-[0.16em] text-gold-muted";
 const button = "border border-forest bg-forest px-4 py-2 text-[11px] uppercase tracking-[0.16em] text-cream hover:bg-forest-deep";
 const ghost = "border border-rule px-4 py-2 text-[11px] uppercase tracking-[0.16em] text-forest hover:border-gold";
 
-type Tab = "banner" | "rules" | "hof" | "timeline" | "awards";
+type Tab = "banner" | "rules" | "hof" | "timeline" | "awards" | "newsletters";
 
 function toLocalInput(iso: string): string {
   const date = new Date(iso);
@@ -39,6 +43,7 @@ function fromLocalInput(value: string): string {
 export function AdminPortal({ managers, initial }: { managers: Manager[]; initial: Editorial }) {
   const [unlocked, setUnlocked] = useState(false);
   const [token, setToken] = useState("");
+  const [publishKey, setPublishKey] = useState("");
   const [editorial, setEditorial] = useState<Editorial>(initial);
   const [tab, setTab] = useState<Tab>("banner");
   const [status, setStatus] = useState("");
@@ -47,12 +52,18 @@ export function AdminPortal({ managers, initial }: { managers: Manager[]; initia
 
   useEffect(() => {
     const stored = getAdminToken();
+    if (stored) setPublishKey(stored);
+    if (isAdminUnlocked()) {
+      setUnlocked(true);
+      setStatus("Signed in.");
+      return;
+    }
     if (!stored) return;
-    setToken(stored);
     verifyAdminToken().then((ok) => {
       if (ok) {
+        markAdminUnlocked();
         setUnlocked(true);
-        setStatus("Signed in. Saves update the live site.");
+        setStatus("Signed in.");
       }
     });
   }, []);
@@ -60,15 +71,15 @@ export function AdminPortal({ managers, initial }: { managers: Manager[]; initia
   async function unlock(event: FormEvent) {
     event.preventDefault();
     setError("");
-    setAdminToken(token);
-    const ok = await verifyAdminToken();
-    if (!ok) {
-      clearAdminToken();
-      setError("GitHub rejected that token. It needs Contents read/write on this repo.");
+    const result = await passwordUnlocksAdmin(token, editorial.adminPinHash);
+    if (!result) {
+      setError("Wrong password.");
       return;
     }
+    markAdminUnlocked();
+    if (result === "token") setPublishKey(token);
     setUnlocked(true);
-    setStatus("Signed in. Saves update the live site.");
+    setStatus("Signed in.");
   }
 
   async function persist(next: Editorial) {
@@ -76,11 +87,12 @@ export function AdminPortal({ managers, initial }: { managers: Manager[]; initia
     setError("");
     setStatus("");
     try {
+      if (publishKey) setAdminToken(publishKey);
       await saveEditorial(next);
       setEditorial(next);
       setStatus("Saved. The live site will update in a few seconds.");
     } catch (err) {
-      setError(err instanceof Error ? err.message : "Save failed.");
+      setError(err instanceof Error ? err.message : "Save failed. If you used the simple password, paste the access key below.");
     } finally {
       setSaving(false);
     }
@@ -95,31 +107,24 @@ export function AdminPortal({ managers, initial }: { managers: Manager[]; initia
         <SectionHeader
           eyebrow="Commissioner"
           title="Admin portal"
-          lede="Update rules, the hall, the countdown banner, timeline notes, and league honors here."
+          lede="Sign in with the commissioner password to edit the site."
         />
         <form onSubmit={unlock} className="max-w-xl border border-rule bg-cream-dark/30 p-6">
           <label className={label} htmlFor="token">
-            GitHub personal access token
+            Password
           </label>
           <input
             id="token"
             type="password"
-            autoComplete="off"
+            autoComplete="current-password"
             className={field}
             value={token}
             onChange={(event) => setToken(event.target.value)}
-            placeholder="ghp_… or github_pat_…"
           />
-          <p className="mt-3 text-sm text-ink/70">
-            Create a token with Contents read and write on{" "}
-            <a className="underline" href={`https://github.com/${GITHUB_REPO}`} target="_blank" rel="noreferrer">
-              {GITHUB_REPO}
-            </a>
-            . It stays in this browser session only and is never committed.
-          </p>
+          <p className="mt-3 text-sm text-ink/70">Simple login. It stays in this browser until you close the tab.</p>
           {error ? <p className="mt-3 text-sm text-red-800">{error}</p> : null}
           <button type="submit" className={`${button} mt-5`}>
-            Unlock
+            Log in
           </button>
         </form>
       </PageShell>
@@ -141,6 +146,7 @@ export function AdminPortal({ managers, initial }: { managers: Manager[]; initia
             ["hof", "Hall of Fame"],
             ["timeline", "Timeline"],
             ["awards", "Awards"],
+            ["newsletters", "Newsletters"],
           ] as const
         ).map(([id, name]) => (
           <button
@@ -179,6 +185,25 @@ export function AdminPortal({ managers, initial }: { managers: Manager[]; initia
       {tab === "awards" ? (
         <AwardsEditor editorial={editorial} managers={managers} onChange={setEditorial} onSave={persist} saving={saving} />
       ) : null}
+      {tab === "newsletters" ? (
+        <NewsletterEditor editorial={editorial} onChange={setEditorial} onSave={persist} saving={saving} publishKey={publishKey} setPublishKey={setPublishKey} />
+      ) : null}
+      <div className="mt-10 max-w-xl border-t border-rule pt-6">
+        <p className={label}>Access key</p>
+        <p className="mt-1 text-sm text-ink/60">Needed only to publish. Ask the commissioner if you do not have it.</p>
+        <input
+          type="password"
+          className={field}
+          value={publishKey}
+          onChange={(event) => {
+            setPublishKey(event.target.value);
+            if (event.target.value) setAdminToken(event.target.value);
+          }}
+        />
+        <button type="button" className={`${ghost} mt-4`} onClick={() => { clearAdminSession(); setUnlocked(false); setToken(""); }}>
+          Log out
+        </button>
+      </div>
     </PageShell>
   );
 }
@@ -624,6 +649,99 @@ function AwardsEditor({
         </article>
       ))}
       <SaveBar saving={saving} onSave={() => onSave(editorial)} />
+    </section>
+  );
+}
+
+function NewsletterEditor({
+  editorial,
+  onChange,
+  onSave,
+  saving,
+  publishKey,
+}: {
+  editorial: Editorial;
+  onChange: (next: Editorial) => void;
+  onSave: (next: Editorial) => void;
+  saving: boolean;
+  publishKey: string;
+  setPublishKey: (value: string) => void;
+}) {
+  const [draft, setDraft] = useState({ year: new Date().getFullYear(), week: 1, title: "", html: "" });
+  const [busy, setBusy] = useState(false);
+  const [note, setNote] = useState("");
+
+  async function publish() {
+    if (!draft.title.trim() || !draft.html.trim()) return;
+    setBusy(true);
+    setNote("");
+    try {
+      if (publishKey) setAdminToken(publishKey);
+      const week = Number(draft.week);
+      const filePath = `public/newsletters/${draft.year}-week-${week}.html`;
+      await saveRepoFile(filePath, draft.html, `Publish ${draft.year} week ${week} newsletter`);
+      const issue: NewsletterIssue = {
+        id: `${draft.year}-${week}`,
+        year: Number(draft.year),
+        week,
+        title: draft.title.trim(),
+        path: `/newsletters/${draft.year}-week-${week}.html`,
+      };
+      const next = {
+        ...editorial,
+        newsletters: [...editorial.newsletters.filter((item) => item.id !== issue.id), issue],
+      };
+      onChange(next);
+      await onSave(next);
+      const site = `https://e-fisher-515.github.io/NoPuntIntendedSite${issue.path}`;
+      const recipients = editorial.newsletterRecipients;
+      setNote(`Published. Share link: ${site}`);
+      if (recipients) {
+        window.location.href = `mailto:${recipients}?subject=${encodeURIComponent(issue.title)}&body=${encodeURIComponent(`New No Punt Intended newsletter:\n${site}`)}`;
+      }
+    } catch (err) {
+      setNote(err instanceof Error ? err.message : "Publish failed.");
+    } finally {
+      setBusy(false);
+    }
+  }
+
+  return (
+    <section className="max-w-2xl space-y-6">
+      <p className="text-sm text-ink/70">
+        Paste the weekly recap and publish it to the Newsletters page. If you add league emails below, Publish also opens a
+        message to send the link.
+      </p>
+      <div>
+        <label className={label}>League emails (optional, comma-separated)</label>
+        <input
+          className={field}
+          value={editorial.newsletterRecipients}
+          onChange={(event) => onChange({ ...editorial, newsletterRecipients: event.target.value })}
+        />
+      </div>
+      <div className="grid gap-3 md:grid-cols-2">
+        <div>
+          <label className={label}>Year</label>
+          <input className={field} type="number" value={draft.year} onChange={(event) => setDraft({ ...draft, year: Number(event.target.value) })} />
+        </div>
+        <div>
+          <label className={label}>Week</label>
+          <input className={field} type="number" value={draft.week} onChange={(event) => setDraft({ ...draft, week: Number(event.target.value) })} />
+        </div>
+      </div>
+      <div>
+        <label className={label}>Title</label>
+        <input className={field} value={draft.title} onChange={(event) => setDraft({ ...draft, title: event.target.value })} />
+      </div>
+      <div>
+        <label className={label}>Newsletter HTML</label>
+        <textarea className={`${field} min-h-48 font-mono text-[13px]`} value={draft.html} onChange={(event) => setDraft({ ...draft, html: event.target.value })} />
+      </div>
+      {note ? <p className="text-sm text-forest">{note}</p> : null}
+      <button type="button" className={button} disabled={busy || saving} onClick={publish}>
+        {busy ? "Publishing…" : "Publish and share"}
+      </button>
     </section>
   );
 }

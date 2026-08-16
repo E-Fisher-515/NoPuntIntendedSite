@@ -296,24 +296,30 @@
     "highestScoringWeek": {
       "teamName": "Boston Clam Chowda",
       "teamId": 10,
+      "ownerName": "Zakk",
       "points": 189.68,
       "opponentName": "Stroud to be here",
+      "opponentOwner": "Jacob",
       "opponentPoints": 80.64,
       "week": 5
     },
     "lowestScoringWeek": {
       "teamName": "Silver Bullet",
       "teamId": 9,
+      "ownerName": "chaz",
       "points": 66.46,
       "opponentName": "Jake Bobo",
+      "opponentOwner": "Trent",
       "opponentPoints": 109.98,
       "week": 12
     },
     "biggestBlowout": {
       "teamName": "Boston Clam Chowda",
       "teamId": 10,
+      "ownerName": "Zakk",
       "points": 189.68,
       "opponentName": "Stroud to be here",
+      "opponentOwner": "Jacob",
       "opponentPoints": 80.64,
       "week": 5,
       "margin": 109.04
@@ -322,6 +328,10 @@
       "week": 1,
       "homeTeamName": "Brenden's Team",
       "awayTeamName": "Boomstick",
+      "homeTeamId": 3,
+      "awayTeamId": 12,
+      "homeOwnerName": "Kodi",
+      "awayOwnerName": "Colby",
       "homeScore": 108.04,
       "awayScore": 108.0,
       "margin": 0.04
@@ -444,6 +454,223 @@
     "combined": 210.0,
     "margin": 21.56,
     "winner": "away"
+  },
+  "championshipRosters": {
+    "week": 17,
+    "winner": {
+      "teamId": 3,
+      "teamName": "Brenden's Team",
+      "ownerName": "Kodi",
+      "score": 115.78,
+      "players": [
+        {
+          "name": "Joe Burrow",
+          "slot": "QB",
+          "position": "QB",
+          "points": 41.98
+        },
+        {
+          "name": "Bucky Irving",
+          "slot": "RB/WR/TE",
+          "position": "RB",
+          "points": 26.0
+        },
+        {
+          "name": "A.J. Brown",
+          "slot": "WR",
+          "position": "WR",
+          "points": 12.6
+        },
+        {
+          "name": "Dolphins D/ST",
+          "slot": "D/ST",
+          "position": "D/ST",
+          "points": 11.0
+        },
+        {
+          "name": "Davante Adams",
+          "slot": "WR",
+          "position": "WR",
+          "points": 9.7
+        },
+        {
+          "name": "Joe Mixon",
+          "slot": "RB/WR/TE",
+          "position": "RB",
+          "points": 5.9
+        },
+        {
+          "name": "De'Von Achane",
+          "slot": "RB",
+          "position": "RB",
+          "points": 5.8
+        },
+        {
+          "name": "Jake Ferguson",
+          "slot": "TE",
+          "position": "TE",
+          "points": 2.8
+        },
+        {
+          "name": "Ka'imi Fairbairn",
+          "slot": "K",
+          "position": "K",
+          "points": 0.0
+        },
+        {
+          "name": "Jared Goff",
+          "slot": "BE",
+          "position": "QB",
+          "points": 28.82
+        },
+        {
+          "name": "Jordan Addison",
+          "slot": "BE",
+          "position": "WR",
+          "points": 18.9
+        },
+        {
+          "name": "Breece Hall",
+          "slot": "BE",
+          "position": "RB",
+          "points": 6.3
+        },
+        {
+          "name": "Broncos D/ST",
+          "slot": "BE",
+          "position": "D/ST",
+          "points": 3.0
+        },
+        {
+          "name": "Jerome Ford",
+          "slot": "BE",
+          "position": "RB",
+          "points": 2.2
+        },
+        {
+          "name": "Chris Olave",
+          "slot": "BE",
+          "position": "WR",
+          "points": 0.0
+        },
+        {
+          "name": "Jonathon Brooks",
+          "slot": "IR",
+          "position": "RB",
+          "points": 0.0
+        },
+        {
+          "name": "David Njoku",
+          "slot": "BE",
+          "position": "TE",
+          "points": 0.0
+        }
+      ]
+    },
+    "loser": {
+      "teamId": 1,
+      "teamName": "TE University",
+      "ownerName": "Brenden",
+      "score": 94.22,
+      "players": [
+        {
+          "name": "Saquon Barkley",
+          "slot": "RB",
+          "position": "RB",
+          "points": 21.9
+        },
+        {
+          "name": "Drake London",
+          "slot": "RB/WR/TE",
+          "position": "WR",
+          "points": 20.6
+        },
+        {
+          "name": "Jauan Jennings",
+          "slot": "WR",
+          "position": "WR",
+          "points": 13.7
+        },
+        {
+          "name": "Mason Rudolph",
+          "slot": "QB",
+          "position": "QB",
+          "points": 12.02
+        },
+        {
+          "name": "Chig Okonkwo",
+          "slot": "TE",
+          "position": "TE",
+          "points": 10.9
+        },
+        {
+          "name": "Jaxon Smith-Njigba",
+          "slot": "WR",
+          "position": "WR",
+          "points": 6.2
+        },
+        {
+          "name": "Brandon McManus",
+          "slot": "K",
+          "position": "K",
+          "points": 5.0
+        },
+        {
+          "name": "Cooper Kupp",
+          "slot": "RB/WR/TE",
+          "position": "WR",
+          "points": 3.9
+        },
+        {
+          "name": "Packers D/ST",
+          "slot": "D/ST",
+          "position": "D/ST",
+          "points": 0.0
+        },
+        {
+          "name": "Ricky Pearsall",
+          "slot": "BE",
+          "position": "WR",
+          "points": 31.7
+        },
+        {
+          "name": "Michael Pittman Jr.",
+          "slot": "BE",
+          "position": "WR",
+          "points": 28.9
+        },
+        {
+          "name": "Bryce Young",
+          "slot": "BE",
+          "position": "QB",
+          "points": 16.92
+        },
+        {
+          "name": "Isaac Guerendo",
+          "slot": "BE",
+          "position": "RB",
+          "points": 13.9
+        },
+        {
+          "name": "D'Andre Swift",
+          "slot": "BE",
+          "position": "RB",
+          "points": 12.1
+        },
+        {
+          "name": "Hollywood Brown",
+          "slot": "BE",
+          "position": "WR",
+          "points": 8.6
+        },
+        {
+          "name": "Jalen Hurts",
+          "slot": "BE",
+          "position": "QB",
+          "points": 0.0
+        }
+      ]
+    }
   },
   "weeklyMatchupCount": {
     "1": 7,
