@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fantasy Football Newsletter</title>
+    <style>
+        @media print {
+            body {
+                background: white !important;
+                padding: 0 !important;
+            }
+            .newsletter-container {
+                box-shadow: none !important;
+                margin: 0 !important;
+                max-width: none !important;
+            }
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            margin: 0;
+            padding: 20px;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        .newsletter-container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            color: white;
+            padding: 30px;
+            text-align: center;
+        }
+        
+        @media print {
+            .header {
+                background: #1e3c72 !important;
+                -webkit-print-color-adjust: exact;
+                color-adjust: exact;
+            }
+        }
+        
+        .header h1 {
+            margin: 0;
+            font-size: 2.5em;
+            font-weight: bold;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        
+        .header p {
+            margin: 10px 0 0 0;
+            font-size: 1.2em;
+            opacity: 0.9;
+        }
+        
+        .content {
+            padding: 30px;
+        }
+        
+        .section {
+            margin-bottom: 30px;
+            page-break-inside: avoid;
+        }
+        
+        @media print {
+            .section {
+                page-break-inside: avoid;
+                break-inside: avoid;
+            }
+            h1, h2, h3 {
+                page-break-after: avoid;
+            }
+            .matchup {
+                page-break-inside: avoid;
+            }
+        }
+        
+        .section h2 {
+            color: #1e3c72;
+            font-size: 1.8em;
+            margin-bottom: 15px;
+            border-bottom: 3px solid #667eea;
+            padding-bottom: 10px;
+        }
+        
+        .section h3 {
+            color: #2a5298;
+            font-size: 1.4em;
+            margin: 20px 0 10px 0;
+        }
+        
+        .matchup {
+            background: #f8f9fa;
+            border-left: 4px solid #667eea;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+        
+        .matchup-title {
+            font-weight: bold;
+            font-size: 1.1em;
+            color: #1e3c72;
+            margin-bottom: 5px;
+        }
+        
+        .matchup-commentary {
+            font-style: italic;
+            color: #666;
+            margin: 5px 0;
+        }
+        
+        .matchup-score {
+            font-weight: bold;
+            color: #2a5298;
+        }
+        
+        .highlight-box {
+            background: linear-gradient(135deg, #ffeaa7 0%, #fab1a0 100%);
+            padding: 20px;
+            border-radius: 10px;
+            margin: 15px 0;
+            text-align: center;
+        }
+        
+        .highlight-box h3 {
+            margin: 0 0 10px 0;
+            color: #2d3436;
+        }
+        
+        .highlight-box .score {
+            font-size: 2em;
+            font-weight: bold;
+            color: #e17055;
+        }
+        
+        .player-list {
+            background: #f8f9fa;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 10px 0;
+        }
+        
+        .player-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 8px 0;
+            border-bottom: 1px solid #dee2e6;
+        }
+        
+        .player-item:last-child {
+            border-bottom: none;
+        }
+        
+        .player-name {
+            font-weight: bold;
+            color: #1e3c72;
+        }
+        
+        .player-score {
+            font-weight: bold;
+            color: #e17055;
+        }
+        
+        .power-ranking {
+            background: linear-gradient(135deg, #74b9ff 0%, #0984e3 100%);
+            color: white;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 10px 0;
+        }
+        
+        .power-ranking h4 {
+            margin: 0 0 10px 0;
+            font-size: 1.2em;
+        }
+        
+        .ranking-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 5px 0;
+        }
+        
+        .comedy-section {
+            background: linear-gradient(135deg, #fd79a8 0%, #e84393 100%);
+            color: white;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 15px 0;
+        }
+        
+        .comedy-section h3 {
+            color: white;
+            margin: 0 0 15px 0;
+        }
+        
+        .footer {
+            background: #2d3436;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        
+        .emoji {
+            font-size: 1.2em;
+        }
+        
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin: 20px 0;
+        }
+        
+        .stat-box {
+            background: #f8f9fa;
+            padding: 15px;
+            border-radius: 8px;
+            text-align: center;
+            border: 2px solid #e9ecef;
+        }
+        
+        .stat-box h4 {
+            margin: 0 0 10px 0;
+            color: #1e3c72;
+        }
+        
+        .stat-value {
+            font-size: 1.5em;
+            font-weight: bold;
+            color: #e17055;
+        }
+    </style>
+</head>
+<body>
+    <div class="newsletter-container">
+        <div class="header">
+            <h1>🏈 No Punt Intended - 2025 End of Year Review 🏈</h1>
+            <p>A comprehensive look back at the season that was</p>
+        </div>
+        
+        <div class="content">
+            <!-- This will be populated by the Python script -->
+            <div id="newsletter-content"><h1>🏆 <strong>No Punt Intended - 2025 End of Year Review</strong> 🏆</h1><br>
+<br>
+<em>A comprehensive look back at the season that was</em><br>
+<br>
+---<br>
+<br>
+<div class="section"><h2>📚 <strong>League History: The Big Picture</strong></h2><br>
+<br>
+<h3>League History</h3><br>
+<br>
+<strong>Scoring Trends</strong><br>
+• Average points per game (PPG) saw a slight decrease from <strong>115.98</strong> in 2023 to <strong>114.1</strong> in 2024, before rebounding to <strong>119.99</strong> in 2025.  <br>
+• Scoring overall increased in 2025 by <strong>5.89 points per game</strong> compared to 2024.  <br>
+• The highest individual score recorded in 2025 was <strong>209.7</strong>, marking a notable uptick in offensive performances compared to a previous high of <strong>189.68</strong> in 2024.<br>
+<br>
+<strong>Flex Position Strategy</strong><br>
+• In 2025, wide receivers (WR) were utilized in flex spots <strong>211 times</strong>, while running backs (RB) accounted for <strong>229</strong> flex starts, and tight ends (TE) saw <strong>36</strong>.  <br>
+• WR usage decreased slightly from <strong>215</strong> in 2024 to <strong>211</strong> in 2025, while RBs decreased from <strong>238</strong> to <strong>229</strong>. TE usage surged from <strong>23</strong> flex starts in 2024 to <strong>36</strong> in 2025, showcasing a strategic shift towards more TE involvement.  <br>
+• Overall, the trend indicates a leaning towards RBs in flex positions, though managers are starting to recognize the value of the TE position more than in previous seasons.<br>
+<br>
+<strong>Transaction Activity</strong><br>
+• Total trades fell from <strong>64</strong> in 2023 to <strong>60</strong> in 2024 and then to <strong>28</strong> in 2025, indicating a significant decrease in trade activity over the years.  <br>
+• Waiver claims also saw a decline from <strong>312</strong> in 2024 to <strong>270</strong> in 2025, suggesting managers have become more selective with their roster moves.  <br>
+• The average trades per team dropped from <strong>4.57</strong> in 2023 to <strong>2.0</strong> in 2025, reflecting a more conservative approach to team management and possibly a greater reliance on drafted players.<br>
+<br>
+<strong>Overall League Evolution</strong><br>
+• The league has experienced a shift towards higher scoring in 2025, indicating a more competitive and offensive-minded environment.  <br>
+• Flex position strategies are evolving, with increasing flexibility and usage of TEs, suggesting managers are adapting to the changing landscape of player performances.  <br>
+• Transaction activity is on the decline, highlighting a potential trend of managers investing in long-term roster stability rather than frequent changes.<br>
+<br>
+---<br>
+<br>
+</div><div class="section"><h2>👥 <strong>Team-by-Team Breakdown: The Individual Stories</strong></h2><br>
+<br>
+<h3>Kodi</h3><br>
+Kodi's team, Alaina's Team, showcased a remarkable story of resilience despite finishing the season in a tie for 1st place with a record of 7-7-0. This year, they faced the toughest competition in the league, as evidenced by their league-high points against, yet still managed to maintain their elite status from last season, where they also finished 1st with a 9-5 record. The number of trades made—six in total—reflects a proactive approach to roster management, but their waiver activity was notably high at 51, showing a commitment to adapt to the ever-changing landscape of fantasy football. Ultimately, their ability to navigate a tumultuous season while still contending at the top solidifies Kodi's status as a formidable force in the league.<br>
+<br>
+<h3>Marc</h3><br>
+Marc's team, Dsm Tittsburgh, emerged from the ashes of last season's struggles to secure a remarkable 2nd place finish with an 8-6 record. After finishing 13th in the previous year, their 11-position leap speaks volumes about their strategic improvements and adaptability, as they managed to significantly increase their points for while facing a relatively moderate points against rank of 6. With no trades made, Marc's approach relied heavily on a strong draft and smart waiver pickups, totaling nine, which helped bolster the roster. This turnaround season highlights Marc's ability to identify key players and make the most of his opportunities, marking a memorable resurgence in team performance.<br>
+<br>
+<h3>Erik</h3><br>
+Erik’s journey with Ceedeez nuts is nothing short of inspirational, as he transformed from a 14th place finish last year to a stunning 3rd place finish this season with an impressive 11-3 record. This remarkable comeback was fueled by a potent offense that scored an impressive 1857.15 points, showcasing his talent for assembling a high-scoring lineup. With a low points against rank of 13, Erik not only built a strong squad but also benefited from favorable matchups throughout the season. This turnaround cements Erik's reputation as a savvy manager, proving that perseverance and strategic thinking can turn the tides in fantasy football.<br>
+<br>
+<h3>Brenden</h3><br>
+Brenden's Home Improvement team epitomized dominance this season, finishing with an impressive 12-2 record and leading the league in points for with a staggering 2032.42. Although he slipped from 2nd to 4th place from the previous year, this decline in standing is more reflective of the competitive landscape than of any shortcomings on his part. His low points against rank of 14 indicates that he not only scored well but also avoided tough matchups, allowing him to maintain a consistent scoring output. Brenden’s ability to navigate the waiver wire—21 pickups—shows his commitment to refining a championship-caliber roster, making this season a memorable display of skill and strategy.<br>
+<br>
+<h3>Dillon</h3><br>
+Dillon’s Team Lehman had a solid season, finishing 5th with a 9-5 record, a significant improvement from his 11th place finish last year. With a strong points for total of 1860.91, Dillon effectively utilized the waiver wire to make strategic enhancements to his lineup, although he opted to remain inactive in trades. Facing a challenging points against rank of 7, he proved his mettle by consistently outperforming expectations. This season reflects Dillon's growth as a manager, navigating tough matchups while building a competitive team that showcased resilience and tactical prowess.<br>
+<br>
+<h3>Zakk</h3><br>
+Zakk's Boston Clam Chowda finished the season in 6th place with a 7-7 record, reflecting a steady performance despite facing fierce competition. After maintaining a solid 6th place finish last year, Zakk’s points for dropped slightly, but his consistency is notable—he remained a competitive team despite encountering a challenging points against rank of 10. His single trade demonstrates a focused approach to roster management, bolstered by 10 waiver claims that allowed him to tweak his lineup throughout the season. This year was a testament to Zakk’s dedication to improvement, even if the standings didn’t fully reflect his efforts.<br>
+<br>
+<h3>Jacob</h3><br>
+Jacob's Just Josh team had a rollercoaster of a season, finishing 7th with a 7-7 record after a strong 10-4 showing last year. Despite the decline in standings, his points for of 1881.08 indicates a potent offense that struggled to convert points into wins, highlighting an inconsistency that plagued his squad throughout the season. With four trades made and a respectable waiver count of 13, Jacob was active in seeking ways to bolster his team, yet he couldn’t quite capture the magic of the previous year. This season serves as a learning experience for Jacob, demonstrating the fine margins in fantasy football and the importance of consistent performance.<br>
+<br>
+<h3>Derek</h3><br>
+Derek’s Calvin and the Chipmunks team saw modest improvement, finishing 8th with a 6-8 record, a slight uptick from last year's finish. While his points for increased to 1711.04, the challenge of facing a high points against rank of 9 meant that even solid performances often fell short. Derek’s active approach in the trade market, making two trades, coupled with a significant 17 waiver claims, illustrated his willingness to adapt and refine his roster. This season showcased Derek’s commitment to improvement, even if the overall results didn’t quite match his efforts on paper.<br>
+<br>
+<h3>Nick</h3><br>
+Nick's Nacua Matata faced a challenging season, finishing 9th with a 6-8 record, a notable decline from his 3rd place finish last year. Despite scoring a respectable 1829.65 points, he faced the second-highest points against, indicating tough matchups that proved difficult to navigate. With four trades made and an active waiver wire strategy, Nick clearly sought to improve his fortunes, yet couldn't quite find the right formula. This season serves as a reminder of the unpredictability of fantasy football, as even strong teams can struggle when faced with relentless competition.<br>
+<br>
+<h3>Chaz</h3><br>
+Chaz's Silver Bullet had a somewhat underwhelming season, finishing 10th with a 6-8 record, mirroring last year's performance. With a slight increase in points for to 1682.34, it was clear that while Chaz had some success in scoring, his team faced challenges against a solid points against rank of 12. The decision to remain inactive in trades, combined with a significant 25 waiver claims, indicates a manager eager to make changes but perhaps unsure of the best course of action. This season highlighted the challenges of finding consistency and success in the often unpredictable world of fantasy football.<br>
+<br>
+<h3>Alaina</h3><br>
+Alaina's Trophy Wife had a difficult season, finishing 11th with a 4-10 record, a disappointing result after a year of no previous data to compare against. Despite the struggles, the team managed to score 1435.68 points, showcasing flashes of potential but ultimately falling short due to a high points against rank of 4. While she made no trades, Alaina was active on the waiver wire with 12 claims, showing a willingness to adapt her roster throughout the season. This season serves as a learning opportunity for Alaina, as she seeks to regroup and come back stronger in the next campaign.<br>
+<br>
+<h3>Ace</h3><br>
+Ace’s Maye I Digg In Yo Boutte? team experienced a season of struggle, finishing 12th with a 4-10 record, a decline from his previous year's performance. Scoring 1613.3 points, the team had moments of promise, but ultimately faced the highest points against rank of 3, indicating a tough schedule that hampered any chance of success. His four trades reflect an effort to build a stronger squad, but with only five waivers, it seems that roster management strategies may need reevaluation. This season will serve as a valuable lesson in resilience and adaptability for Ace, as he plans to bounce back in the upcoming year.<br>
+<br>
+<h3>Colby</h3><br>
+Colby’s Boomstick team finished the season in 13th place with a 5-9 record, maintaining the same position from last year. With a slight increase in points for to 1565.96, there were signs of improvement, but the team still struggled against a challenging points against rank of 5. The single trade and 23 waiver claims indicate a willingness to make changes, yet Colby may have been searching for the right mix without finding the magic formula this season. This year serves as a building block for Colby as he looks to refine his strategy and emerge stronger in the next fantasy season.<br>
+<br>
+<h3>Trent</h3><br>
+Trent’s DADGUMMIT had a challenging season as well, finishing 14th with a 6-8 record, a steep drop from his 4th place finish last year. His points for of 1435.21 reflects a struggle to keep pace with the league’s top performers, compounded by a challenging points against rank of 11, which made each matchup a tough battle. With four trades made and a notable 29 waivers, Trent was clearly trying to find the right combination of players, yet the results didn’t materialize as hoped. This season serves as a wake-up call for Trent, as he looks to recalibrate and come back ready to fight for a better standing next year.<br>
+<br>
+---<br>
+<br>
+🏈 <strong>Thank you for another great season! See you next year!</strong> 🏈<br>
+<br>
+<em>Generated on December 31, 2025</em><br></div>
+</div>
+        </div>
+        
+        <div class="footer">
+            <p>This newsletter was automatically generated for your fantasy football enjoyment.</p>
+            <p>🏈 Good luck this week! 🏈</p>
+        </div>
+    </div>
+</body>
+</html>

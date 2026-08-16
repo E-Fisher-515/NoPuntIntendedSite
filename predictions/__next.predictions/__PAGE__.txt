@@ -1,0 +1,20 @@
+1:"$Sreact.fragment"
+2:I[97367,["/NoPuntIntendedSite/_next/static/chunks/2o1af194-k29p.js"],"OutletBoundary"]
+3:"$Sreact.suspense"
+7:I[97367,["/NoPuntIntendedSite/_next/static/chunks/2o1af194-k29p.js"],"ViewportBoundary"]
+8:I[97367,["/NoPuntIntendedSite/_next/static/chunks/2o1af194-k29p.js"],"MetadataBoundary"]
+9:I[27201,["/NoPuntIntendedSite/_next/static/chunks/2o1af194-k29p.js"],"IconMark"]
+b:I[39756,["/NoPuntIntendedSite/_next/static/chunks/2o1af194-k29p.js"],"default"]
+c:I[37457,["/NoPuntIntendedSite/_next/static/chunks/2o1af194-k29p.js"],"default"]
+6:X
+e:X
+e:C
+0:{"buildId":"rnBn-HOBoaSXvcXSF5UaK","data":[{"rsc":["$","$1","c",{"children":[["$","div",null,{"className":"mx-auto w-full max-w-6xl px-4 py-10","children":[["$","header",null,{"className":"mb-8 border-b border-rule pb-4","children":[["$","p",null,{"className":"text-[11px] uppercase tracking-[0.24em] text-gold-muted","children":"2025 outlook"}],["$","h1",null,{"className":"mt-2 font-serif text-4xl text-forest md:text-5xl","children":"Predictions"}],["$","p",null,{"className":"mt-3 max-w-2xl text-ink/70","children":"This season is complete. Predictions will return when the next season begins."}]]}],["$","p",null,{"className":"border border-rule px-4 py-8 text-ink/70","children":"This season is complete. Predictions will return when the next season begins."}]]}],null,["$","$L2",null,{"children":["$","$3",null,{"name":"Next.MetadataOutlet","children":"$@4"}]}]]}],"isPartial":"$@5","staleTime":"$6","varyParams":null},{"rsc":["$","$1","h",{"children":[null,["$","$L7",null,{"children":[["$","meta","0",{"charSet":"utf-8"}],["$","meta","1",{"name":"viewport","content":"width=device-width, initial-scale=1"}]]}],["$","div",null,{"hidden":true,"children":["$","$L8",null,{"children":["$","$3",null,{"name":"Next.Metadata","children":[["$","title","0",{"children":"No Punt Intended | League Archive"}],["$","meta","1",{"name":"description","content":"The official digital archive of No Punt Intended — championships, managers, records, and league history."}],["$","link","2",{"rel":"icon","href":"/NoPuntIntendedSite/favicon.ico?favicon.2vob68tjqpejf.ico","sizes":"256x256","type":"image/x-icon"}],["$","$L9","3",{}]]}]}]}],["$","meta",null,{"name":"next-size-adjust","content":""}]]}],"isPartial":"$@a","staleTime":"$6","varyParams":null},{"rsc":["$","$1","c",{"children":[null,["$","$Lb",null,{"parallelRouterKey":"children","template":["$","$Lc",null,{}]}]]}],"isPartial":"$@d","staleTime":"$6","varyParams":"$e"}],"isUpgradeableISRFallback":false,"a":"$@f","rootVaryParams":null,"needsRuntimeRequest":"$@10"}
+4:null
+10:true
+6:300
+6:C
+f:0
+a:"$undefined"
+d:"$undefined"
+5:"$undefined"

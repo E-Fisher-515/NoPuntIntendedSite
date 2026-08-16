@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fantasy Football Newsletter</title>
+    <style>
+        @media print {
+            body {
+                background: white !important;
+                padding: 0 !important;
+            }
+            .newsletter-container {
+                box-shadow: none !important;
+                margin: 0 !important;
+                max-width: none !important;
+            }
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            margin: 0;
+            padding: 20px;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        .newsletter-container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            color: white;
+            padding: 30px;
+            text-align: center;
+        }
+        
+        @media print {
+            .header {
+                background: #1e3c72 !important;
+                -webkit-print-color-adjust: exact;
+                color-adjust: exact;
+            }
+        }
+        
+        .header h1 {
+            margin: 0;
+            font-size: 2.5em;
+            font-weight: bold;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        
+        .header p {
+            margin: 10px 0 0 0;
+            font-size: 1.2em;
+            opacity: 0.9;
+        }
+        
+        .content {
+            padding: 30px;
+        }
+        
+        .section {
+            margin-bottom: 30px;
+            page-break-inside: avoid;
+        }
+        
+        @media print {
+            .section {
+                page-break-inside: avoid;
+                break-inside: avoid;
+            }
+            h1, h2, h3 {
+                page-break-after: avoid;
+            }
+            .matchup {
+                page-break-inside: avoid;
+            }
+        }
+        
+        .section h2 {
+            color: #1e3c72;
+            font-size: 1.8em;
+            margin-bottom: 15px;
+            border-bottom: 3px solid #667eea;
+            padding-bottom: 10px;
+        }
+        
+        .section h3 {
+            color: #2a5298;
+            font-size: 1.4em;
+            margin: 20px 0 10px 0;
+        }
+        
+        .matchup {
+            background: #f8f9fa;
+            border-left: 4px solid #667eea;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+        
+        .matchup-title {
+            font-weight: bold;
+            font-size: 1.1em;
+            color: #1e3c72;
+            margin-bottom: 5px;
+        }
+        
+        .matchup-commentary {
+            font-style: italic;
+            color: #666;
+            margin: 5px 0;
+        }
+        
+        .matchup-score {
+            font-weight: bold;
+            color: #2a5298;
+        }
+        
+        .highlight-box {
+            background: linear-gradient(135deg, #ffeaa7 0%, #fab1a0 100%);
+            padding: 20px;
+            border-radius: 10px;
+            margin: 15px 0;
+            text-align: center;
+        }
+        
+        .highlight-box h3 {
+            margin: 0 0 10px 0;
+            color: #2d3436;
+        }
+        
+        .highlight-box .score {
+            font-size: 2em;
+            font-weight: bold;
+            color: #e17055;
+        }
+        
+        .player-list {
+            background: #f8f9fa;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 10px 0;
+        }
+        
+        .player-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 8px 0;
+            border-bottom: 1px solid #dee2e6;
+        }
+        
+        .player-item:last-child {
+            border-bottom: none;
+        }
+        
+        .player-name {
+            font-weight: bold;
+            color: #1e3c72;
+        }
+        
+        .player-score {
+            font-weight: bold;
+            color: #e17055;
+        }
+        
+        .power-ranking {
+            background: linear-gradient(135deg, #74b9ff 0%, #0984e3 100%);
+            color: white;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 10px 0;
+        }
+        
+        .power-ranking h4 {
+            margin: 0 0 10px 0;
+            font-size: 1.2em;
+        }
+        
+        .ranking-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 5px 0;
+        }
+        
+        .comedy-section {
+            background: linear-gradient(135deg, #fd79a8 0%, #e84393 100%);
+            color: white;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 15px 0;
+        }
+        
+        .comedy-section h3 {
+            color: white;
+            margin: 0 0 15px 0;
+        }
+        
+        .footer {
+            background: #2d3436;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        
+        .emoji {
+            font-size: 1.2em;
+        }
+        
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin: 20px 0;
+        }
+        
+        .stat-box {
+            background: #f8f9fa;
+            padding: 15px;
+            border-radius: 8px;
+            text-align: center;
+            border: 2px solid #e9ecef;
+        }
+        
+        .stat-box h4 {
+            margin: 0 0 10px 0;
+            color: #1e3c72;
+        }
+        
+        .stat-value {
+            font-size: 1.5em;
+            font-weight: bold;
+            color: #e17055;
+        }
+    </style>
+</head>
+<body>
+    <div class="newsletter-container">
+        <div class="header">
+            <h1>🏈 No Punt Intended - Week 4 Scouting Report 🏈</h1>
+            <p>Where fantasy football meets real analysis</p>
+        </div>
+        
+        <div class="content">
+            <!-- This will be populated by the Python script -->
+            <div id="newsletter-content"><h1>🏈 <strong>No Punt Intended - Week 4 Scouting Report</strong> 🏈</h1><br>
+<em>Where fantasy football meets real analysis</em><br>
+<br>
+<div class="section"><h2>🎬 <strong>This Week's Big Storyline</strong></h2><br>
+<br>
+<strong>🚨 MAJOR UPSET ALERT!</strong> JAKE BOBO (454.0 season PF) pulled off the upset of the week, defeating powerhouse Home Improvement (509.3 season PF) by 12.3 points! Nobody saw this coming, and it completely shakes up the league standings.<br>
+<br>
+<br>
+</div><div class="section"><h2>⚔️ <strong>Game Recaps: The Drama Unfolds</strong></h2><br>
+<br>
+<strong>Kodi's Drake and Josh</strong> @ <strong>Alaina's Trophy Wife</strong><br>
+<em>🔥 HIGH-STAKES SHOWDOWN!</em> In a matchup that had everyone's attention, Kodi came out on top against Alaina by 45.0 points. This was the kind of game that separates contenders from pretenders. Alaina will be back, but for now, Kodi gets the glory.<br>
+<strong>Final:</strong> Kodi's Drake and Josh 191.1 - 146.1 Alaina's Trophy Wife<br>
+<br>
+<strong>Colby's Boomstick</strong> @ <strong>Erik's Ceedeez nuts</strong><br>
+<em>🚀 BREAKTHROUGH PERFORMANCE!</em> Erik had their breakthrough moment, defeating Colby by 40.4 points in what could be a season-defining win. The explosion performance shows they're ready to compete with the best. Colby just witnessed something special.<br>
+🎯 <strong>PREDICTION ALERT:</strong> Last week's newsletter correctly called this upset! The newsletter's 'Upset Watch' section predicted Ceedeez nuts would pull off the upset, and they delivered with a 40.4-point victory. Sometimes the crystal ball works perfectly!<br>
+<strong>Final:</strong> Erik's Ceedeez nuts 147.0 - 106.7 Colby's Boomstick<br>
+<br>
+<strong>derek's Calvin and the chipmunks</strong> @ <strong>Nick's Nacua Matata</strong><br>
+<em>🔄 MIRACULOUS COMEBACK!</em> Down and out, Nick staged an incredible comeback, defeating derek by 28.4 points in what can only be described as a fantasy football miracle. The improvement performance showed the heart of a champion. derek learned that no lead is safe in this league.<br>
+<strong>Final:</strong> Nick's Nacua Matata 134.3 - 105.9 derek's Calvin and the chipmunks<br>
+<br>
+<strong>Zakk's Boston Clam Chowda</strong> @ <strong>Ace's Maye I Digg In Yo Boutte?</strong><br>
+<em>🎉 SURPRISE VICTORY!</em> Zakk pulled off a surprise win over Ace by 27.9 points, proving that in fantasy football, anything can happen. This unexpected result shows why you never count anyone out. Ace will be looking for answers after this one.<br>
+<strong>Final:</strong> Zakk's Boston Clam Chowda 126.2 - 98.3 Ace's Maye I Digg In Yo Boutte?<br>
+<br>
+<strong>Brenden's Home Improvement</strong> @ <strong>Trent's JAKE BOBO</strong><br>
+<em>💀 ABSOLUTE DOMINATION!</em> Trent just put on a clinic of epic proportions, completely dismantling Brenden in a 12.3-point beatdown that will be remembered for years. This wasn't just a win—it was a masterclass in fantasy football superiority. Brenden might need therapy after this performance. 💔 <strong>BENCH BLUNDER ALERT:</strong> Brenden's Home Improvement left <strong>Dak Prescott</strong> (40.0 points) on the bench! Starting him over Jalen Hurts (23.4 points) would have won by 4.2 points!<br>
+<strong>Final:</strong> Trent's JAKE BOBO 113.3 - 101.0 Brenden's Home Improvement<br>
+<br>
+<strong>Marc's Dsm Tittsburgh </strong> @ <strong>Dillon's Team Lehman</strong><br>
+<em>🎬 HOLLYWOOD COULDN'T WRITE THIS BETTER!</em> In a 2.6-point nail-biter that had everyone on the edge of their seats, Marc pulled off a miraculous victory! This game had more twists than a soap opera, with lead changes that kept fantasy managers refreshing their apps every 30 seconds. Dillon fought valiantly but came up just short in what might be the game of the season. 💔 <strong>BENCH BLUNDER ALERT:</strong> Dillon's Team Lehman left <strong>RJ Harvey</strong> (19.8 points) on the bench! Starting him over Jaylen Warren (0.0 points) would have won by 17.2 points!<br>
+<strong>Final:</strong> Marc's Dsm Tittsburgh  138.6 - 136.0 Dillon's Team Lehman<br>
+<br>
+<strong>chaz's Silver Bullet</strong> @ <strong>Jacob's Ladd to the Bone</strong><br>
+<em>⚡ SHOCKING UPSET!</em> chaz just delivered the shock of the week, stunning Jacob with a 0.1-point victory that nobody saw coming! This is exactly why we love fantasy football—the unexpected always happens. Jacob is probably still in disbelief. 💔 <strong>BENCH BLUNDER ALERT:</strong> Jacob's Ladd to the Bone left <strong>Stefon Diggs</strong> (19.1 points) on the bench! Starting him over Ladd McConkey (2.1 points) would have won by 16.9 points!<br>
+<strong>Final:</strong> chaz's Silver Bullet 131.5 - 131.4 Jacob's Ladd to the Bone<br>
+<br>
+<br>
+</div><div class="section"><h2>⭐ <strong>Player Spotlights: Heroes and Villains</strong></h2><br>
+<br>
+<strong>🏆 The Heroes (Overperformers):</strong><br>
+<div class="player-item"><span class="player-name">🥇 <strong>Dak Prescott</strong> (QB, DAL) - 40.0 points (Projected: 17.3, +22.6)</span></div><br>
+   <em>Brenden's Home Improvement got exactly what they needed from this QB</em><br>
+<div class="player-item"><span class="player-name">🥈 <strong>Puka Nacua</strong> (WR, LAR) - 39.0 points (Projected: 23.2, +15.8)</span></div><br>
+   <em>Nick's Nacua Matata got exactly what they needed from this WR</em><br>
+<div class="player-item"><span class="player-name">🥉 <strong>Ashton Jeanty</strong> (RB, LV) - 36.5 points (Projected: 16.4, +20.1)</span></div><br>
+   <em>Alaina's Trophy Wife got exactly what they needed from this RB</em><br>
+<br>
+<strong>😤 The Underperformer:</strong><br>
+💔 <strong>Lamar Jackson</strong> (QB) - 12.7 points (Projected: 27.6, -14.9)<br>
+   <em>derek's Calvin and the chipmunks expected more from this QB</em><br>
+<br>
+<strong>😱 The Villain (Bench Blunder):</strong><br>
+💀 <strong>Romeo Doubs</strong> (WR) - 29.8 points on the BENCH!<br>
+   <em>Ace's Maye I Digg In Yo Boutte? could have gained 24.2 points by starting him over Chris Godwin Jr. (5.6 points)</em><br>
+<br>
+<br>
+</div><div class="section"><h2>📈 <strong>Trends Watch: The Plot Thickens</strong></h2><br>
+<br>
+<strong>📈 Hot Streaks & Cold Spells:</strong><br>
+<em>The Elite:</em> Kodi's Drake and Josh (566.6 PF), Dillon's Team Lehman (536.0 PF), Erik's Ceedeez nuts (532.4 PF)<br>
+<em>The Struggling:</em> Colby's Boomstick (458.2 PF), Alaina's Trophy Wife (456.5 PF), Trent's JAKE BOBO (454.0 PF)<br>
+<br>
+<strong>🍀 Luck Factor Analysis:</strong><br>
+<em>Elite:</em> chaz's Silver Bullet is undefeated at 4-0-0 with 131.4 PPG - the perfect start to the season!<br>
+<br>
+<br>
+</div><div class="section"><h2>📚 <strong>League History Deep Dive</strong></h2><br>
+<br>
+<strong>📊 This Season vs. League History:</strong><br>
+<em>Above average season!</em> The league is averaging 124.9 PPG per team, which is 10.0 points higher than the historical average of 114.9 PPG. Scoring is up this year!<br>
+<br>
+<strong>🎯 This Week's High Score Context:</strong><br>
+<em>Historic Performance!</em> This week's high score of 191.1 points ranks #4 all-time out of 958 single games, putting it in the top 99.7% of all league performances!<br>
+<br>
+<strong>💥 This Week's Beatdown Analysis:</strong><br>
+<em>SIGNIFICANT BEATDOWN!</em> This week featured a 45.0-point margin of victory, a substantial beatdown that shows the competitive gap between teams.<br>
+<br>
+<strong>📅 Historical Data Scope:</strong><br>
+<em>Analysis based on 4 seasons</em> (2021-2024) with 958 total games analyzed. This gives us a comprehensive view of league trends over time.<br>
+<br>
+</div><div class="section"><h2>🏆 <strong>Power Rankings & Playoff Outlook</strong></h2><br>
+<br>
+<strong>🏆 Power Rankings (Top 5):</strong><br>
+<div class="ranking-item"><span>1.</span> <span><strong>chaz's Silver Bullet</strong> (4-0-0) - 525.5 PF, +74.9 diff - <em>The Alpha</em></span></div><br>
+<div class="ranking-item"><span>2.</span> <span><strong>Brenden's Home Improvement</strong> (3-1-0) - 509.3 PF, +110.0 diff - <em>The Contender</em></span></div><br>
+<div class="ranking-item"><span>3.</span> <span><strong>Kodi's Drake and Josh</strong> (3-1-0) - 566.6 PF, +88.7 diff - <em>The Dark Horse</em></span></div><br>
+<div class="ranking-item"><span>4.</span> <span><strong>Erik's Ceedeez nuts</strong> (2-2-0) - 532.4 PF, +38.2 diff</span></div><br>
+<div class="ranking-item"><span>5.</span> <span><strong>Nick's Nacua Matata</strong> (2-2-0) - 528.8 PF, +4.4 diff</span></div><br>
+<br>
+<strong>🔮 Playoff Outlook:</strong><br>
+<em>We're approaching the quarter pole of the season, and the playoff picture is starting to take shape. The top teams are establishing themselves as contenders, while others are running out of time to make their move. Every matchup becomes crucial from here on out.</em><br>
+<br>
+<br>
+</div><div class="section"><h2>🎭 <strong>Comedy Corner: The Roast is Real</strong></h2><br>
+<br>
+<strong>🔥 The Roast Corner:</strong><br>
+<em>Colby's Boomstick</em> just got absolutely demolished this week with 106.7 points. That's not just a loss—that's a public service announcement about what not to do in fantasy football.<br>
+<br>
+<strong>😱 Bench Blunder of the Week:</strong><br>
+<em>Brenden's Home Improvement</em> left <strong>Dak Prescott</strong> and his 40.0 points on the bench. That's not just a mistake—that's a masterclass in how to lose a fantasy football game. Maybe next time Brenden should try actually looking at their lineup before Sunday?<br>
+<br>
+<strong>🎭 Meme of the Week:</strong><br>
+<em>When you check your lineup Monday morning and realize you forgot to start anyone</em><br>
+<em>[Insert Homer Simpson disappearing into bushes meme]</em><br>
+<br>
+<br>
+</div><div class="section"><h2>🔮 <strong>Next Week Preview: The Saga Continues</strong></h2><br>
+<br>
+<strong>🔥 Game of the Week:</strong><br>
+<em>Team Lehman</em> @ <em>Maye I Digg In Yo Boutte?</em><br>
+Projected: Team Lehman 130.4 - 131.4 Maye I Digg In Yo Boutte?<br>
+<em>This is going to be a nail-biter! Both teams are projected within 5 points of each other.</em><br>
+<br>
+<strong>🎯 Upset Watch:</strong><br>
+<em>The biggest upset potential lies with Calvin and the chipmunks against Home Improvement. With a 27.8-point projected deficit, this could be the week's biggest shocker if the underdog pulls it off.</em><br>
+<br>
+---<br>
+<br>
+🏈 <strong>Until next week, may your lineups be stacked and your opponents be weak!</strong> 🏈</div></div>
+        </div>
+        
+        <div class="footer">
+            <p>This newsletter was automatically generated for your fantasy football enjoyment.</p>
+            <p>🏈 Good luck this week! 🏈</p>
+        </div>
+    </div>
+</body>
+</html>

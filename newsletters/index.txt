@@ -1,0 +1,135 @@
+1:"$Sreact.fragment"
+2:I[50360,["/NoPuntIntendedSite/_next/static/chunks/2o1af194-k29p.js"],"SiteBanner"]
+4:I[36852,["/NoPuntIntendedSite/_next/static/chunks/2o1af194-k29p.js"],"SiteHeader"]
+5:I[39756,["/NoPuntIntendedSite/_next/static/chunks/2o1af194-k29p.js"],"default"]
+6:I[37457,["/NoPuntIntendedSite/_next/static/chunks/2o1af194-k29p.js"],"default"]
+c:I[68027,["/NoPuntIntendedSite/_next/static/chunks/2o1af194-k29p.js"],"default",1]
+:HL["/NoPuntIntendedSite/_next/static/chunks/0tzmbty4_6hg9.css","style"]
+:HL["/NoPuntIntendedSite/_next/static/media/47df9ba1c7236d3b-s.p.137759vg1sbmi.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+:HL["/NoPuntIntendedSite/_next/static/media/5f402bd2d8eef81a-s.p.40bho2kviej2o.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+3:T603,# 2026 rules
+
+## Draft
+
+Sunday, September 6, around 1pm at Erik's house. Final time TBD.
+
+Buy-in: $75, due to B on or before draft day.
+
+- Food will be provided — Mexican if they are available, otherwise pizza. Be prepared to pitch in about $40 extra to cover food (final amount TBD).
+- Optional draft-day prop bet: $5 to bet on a specific player someone in the league will draft. No limit on entries.
+- Vote on draft day on whether to add a Rivalry week in week 14. Think who you want as your rival, and why, in case that passes.
+
+### Draft order
+
+- 14th: Kodi
+- 13th: Marc
+- 12th: Erik
+- 11th: B
+- 10th: Dillon
+- 9th: Zakk
+- 8th: Jacob
+
+### Lottery entries (picks 7 through 1)
+
+- 7 entries: Trent
+- 6 entries: Colby
+- 5 entries: Ace
+- 4 entries: Nick
+- 3 entries: Robert
+- 2 entries: Chaz
+- 1 entry: Derek
+
+## Rule changes
+
+- 60+ yard FG: now worth 7 points.
+- FAAB waiver system: standard ESPN FAAB waiver settings apply.
+- Bench roster spots: previously 6, now 5. That also means one fewer draft round.
+- IR roster spots: previously 1, now 2.
+
+## 2027 buy-in
+
+Next year's buy-in (for the 2027 season) will be $75 for buy-in plus $25 Beast of the Week (paid to the team that scores the most points each regular-season week) = $100.
+
+## 2027 draft lottery
+
+Next year's draft lottery will include every team. Number of entries:
+
+- 7th and 8th place: 7 balls
+- 6th and 9th place: 6 balls
+- 5th and 10th place: 5 balls
+- 4th and 11th place: 4 balls
+- 3rd and 12th place: 3 balls
+- 2nd and 13th place: 2 balls
+- 1st and 14th place: 1 ball
+a:X
+0:{"P":null,"c":["","newsletters",""],"q":"","i":false,"f":[[["",{"children":["newsletters",{"children":["__PAGE__",{},"$undefined","$undefined",4608]},"$undefined","$undefined",4608]},"$undefined","$undefined",4624],[["$","$1","c",{"children":[[["$","link","0",{"rel":"stylesheet","href":"/NoPuntIntendedSite/_next/static/chunks/0tzmbty4_6hg9.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}],["$","script","script-0",{"src":"/NoPuntIntendedSite/_next/static/chunks/2o1af194-k29p.js","async":true,"nonce":"$undefined"}]],["$","html",null,{"lang":"en","className":"newsreader_ec019566-module__bJ0HsW__variable source_sans_3_71916a2c-module__5x7SKq__variable h-full antialiased","children":["$","body",null,{"className":"min-h-full bg-cream font-sans text-ink","children":[["$","$L2",null,{"initial":{"banner":{"enabled":false,"label":"Draft day","target":"2026-09-06T17:00:00-05:00","message":"Countdown to the offline draft"},"constitution":"$3","hallOfFame":[],"rejectedHofIds":[],"timeline":[],"customAwards":[],"adminPinHash":"90ef794f5ced4199fdfad5278673de115167bfe12d90787a5f33fb279a3deb61","newsletters":[],"newsletterRecipients":""}}],["$","$L4",null,{}],["$","main",null,{"className":"flex-1","children":["$","$L5",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L6",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":[[["$","title",null,{"children":"404: This page could not be found."}],["$","div",null,{"style":{"fontFamily":"system-ui,\"Segoe UI\",Roboto,Helvetica,Arial,sans-serif,\"Apple Color Emoji\",\"Segoe UI Emoji\"","height":"100vh","textAlign":"center","display":"flex","flexDirection":"column","alignItems":"center","justifyContent":"center"},"children":["$","div",null,{"children":[["$","style",null,{"dangerouslySetInnerHTML":{"__html":"body{color:#000;background:#fff;margin:0}.next-error-h1{border-right:1px solid rgba(0,0,0,.3)}@media (prefers-color-scheme:dark){body{color:#fff;background:#000}.next-error-h1{border-right:1px solid rgba(255,255,255,.3)}}"}}],["$","h1",null,{"className":"next-error-h1","style":{"display":"inline-block","margin":"0 20px 0 0","padding":"0 23px 0 0","fontSize":24,"fontWeight":500,"verticalAlign":"top","lineHeight":"49px"},"children":404}],["$","div",null,{"style":{"display":"inline-block"},"children":["$","h2",null,{"style":{"fontSize":14,"fontWeight":400,"lineHeight":"49px","margin":0},"children":"This page could not be found."}]}]]}]}]],[]],"forbidden":"$undefined","unauthorized":"$undefined"}]}],"$L7"]}]}]]}],{"children":["$L8",{"children":["$L9",{},null,false,null]},null,false,"$a"]},null,false,null],"$Lb",false]],"m":"$undefined","G":["$c",["$Ld"]],"S":true,"h":null,"r":"$undefined","s":"$undefined","a":"$undefined","l":"$undefined","p":"$undefined","d":"$undefined","b":"rnBn-HOBoaSXvcXSF5UaK"}
+e:I[22016,["/NoPuntIntendedSite/_next/static/chunks/2o1af194-k29p.js"],""]
+f:I[33900,["/NoPuntIntendedSite/_next/static/chunks/2o1af194-k29p.js","/NoPuntIntendedSite/_next/static/chunks/1z82p_b5bj12-.js"],"NewslettersClient"]
+11:I[97367,["/NoPuntIntendedSite/_next/static/chunks/2o1af194-k29p.js"],"OutletBoundary"]
+12:"$Sreact.suspense"
+14:I[97367,["/NoPuntIntendedSite/_next/static/chunks/2o1af194-k29p.js"],"ViewportBoundary"]
+16:I[97367,["/NoPuntIntendedSite/_next/static/chunks/2o1af194-k29p.js"],"MetadataBoundary"]
+7:["$","footer",null,{"className":"border-t border-rule px-4 py-6 text-center text-xs uppercase tracking-[0.18em] text-ink/50","children":["No Punt Intended · Official League Archive",["$","span",null,{"className":"mx-2 text-rule","children":"·"}],["$","$Le",null,{"href":"/admin","className":"tracking-[0.12em] text-gold-muted hover:text-forest","children":"Admin"}]]}]
+8:["$","$1","c",{"children":[null,["$","$L5",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L6",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}]
+10:T603,# 2026 rules
+
+## Draft
+
+Sunday, September 6, around 1pm at Erik's house. Final time TBD.
+
+Buy-in: $75, due to B on or before draft day.
+
+- Food will be provided — Mexican if they are available, otherwise pizza. Be prepared to pitch in about $40 extra to cover food (final amount TBD).
+- Optional draft-day prop bet: $5 to bet on a specific player someone in the league will draft. No limit on entries.
+- Vote on draft day on whether to add a Rivalry week in week 14. Think who you want as your rival, and why, in case that passes.
+
+### Draft order
+
+- 14th: Kodi
+- 13th: Marc
+- 12th: Erik
+- 11th: B
+- 10th: Dillon
+- 9th: Zakk
+- 8th: Jacob
+
+### Lottery entries (picks 7 through 1)
+
+- 7 entries: Trent
+- 6 entries: Colby
+- 5 entries: Ace
+- 4 entries: Nick
+- 3 entries: Robert
+- 2 entries: Chaz
+- 1 entry: Derek
+
+## Rule changes
+
+- 60+ yard FG: now worth 7 points.
+- FAAB waiver system: standard ESPN FAAB waiver settings apply.
+- Bench roster spots: previously 6, now 5. That also means one fewer draft round.
+- IR roster spots: previously 1, now 2.
+
+## 2027 buy-in
+
+Next year's buy-in (for the 2027 season) will be $75 for buy-in plus $25 Beast of the Week (paid to the team that scores the most points each regular-season week) = $100.
+
+## 2027 draft lottery
+
+Next year's draft lottery will include every team. Number of entries:
+
+- 7th and 8th place: 7 balls
+- 6th and 9th place: 6 balls
+- 5th and 10th place: 5 balls
+- 4th and 11th place: 4 balls
+- 3rd and 12th place: 3 balls
+- 2nd and 13th place: 2 balls
+- 1st and 14th place: 1 ball
+9:["$","$1","c",{"children":[["$","$Lf",null,{"seeded":[{"id":"2025-1","year":2025,"week":1,"title":"Week 1 recap","path":"/newsletters/2025-week-1.html"},{"id":"2025-2","year":2025,"week":2,"title":"Week 2 recap","path":"/newsletters/2025-week-2.html"},{"id":"2025-3","year":2025,"week":3,"title":"Week 3 recap","path":"/newsletters/2025-week-3.html"},{"id":"2025-4","year":2025,"week":4,"title":"Week 4 recap","path":"/newsletters/2025-week-4.html"},{"id":"2025-5","year":2025,"week":5,"title":"Week 5 recap","path":"/newsletters/2025-week-5.html"},{"id":"2025-6","year":2025,"week":6,"title":"Week 6 recap","path":"/newsletters/2025-week-6.html"},{"id":"2025-8","year":2025,"week":8,"title":"Week 8 recap","path":"/newsletters/2025-week-8.html"},{"id":"2025-10","year":2025,"week":10,"title":"Week 10 recap","path":"/newsletters/2025-week-10.html"},{"id":"2025-eoy","year":2025,"week":"eoy","title":"2025 year in review","path":"/newsletters/2025-year-in-review.html"}],"initial":{"banner":{"enabled":false,"label":"Draft day","target":"2026-09-06T17:00:00-05:00","message":"Countdown to the offline draft"},"constitution":"$10","hallOfFame":[],"rejectedHofIds":[],"timeline":[],"customAwards":[],"adminPinHash":"90ef794f5ced4199fdfad5278673de115167bfe12d90787a5f33fb279a3deb61","newsletters":[],"newsletterRecipients":""}}],[["$","script","script-0",{"src":"/NoPuntIntendedSite/_next/static/chunks/1z82p_b5bj12-.js","async":true,"nonce":"$undefined"}]],["$","$L11",null,{"children":["$","$12",null,{"name":"Next.MetadataOutlet","children":"$@13"}]}]]}]
+b:["$","$1","h",{"children":[null,["$","$L14",null,{"children":"$L15"}],["$","div",null,{"hidden":true,"children":["$","$L16",null,{"children":["$","$12",null,{"name":"Next.Metadata","children":"$L17"}]}]}],["$","meta",null,{"name":"next-size-adjust","content":""}]]}]
+d:["$","link","0",{"rel":"stylesheet","href":"/NoPuntIntendedSite/_next/static/chunks/0tzmbty4_6hg9.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}]
+a:C
+15:[["$","meta","0",{"charSet":"utf-8"}],["$","meta","1",{"name":"viewport","content":"width=device-width, initial-scale=1"}]]
+18:I[27201,["/NoPuntIntendedSite/_next/static/chunks/2o1af194-k29p.js"],"IconMark"]
+13:null
+17:[["$","title","0",{"children":"No Punt Intended | League Archive"}],["$","meta","1",{"name":"description","content":"The official digital archive of No Punt Intended — championships, managers, records, and league history."}],["$","link","2",{"rel":"icon","href":"/NoPuntIntendedSite/favicon.ico?favicon.2vob68tjqpejf.ico","sizes":"256x256","type":"image/x-icon"}],["$","$L18","3",{}]]

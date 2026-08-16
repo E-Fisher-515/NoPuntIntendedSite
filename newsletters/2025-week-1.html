@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fantasy Football Newsletter</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            margin: 0;
+            padding: 20px;
+            color: #333;
+        }
+        
+        .newsletter-container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            color: white;
+            padding: 30px;
+            text-align: center;
+        }
+        
+        .header h1 {
+            margin: 0;
+            font-size: 2.5em;
+            font-weight: bold;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        
+        .header p {
+            margin: 10px 0 0 0;
+            font-size: 1.2em;
+            opacity: 0.9;
+        }
+        
+        .content {
+            padding: 30px;
+        }
+        
+        .section {
+            margin-bottom: 30px;
+        }
+        
+        .section h2 {
+            color: #1e3c72;
+            font-size: 1.8em;
+            margin-bottom: 15px;
+            border-bottom: 3px solid #667eea;
+            padding-bottom: 10px;
+        }
+        
+        .section h3 {
+            color: #2a5298;
+            font-size: 1.4em;
+            margin: 20px 0 10px 0;
+        }
+        
+        .matchup {
+            background: #f8f9fa;
+            border-left: 4px solid #667eea;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+        
+        .matchup-title {
+            font-weight: bold;
+            font-size: 1.1em;
+            color: #1e3c72;
+            margin-bottom: 5px;
+        }
+        
+        .matchup-commentary {
+            font-style: italic;
+            color: #666;
+            margin: 5px 0;
+        }
+        
+        .matchup-score {
+            font-weight: bold;
+            color: #2a5298;
+        }
+        
+        .highlight-box {
+            background: linear-gradient(135deg, #ffeaa7 0%, #fab1a0 100%);
+            padding: 20px;
+            border-radius: 10px;
+            margin: 15px 0;
+            text-align: center;
+        }
+        
+        .highlight-box h3 {
+            margin: 0 0 10px 0;
+            color: #2d3436;
+        }
+        
+        .highlight-box .score {
+            font-size: 2em;
+            font-weight: bold;
+            color: #e17055;
+        }
+        
+        .player-list {
+            background: #f8f9fa;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 10px 0;
+        }
+        
+        .player-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 8px 0;
+            border-bottom: 1px solid #dee2e6;
+        }
+        
+        .player-item:last-child {
+            border-bottom: none;
+        }
+        
+        .player-name {
+            font-weight: bold;
+            color: #1e3c72;
+        }
+        
+        .player-score {
+            font-weight: bold;
+            color: #e17055;
+        }
+        
+        .power-ranking {
+            background: linear-gradient(135deg, #74b9ff 0%, #0984e3 100%);
+            color: white;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 10px 0;
+        }
+        
+        .power-ranking h4 {
+            margin: 0 0 10px 0;
+            font-size: 1.2em;
+        }
+        
+        .ranking-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 5px 0;
+        }
+        
+        .comedy-section {
+            background: linear-gradient(135deg, #fd79a8 0%, #e84393 100%);
+            color: white;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 15px 0;
+        }
+        
+        .comedy-section h3 {
+            color: white;
+            margin: 0 0 15px 0;
+        }
+        
+        .footer {
+            background: #2d3436;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        
+        .emoji {
+            font-size: 1.2em;
+        }
+        
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin: 20px 0;
+        }
+        
+        .stat-box {
+            background: #f8f9fa;
+            padding: 15px;
+            border-radius: 8px;
+            text-align: center;
+            border: 2px solid #e9ecef;
+        }
+        
+        .stat-box h4 {
+            margin: 0 0 10px 0;
+            color: #1e3c72;
+        }
+        
+        .stat-value {
+            font-size: 1.5em;
+            font-weight: bold;
+            color: #e17055;
+        }
+    </style>
+</head>
+<body>
+    <div class="newsletter-container">
+        <div class="header">
+            <h1>🏈 Fantasy Football League - Week 1 Newsletter 🏈</h1>
+            <p>Generated on September 11, 2025 by Commissioner</p>
+        </div>
+        
+        <div class="content">
+            <!-- This will be populated by the Python script -->
+            <div id="newsletter-content"><h1>🏈 <strong>Fantasy Football League - Week 1 Drama Report</strong> 🏈</h1><br>
+<em>Your source for the juiciest fantasy football storylines</em><br>
+<br>
+<div class="section"><h2>🎬 <strong>This Week's Big Storyline</strong></h2><br>
+<br>
+<strong>💥 OBLITERATION ALERT!</strong> Ceedeez nuts just delivered a 43.4-point beatdown to Nacua Matata in what can only be described as a fantasy football massacre. This wasn't just a win—it was a statement. Ceedeez nuts put the entire league on notice with a 178.1-point explosion that left Nacua Matata questioning their life choices.<br>
+<br>
+<br>
+</div><div class="section"><h2>⚔️ <strong>Game Recaps: The Drama Unfolds</strong></h2><br>
+<br>
+<strong>Ladd to the Bone</strong> @ <strong>Laina</strong><br>
+<em>🔥 NAIL-BITER ALERT!</em> Laina hosted Ladd to the Bone in a 5.8-point thriller that came down to the final minutes! This was the closest game of the week and had everyone checking their phones every 30 seconds. Final: Laina 119.8 - 114.0 Ladd to the Bone<br>
+<br>
+<strong>Boston Clam Chowda</strong> @ <strong>Calvin and the chipmunks</strong><br>
+<em>🎯 COMPETITIVE BATTLE!</em> Boston Clam Chowda visited Calvin and the chipmunks in a 7.8-point win that was closer than it looked! Both teams brought their A-game, but Boston Clam Chowda made just enough plays to pull it out. Final: Boston Clam Chowda 123.0 - 115.2 Calvin and the chipmunks<br>
+<br>
+<strong>Maye I Digg In Yo Boutte?</strong> @ <strong>SCLSU MUD DOGS</strong><br>
+<em>🎯 COMPETITIVE BATTLE!</em> Maye I Digg In Yo Boutte? visited SCLSU MUD DOGS in a 9.5-point win that was closer than it looked! Both teams brought their A-game, but Maye I Digg In Yo Boutte? made just enough plays to pull it out. Final: Maye I Digg In Yo Boutte? 103.3 - 93.9 SCLSU MUD DOGS<br>
+<br>
+<strong>Dsm Tittsburgh </strong> @ <strong>TE University</strong><br>
+<em>💪 SOLID VICTORY!</em> TE University hosted Dsm Tittsburgh  in a 15.5-point win that showed who the better team was! Not a blowout, but TE University controlled this one from start to finish. Final: TE University 116.8 - 101.2 Dsm Tittsburgh <br>
+<br>
+<strong>Team Lehman</strong> @ <strong>Silver Bullet</strong><br>
+<em>🚨 DOMINANCE!</em> Silver Bullet hosted Team Lehman in a 32.0-point beatdown that was never in doubt! This was the kind of performance that makes other teams take notice. Final: Silver Bullet 146.8 - 114.8 Team Lehman<br>
+<br>
+<strong>Boomstick</strong> @ <strong>Drake and Josh</strong><br>
+<em>🚨 DOMINANCE!</em> Drake and Josh hosted Boomstick in a 33.1-point beatdown that was never in doubt! This was the kind of performance that makes other teams take notice. Final: Drake and Josh 130.8 - 97.7 Boomstick<br>
+<br>
+<strong>Ceedeez nuts</strong> @ <strong>Nacua Matata</strong><br>
+<em>💥 OBLITERATION!</em> Ceedeez nuts visited Nacua Matata in a 43.4-point massacre that was over by halftime! This wasn't just a win—it was a statement game that left Nacua Matata questioning their life choices. Final: Ceedeez nuts 178.1 - 134.7 Nacua Matata<br>
+<br>
+<br>
+</div><div class="section"><h2>⭐ <strong>Player Spotlights: Heroes and Villains</strong></h2><br>
+<br>
+<strong>🏆 The Heroes:</strong><br>
+<div class="player-item"><span class="player-name">🥇 <strong>Josh Allen</strong> (QB, BUF) - 45.8 points</span></div><br>
+   <em>Ceedeez nuts is thanking their lucky stars for this performance</em><br>
+<div class="player-item"><span class="player-name">🥈 <strong>Justin Herbert</strong> (QB, LAC) - 36.9 points</span></div><br>
+   <em>Team Lehman is thanking their lucky stars for this performance</em><br>
+<div class="player-item"><span class="player-name">🥉 <strong>Lamar Jackson</strong> (QB, BAL) - 33.4 points</span></div><br>
+   <em>Calvin and the chipmunks is thanking their lucky stars for this performance</em><br>
+<br>
+<br>
+</div><div class="section"><h2>📈 <strong>Trends Watch: The Plot Thickens</strong></h2><br>
+<br>
+<strong>📈 Hot Streaks & Cold Spells:</strong><br>
+<em>The Elite:</em> Ceedeez nuts (178.1 PF), Silver Bullet (146.8 PF), Nacua Matata (134.7 PF)<br>
+<em>The Struggling:</em> Dsm Tittsburgh  (101.2 PF), Boomstick (97.7 PF), SCLSU MUD DOGS (93.9 PF)<br>
+<br>
+<strong>🍀 Luck Factor Analysis:</strong><br>
+<em>Unlucky:</em> Nacua Matata is scoring 134.7 PPG but only 0-1-0 - the fantasy gods are cruel!<br>
+<em>Lucky:</em> Maye I Digg In Yo Boutte? is only scoring 103.3 PPG but 1-0-0 - riding the wave!<br>
+<br>
+<br>
+</div><div class="section"><h2>🏆 <strong>Power Rankings & Playoff Outlook</strong></h2><br>
+<br>
+<strong>🏆 Power Rankings (Top 5):</strong><br>
+<div class="ranking-item"><span>1.</span> <span><strong>Ceedeez nuts</strong> (1-0-0) - 178.1 PF, +43.4 diff - <em>The Alpha</em></span></div><br>
+<div class="ranking-item"><span>2.</span> <span><strong>Drake and Josh</strong> (1-0-0) - 130.8 PF, +33.1 diff - <em>The Contender</em></span></div><br>
+<div class="ranking-item"><span>3.</span> <span><strong>Silver Bullet</strong> (1-0-0) - 146.8 PF, +32.0 diff - <em>The Dark Horse</em></span></div><br>
+<div class="ranking-item"><span>4.</span> <span><strong>TE University</strong> (1-0-0) - 116.8 PF, +15.5 diff</span></div><br>
+<div class="ranking-item"><span>5.</span> <span><strong>Maye I Digg In Yo Boutte?</strong> (1-0-0) - 103.3 PF, +9.5 diff</span></div><br>
+<br>
+<strong>🔮 Playoff Outlook:</strong><br>
+<em>Early season, but the top 3 are already separating themselves from the pack. With 14 teams fighting for playoff spots, every week matters more than ever.</em><br>
+<br>
+<br>
+</div><div class="section"><h2>🎭 <strong>Comedy Corner: The Roast is Real</strong></h2><br>
+<br>
+<strong>🔥 The Roast Corner:</strong><br>
+<em>SCLSU MUD DOGS</em> just put up a whopping 93.9 points this week. That's not just a bad week—that's a performance so bad it should come with a warning label. Did you forget to set your lineup, or did you actually think that was a good strategy?<br>
+<br>
+<strong>🎭 Meme of the Week:</strong><br>
+<em>When you check your fantasy app and see your opponent scored 50+ more points than you</em><br>
+<em>[Insert crying Jordan face here]</em><br>
+<br>
+<br>
+</div><div class="section"><h2>🔮 <strong>Next Week Preview: The Saga Continues</strong></h2><br>
+<br>
+<strong>🔥 Game of the Week:</strong><br>
+<em>Silver Bullet</em> @ <em>Boston Clam Chowda</em><br>
+Projected: Silver Bullet 138.8 - 133.0 Boston Clam Chowda<br>
+<em>High-scoring affair expected with 271.9 total points projected!</em><br>
+<br>
+<strong>🎯 Upset Watch:</strong><br>
+<em>Keep an eye on the underdog in this matchup. Fantasy football is unpredictable, and the projected favorite doesn't always win.</em><br>
+<br>
+---<br>
+<br>
+🏈 <strong>Until next week, may your lineups be stacked and your opponents be weak!</strong> 🏈</div></div>
+        </div>
+        
+        <div class="footer">
+            <p>This newsletter was automatically generated. For questions or suggestions, contact Commissioner.</p>
+            <p>🏈 Good luck in Week 2! 🏈</p>
+        </div>
+    </div>
+</body>
+</html>

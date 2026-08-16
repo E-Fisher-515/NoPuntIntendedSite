@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fantasy Football Newsletter</title>
+    <style>
+        @media print {
+            body {
+                background: white !important;
+                padding: 0 !important;
+            }
+            .newsletter-container {
+                box-shadow: none !important;
+                margin: 0 !important;
+                max-width: none !important;
+            }
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            margin: 0;
+            padding: 20px;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        .newsletter-container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            color: white;
+            padding: 30px;
+            text-align: center;
+        }
+        
+        .header h1 {
+            margin: 0;
+            font-size: 2.5em;
+            font-weight: bold;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        
+        .header p {
+            margin: 10px 0 0 0;
+            font-size: 1.2em;
+            opacity: 0.9;
+        }
+        
+        .content {
+            padding: 30px;
+        }
+        
+        .section {
+            margin-bottom: 30px;
+            page-break-inside: avoid;
+        }
+        
+        @media print {
+            .section {
+                page-break-inside: avoid;
+                break-inside: avoid;
+            }
+            h1, h2, h3 {
+                page-break-after: avoid;
+            }
+            .matchup {
+                page-break-inside: avoid;
+            }
+        }
+        
+        .section h2 {
+            color: #1e3c72;
+            font-size: 1.8em;
+            margin-bottom: 15px;
+            border-bottom: 3px solid #667eea;
+            padding-bottom: 10px;
+        }
+        
+        .section h3 {
+            color: #2a5298;
+            font-size: 1.4em;
+            margin: 20px 0 10px 0;
+        }
+        
+        .matchup {
+            background: #f8f9fa;
+            border-left: 4px solid #667eea;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+        
+        .matchup-title {
+            font-weight: bold;
+            font-size: 1.1em;
+            color: #1e3c72;
+            margin-bottom: 5px;
+        }
+        
+        .matchup-commentary {
+            font-style: italic;
+            color: #666;
+            margin: 5px 0;
+        }
+        
+        .matchup-score {
+            font-weight: bold;
+            color: #2a5298;
+        }
+        
+        .highlight-box {
+            background: linear-gradient(135deg, #ffeaa7 0%, #fab1a0 100%);
+            padding: 20px;
+            border-radius: 10px;
+            margin: 15px 0;
+            text-align: center;
+        }
+        
+        .highlight-box h3 {
+            margin: 0 0 10px 0;
+            color: #2d3436;
+        }
+        
+        .highlight-box .score {
+            font-size: 2em;
+            font-weight: bold;
+            color: #e17055;
+        }
+        
+        .player-list {
+            background: #f8f9fa;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 10px 0;
+        }
+        
+        .player-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 8px 0;
+            border-bottom: 1px solid #dee2e6;
+        }
+        
+        .player-item:last-child {
+            border-bottom: none;
+        }
+        
+        .player-name {
+            font-weight: bold;
+            color: #1e3c72;
+        }
+        
+        .player-score {
+            font-weight: bold;
+            color: #e17055;
+        }
+        
+        .power-ranking {
+            background: linear-gradient(135deg, #74b9ff 0%, #0984e3 100%);
+            color: white;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 10px 0;
+        }
+        
+        .power-ranking h4 {
+            margin: 0 0 10px 0;
+            font-size: 1.2em;
+        }
+        
+        .ranking-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 5px 0;
+        }
+        
+        .comedy-section {
+            background: linear-gradient(135deg, #fd79a8 0%, #e84393 100%);
+            color: white;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 15px 0;
+        }
+        
+        .comedy-section h3 {
+            color: white;
+            margin: 0 0 15px 0;
+        }
+        
+        .footer {
+            background: #2d3436;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        
+        .emoji {
+            font-size: 1.2em;
+        }
+        
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin: 20px 0;
+        }
+        
+        .stat-box {
+            background: #f8f9fa;
+            padding: 15px;
+            border-radius: 8px;
+            text-align: center;
+            border: 2px solid #e9ecef;
+        }
+        
+        .stat-box h4 {
+            margin: 0 0 10px 0;
+            color: #1e3c72;
+        }
+        
+        .stat-value {
+            font-size: 1.5em;
+            font-weight: bold;
+            color: #e17055;
+        }
+    </style>
+</head>
+<body>
+    <div class="newsletter-container">
+        <div class="header">
+            <h1>🏈 No Punt Intended - Week 2 Field Report 🏈</h1>
+            <p>Where fantasy football meets real analysis</p>
+        </div>
+        
+        <div class="content">
+            <!-- This will be populated by the Python script -->
+            <div id="newsletter-content"><h1>🏈 <strong>No Punt Intended - Week 2 Field Report</strong> 🏈</h1><br>
+<em>Where fantasy football meets real analysis</em><br>
+<br>
+<div class="section"><h2>🎬 <strong>This Week's Big Storyline</strong></h2><br>
+<br>
+<strong>🎯 SURPRISING START:</strong> Home Improvement sits undefeated at 2-0 despite averaging just 119.9 points per game. Sometimes it's better to be lucky than good, and Home Improvement is riding that wave perfectly. The question is: can this magic continue?<br>
+<br>
+<br>
+</div><div class="section"><h2>⚔️ <strong>Game Recaps: The Drama Unfolds</strong></h2><br>
+<br>
+<strong>derek's Calvin and the chipmunks</strong> @ <strong>Ace's Maye I Digg In Yo Boutte?</strong><br>
+<em>🔥 RIVALRY RENEWED!</em> In a classic battle between derek and Ace, it was derek who emerged victorious by 12.9 points. These two always bring out the best in each other, and this game was no exception. Ace will be plotting their revenge, but for now, derek gets the bragging rights.<br>
+<strong>Final:</strong> derek's Calvin and the chipmunks 151.1 - 138.2 Ace's Maye I Digg In Yo Boutte?<br>
+<br>
+<strong>Brenden's Home Improvement</strong> @ <strong>Erik's Ceedeez nuts</strong><br>
+<em>⚔️ REVENGE IS A DISH BEST SERVED COLD!</em> Brenden had this game circled on their calendar, and they delivered with a 16.4-point beatdown of Erik. This felt personal from the opening kickoff, and Brenden left no doubt about who the better manager is. Erik just got served a reality check they won't soon forget.<br>
+<strong>Final:</strong> Brenden's Home Improvement 123.0 - 106.6 Erik's Ceedeez nuts<br>
+<br>
+<strong>Kodi's Drake and Josh</strong> @ <strong>Marc's Dsm Tittsburgh </strong><br>
+<em>🐕 UNDERDOG SPECIAL!</em> Marc just pulled off the upset of the week, shocking Kodi with a 18.6-point victory that nobody saw coming! This David vs. Goliath story proves that in fantasy football, anything can happen on any given Sunday. Kodi is probably still trying to figure out what hit them.<br>
+<strong>Final:</strong> Marc's Dsm Tittsburgh  133.4 - 114.9 Kodi's Drake and Josh<br>
+<br>
+<strong>Nick's Nacua Matata</strong> @ <strong>Alaina's Laina</strong><br>
+<em>🎓 FANTASY FOOTBALL MASTERCLASS!</em> Nick just put on an absolute clinic, dismantling Alaina in a 28.2-point beatdown after a consistent performance. This wasn't just a win—it was a statement to the entire league that Nick means business. Alaina might want to hit the waiver wire after this embarrassing display.<br>
+<strong>Final:</strong> Nick's Nacua Matata 140.6 - 112.4 Alaina's Laina<br>
+<br>
+<strong>chaz's Silver Bullet</strong> @ <strong>Zakk's Boston Clam Chowda</strong><br>
+<em>🔄 REDEMPTION STORY!</em> After last week's struggles, chaz came back with a vengeance, defeating Zakk by 35.8 points in what can only be described as a bounce-back masterpiece. The collapse performance showed exactly why you never count out a good fantasy manager. Zakk learned the hard way that chaz doesn't stay down for long.<br>
+<strong>Final:</strong> chaz's Silver Bullet 119.3 - 83.5 Zakk's Boston Clam Chowda<br>
+<br>
+<strong>Colby's Boomstick</strong> @ <strong>Dillon's Team Lehman</strong><br>
+<em>📢 STATEMENT GAME!</em> Dillon just sent a message to the entire league with this 35.9-point demolition of Colby. After showing explosion from last week, Dillon proved this wasn't a fluke. Meanwhile, Colby is dealing with a explosion that has them questioning every roster decision.<br>
+<strong>Final:</strong> Dillon's Team Lehman 154.0 - 118.1 Colby's Boomstick<br>
+<br>
+<strong>Trent's JAKE BOBO</strong> @ <strong>Jacob's Ladd to the Bone</strong><br>
+<em>💥 TOTAL MELTDOWN ALERT!</em> What started as a competitive matchup turned into a 44.6-point disaster for Trent. Jacob watched in amazement as their opponent completely fell apart. Trent's team had more holes than Swiss cheese, and Jacob took full advantage of every single one.<br>
+<strong>Final:</strong> Jacob's Ladd to the Bone 163.5 - 118.9 Trent's JAKE BOBO<br>
+<br>
+<br>
+</div><div class="section"><h2>⭐ <strong>Player Spotlights: Heroes and Villains</strong></h2><br>
+<br>
+<strong>🏆 The Heroes:</strong><br>
+<div class="player-item"><span class="player-name">🥇 <strong>Jared Goff</strong> (QB, DET) - 47.0 points</span></div><br>
+   <em>Jacob's Ladd to the Bone is thanking their lucky stars for this performance</em><br>
+<div class="player-item"><span class="player-name">🥈 <strong>Amon-Ra St. Brown</strong> (WR, DET) - 42.2 points</span></div><br>
+   <em>Jacob's Ladd to the Bone is thanking their lucky stars for this performance</em><br>
+<div class="player-item"><span class="player-name">🥉 <strong>Malik Nabers</strong> (WR, NYG) - 40.7 points</span></div><br>
+   <em>Colby's Boomstick is thanking their lucky stars for this performance</em><br>
+<br>
+<br>
+</div><div class="section"><h2>📈 <strong>Trends Watch: The Plot Thickens</strong></h2><br>
+<br>
+<strong>📈 Hot Streaks & Cold Spells:</strong><br>
+<em>The Elite:</em> Erik's Ceedeez nuts (284.7 PF), Jacob's Ladd to the Bone (277.5 PF), Nick's Nacua Matata (275.3 PF)<br>
+<em>The Struggling:</em> Colby's Boomstick (215.8 PF), Trent's JAKE BOBO (212.8 PF), Zakk's Boston Clam Chowda (206.6 PF)<br>
+<br>
+<strong>🍀 Luck Factor Analysis:</strong><br>
+<em>Charmed:</em> Brenden's Home Improvement is undefeated at 2-0-0 despite only 119.9 PPG - the luck is real!<br>
+<em>Underachieving:</em> Colby's Boomstick only has 0 wins despite 107.9 PPG - tough matchup luck!<br>
+<em>Underachieving:</em> Trent's JAKE BOBO only has 0 wins despite 106.4 PPG - tough matchup luck!<br>
+<br>
+<br>
+</div><div class="section"><h2>🏆 <strong>Power Rankings & Playoff Outlook</strong></h2><br>
+<br>
+<strong>🏆 Power Rankings (Top 5):</strong><br>
+<div class="ranking-item"><span>1.</span> <span><strong>chaz's Silver Bullet</strong> (2-0-0) - 266.1 PF, +67.8 diff - <em>The Alpha</em></span></div><br>
+<div class="ranking-item"><span>2.</span> <span><strong>Brenden's Home Improvement</strong> (2-0-0) - 239.8 PF, +31.9 diff - <em>The Contender</em></span></div><br>
+<div class="ranking-item"><span>3.</span> <span><strong>Jacob's Ladd to the Bone</strong> (1-1-0) - 277.5 PF, +38.8 diff - <em>The Dark Horse</em></span></div><br>
+<div class="ranking-item"><span>4.</span> <span><strong>Erik's Ceedeez nuts</strong> (1-1-0) - 284.7 PF, +27.1 diff</span></div><br>
+<div class="ranking-item"><span>5.</span> <span><strong>Kodi's Drake and Josh</strong> (1-1-0) - 245.7 PF, +14.5 diff</span></div><br>
+<br>
+<strong>🔮 Playoff Outlook:</strong><br>
+<em>Early season, but the top 3 are already separating themselves from the pack. With 14 teams fighting for playoff spots, every week matters more than ever.</em><br>
+<br>
+<br>
+</div><div class="section"><h2>🎭 <strong>Comedy Corner: The Roast is Real</strong></h2><br>
+<br>
+<strong>🔥 The Roast Corner:</strong><br>
+<em>Zakk's Boston Clam Chowda</em> managed to score 83.5 points, which is impressive considering most people score more points just by accidentally leaving their lineup empty. Did Zakk actively try to lose, or is this just natural talent?<br>
+<br>
+<strong>🎭 Meme of the Week:</strong><br>
+<em>When your opponent starts players who aren't even active</em><br>
+<em>[Insert confused Nick Young meme]</em><br>
+<br>
+<br>
+</div><div class="section"><h2>🔮 <strong>Next Week Preview: The Saga Continues</strong></h2><br>
+<br>
+<strong>🔥 Game of the Week:</strong><br>
+<em>Team Lehman</em> @ <em>Boston Clam Chowda</em><br>
+Projected: Team Lehman 126.0 - 121.8 Boston Clam Chowda<br>
+<em>This is going to be a nail-biter! Both teams are projected within 5 points of each other.</em><br>
+<br>
+<strong>🎯 Upset Watch:</strong><br>
+<em>Keep an eye on the underdog in this matchup. Fantasy football is unpredictable, and the projected favorite doesn't always win.</em><br>
+<br>
+---<br>
+<br>
+🏈 <strong>Until next week, may your lineups be stacked and your opponents be weak!</strong> 🏈</div></div>
+        </div>
+        
+        <div class="footer">
+            <p>This newsletter was automatically generated for your fantasy football enjoyment.</p>
+            <p>🏈 Good luck this week! 🏈</p>
+        </div>
+    </div>
+</body>
+</html>
