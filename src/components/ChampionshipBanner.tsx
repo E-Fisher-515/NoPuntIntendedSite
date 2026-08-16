@@ -1,3 +1,4 @@
+import Link from "next/link";
 import type { Championship } from "@/lib/types";
 
 type Props = {
@@ -19,7 +20,7 @@ export function ChampionshipBanner({ championships }: Props) {
     <div className="border-b border-gold/30 bg-forest-deep">
       <div className="flex gap-0 overflow-x-auto">
         {championships.map((champ) => (
-          <a
+          <Link
             key={champ.year}
             href={`/seasons/${champ.year}`}
             className="min-w-[160px] shrink-0 border-r border-gold/20 px-5 py-4 text-cream transition-colors hover:bg-forest"
@@ -29,7 +30,7 @@ export function ChampionshipBanner({ championships }: Props) {
             <p className="mt-1 text-sm text-cream/90">{champ.ownerName}</p>
             <p className="text-xs text-cream/60">{champ.teamName}</p>
             <p className="mt-2 text-[11px] uppercase tracking-wider text-gold/80">{champ.record}</p>
-          </a>
+          </Link>
         ))}
       </div>
     </div>
