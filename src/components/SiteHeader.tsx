@@ -10,7 +10,6 @@ const links = [
   { href: "/seasons", label: "Seasons" },
   { href: "/managers", label: "Managers" },
   { href: "/records", label: "Records" },
-  { href: "/awards", label: "Awards" },
   { href: "/hall-of-fame", label: "Hall of Fame" },
   { href: "/rules", label: "Rules" },
   { href: "/predictions", label: "Predictions" },

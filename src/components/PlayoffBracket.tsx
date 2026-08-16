@@ -12,7 +12,7 @@ export function PlayoffBracket({
   if (!playoff.length) {
     return (
       <p className="border border-dashed border-rule px-4 py-6 text-sm text-ink/60">
-        ESPN does not expose a full bracket object. Playoff games will appear here when weekly scores are archived.
+        Playoff games will appear here once the season reaches the postseason.
       </p>
     );
   }
@@ -27,7 +27,7 @@ export function PlayoffBracket({
     <div>
       {finishers.length ? (
         <p className="mb-4 text-sm text-ink/70">
-          Finals inferred from ESPN finish:{" "}
+          Final results:{" "}
           {finishers
             .map((team) => `${team.finalStanding}. ${team.ownerName} · ${team.teamName}`)
             .join(" · ")}

@@ -7,7 +7,7 @@ export default function SeasonsIndexPage() {
   if (!archiveReady()) {
     return (
       <PageShell>
-        <SectionHeader title="Seasons" lede="Archive data has not been generated yet." />
+        <SectionHeader title="Seasons" lede="This page will be ready once the season history is loaded." />
       </PageShell>
     );
   }
@@ -18,7 +18,7 @@ export default function SeasonsIndexPage() {
       <SectionHeader
         eyebrow="The record"
         title="Seasons"
-        lede="Every archived year, with the champion when ESPN has a final standing."
+        lede="Every year on record, with the champion when that season is complete."
       />
       <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
         {[...league.seasons].sort((a, b) => b - a).map((year) => {

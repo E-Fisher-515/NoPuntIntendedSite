@@ -14,7 +14,7 @@ export function HallOfFameClient({ initial }: { initial: Editorial }) {
       <SectionHeader
         eyebrow="The hall"
         title="Hall of Fame"
-        lede="Induction is editorial, not automatic. The commissioner reviews archive suggestions and approves a class from the admin portal."
+        lede="Induction is chosen by the league, not by standings alone. To suggest a member, contact the commissioner."
       />
       {inductees.length ? (
         <div className="grid gap-6">
@@ -24,7 +24,7 @@ export function HallOfFameClient({ initial }: { initial: Editorial }) {
         </div>
       ) : (
         <p className="border border-gold/40 bg-cream-dark/40 px-6 py-16 text-center font-serif text-2xl text-forest">
-          The hall awaits its first class.
+          The hall awaits its first class. To nominate someone, contact the commissioner.
         </p>
       )}
     </PageShell>

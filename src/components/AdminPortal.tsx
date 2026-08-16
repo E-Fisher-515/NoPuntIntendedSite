@@ -52,7 +52,7 @@ export function AdminPortal({ managers, initial }: { managers: Manager[]; initia
     verifyAdminToken().then((ok) => {
       if (ok) {
         setUnlocked(true);
-        setStatus("Signed in. Edits save to public/editorial.json on GitHub.");
+        setStatus("Signed in. Saves update the live site.");
       }
     });
   }, []);
@@ -68,7 +68,7 @@ export function AdminPortal({ managers, initial }: { managers: Manager[]; initia
       return;
     }
     setUnlocked(true);
-    setStatus("Signed in. Edits save to public/editorial.json on GitHub.");
+    setStatus("Signed in. Saves update the live site.");
   }
 
   async function persist(next: Editorial) {
@@ -78,7 +78,7 @@ export function AdminPortal({ managers, initial }: { managers: Manager[]; initia
     try {
       await saveEditorial(next);
       setEditorial(next);
-      setStatus("Saved. The live site will pick this up from GitHub within a few seconds.");
+      setStatus("Saved. The live site will update in a few seconds.");
     } catch (err) {
       setError(err instanceof Error ? err.message : "Save failed.");
     } finally {
@@ -95,7 +95,7 @@ export function AdminPortal({ managers, initial }: { managers: Manager[]; initia
         <SectionHeader
           eyebrow="Commissioner"
           title="Admin portal"
-          lede="Rules, the hall, the countdown banner, timeline notes, and custom awards are edited here — not in the codebase."
+          lede="Update rules, the hall, the countdown banner, timeline notes, and league honors here."
         />
         <form onSubmit={unlock} className="max-w-xl border border-rule bg-cream-dark/30 p-6">
           <label className={label} htmlFor="token">
@@ -131,7 +131,7 @@ export function AdminPortal({ managers, initial }: { managers: Manager[]; initia
       <SectionHeader
         eyebrow="Commissioner"
         title="Admin portal"
-        lede="Save writes public/editorial.json on GitHub. ESPN standings and records stay ingest-only."
+        lede="Save to publish changes on the site. Standings, scores, and records still come from the league's ESPN history."
       />
       <div className="mb-6 flex flex-wrap gap-2">
         {(
@@ -331,8 +331,8 @@ function HofEditor({
       <section>
         <h2 className="font-serif text-3xl text-forest">Suggested class</h2>
         <p className="mt-2 max-w-2xl text-sm text-ink/70">
-          These names are computed from the archive. Approve to induct, or reject to hide the suggestion. Nothing is
-          automatic.
+          These names come from championships, win rate, and how long they have been in the league. Approve to induct, or
+          reject to hide the suggestion. Nothing is automatic.
         </p>
         {!suggestions.length ? (
           <p className="mt-4 border border-dashed border-rule px-4 py-6 text-sm text-ink/60">No pending suggestions.</p>
@@ -464,7 +464,7 @@ function TimelineEditor({
   return (
     <section className="max-w-2xl space-y-6">
       <div className="border border-rule p-5">
-        <p className={label}>Add an editorial event</p>
+        <p className={label}>Add a timeline event</p>
         <div className="mt-3 grid gap-3 md:grid-cols-[8rem_1fr]">
           <input
             className={field}
@@ -552,7 +552,9 @@ function AwardsEditor({
 
   return (
     <section className="max-w-2xl space-y-6">
-      <p className="text-sm text-ink/70">ESPN awards stay computed. Add league honors here (Toilet Bowl, sportsmanship, and so on).</p>
+      <p className="text-sm text-ink/70">
+        Season awards from the record already appear on each season page. Add extra league honors here (Toilet Bowl, sportsmanship, and so on).
+      </p>
       <div className="border border-rule p-5">
         <div className="grid gap-3 md:grid-cols-2">
           <div>

@@ -8,7 +8,7 @@ export default function PredictionsPage() {
   if (!archiveReady()) {
     return (
       <PageShell>
-        <SectionHeader title="Predictions" lede="Archive data has not been generated yet." />
+        <SectionHeader title="Predictions" lede="This page will be ready once the season history is loaded." />
       </PageShell>
     );
   }

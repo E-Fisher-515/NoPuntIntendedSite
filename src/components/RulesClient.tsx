@@ -13,7 +13,7 @@ export function RulesClient({ initial }: { initial: Editorial }) {
       <SectionHeader
         eyebrow="League law"
         title="Constitution"
-        lede="House rules belong here. ESPN settings are ingested per season; this document is edited from the commissioner portal."
+        lede="The house rules for No Punt Intended. To propose a change, contact the commissioner."
       />
       <ConstitutionBody text={editorial.constitution} />
     </PageShell>

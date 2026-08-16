@@ -14,7 +14,7 @@ export function HistoryClient({ espnEvents, initial }: { espnEvents: TimelineEve
       <SectionHeader
         eyebrow="League history"
         title="The timeline"
-        lede="Championships and founding dates come from ESPN. Editorial events are added from the commissioner portal."
+        lede="Championships and the founding year come from the league record. To add a timeline event, contact the commissioner."
       />
       <Timeline events={events} />
     </PageShell>

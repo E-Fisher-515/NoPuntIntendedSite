@@ -8,7 +8,7 @@ export default function ManagersPage() {
   if (!archiveReady()) {
     return (
       <PageShell>
-        <SectionHeader title="Managers" lede="Archive data has not been generated yet." />
+        <SectionHeader title="Managers" lede="This page will be ready once the season history is loaded." />
       </PageShell>
     );
   }
@@ -26,7 +26,7 @@ export default function ManagersPage() {
       <SectionHeader
         eyebrow="The managers"
         title="Directory"
-        lede={`${league.currentSeason} members first. Alumni from earlier seasons follow. Career records roll up by ESPN owner ID.`}
+        lede={`${league.currentSeason} members first. Alumni from earlier seasons follow. Career records follow each manager across every year they played.`}
       />
       <h2 className="mb-4 font-serif text-3xl text-forest">{league.currentSeason} league</h2>
       <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">

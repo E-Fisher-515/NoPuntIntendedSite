@@ -98,7 +98,7 @@ export function getEspnTimeline(): TimelineEvent[] {
     {
       year: Math.min(...league.seasons),
       title: "League founded",
-      body: `${league.name} begins its recorded ESPN history.`,
+      body: `${league.name} begins.`,
       source: "espn",
     },
     ...league.championships.map((champ) => ({

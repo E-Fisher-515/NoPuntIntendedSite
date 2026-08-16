@@ -2,12 +2,13 @@ import { notFound } from "next/navigation";
 import { MatchupCard } from "@/components/MatchupCard";
 import { PageShell } from "@/components/PageShell";
 import { PlayoffBracket } from "@/components/PlayoffBracket";
+import { SeasonAwards } from "@/components/SeasonAwards";
 import { SeasonHeader } from "@/components/SeasonHeader";
 import { SeasonSelector } from "@/components/SeasonSelector";
 import { SectionHeader } from "@/components/SectionHeader";
 import { StandingsTable } from "@/components/StandingsTable";
 import { StatCard } from "@/components/StatCard";
-import { archiveReady, getLeague, getMatchups, getSeason } from "@/lib/archive";
+import { archiveReady, getEditorialFile, getEspnAwards, getLeague, getManagers, getMatchups, getSeason } from "@/lib/archive";
 import { identity } from "@/lib/format";
 import { findSeasonTeam, teamIdentity } from "@/lib/lookups";
 
@@ -107,9 +108,10 @@ export default async function SeasonPage({ params }: { params: Promise<{ year: s
         />
       </section>
       <section className="mt-12">
-        <SectionHeader title="Playoffs" lede="Bracket inferred from ESPN playoff weeks and final standings." />
+        <SectionHeader title="Playoffs" lede="Playoff results from this season." />
         <PlayoffBracket matchups={matchups} teams={season.teams} />
       </section>
+      <SeasonAwards year={year} espnAwards={getEspnAwards()} managers={getManagers()} initial={getEditorialFile()} />
       <section className="mt-12">
         <SectionHeader title="Weekly scores" />
         {weeks.map((week) => (
@@ -126,8 +128,7 @@ export default async function SeasonPage({ params }: { params: Promise<{ year: s
         ))}
       </section>
       <p className="mt-8 text-xs text-ink/40">
-        Regular season: {season.regularSeasonWeeks} weeks · Playoff teams: {season.playoffTeamCount} ·
-        Scoring type: {season.scoringType || "ESPN"}
+        Regular season: {season.regularSeasonWeeks} weeks · Playoff teams: {season.playoffTeamCount}
       </p>
     </PageShell>
   );

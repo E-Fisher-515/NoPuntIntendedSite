@@ -45,7 +45,7 @@ export default function RecordsPage() {
   if (!archiveReady()) {
     return (
       <PageShell>
-        <SectionHeader title="Record book" lede="Archive data has not been generated yet." />
+        <SectionHeader title="Record book" lede="This page will be ready once the season history is loaded." />
       </PageShell>
     );
   }
@@ -71,7 +71,7 @@ export default function RecordsPage() {
       <SectionHeader
         eyebrow="All-time"
         title="Record book"
-        lede="Every line includes the manager, team, and season. Career marks use the latest team name and the years that manager appears in the archive."
+        lede="The league's all-time marks. Career lines use each manager's latest team name and the years they played."
       />
       <h2 className="mb-6 font-serif text-3xl text-forest">Scoring</h2>
       <RecordTable

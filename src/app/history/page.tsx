@@ -7,7 +7,7 @@ export default function HistoryPage() {
   if (!archiveReady()) {
     return (
       <PageShell>
-        <SectionHeader title="History" lede="Archive data has not been generated yet." />
+        <SectionHeader title="History" lede="This page will be ready once the season history is loaded." />
       </PageShell>
     );
   }

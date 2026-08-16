@@ -12,8 +12,8 @@ export default function HomePage() {
     return (
       <PageShell>
         <SectionHeader
-          title="Archive not generated yet"
-          lede="Run python ingest/ingest.py with ESPN credentials in .env, then restart the site."
+          title="Season history is on the way"
+          lede="Check back once the league record has been loaded."
         />
       </PageShell>
     );
@@ -36,7 +36,7 @@ export default function HomePage() {
         <p className="text-[11px] uppercase tracking-[0.28em] text-gold-muted">Established league archive</p>
         <h1 className="mt-3 font-serif text-5xl text-forest md:text-7xl">{league.name}</h1>
         <p className="mt-4 max-w-2xl text-lg text-ink/70">
-          A long-running fantasy football league with champions, records, rivalries, and lore — not another ESPN clone.
+          A long-running fantasy football league with champions, records, rivalries, and lore.
         </p>
         <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           <StatCard label="Current season" value={String(year)} />

@@ -1,17 +1,21 @@
-import { AwardsClient } from "@/components/AwardsClient";
+"use client";
+
+import { useEffect } from "react";
+import { useRouter } from "next/navigation";
 import { PageShell } from "@/components/PageShell";
 import { SectionHeader } from "@/components/SectionHeader";
-import { archiveReady, getEditorialFile, getEspnAwards, getManagers } from "@/lib/archive";
 
 export default function AwardsPage() {
-  if (!archiveReady()) {
-    return (
-      <PageShell>
-        <SectionHeader title="Awards" lede="Archive data has not been generated yet." />
-      </PageShell>
-    );
-  }
+  const router = useRouter();
+  useEffect(() => {
+    router.replace("/seasons");
+  }, [router]);
   return (
-    <AwardsClient espnAwards={getEspnAwards()} managers={getManagers()} initial={getEditorialFile()} />
+    <PageShell>
+      <SectionHeader
+        title="Awards"
+        lede="Awards now live on each season page. You will be taken to Seasons."
+      />
+    </PageShell>
   );
 }
