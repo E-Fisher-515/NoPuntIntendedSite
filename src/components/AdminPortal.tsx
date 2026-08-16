@@ -260,7 +260,7 @@ function RulesEditor({
   return (
     <section className="grid gap-8 lg:grid-cols-2">
       <div>
-        <label className={label}>Constitution (markdown headings with # and ##)</label>
+        <label className={label}>Rules (markdown headings with # and ##)</label>
         <textarea
           className={`${field} min-h-[28rem] font-mono text-[13px] leading-6`}
           value={editorial.constitution}

@@ -17,7 +17,7 @@ export const emptyEditorial = (): Editorial => ({
     target: "2026-09-06T17:00:00-05:00",
     message: "Countdown to the offline draft",
   },
-  constitution: "Constitution has not been published yet.",
+  constitution: "Rules have not been published yet.",
   hallOfFame: [],
   rejectedHofIds: [],
   timeline: [],
