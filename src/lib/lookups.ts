@@ -5,6 +5,12 @@ export function isCurrentManager(manager: Manager, currentSeason: number): boole
   return manager.seasons.some((season) => season.year === currentSeason);
 }
 
+export function activeRosterYear(managers: Manager[], currentSeason: number): number {
+  if (managers.some((manager) => isCurrentManager(manager, currentSeason))) return currentSeason;
+  const years = managers.flatMap((manager) => manager.seasons.map((season) => season.year));
+  return years.length ? Math.max(...years) : currentSeason;
+}
+
 export function currentTeamName(manager: Manager, currentSeason: number): string {
   return (
     manager.seasons.find((season) => season.year === currentSeason)?.teamName ??

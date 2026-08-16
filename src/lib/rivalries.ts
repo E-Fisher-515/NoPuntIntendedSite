@@ -1,6 +1,6 @@
 import type { Championship, Manager, Matchup, SeasonArchive } from "./types";
 import { recordLine } from "./format";
-import { isCurrentManager, managerById } from "./lookups";
+import { activeRosterYear, isCurrentManager, managerById } from "./lookups";
 
 export type Rivalry = {
   id: string;
@@ -100,7 +100,8 @@ export function buildRivalries(
   matchups: Matchup[],
   currentSeason: number,
 ): Rivalry[] {
-  const current = managers.filter((manager) => isCurrentManager(manager, currentSeason));
+  const rosterYear = activeRosterYear(managers, currentSeason);
+  const current = managers.filter((manager) => isCurrentManager(manager, rosterYear));
   const currentIds = new Set(current.map((manager) => manager.id));
   const byId = new Map(managers.map((manager) => [manager.id, manager]));
 
@@ -148,7 +149,7 @@ export function buildRivalries(
         if (!currentIds.has(row.opponentId) || row.opponentId === manager.id) continue;
         const opponent = managerById(managers, row.opponentId);
         if (!opponent) continue;
-        const facts = scorePair(manager, opponent, row, titles, knockouts, currentSeason);
+        const facts = scorePair(manager, opponent, row, titles, knockouts, rosterYear);
         if (!best || facts.score > best.facts.score) best = { opponent, facts };
       }
       if (!best) {
@@ -160,12 +161,12 @@ export function buildRivalries(
             right: { id: manager.id, name: manager.name },
             record: "—",
             games: 0,
-            reasons: [`No other ${currentSeason} manager is on record yet.`],
+            reasons: [`No other ${rosterYear} manager is on record yet.`],
           };
         }
         best = {
           opponent,
-          facts: scorePair(manager, opponent, { wins: 0, losses: 0, ties: 0 }, titles, knockouts, currentSeason),
+          facts: scorePair(manager, opponent, { wins: 0, losses: 0, ties: 0 }, titles, knockouts, rosterYear),
         };
       }
       return {

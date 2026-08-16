@@ -4,7 +4,7 @@ const SLOT_RANK: Record<string, number> = {
   QB: 0,
   RB: 1,
   WR: 2,
-  TE: 4,
+  TE: 3,
   FLX: 4,
   FLEX: 4,
   "RB/WR/TE": 4,
@@ -27,7 +27,7 @@ export function slotRank(slot: string): number {
 
 export function displaySlot(slot: string): string {
   const value = slot.trim().toUpperCase();
-  if (value === "TE" || value === "RB/WR/TE" || value === "FLEX" || value === "WR/TE" || value === "RB/WR" || value === "RB/WR/TE/QB" || value === "OP") {
+  if (value === "RB/WR/TE" || value === "FLEX" || value === "WR/TE" || value === "RB/WR" || value === "RB/WR/TE/QB" || value === "OP") {
     return "FLX";
   }
   if (value === "D/ST" || value === "DEF") return "DST";

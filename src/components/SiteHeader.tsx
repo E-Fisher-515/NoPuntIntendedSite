@@ -23,7 +23,7 @@ const groups: Group[] = [
     href: "/managers",
     children: [
       { href: "/managers", label: "Directory" },
-      { href: "/rivalries", label: "Rivalry" },
+      { href: "/rivalries", label: "Rivalries" },
       { href: "/hall-of-fame", label: "Hall of Fame" },
     ],
   },

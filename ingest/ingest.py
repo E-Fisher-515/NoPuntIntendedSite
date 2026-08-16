@@ -283,7 +283,7 @@ def lineup_players(players) -> list[dict]:
             }
         )
     rows.sort(key=lambda row: (
-        {"QB": 0, "RB": 1, "WR": 2, "TE": 4, "RB/WR/TE": 4, "FLEX": 4, "WR/TE": 4, "K": 5, "D/ST": 6, "DST": 6, "BE": 7, "IR": 8}.get(row["slot"], 50),
+        {"QB": 0, "RB": 1, "WR": 2, "TE": 3, "RB/WR/TE": 4, "FLEX": 4, "WR/TE": 4, "K": 5, "D/ST": 6, "DST": 6, "BE": 7, "IR": 8}.get(row["slot"], 50),
         -row["points"],
     ))
     return rows

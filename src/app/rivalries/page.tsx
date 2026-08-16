@@ -2,6 +2,7 @@ import Link from "next/link";
 import { PageShell } from "@/components/PageShell";
 import { SectionHeader } from "@/components/SectionHeader";
 import { archiveReady, getAllMatchups, getAllSeasons, getLeague, getManagers } from "@/lib/archive";
+import { activeRosterYear } from "@/lib/lookups";
 import { buildRivalries } from "@/lib/rivalries";
 
 export default function RivalriesPage() {
@@ -13,8 +14,10 @@ export default function RivalriesPage() {
     );
   }
   const league = getLeague();
+  const managers = getManagers();
+  const rosterYear = activeRosterYear(managers, league.currentSeason);
   const rivalries = buildRivalries(
-    getManagers(),
+    managers,
     league.championships,
     getAllSeasons(),
     getAllMatchups(),
@@ -25,7 +28,7 @@ export default function RivalriesPage() {
       <SectionHeader
         eyebrow="Managers"
         title="Rivalries"
-        lede={`Every ${league.currentSeason} manager has a suggested rival from this year's roster, based on championship meetings, playoff knockouts, lopsided series, and the closest career records.`}
+        lede={`Suggested rivals for the ${rosterYear} league only. Both managers are on that year's roster. Alumni from earlier seasons are not listed.`}
       />
       <div className="grid gap-6">
         {rivalries.map((rivalry) => (
