@@ -3,10 +3,12 @@ import { recordLine } from "./format";
 
 export const GITHUB_REPO = "E-Fisher-515/NoPuntIntendedSite";
 export const EDITORIAL_PATH = "public/editorial.json";
+const PUBLISH_SECRET_PATH = "public/admin-publish.json";
 const TOKEN_KEY = "npi-admin-token";
+const UNLOCKED_KEY = "npi-admin-ok";
+const PBKDF2_ITERATIONS = 210_000;
 
 export const DEFAULT_ADMIN_PIN_HASH = "90ef794f5ced4199fdfad5278673de115167bfe12d90787a5f33fb279a3deb61";
-const UNLOCKED_KEY = "npi-admin-ok";
 
 export const emptyEditorial = (): Editorial => ({
   banner: {
@@ -42,16 +44,26 @@ export function normalizeEditorial(data: Partial<Editorial> | null | undefined):
   };
 }
 
-function localEditorialUrl(cacheBust: number): string {
-  if (typeof window === "undefined") return "/editorial.json";
+function publicFileUrl(file: string, cacheBust: number): string {
+  if (typeof window === "undefined") return `/${file}`;
   const base = window.location.pathname.startsWith("/NoPuntIntendedSite") ? "/NoPuntIntendedSite" : "";
-  return `${base}/editorial.json?t=${cacheBust}`;
+  return `${base}/${file}?t=${cacheBust}`;
 }
 
 function editorialUrls(): string[] {
   const cacheBust = Date.now();
   const remote = `https://raw.githubusercontent.com/${GITHUB_REPO}/main/${EDITORIAL_PATH}?t=${cacheBust}`;
-  const local = localEditorialUrl(cacheBust);
+  const local = publicFileUrl("editorial.json", cacheBust);
+  if (typeof window !== "undefined" && window.location.hostname.includes("github.io")) {
+    return [remote, local];
+  }
+  return [local, remote];
+}
+
+function publishSecretUrls(): string[] {
+  const cacheBust = Date.now();
+  const remote = `https://raw.githubusercontent.com/${GITHUB_REPO}/main/${PUBLISH_SECRET_PATH}?t=${cacheBust}`;
+  const local = publicFileUrl("admin-publish.json", cacheBust);
   if (typeof window !== "undefined" && window.location.hostname.includes("github.io")) {
     return [remote, local];
   }
@@ -126,17 +138,73 @@ export async function sha256Hex(text: string): Promise<string> {
 }
 
 export async function passwordUnlocksAdmin(password: string, pinHash: string): Promise<"token" | "pin" | null> {
-  setAdminToken(password);
+  const trimmed = password.trim();
+  setAdminToken(trimmed);
   if (await verifyAdminToken()) return "token";
   clearAdminToken();
-  const hash = await sha256Hex(password);
-  if (hash === (pinHash || DEFAULT_ADMIN_PIN_HASH)) return "pin";
+  const hash = await sha256Hex(trimmed);
+  if (hash !== (pinHash || DEFAULT_ADMIN_PIN_HASH)) return null;
+  await unlockPublishCredential(trimmed);
+  return "pin";
+}
+
+type PublishSecret = { v: number; salt: string; iv: string; data: string };
+
+function b64ToBytes(value: string): Uint8Array<ArrayBuffer> {
+  const binary = atob(value);
+  const bytes = new Uint8Array(binary.length);
+  for (let i = 0; i < binary.length; i += 1) bytes[i] = binary.charCodeAt(i);
+  return bytes;
+}
+
+async function decryptPublishToken(password: string, secret: PublishSecret): Promise<string | null> {
+  try {
+    const salt = b64ToBytes(secret.salt);
+    const iv = b64ToBytes(secret.iv);
+    const data = b64ToBytes(secret.data);
+    const material = await crypto.subtle.importKey("raw", new TextEncoder().encode(password), "PBKDF2", false, ["deriveKey"]);
+    const key = await crypto.subtle.deriveKey(
+      { name: "PBKDF2", salt, iterations: PBKDF2_ITERATIONS, hash: "SHA-256" },
+      material,
+      { name: "AES-GCM", length: 256 },
+      false,
+      ["decrypt"],
+    );
+    const plain = await crypto.subtle.decrypt({ name: "AES-GCM", iv }, key, data);
+    return new TextDecoder().decode(plain).trim();
+  } catch {
+    return null;
+  }
+}
+
+async function fetchPublishSecret(): Promise<PublishSecret | null> {
+  for (const url of publishSecretUrls()) {
+    try {
+      const response = await fetch(url, { cache: "no-store" });
+      if (!response.ok) continue;
+      const data = (await response.json()) as PublishSecret;
+      if (data?.salt && data?.iv && data?.data) return data;
+    } catch {
+      continue;
+    }
+  }
   return null;
+}
+
+async function unlockPublishCredential(password: string): Promise<boolean> {
+  const secret = await fetchPublishSecret();
+  if (!secret) return false;
+  const token = await decryptPublishToken(password, secret);
+  if (!token) return false;
+  setAdminToken(token);
+  const ok = await verifyAdminToken();
+  if (!ok) clearAdminToken();
+  return ok;
 }
 
 async function githubFile(path: string) {
   const token = getAdminToken();
-  if (!token) throw new Error("Publishing needs the access key.");
+  if (!token) throw new Error("Could not publish. Log in again.");
   const url = `https://api.github.com/repos/${GITHUB_REPO}/contents/${path}`;
   const response = await fetch(url, {
     headers: {
@@ -151,7 +219,7 @@ async function githubFile(path: string) {
 
 export async function saveRepoFile(path: string, content: string, message: string): Promise<void> {
   const token = getAdminToken();
-  if (!token) throw new Error("Publishing needs the access key.");
+  if (!token) throw new Error("Could not publish. Log in again.");
   const current = await githubFile(path);
   const response = await fetch(`https://api.github.com/repos/${GITHUB_REPO}/contents/${path}`, {
     method: "PUT",
@@ -181,7 +249,7 @@ function utf8ToBase64(text: string): string {
 
 async function githubContents() {
   const token = getAdminToken();
-  if (!token) throw new Error("Paste a GitHub token with Contents write access on this repo.");
+  if (!token) throw new Error("Could not publish. Log in again.");
   const url = `https://api.github.com/repos/${GITHUB_REPO}/contents/${EDITORIAL_PATH}`;
   const response = await fetch(url, {
     headers: {
@@ -190,14 +258,14 @@ async function githubContents() {
     },
   });
   if (!response.ok) {
-    throw new Error(`GitHub could not read ${EDITORIAL_PATH} (${response.status}). Check the token and repo access.`);
+    throw new Error(`Could not publish (${response.status}). Try logging in again.`);
   }
   return response.json() as Promise<{ sha: string; content: string }>;
 }
 
 export async function saveEditorial(editorial: Editorial): Promise<void> {
   const token = getAdminToken();
-  if (!token) throw new Error("Paste a GitHub token with Contents write access on this repo.");
+  if (!token) throw new Error("Could not publish. Log in again.");
   const current = await githubContents();
   const payload = normalizeEditorial(editorial);
   const response = await fetch(`https://api.github.com/repos/${GITHUB_REPO}/contents/${EDITORIAL_PATH}`, {

@@ -6,15 +6,11 @@ import { PageShell } from "@/components/PageShell";
 import { SectionHeader } from "@/components/SectionHeader";
 import {
   clearAdminSession,
-  getAdminToken,
   inducteeFromManager,
-  isAdminUnlocked,
   markAdminUnlocked,
   passwordUnlocksAdmin,
   saveEditorial,
   saveRepoFile,
-  setAdminToken,
-  sha256Hex,
   suggestHallOfFame,
   verifyAdminToken,
 } from "@/lib/editorial";
@@ -43,7 +39,6 @@ function fromLocalInput(value: string): string {
 export function AdminPortal({ managers, initial }: { managers: Manager[]; initial: Editorial }) {
   const [unlocked, setUnlocked] = useState(false);
   const [token, setToken] = useState("");
-  const [publishKey, setPublishKey] = useState("");
   const [editorial, setEditorial] = useState<Editorial>(initial);
   const [tab, setTab] = useState<Tab>("banner");
   const [status, setStatus] = useState("");
@@ -51,21 +46,16 @@ export function AdminPortal({ managers, initial }: { managers: Manager[]; initia
   const [saving, setSaving] = useState(false);
 
   useEffect(() => {
-    const stored = getAdminToken();
-    if (stored) setPublishKey(stored);
-    if (isAdminUnlocked()) {
+    let cancelled = false;
+    verifyAdminToken().then((ok) => {
+      if (!ok || cancelled) return;
+      markAdminUnlocked();
       setUnlocked(true);
       setStatus("Signed in.");
-      return;
-    }
-    if (!stored) return;
-    verifyAdminToken().then((ok) => {
-      if (ok) {
-        markAdminUnlocked();
-        setUnlocked(true);
-        setStatus("Signed in.");
-      }
     });
+    return () => {
+      cancelled = true;
+    };
   }, []);
 
   async function unlock(event: FormEvent) {
@@ -77,9 +67,13 @@ export function AdminPortal({ managers, initial }: { managers: Manager[]; initia
       return;
     }
     markAdminUnlocked();
-    if (result === "token") setPublishKey(token);
     setUnlocked(true);
+    if (await verifyAdminToken()) {
+      setStatus("Signed in.");
+      return;
+    }
     setStatus("Signed in.");
+    setError("Logged in, but saving is not ready yet. Try Save once; if it fails, log out and in again.");
   }
 
   async function persist(next: Editorial) {
@@ -87,12 +81,11 @@ export function AdminPortal({ managers, initial }: { managers: Manager[]; initia
     setError("");
     setStatus("");
     try {
-      if (publishKey) setAdminToken(publishKey);
       await saveEditorial(next);
       setEditorial(next);
       setStatus("Saved. The live site will update in a few seconds.");
     } catch (err) {
-      setError(err instanceof Error ? err.message : "Save failed. If you used the simple password, paste the access key below.");
+      setError(err instanceof Error ? err.message : "Save failed. Try logging in again.");
     } finally {
       setSaving(false);
     }
@@ -107,7 +100,7 @@ export function AdminPortal({ managers, initial }: { managers: Manager[]; initia
         <SectionHeader
           eyebrow="Commissioner"
           title="Admin portal"
-          lede="Sign in with the commissioner password to edit the site."
+          lede="Sign in with the commissioner password. Saving publishes to the site."
         />
         <form onSubmit={unlock} className="max-w-xl border border-rule bg-cream-dark/30 p-6">
           <label className={label} htmlFor="token">
@@ -121,7 +114,7 @@ export function AdminPortal({ managers, initial }: { managers: Manager[]; initia
             value={token}
             onChange={(event) => setToken(event.target.value)}
           />
-          <p className="mt-3 text-sm text-ink/70">Simple login. It stays in this browser until you close the tab.</p>
+          <p className="mt-3 text-sm text-ink/70">Same password as always. It stays in this browser until you log out.</p>
           {error ? <p className="mt-3 text-sm text-red-800">{error}</p> : null}
           <button type="submit" className={`${button} mt-5`}>
             Log in
@@ -186,21 +179,10 @@ export function AdminPortal({ managers, initial }: { managers: Manager[]; initia
         <AwardsEditor editorial={editorial} managers={managers} onChange={setEditorial} onSave={persist} saving={saving} />
       ) : null}
       {tab === "newsletters" ? (
-        <NewsletterEditor editorial={editorial} onChange={setEditorial} onSave={persist} saving={saving} publishKey={publishKey} setPublishKey={setPublishKey} />
+        <NewsletterEditor editorial={editorial} onChange={setEditorial} onSave={persist} saving={saving} />
       ) : null}
       <div className="mt-10 max-w-xl border-t border-rule pt-6">
-        <p className={label}>Access key</p>
-        <p className="mt-1 text-sm text-ink/60">Needed only to publish. Ask the commissioner if you do not have it.</p>
-        <input
-          type="password"
-          className={field}
-          value={publishKey}
-          onChange={(event) => {
-            setPublishKey(event.target.value);
-            if (event.target.value) setAdminToken(event.target.value);
-          }}
-        />
-        <button type="button" className={`${ghost} mt-4`} onClick={() => { clearAdminSession(); setUnlocked(false); setToken(""); }}>
+        <button type="button" className={ghost} onClick={() => { clearAdminSession(); setUnlocked(false); setToken(""); }}>
           Log out
         </button>
       </div>
@@ -211,7 +193,7 @@ export function AdminPortal({ managers, initial }: { managers: Manager[]; initia
 function SaveBar({ onSave, saving }: { onSave: () => void; saving: boolean }) {
   return (
     <button type="button" className={`${button} mt-6`} disabled={saving} onClick={onSave}>
-      {saving ? "Saving…" : "Save to GitHub"}
+      {saving ? "Saving…" : "Save"}
     </button>
   );
 }
@@ -658,14 +640,11 @@ function NewsletterEditor({
   onChange,
   onSave,
   saving,
-  publishKey,
 }: {
   editorial: Editorial;
   onChange: (next: Editorial) => void;
   onSave: (next: Editorial) => void;
   saving: boolean;
-  publishKey: string;
-  setPublishKey: (value: string) => void;
 }) {
   const [draft, setDraft] = useState({ year: new Date().getFullYear(), week: 1, title: "", html: "" });
   const [busy, setBusy] = useState(false);
@@ -676,7 +655,6 @@ function NewsletterEditor({
     setBusy(true);
     setNote("");
     try {
-      if (publishKey) setAdminToken(publishKey);
       const week = Number(draft.week);
       const filePath = `public/newsletters/${draft.year}-week-${week}.html`;
       await saveRepoFile(filePath, draft.html, `Publish ${draft.year} week ${week} newsletter`);
