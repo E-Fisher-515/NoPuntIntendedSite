@@ -24,7 +24,7 @@ export default function ManagersPage() {
   return (
     <PageShell>
       <SectionHeader
-        eyebrow="The managers"
+        eyebrow="Managers"
         title="Directory"
         lede={`${league.currentSeason} members first. Alumni from earlier seasons follow. Career records follow each manager across every year they played.`}
       />

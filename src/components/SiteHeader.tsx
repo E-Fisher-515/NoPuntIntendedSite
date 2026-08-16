@@ -4,22 +4,56 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
 
-const links = [
-  { href: "/", label: "Home" },
-  { href: "/history", label: "History" },
-  { href: "/seasons", label: "Seasons" },
-  { href: "/managers", label: "Managers" },
-  { href: "/records", label: "Records" },
-  { href: "/rivalries", label: "Rivalries" },
-  { href: "/newsletters", label: "Newsletters" },
-  { href: "/hall-of-fame", label: "Hall of Fame" },
-  { href: "/rules", label: "Rules" },
-  { href: "/predictions", label: "Predictions" },
+type Child = { href: string; label: string };
+type Group = { label: string; href: string; children?: Child[] };
+
+const groups: Group[] = [
+  { label: "Home", href: "/" },
+  {
+    label: "History",
+    href: "/history",
+    children: [
+      { href: "/history", label: "Timeline" },
+      { href: "/seasons", label: "Seasons" },
+      { href: "/records", label: "Records" },
+    ],
+  },
+  {
+    label: "Managers",
+    href: "/managers",
+    children: [
+      { href: "/managers", label: "Directory" },
+      { href: "/rivalries", label: "Rivalry" },
+      { href: "/hall-of-fame", label: "Hall of Fame" },
+    ],
+  },
+  {
+    label: "League",
+    href: "/newsletters",
+    children: [
+      { href: "/newsletters", label: "Newsletters" },
+      { href: "/rules", label: "Rules" },
+      { href: "/predictions", label: "Predictions" },
+    ],
+  },
 ];
+
+function groupActive(pathname: string, group: Group): boolean {
+  if (group.href === "/") return pathname === "/";
+  const targets = [group.href, ...(group.children?.map((child) => child.href) ?? [])];
+  return targets.some((href) => pathname === href || (href !== "/" && pathname.startsWith(`${href}/`)) || pathname.startsWith(href));
+}
+
+function childActive(pathname: string, href: string): boolean {
+  if (href === "/history") return pathname === "/history" || pathname === "/history/";
+  if (href === "/managers") return pathname === "/managers" || pathname === "/managers/" || pathname.startsWith("/managers/");
+  return pathname === href || pathname.startsWith(`${href}/`);
+}
 
 export function SiteHeader() {
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
+  const activeGroup = groups.find((group) => group.children && groupActive(pathname, group));
 
   return (
     <header className="border-b border-rule bg-cream">
@@ -36,18 +70,18 @@ export function SiteHeader() {
         >
           {open ? "Close" : "Menu"}
         </button>
-        <nav className="hidden items-center gap-5 md:flex">
-          {links.map((link) => {
-            const active = pathname === link.href || (link.href !== "/" && pathname.startsWith(link.href));
+        <nav className="hidden items-center gap-6 md:flex">
+          {groups.map((group) => {
+            const active = groupActive(pathname, group);
             return (
               <Link
-                key={link.href}
-                href={link.href}
+                key={group.label}
+                href={group.href}
                 className={`text-[11px] uppercase tracking-[0.16em] ${
                   active ? "text-forest border-b border-gold pb-0.5" : "text-ink/70 hover:text-forest"
                 }`}
               >
-                {link.label}
+                {group.label}
               </Link>
             );
           })}
@@ -61,19 +95,50 @@ export function SiteHeader() {
           </Link>
         </nav>
       </div>
+      {activeGroup?.children ? (
+        <div className="hidden border-t border-rule md:block">
+          <nav className="mx-auto flex max-w-6xl gap-6 px-4 py-2">
+            {activeGroup.children.map((child) => {
+              const active = childActive(pathname, child.href);
+              return (
+                <Link
+                  key={child.href}
+                  href={child.href}
+                  className={`text-[11px] uppercase tracking-[0.16em] ${
+                    active ? "text-forest" : "text-ink/50 hover:text-forest"
+                  }`}
+                >
+                  {child.label}
+                </Link>
+              );
+            })}
+          </nav>
+        </div>
+      ) : null}
       {open ? (
-        <nav className="grid gap-2 border-t border-rule px-4 py-4 md:hidden">
-          {links.map((link) => (
-            <Link
-              key={link.href}
-              href={link.href}
-              onClick={() => setOpen(false)}
-              className="py-1 text-sm uppercase tracking-[0.14em] text-forest"
-            >
-              {link.label}
-            </Link>
+        <nav className="grid gap-4 border-t border-rule px-4 py-4 md:hidden">
+          {groups.map((group) => (
+            <div key={group.label}>
+              <Link href={group.href} onClick={() => setOpen(false)} className="text-sm uppercase tracking-[0.14em] text-forest">
+                {group.label}
+              </Link>
+              {group.children ? (
+                <div className="mt-1 grid gap-1 pl-3">
+                  {group.children.map((child) => (
+                    <Link
+                      key={child.href}
+                      href={child.href}
+                      onClick={() => setOpen(false)}
+                      className="py-0.5 text-sm text-ink/70"
+                    >
+                      {child.label}
+                    </Link>
+                  ))}
+                </div>
+              ) : null}
+            </div>
           ))}
-          <Link href="/admin" onClick={() => setOpen(false)} className="py-1 text-sm uppercase tracking-[0.14em] text-gold-muted">
+          <Link href="/admin" onClick={() => setOpen(false)} className="text-sm uppercase tracking-[0.14em] text-gold-muted">
             Admin
           </Link>
         </nav>

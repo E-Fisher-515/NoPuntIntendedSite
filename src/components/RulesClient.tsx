@@ -11,7 +11,7 @@ export function RulesClient({ initial }: { initial: Editorial }) {
   return (
     <PageShell>
       <SectionHeader
-        eyebrow="League law"
+        eyebrow="League"
         title="Constitution"
         lede="The house rules for No Punt Intended. To propose a change, contact the commissioner."
       />

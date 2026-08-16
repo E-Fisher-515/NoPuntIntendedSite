@@ -282,7 +282,10 @@ def lineup_players(players) -> list[dict]:
                 "points": round2(getattr(player, "points", 0)),
             }
         )
-    rows.sort(key=lambda row: (row["slot"] in {"BE", "IR", "Bench"}, -row["points"]))
+    rows.sort(key=lambda row: (
+        {"QB": 0, "RB": 1, "WR": 2, "TE": 4, "RB/WR/TE": 4, "FLEX": 4, "WR/TE": 4, "K": 5, "D/ST": 6, "DST": 6, "BE": 7, "IR": 8}.get(row["slot"], 50),
+        -row["points"],
+    ))
     return rows
 
 

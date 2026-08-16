@@ -17,7 +17,7 @@ export default function RivalriesPage() {
   return (
     <PageShell>
       <SectionHeader
-        eyebrow="Bad blood"
+        eyebrow="Managers"
         title="Rivalries"
         lede="Recommended rivalries from championship meetings, playoff knockouts, lopsided series, and the closest career records."
       />

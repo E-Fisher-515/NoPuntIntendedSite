@@ -16,7 +16,7 @@ export default function SeasonsIndexPage() {
   return (
     <PageShell>
       <SectionHeader
-        eyebrow="The record"
+        eyebrow="History"
         title="Seasons"
         lede="Every year on record, with the champion when that season is complete."
       />

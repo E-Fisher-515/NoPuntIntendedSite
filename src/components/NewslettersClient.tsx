@@ -17,7 +17,7 @@ export function NewslettersClient({ seeded, initial }: { seeded: NewsletterIssue
   return (
     <PageShell>
       <SectionHeader
-        eyebrow="The recap"
+        eyebrow="League"
         title="Newsletters"
         lede="Weekly recaps for the league. The commissioner can publish a new issue from Admin."
       />

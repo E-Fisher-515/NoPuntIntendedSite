@@ -12,7 +12,7 @@ export function HallOfFameClient({ initial }: { initial: Editorial }) {
   return (
     <PageShell>
       <SectionHeader
-        eyebrow="The hall"
+        eyebrow="Managers"
         title="Hall of Fame"
         lede="Induction is chosen by the league, not by standings alone. To suggest a member, contact the commissioner."
       />

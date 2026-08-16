@@ -69,7 +69,7 @@ export default function RecordsPage() {
   return (
     <PageShell>
       <SectionHeader
-        eyebrow="All-time"
+        eyebrow="History"
         title="Record book"
         lede="The league's all-time marks. Career lines use each manager's latest team name and the years they played."
       />
