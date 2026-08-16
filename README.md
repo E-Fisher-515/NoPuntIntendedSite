@@ -4,6 +4,8 @@ Official digital archive for the **No Punt Intended** fantasy football league. C
 
 This is not an ESPN clone. It is the league's record book.
 
+Repo: [https://github.com/E-Fisher-515/NoPuntIntendedSite](https://github.com/E-Fisher-515/NoPuntIntendedSite)
+
 ## Local development
 
 ```bash
@@ -32,3 +34,18 @@ python ingest/ingest.py
 ```
 
 Re-run after the NFL week turns, then commit updated `data/archive/` files.
+
+## Public site
+
+GitHub Pages (after the first Actions deploy):
+
+https://e-fisher-515.github.io/NoPuntIntendedSite/
+
+To publish on Vercel as well:
+
+```bash
+npx vercel login
+npx vercel --prod --yes
+```
+
+Or import https://github.com/E-Fisher-515/NoPuntIntendedSite in the Vercel dashboard.
