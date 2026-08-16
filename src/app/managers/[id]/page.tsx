@@ -3,8 +3,9 @@ import { notFound } from "next/navigation";
 import { PageShell } from "@/components/PageShell";
 import { SectionHeader } from "@/components/SectionHeader";
 import { StatCard } from "@/components/StatCard";
-import { archiveReady, getManager, getManagers } from "@/lib/archive";
+import { archiveReady, getAllMatchups, getAllSeasons, getLeague, getManager, getManagers } from "@/lib/archive";
 import { pct, playoffResult, points, recordLine } from "@/lib/format";
+import { rivalryFor, buildRivalries } from "@/lib/rivalries";
 
 export function generateStaticParams() {
   if (!archiveReady()) return [];
@@ -18,10 +19,15 @@ export default async function ManagerPage({ params }: { params: Promise<{ id: st
   const all = getManagers();
   if (!manager) notFound();
   const byId = new Map(all.map((item) => [item.id, item]));
+  const league = getLeague();
+  const suggested = rivalryFor(
+    buildRivalries(all, league.championships, getAllSeasons(), getAllMatchups(), league.currentSeason),
+    manager.id,
+  );
 
   return (
     <PageShell>
-      <SectionHeader eyebrow="Manager profile" title={manager.name} />
+      <SectionHeader eyebrow="Managers" title={manager.name} />
       <div className="grid gap-4 md:grid-cols-4">
         <StatCard label="Career record" value={recordLine(manager.wins, manager.losses, manager.ties)} />
         <StatCard label="Championships" value={String(manager.championships)} />
@@ -91,6 +97,25 @@ export default async function ManagerPage({ params }: { params: Promise<{ id: st
           <StatCard label="Worst finish" value={manager.worstFinish ? String(manager.worstFinish) : "—"} />
         </div>
       </section>
+      {suggested ? (
+        <section className="mt-12">
+          <h2 className="mb-4 font-serif text-3xl text-forest">Suggested rival</h2>
+          <article className="border border-rule p-6">
+            <p className="text-[11px] uppercase tracking-[0.18em] text-gold-muted">{suggested.games} games</p>
+            <p className="mt-1 font-serif text-2xl text-forest">
+              <Link href={`/managers/${suggested.right.id}`} className="hover:text-gold-muted">
+                {suggested.right.name}
+              </Link>
+            </p>
+            <p className="mt-1 text-sm text-ink/60">{suggested.record}</p>
+            <ul className="mt-4 list-disc pl-5 text-sm text-ink/80">
+              {suggested.reasons.map((reason) => (
+                <li key={reason}>{reason}</li>
+              ))}
+            </ul>
+          </article>
+        </section>
+      ) : null}
       <section className="mt-12">
         <h2 className="mb-4 font-serif text-3xl text-forest">Head-to-head</h2>
         <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">

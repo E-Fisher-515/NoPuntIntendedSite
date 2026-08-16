@@ -1,6 +1,6 @@
 import type { Championship, Manager, Matchup, SeasonArchive } from "./types";
 import { recordLine } from "./format";
-import { managerById } from "./lookups";
+import { isCurrentManager, managerById } from "./lookups";
 
 export type Rivalry = {
   id: string;
@@ -15,13 +15,95 @@ function pairKey(a: string, b: string) {
   return [a, b].sort().join("::");
 }
 
+type PairFacts = {
+  score: number;
+  games: number;
+  reasons: string[];
+  record: string;
+};
+
+function scorePair(
+  manager: Manager,
+  opponent: Manager,
+  row: { wins: number; losses: number; ties: number },
+  titles: Map<string, { year: number; winner: string; loser: string }[]>,
+  knockouts: Record<string, { year: number; winner: string; loser: string }[]>,
+  currentSeason: number,
+): PairFacts {
+  const games = row.wins + row.losses + row.ties;
+  const key = pairKey(manager.id, opponent.id);
+  const reasons: string[] = [];
+  let score = games;
+
+  const titleMeetings = titles.get(key) ?? [];
+  if (titleMeetings.length) {
+    score += 20 * titleMeetings.length;
+    reasons.push(
+      `Met in the championship ${titleMeetings.length === 1 ? "once" : `${titleMeetings.length} times`}: ${titleMeetings
+        .map((item) => `${item.year} (${item.winner} over ${item.loser})`)
+        .join("; ")}`,
+    );
+  }
+
+  const playoffMeetings = knockouts[key] ?? [];
+  if (playoffMeetings.length) {
+    score += 8 * playoffMeetings.length;
+    const latest = playoffMeetings[playoffMeetings.length - 1];
+    reasons.push(
+      `Playoff history: ${playoffMeetings.length} winners-bracket meetings. Latest: ${latest.year}, ${latest.winner} sent ${latest.loser} home.`,
+    );
+  }
+
+  const winShare = games ? row.wins / games : 0.5;
+  if (games >= 4 && winShare >= 0.75) {
+    score += 12;
+    reasons.push(
+      `${manager.name} owns the series ${recordLine(row.wins, row.losses, row.ties)} — ${opponent.name} is due for a win.`,
+    );
+  } else if (games >= 4 && winShare <= 0.25) {
+    score += 12;
+    reasons.push(
+      `${opponent.name} owns the series ${recordLine(row.losses, row.wins, row.ties)} — ${manager.name} is due for a win.`,
+    );
+  } else if (games >= 2 && Math.abs(row.wins - row.losses) <= 1) {
+    score += 10;
+    reasons.push(`Close series: ${recordLine(row.wins, row.losses, row.ties)} over ${games} game${games === 1 ? "" : "s"}.`);
+  }
+
+  if (manager.championships && opponent.championships) {
+    score += 6;
+    reasons.push(`Both have titles (${manager.name} ${manager.championships}, ${opponent.name} ${opponent.championships}).`);
+  }
+
+  if (!reasons.length) {
+    if (games) {
+      reasons.push(
+        `Most history among the ${currentSeason} managers: ${games} game${games === 1 ? "" : "s"}, ${recordLine(row.wins, row.losses, row.ties)}.`,
+      );
+    } else {
+      reasons.push(`Both are on the ${currentSeason} roster. A series is still waiting to be written.`);
+    }
+  }
+
+  return {
+    score,
+    games,
+    reasons,
+    record: `${manager.name} ${recordLine(row.wins, row.losses, row.ties)} vs ${opponent.name}`,
+  };
+}
+
 export function buildRivalries(
   managers: Manager[],
   championships: Championship[],
   seasons: SeasonArchive[],
   matchups: Matchup[],
+  currentSeason: number,
 ): Rivalry[] {
+  const current = managers.filter((manager) => isCurrentManager(manager, currentSeason));
+  const currentIds = new Set(current.map((manager) => manager.id));
   const byId = new Map(managers.map((manager) => [manager.id, manager]));
+
   const titles = new Map<string, { year: number; winner: string; loser: string }[]>();
   for (const champ of championships) {
     if (!champ.ownerId || !champ.runnerUpName) continue;
@@ -57,65 +139,46 @@ export function buildRivalries(
     knockouts[key] = list;
   }
 
-  const seen = new Set<string>();
-  const rivalries: Rivalry[] = [];
-  for (const manager of managers) {
-    for (const row of manager.headToHead) {
-      const key = pairKey(manager.id, row.opponentId);
-      if (seen.has(key)) continue;
-      seen.add(key);
-      const opponent = managerById(managers, row.opponentId);
-      if (!opponent) continue;
-      const games = row.wins + row.losses + row.ties;
-      if (games < 3) continue;
-      const reasons: string[] = [];
-      let score = games;
-      const titleMeetings = titles.get(key) ?? [];
-      if (titleMeetings.length) {
-        score += 20 * titleMeetings.length;
-        reasons.push(
-          `Met in the championship ${titleMeetings.length === 1 ? "once" : `${titleMeetings.length} times`}: ${titleMeetings
-            .map((item) => `${item.year} (${item.winner} over ${item.loser})`)
-            .join("; ")}`,
-        );
+  return current
+    .slice()
+    .sort((a, b) => a.name.localeCompare(b.name))
+    .map((manager) => {
+      let best: { opponent: Manager; facts: PairFacts } | null = null;
+      for (const row of manager.headToHead) {
+        if (!currentIds.has(row.opponentId) || row.opponentId === manager.id) continue;
+        const opponent = managerById(managers, row.opponentId);
+        if (!opponent) continue;
+        const facts = scorePair(manager, opponent, row, titles, knockouts, currentSeason);
+        if (!best || facts.score > best.facts.score) best = { opponent, facts };
       }
-      const playoffMeetings = knockouts[key] ?? [];
-      if (playoffMeetings.length) {
-        score += 8 * playoffMeetings.length;
-        const latest = playoffMeetings[playoffMeetings.length - 1];
-        reasons.push(
-          `Playoff history: ${playoffMeetings.length} winners-bracket meetings. Latest: ${latest.year}, ${latest.winner} sent ${latest.loser} home.`,
-        );
+      if (!best) {
+        const opponent = current.find((item) => item.id !== manager.id);
+        if (!opponent) {
+          return {
+            id: manager.id,
+            left: { id: manager.id, name: manager.name },
+            right: { id: manager.id, name: manager.name },
+            record: "—",
+            games: 0,
+            reasons: [`No other ${currentSeason} manager is on record yet.`],
+          };
+        }
+        best = {
+          opponent,
+          facts: scorePair(manager, opponent, { wins: 0, losses: 0, ties: 0 }, titles, knockouts, currentSeason),
+        };
       }
-      const winShare = games ? row.wins / games : 0.5;
-      if (games >= 4 && winShare >= 0.75) {
-        score += 12;
-        reasons.push(
-          `${manager.name} owns the series ${recordLine(row.wins, row.losses, row.ties)} — ${opponent.name} is due for a win.`,
-        );
-      } else if (games >= 4 && winShare <= 0.25) {
-        score += 12;
-        reasons.push(
-          `${opponent.name} owns the series ${recordLine(row.losses, row.wins, row.ties)} — ${manager.name} is due for a win.`,
-        );
-      } else if (games >= 4 && Math.abs(row.wins - row.losses) <= 1) {
-        score += 10;
-        reasons.push(`Closest records in the league: ${recordLine(row.wins, row.losses, row.ties)} over ${games} games.`);
-      }
-      if (manager.championships && opponent.championships) {
-        score += 6;
-        reasons.push(`Both have titles (${manager.name} ${manager.championships}, ${opponent.name} ${opponent.championships}).`);
-      }
-      if (!reasons.length) continue;
-      rivalries.push({
-        id: key,
+      return {
+        id: `${manager.id}::${best.opponent.id}`,
         left: { id: manager.id, name: manager.name },
-        right: { id: opponent.id, name: opponent.name },
-        record: `${manager.name} ${recordLine(row.wins, row.losses, row.ties)} vs ${opponent.name}`,
-        games,
-        reasons,
-      });
-    }
-  }
-  return rivalries.sort((a, b) => b.reasons.length - a.reasons.length || b.games - a.games).slice(0, 12);
+        right: { id: best.opponent.id, name: best.opponent.name },
+        record: best.facts.record,
+        games: best.facts.games,
+        reasons: best.facts.reasons,
+      };
+    });
+}
+
+export function rivalryFor(rivalries: Rivalry[], managerId: string): Rivalry | undefined {
+  return rivalries.find((rivalry) => rivalry.left.id === managerId);
 }

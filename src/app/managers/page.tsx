@@ -1,8 +1,9 @@
 import { ManagerCard } from "@/components/ManagerCard";
 import { PageShell } from "@/components/PageShell";
 import { SectionHeader } from "@/components/SectionHeader";
-import { archiveReady, getLeague, getManagers } from "@/lib/archive";
+import { archiveReady, getAllMatchups, getAllSeasons, getLeague, getManagers } from "@/lib/archive";
 import { isCurrentManager } from "@/lib/lookups";
+import { buildRivalries, rivalryFor } from "@/lib/rivalries";
 
 export default function ManagersPage() {
   if (!archiveReady()) {
@@ -20,6 +21,13 @@ export default function ManagersPage() {
   const alumni = managers
     .filter((manager) => !isCurrentManager(manager, league.currentSeason))
     .sort((a, b) => a.name.localeCompare(b.name));
+  const rivalries = buildRivalries(
+    managers,
+    league.championships,
+    getAllSeasons(),
+    getAllMatchups(),
+    league.currentSeason,
+  );
 
   return (
     <PageShell>
@@ -31,7 +39,12 @@ export default function ManagersPage() {
       <h2 className="mb-4 font-serif text-3xl text-forest">{league.currentSeason} league</h2>
       <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
         {current.map((manager) => (
-          <ManagerCard key={manager.id} manager={manager} currentSeason={league.currentSeason} />
+          <ManagerCard
+            key={manager.id}
+            manager={manager}
+            currentSeason={league.currentSeason}
+            rival={rivalryFor(rivalries, manager.id)}
+          />
         ))}
       </div>
       {alumni.length ? (

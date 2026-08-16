@@ -13,18 +13,24 @@ export default function RivalriesPage() {
     );
   }
   const league = getLeague();
-  const rivalries = buildRivalries(getManagers(), league.championships, getAllSeasons(), getAllMatchups());
+  const rivalries = buildRivalries(
+    getManagers(),
+    league.championships,
+    getAllSeasons(),
+    getAllMatchups(),
+    league.currentSeason,
+  );
   return (
     <PageShell>
       <SectionHeader
         eyebrow="Managers"
         title="Rivalries"
-        lede="Recommended rivalries from championship meetings, playoff knockouts, lopsided series, and the closest career records."
+        lede={`Every ${league.currentSeason} manager has a suggested rival from this year's roster, based on championship meetings, playoff knockouts, lopsided series, and the closest career records.`}
       />
       <div className="grid gap-6">
         {rivalries.map((rivalry) => (
           <article key={rivalry.id} className="border border-rule p-6">
-            <p className="text-[11px] uppercase tracking-[0.18em] text-gold-muted">{rivalry.games} games</p>
+            <p className="text-[11px] uppercase tracking-[0.18em] text-gold-muted">Suggested rival · {rivalry.games} games</p>
             <h2 className="mt-1 font-serif text-3xl text-forest">
               <Link href={`/managers/${rivalry.left.id}`} className="hover:text-gold-muted">
                 {rivalry.left.name}

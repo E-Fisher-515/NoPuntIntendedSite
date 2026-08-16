@@ -13,7 +13,7 @@ export function RulesClient({ initial }: { initial: Editorial }) {
       <SectionHeader
         eyebrow="League"
         title="Constitution"
-        lede="The house rules for No Punt Intended. To propose a change, contact the commissioner."
+        lede="House rules for No Punt Intended, including the 2026 draft, scoring, roster, and lottery changes. To propose a change, contact the commissioner."
       />
       <ConstitutionBody text={editorial.constitution} />
     </PageShell>

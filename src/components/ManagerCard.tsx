@@ -2,15 +2,18 @@ import Link from "next/link";
 import type { Manager } from "@/lib/types";
 import { pct, recordLine } from "@/lib/format";
 import { currentTeamName, seasonSpan } from "@/lib/lookups";
+import type { Rivalry } from "@/lib/rivalries";
 
 export function ManagerCard({
   manager,
   currentSeason,
   alumni = false,
+  rival,
 }: {
   manager: Manager;
   currentSeason?: number;
   alumni?: boolean;
+  rival?: Rivalry;
 }) {
   const team =
     currentSeason != null ? currentTeamName(manager, currentSeason) : manager.seasons.at(-1)?.teamName;
@@ -45,6 +48,11 @@ export function ManagerCard({
           <dd>{manager.averageFinish ?? "—"}</dd>
         </div>
       </dl>
+      {rival ? (
+        <p className="mt-4 text-sm text-ink/70">
+          Suggested rival: <span className="text-forest">{rival.right.name}</span>
+        </p>
+      ) : null}
     </Link>
   );
 }
