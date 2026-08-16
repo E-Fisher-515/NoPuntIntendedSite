@@ -1,0 +1,1062 @@
+{
+  "scoring": {
+    "mostPointsSeason": [
+      {
+        "year": 2025,
+        "teamId": 1,
+        "teamName": "Home Improvement",
+        "abbrev": "JTT",
+        "logoUrl": "https://g.espncdn.com/lm-static/logo-packs/ffl/Talent-ChipWass/talent-yates_2.svg",
+        "ownerId": "7001b1f9-65a1-4cc3-81b1-f965a12cc356",
+        "ownerName": "Brenden",
+        "wins": 12,
+        "losses": 2,
+        "ties": 0,
+        "pointsFor": 2032.42,
+        "pointsAgainst": 1520.43,
+        "standing": 1,
+        "finalStanding": 4,
+        "playoffPct": 0.0,
+        "trades": 0,
+        "acquisitions": 21,
+        "drops": 22,
+        "division": "MidWest"
+      },
+      {
+        "year": 2021,
+        "teamId": 12,
+        "teamName": "new year new me",
+        "abbrev": "STAR",
+        "logoUrl": "https://g.espncdn.com/lm-static/logo-packs/core/StarsAndFlames/stars_flames-12.svg",
+        "ownerId": "6d011778-180a-447b-9ca3-012936e0fcef",
+        "ownerName": "Jared",
+        "wins": 13,
+        "losses": 1,
+        "ties": 0,
+        "pointsFor": 2012.64,
+        "pointsAgainst": 1533.18,
+        "standing": 1,
+        "finalStanding": 2,
+        "playoffPct": 0.0,
+        "trades": 0,
+        "acquisitions": 19,
+        "drops": 19,
+        "division": "West"
+      },
+      {
+        "year": 2018,
+        "teamId": 9,
+        "teamName": "Bortle-Line Retarded",
+        "abbrev": "CHAZ",
+        "logoUrl": "",
+        "ownerId": "7407050f-8994-489c-bdab-99c4f96ad05a",
+        "ownerName": "chaz",
+        "wins": 11,
+        "losses": 3,
+        "ties": 0,
+        "pointsFor": 1916.98,
+        "pointsAgainst": 1599.88,
+        "standing": 1,
+        "finalStanding": 5,
+        "playoffPct": 0.0,
+        "trades": 3,
+        "acquisitions": 30,
+        "drops": 29,
+        "division": "West"
+      },
+      {
+        "year": 2019,
+        "teamId": 19,
+        "teamName": "I'm just filling in",
+        "abbrev": "TIER",
+        "logoUrl": "https://g.espncdn.com/lm-static/logo-packs/ffl/SmackTalk-LeoEspinosa/u_mad_bro-09.svg",
+        "ownerId": "8515684e-7a4d-4aaf-9568-4e7a4dcaaff3",
+        "ownerName": "Nick",
+        "wins": 12,
+        "losses": 2,
+        "ties": 0,
+        "pointsFor": 1902.9,
+        "pointsAgainst": 1491.8,
+        "standing": 1,
+        "finalStanding": 4,
+        "playoffPct": 0.0,
+        "trades": 1,
+        "acquisitions": 15,
+        "drops": 15,
+        "division": "West"
+      },
+      {
+        "year": 2025,
+        "teamId": 6,
+        "teamName": "Just Josh",
+        "abbrev": "JMH",
+        "logoUrl": "https://mystique-api.fantasy.espn.com/apis/v1/domains/lm/images/4abf6380-a075-11f0-90f7-112fa0f42e74",
+        "ownerId": "096ba945-afc2-4e5f-aba9-45afc2fe5f89",
+        "ownerName": "Jacob",
+        "wins": 7,
+        "losses": 7,
+        "ties": 0,
+        "pointsFor": 1881.08,
+        "pointsAgainst": 1713.44,
+        "standing": 5,
+        "finalStanding": 7,
+        "playoffPct": 0.0,
+        "trades": 4,
+        "acquisitions": 13,
+        "drops": 13,
+        "division": "MidWest"
+      }
+    ],
+    "mostPointsWeek": [
+      {
+        "year": 2021,
+        "week": 5,
+        "teamName": "Sutton My Chubb",
+        "ownerName": "andrew",
+        "ownerId": "42618749-4674-4b0b-a187-4946747b0b51",
+        "points": 210.6,
+        "opponentName": "401k- Investments",
+        "opponentPoints": 129.86
+      },
+      {
+        "year": 2025,
+        "week": 16,
+        "teamName": "Team Lehman",
+        "ownerName": "Dillon",
+        "ownerId": "f0778442-346f-483c-863b-b747e000a428",
+        "points": 209.7,
+        "opponentName": "Just Josh",
+        "opponentPoints": 119.26
+      },
+      {
+        "year": 2019,
+        "week": 9,
+        "teamName": "new year new me",
+        "ownerName": "Jared",
+        "ownerId": "6d011778-180a-447b-9ca3-012936e0fcef",
+        "points": 199.92,
+        "opponentName": "Country roads, Take Mahomes ",
+        "opponentPoints": 98.64
+      },
+      {
+        "year": 2020,
+        "week": 2,
+        "teamName": "We Young  \ud83d\ude33",
+        "ownerName": "Kodi",
+        "ownerId": "437742f0-e2a6-4492-b742-f0e2a6c49263",
+        "points": 197.9,
+        "opponentName": "RUN CMC",
+        "opponentPoints": 148.68
+      },
+      {
+        "year": 2025,
+        "week": 10,
+        "teamName": "Just Josh",
+        "ownerName": "Jacob",
+        "ownerId": "096ba945-afc2-4e5f-aba9-45afc2fe5f89",
+        "points": 197.37,
+        "opponentName": "Alaina's Team",
+        "opponentPoints": 132.67
+      }
+    ],
+    "lowestPointsWeek": [
+      {
+        "year": 2025,
+        "week": 14,
+        "teamName": "Dsm Tittsburgh ",
+        "ownerName": "Marc",
+        "ownerId": "66d9a2b1-295f-4994-99a2-b1295f3994c2",
+        "points": 47.3,
+        "opponentName": "Home Improvement",
+        "opponentPoints": 155.69
+      },
+      {
+        "year": 2018,
+        "week": 17,
+        "teamName": "Team Lee",
+        "ownerName": "Kasi",
+        "ownerId": "cb72fd7b-5e5d-478b-9165-9ee9838b119e",
+        "points": 48.24,
+        "opponentName": "SeaThem LynchThem",
+        "opponentPoints": 92.02
+      },
+      {
+        "year": 2018,
+        "week": 17,
+        "teamName": "Team Colwell",
+        "ownerName": "iowahawkeyes10@icloud.com",
+        "ownerId": "9543a833-9725-43cd-9b3f-e25d1906d097",
+        "points": 48.74,
+        "opponentName": "Selling Wins 10$",
+        "opponentPoints": 105.34
+      },
+      {
+        "year": 2019,
+        "week": 7,
+        "teamName": "Finally Got My Team Back!",
+        "ownerName": "Robert",
+        "ownerId": "4601a707-1ca5-4416-9e3c-9f282205bc36",
+        "points": 50.46,
+        "opponentName": "Silver Bullet",
+        "opponentPoints": 112.38
+      },
+      {
+        "year": 2023,
+        "week": 5,
+        "teamName": "Simp Henry",
+        "ownerName": "Ace",
+        "ownerId": "b4073cf5-bc88-4785-873c-f5bc88c785e6",
+        "points": 53.82,
+        "opponentName": "Purple PPR Eaters",
+        "opponentPoints": 81.08
+      }
+    ],
+    "mostCareerPoints": [
+      {
+        "ownerId": "437742f0-e2a6-4492-b742-f0e2a6c49263",
+        "ownerName": "Kodi",
+        "pointsFor": 14338.45
+      },
+      {
+        "ownerId": "7407050f-8994-489c-bdab-99c4f96ad05a",
+        "ownerName": "chaz",
+        "pointsFor": 13527.12
+      },
+      {
+        "ownerId": "7001b1f9-65a1-4cc3-81b1-f965a12cc356",
+        "ownerName": "Brenden",
+        "pointsFor": 13331.54
+      },
+      {
+        "ownerId": "cc7c35aa-669c-4730-a0b5-9b9e6837e8fc",
+        "ownerName": "Zakk",
+        "pointsFor": 12746.32
+      },
+      {
+        "ownerId": "f0778442-346f-483c-863b-b747e000a428",
+        "ownerName": "Dillon",
+        "pointsFor": 12591.13
+      }
+    ],
+    "highestAveragePoints": [
+      {
+        "ownerId": "9dd74b55-4a1a-4e39-974b-554a1a7e39d1",
+        "ownerName": "Cole",
+        "avg": 1831.22
+      },
+      {
+        "ownerId": "437742f0-e2a6-4492-b742-f0e2a6c49263",
+        "ownerName": "Kodi",
+        "avg": 1792.31
+      },
+      {
+        "ownerId": "8515684e-7a4d-4aaf-9568-4e7a4dcaaff3",
+        "ownerName": "Nick",
+        "avg": 1693.16
+      },
+      {
+        "ownerId": "7407050f-8994-489c-bdab-99c4f96ad05a",
+        "ownerName": "chaz",
+        "avg": 1690.89
+      },
+      {
+        "ownerId": "9543a833-9725-43cd-9b3f-e25d1906d097",
+        "ownerName": "iowahawkeyes10@icloud.com",
+        "avg": 1667.88
+      }
+    ]
+  },
+  "records": {
+    "mostWins": [
+      {
+        "ownerId": "437742f0-e2a6-4492-b742-f0e2a6c49263",
+        "ownerName": "Kodi",
+        "wins": 70,
+        "losses": 40
+      },
+      {
+        "ownerId": "7407050f-8994-489c-bdab-99c4f96ad05a",
+        "ownerName": "chaz",
+        "wins": 64,
+        "losses": 46
+      },
+      {
+        "ownerId": "7001b1f9-65a1-4cc3-81b1-f965a12cc356",
+        "ownerName": "Brenden",
+        "wins": 61,
+        "losses": 49
+      },
+      {
+        "ownerId": "409f57ce-50f2-41f5-9f57-ce50f201f53b",
+        "ownerName": "Erik",
+        "wins": 57,
+        "losses": 39
+      },
+      {
+        "ownerId": "8515684e-7a4d-4aaf-9568-4e7a4dcaaff3",
+        "ownerName": "Nick",
+        "wins": 52,
+        "losses": 44
+      }
+    ],
+    "mostLosses": [
+      {
+        "ownerId": "cc7c35aa-669c-4730-a0b5-9b9e6837e8fc",
+        "ownerName": "Zakk",
+        "losses": 61,
+        "wins": 49
+      },
+      {
+        "ownerId": "f0778442-346f-483c-863b-b747e000a428",
+        "ownerName": "Dillon",
+        "losses": 60,
+        "wins": 50
+      },
+      {
+        "ownerId": "66d9a2b1-295f-4994-99a2-b1295f3994c2",
+        "ownerName": "Marc",
+        "losses": 60,
+        "wins": 36
+      },
+      {
+        "ownerId": "60816921-5c37-4b08-8e26-3f1c500485da",
+        "ownerName": "Trent",
+        "losses": 54,
+        "wins": 42
+      },
+      {
+        "ownerId": "b4073cf5-bc88-4785-873c-f5bc88c785e6",
+        "ownerName": "Ace",
+        "losses": 53,
+        "wins": 43
+      }
+    ],
+    "bestRegularSeason": [
+      {
+        "year": 2021,
+        "teamId": 12,
+        "teamName": "new year new me",
+        "abbrev": "STAR",
+        "logoUrl": "https://g.espncdn.com/lm-static/logo-packs/core/StarsAndFlames/stars_flames-12.svg",
+        "ownerId": "6d011778-180a-447b-9ca3-012936e0fcef",
+        "ownerName": "Jared",
+        "wins": 13,
+        "losses": 1,
+        "ties": 0,
+        "pointsFor": 2012.64,
+        "pointsAgainst": 1533.18,
+        "standing": 1,
+        "finalStanding": 2,
+        "playoffPct": 0.0,
+        "trades": 0,
+        "acquisitions": 19,
+        "drops": 19,
+        "division": "West"
+      },
+      {
+        "year": 2019,
+        "teamId": 19,
+        "teamName": "I'm just filling in",
+        "abbrev": "TIER",
+        "logoUrl": "https://g.espncdn.com/lm-static/logo-packs/ffl/SmackTalk-LeoEspinosa/u_mad_bro-09.svg",
+        "ownerId": "8515684e-7a4d-4aaf-9568-4e7a4dcaaff3",
+        "ownerName": "Nick",
+        "wins": 12,
+        "losses": 2,
+        "ties": 0,
+        "pointsFor": 1902.9,
+        "pointsAgainst": 1491.8,
+        "standing": 1,
+        "finalStanding": 4,
+        "playoffPct": 0.0,
+        "trades": 1,
+        "acquisitions": 15,
+        "drops": 15,
+        "division": "West"
+      },
+      {
+        "year": 2022,
+        "teamId": 9,
+        "teamName": "Silver Bullet",
+        "abbrev": "CHAZ",
+        "logoUrl": "https://g.espncdn.com/lm-static/ffl/images/default_logos/20.svg",
+        "ownerId": "7407050f-8994-489c-bdab-99c4f96ad05a",
+        "ownerName": "chaz",
+        "wins": 12,
+        "losses": 2,
+        "ties": 0,
+        "pointsFor": 1769.34,
+        "pointsAgainst": 1468.32,
+        "standing": 1,
+        "finalStanding": 2,
+        "playoffPct": 0.0,
+        "trades": 0,
+        "acquisitions": 22,
+        "drops": 22,
+        "division": "West"
+      },
+      {
+        "year": 2023,
+        "teamId": 3,
+        "teamName": " Stealing Your Kicker",
+        "abbrev": "KMB",
+        "logoUrl": "https://cdn.vox-cdn.com/thumbor/RKWM__k62xOrxCBPJe8Te2HSm2A=/1400x1050/filters:format(jpeg)/cdn.vox-cdn.com/uploads/chorus_asset/file/22241086/usa_today_15444360.jpg",
+        "ownerId": "437742f0-e2a6-4492-b742-f0e2a6c49263",
+        "ownerName": "Kodi",
+        "wins": 12,
+        "losses": 2,
+        "ties": 0,
+        "pointsFor": 1797.82,
+        "pointsAgainst": 1571.48,
+        "standing": 1,
+        "finalStanding": 5,
+        "playoffPct": 0.0,
+        "trades": 8,
+        "acquisitions": 34,
+        "drops": 31,
+        "division": "East"
+      },
+      {
+        "year": 2025,
+        "teamId": 1,
+        "teamName": "Home Improvement",
+        "abbrev": "JTT",
+        "logoUrl": "https://g.espncdn.com/lm-static/logo-packs/ffl/Talent-ChipWass/talent-yates_2.svg",
+        "ownerId": "7001b1f9-65a1-4cc3-81b1-f965a12cc356",
+        "ownerName": "Brenden",
+        "wins": 12,
+        "losses": 2,
+        "ties": 0,
+        "pointsFor": 2032.42,
+        "pointsAgainst": 1520.43,
+        "standing": 1,
+        "finalStanding": 4,
+        "playoffPct": 0.0,
+        "trades": 0,
+        "acquisitions": 21,
+        "drops": 22,
+        "division": "MidWest"
+      }
+    ],
+    "worstRegularSeason": [
+      {
+        "year": 2022,
+        "teamId": 6,
+        "teamName": "Its not  Over",
+        "abbrev": "Over",
+        "logoUrl": "https://g.espncdn.com/lm-static/logo-packs/ffl/GridironWarriors-MartinLaksman/warriors-01.svg",
+        "ownerId": "096ba945-afc2-4e5f-aba9-45afc2fe5f89",
+        "ownerName": "Jacob",
+        "wins": 2,
+        "losses": 12,
+        "ties": 0,
+        "pointsFor": 1365.02,
+        "pointsAgainst": 1815.82,
+        "standing": 14,
+        "finalStanding": 14,
+        "playoffPct": 0.0,
+        "trades": 5,
+        "acquisitions": 28,
+        "drops": 27,
+        "division": "East"
+      },
+      {
+        "year": 2023,
+        "teamId": 15,
+        "teamName": "Double D's and TD's",
+        "abbrev": "GYAT",
+        "logoUrl": "https://images.onwardstate.com/uploads/2018/06/saquon-body-issue2.jpg",
+        "ownerId": "60816921-5c37-4b08-8e26-3f1c500485da",
+        "ownerName": "Trent",
+        "wins": 2,
+        "losses": 12,
+        "ties": 0,
+        "pointsFor": 1506.9,
+        "pointsAgainst": 1923.86,
+        "standing": 14,
+        "finalStanding": 13,
+        "playoffPct": 0.0,
+        "trades": 9,
+        "acquisitions": 29,
+        "drops": 29,
+        "division": "East"
+      },
+      {
+        "year": 2020,
+        "teamId": 17,
+        "teamName": "Dsm Tittsburgh ",
+        "abbrev": "TITt",
+        "logoUrl": "https://g.espncdn.com/lm-static/logo-packs/ffl/AtTheStadium-RobbHarskamp/At_The_Stadium_01.svg",
+        "ownerId": "66d9a2b1-295f-4994-99a2-b1295f3994c2",
+        "ownerName": "Marc",
+        "wins": 2,
+        "losses": 10,
+        "ties": 0,
+        "pointsFor": 1138.98,
+        "pointsAgainst": 1323.44,
+        "standing": 14,
+        "finalStanding": 14,
+        "playoffPct": 0.0,
+        "trades": 0,
+        "acquisitions": 7,
+        "drops": 6,
+        "division": "East"
+      },
+      {
+        "year": 2018,
+        "teamId": 12,
+        "teamName": "three's a crowd",
+        "abbrev": "STAR",
+        "logoUrl": "",
+        "ownerId": "6d011778-180a-447b-9ca3-012936e0fcef",
+        "ownerName": "Jared",
+        "wins": 3,
+        "losses": 11,
+        "ties": 0,
+        "pointsFor": 1488.12,
+        "pointsAgainst": 1687.84,
+        "standing": 14,
+        "finalStanding": 10,
+        "playoffPct": 0.0,
+        "trades": 0,
+        "acquisitions": 21,
+        "drops": 21,
+        "division": "West"
+      },
+      {
+        "year": 2022,
+        "teamId": 10,
+        "teamName": "Purple PPR Eaters",
+        "abbrev": "PPE",
+        "logoUrl": "https://i.imgur.com/ZWIu9IU.png",
+        "ownerId": "cc7c35aa-669c-4730-a0b5-9b9e6837e8fc",
+        "ownerName": "Zakk",
+        "wins": 3,
+        "losses": 11,
+        "ties": 0,
+        "pointsFor": 1622.4,
+        "pointsAgainst": 1675.5,
+        "standing": 13,
+        "finalStanding": 11,
+        "playoffPct": 0.0,
+        "trades": 3,
+        "acquisitions": 12,
+        "drops": 13,
+        "division": "East"
+      }
+    ],
+    "longestWinStreak": [
+      {
+        "ownerId": "6d011778-180a-447b-9ca3-012936e0fcef",
+        "ownerName": "Jared",
+        "streak": 12
+      },
+      {
+        "ownerId": "8515684e-7a4d-4aaf-9568-4e7a4dcaaff3",
+        "ownerName": "Nick",
+        "streak": 10
+      },
+      {
+        "ownerId": "437742f0-e2a6-4492-b742-f0e2a6c49263",
+        "ownerName": "Kodi",
+        "streak": 9
+      },
+      {
+        "ownerId": "409f57ce-50f2-41f5-9f57-ce50f201f53b",
+        "ownerName": "Erik",
+        "streak": 9
+      },
+      {
+        "ownerId": "7001b1f9-65a1-4cc3-81b1-f965a12cc356",
+        "ownerName": "Brenden",
+        "streak": 9
+      }
+    ],
+    "longestLosingStreak": [
+      {
+        "ownerId": "60816921-5c37-4b08-8e26-3f1c500485da",
+        "ownerName": "Trent",
+        "streak": 11
+      },
+      {
+        "ownerId": "cc7c35aa-669c-4730-a0b5-9b9e6837e8fc",
+        "ownerName": "Zakk",
+        "streak": 8
+      },
+      {
+        "ownerId": "b4073cf5-bc88-4785-873c-f5bc88c785e6",
+        "ownerName": "Ace",
+        "streak": 8
+      },
+      {
+        "ownerId": "66d9a2b1-295f-4994-99a2-b1295f3994c2",
+        "ownerName": "Marc",
+        "streak": 8
+      },
+      {
+        "ownerId": "0c91d8fc-d29d-4f25-9d53-04e3e50afeda",
+        "ownerName": "Alaina",
+        "streak": 8
+      }
+    ]
+  },
+  "matchups": {
+    "biggestBlowout": [
+      {
+        "year": 2021,
+        "week": 17,
+        "isPlayoff": true,
+        "matchupType": "LOSERS_CONSOLATION_LADDER",
+        "homeTeamId": 2,
+        "awayTeamId": 10,
+        "homeTeamName": "Team Lehman",
+        "awayTeamName": "Boston  Clam Chowda",
+        "homeScore": 63.4,
+        "awayScore": 191.08,
+        "combined": 254.48,
+        "margin": 127.68,
+        "winner": "away"
+      },
+      {
+        "year": 2022,
+        "week": 9,
+        "isPlayoff": false,
+        "matchupType": "NONE",
+        "homeTeamId": 1,
+        "awayTeamId": 3,
+        "homeTeamName": "Chase'n Gould",
+        "awayTeamName": "Joe 4 The Win!",
+        "homeScore": 71.92,
+        "awayScore": 185.74,
+        "combined": 257.66,
+        "margin": 113.82,
+        "winner": "away"
+      },
+      {
+        "year": 2024,
+        "week": 5,
+        "isPlayoff": false,
+        "matchupType": "NONE",
+        "homeTeamId": 6,
+        "awayTeamId": 10,
+        "homeTeamName": "Stroud to be here",
+        "awayTeamName": "Boston Clam Chowda",
+        "homeScore": 80.64,
+        "awayScore": 189.68,
+        "combined": 270.32,
+        "margin": 109.04,
+        "winner": "away"
+      },
+      {
+        "year": 2025,
+        "week": 14,
+        "isPlayoff": false,
+        "matchupType": "NONE",
+        "homeTeamId": 1,
+        "awayTeamId": 17,
+        "homeTeamName": "Home Improvement",
+        "awayTeamName": "Dsm Tittsburgh ",
+        "homeScore": 155.69,
+        "awayScore": 47.3,
+        "combined": 202.99,
+        "margin": 108.39,
+        "winner": "home"
+      },
+      {
+        "year": 2020,
+        "week": 4,
+        "isPlayoff": false,
+        "matchupType": "NONE",
+        "homeTeamId": 9,
+        "awayTeamId": 19,
+        "homeTeamName": "Silver Bullet",
+        "awayTeamName": "Dee jay Chark Doo Doo Doo Doo",
+        "homeScore": 92.1,
+        "awayScore": 194.58,
+        "combined": 286.68,
+        "margin": 102.48,
+        "winner": "away"
+      }
+    ],
+    "closestMatchup": [
+      {
+        "year": 2020,
+        "week": 10,
+        "isPlayoff": false,
+        "matchupType": "NONE",
+        "homeTeamId": 4,
+        "awayTeamId": 8,
+        "homeTeamName": "Minshew  Mania",
+        "awayTeamName": "Boston Brees an A Younghoe",
+        "homeScore": 60.88,
+        "awayScore": 60.84,
+        "combined": 121.72,
+        "margin": 0.04,
+        "winner": "home"
+      },
+      {
+        "year": 2024,
+        "week": 1,
+        "isPlayoff": false,
+        "matchupType": "NONE",
+        "homeTeamId": 3,
+        "awayTeamId": 12,
+        "homeTeamName": "Brenden's Team",
+        "awayTeamName": "Boomstick",
+        "homeScore": 108.04,
+        "awayScore": 108.0,
+        "combined": 216.04,
+        "margin": 0.04,
+        "winner": "home"
+      },
+      {
+        "year": 2022,
+        "week": 12,
+        "isPlayoff": false,
+        "matchupType": "NONE",
+        "homeTeamId": 2,
+        "awayTeamId": 17,
+        "homeTeamName": "Team Lehman",
+        "awayTeamName": "Dsm Tittsburgh ",
+        "homeScore": 93.3,
+        "awayScore": 93.36,
+        "combined": 186.66,
+        "margin": 0.06,
+        "winner": "away"
+      },
+      {
+        "year": 2023,
+        "week": 14,
+        "isPlayoff": false,
+        "matchupType": "NONE",
+        "homeTeamId": 4,
+        "awayTeamId": 17,
+        "homeTeamName": "Simp Henry",
+        "awayTeamName": "Dsm Tittsburgh ",
+        "homeScore": 122.0,
+        "awayScore": 121.94,
+        "combined": 243.94,
+        "margin": 0.06,
+        "winner": "home"
+      },
+      {
+        "year": 2019,
+        "week": 14,
+        "isPlayoff": false,
+        "matchupType": "NONE",
+        "homeTeamId": 6,
+        "awayTeamId": 10,
+        "homeTeamName": "You Belichick Yo Self",
+        "awayTeamName": "Boston  Clam Chowda",
+        "homeScore": 119.26,
+        "awayScore": 119.18,
+        "combined": 238.44,
+        "margin": 0.08,
+        "winner": "home"
+      }
+    ],
+    "highestCombined": [
+      {
+        "year": 2019,
+        "week": 15,
+        "isPlayoff": true,
+        "matchupType": "LOSERS_CONSOLATION_LADDER",
+        "homeTeamId": 1,
+        "awayTeamId": 10,
+        "homeTeamName": "Late Season PUSH",
+        "awayTeamName": "Boston  Clam Chowda",
+        "homeScore": 186.04,
+        "awayScore": 161.48,
+        "combined": 347.52,
+        "margin": 24.56,
+        "winner": "home"
+      },
+      {
+        "year": 2020,
+        "week": 2,
+        "isPlayoff": false,
+        "matchupType": "NONE",
+        "homeTeamId": 3,
+        "awayTeamId": 18,
+        "homeTeamName": "We Young  \ud83d\ude33",
+        "awayTeamName": "RUN CMC",
+        "homeScore": 197.9,
+        "awayScore": 148.68,
+        "combined": 346.58,
+        "margin": 49.22,
+        "winner": "home"
+      },
+      {
+        "year": 2025,
+        "week": 16,
+        "isPlayoff": true,
+        "matchupType": "LOSERS_CONSOLATION_LADDER",
+        "homeTeamId": 4,
+        "awayTeamId": 19,
+        "homeTeamName": "Maye I Digg In Yo Boutte?",
+        "awayTeamName": "Nacua Matata",
+        "homeScore": 154.35,
+        "awayScore": 186.18,
+        "combined": 340.53,
+        "margin": 31.83,
+        "winner": "away"
+      },
+      {
+        "year": 2021,
+        "week": 5,
+        "isPlayoff": false,
+        "matchupType": "NONE",
+        "homeTeamId": 3,
+        "awayTeamId": 18,
+        "homeTeamName": "401k- Investments",
+        "awayTeamName": "Sutton My Chubb",
+        "homeScore": 129.86,
+        "awayScore": 210.6,
+        "combined": 340.46,
+        "margin": 80.74,
+        "winner": "away"
+      },
+      {
+        "year": 2025,
+        "week": 4,
+        "isPlayoff": false,
+        "matchupType": "NONE",
+        "homeTeamId": 3,
+        "awayTeamId": 8,
+        "homeTeamName": "Alaina's Team",
+        "awayTeamName": "Trophy Wife",
+        "homeScore": 191.05,
+        "awayScore": 146.09,
+        "combined": 337.14,
+        "margin": 44.96,
+        "winner": "home"
+      }
+    ],
+    "lowestCombined": [
+      {
+        "year": 2020,
+        "week": 10,
+        "isPlayoff": false,
+        "matchupType": "NONE",
+        "homeTeamId": 4,
+        "awayTeamId": 8,
+        "homeTeamName": "Minshew  Mania",
+        "awayTeamName": "Boston Brees an A Younghoe",
+        "homeScore": 60.88,
+        "awayScore": 60.84,
+        "combined": 121.72,
+        "margin": 0.04,
+        "winner": "home"
+      },
+      {
+        "year": 2023,
+        "week": 5,
+        "isPlayoff": false,
+        "matchupType": "NONE",
+        "homeTeamId": 4,
+        "awayTeamId": 10,
+        "homeTeamName": "Simp Henry",
+        "awayTeamName": "Purple PPR Eaters",
+        "homeScore": 53.82,
+        "awayScore": 81.08,
+        "combined": 134.9,
+        "margin": 27.26,
+        "winner": "away"
+      },
+      {
+        "year": 2020,
+        "week": 8,
+        "isPlayoff": false,
+        "matchupType": "NONE",
+        "homeTeamId": 3,
+        "awayTeamId": 9,
+        "homeTeamName": "We Young  \ud83d\ude33",
+        "awayTeamName": "Silver Bullet",
+        "homeScore": 59.46,
+        "awayScore": 78.5,
+        "combined": 137.96,
+        "margin": 19.04,
+        "winner": "away"
+      },
+      {
+        "year": 2018,
+        "week": 17,
+        "isPlayoff": true,
+        "matchupType": "WINNERS_CONSOLATION_LADDER",
+        "homeTeamId": 11,
+        "awayTeamId": 14,
+        "homeTeamName": "Team Lee",
+        "awayTeamName": "SeaThem LynchThem",
+        "homeScore": 48.24,
+        "awayScore": 92.02,
+        "combined": 140.26,
+        "margin": 43.78,
+        "winner": "away"
+      },
+      {
+        "year": 2020,
+        "week": 15,
+        "isPlayoff": true,
+        "matchupType": "LOSERS_CONSOLATION_LADDER",
+        "homeTeamId": 8,
+        "awayTeamId": 17,
+        "homeTeamName": "Boston Brees an A Younghoe",
+        "awayTeamName": "Dsm Tittsburgh ",
+        "homeScore": 87.9,
+        "awayScore": 55.3,
+        "combined": 143.2,
+        "margin": 32.6,
+        "winner": "home"
+      }
+    ]
+  },
+  "playoffs": {
+    "mostChampionships": [
+      {
+        "ownerId": "437742f0-e2a6-4492-b742-f0e2a6c49263",
+        "ownerName": "Kodi",
+        "championships": 5
+      },
+      {
+        "ownerId": "7407050f-8994-489c-bdab-99c4f96ad05a",
+        "ownerName": "chaz",
+        "championships": 1
+      },
+      {
+        "ownerId": "3ac69504-ba45-4937-8695-04ba45e93721",
+        "ownerName": "derek",
+        "championships": 1
+      },
+      {
+        "ownerId": "cc7c35aa-669c-4730-a0b5-9b9e6837e8fc",
+        "ownerName": "Zakk",
+        "championships": 1
+      }
+    ],
+    "mostPlayoffWins": [
+      {
+        "ownerId": "437742f0-e2a6-4492-b742-f0e2a6c49263",
+        "ownerName": "Kodi",
+        "wins": 19,
+        "games": 24,
+        "winPct": 0.792,
+        "championships": 5,
+        "appearances": 8
+      },
+      {
+        "ownerId": "7407050f-8994-489c-bdab-99c4f96ad05a",
+        "ownerName": "chaz",
+        "wins": 15,
+        "games": 24,
+        "winPct": 0.625,
+        "championships": 1,
+        "appearances": 5
+      },
+      {
+        "ownerId": "7001b1f9-65a1-4cc3-81b1-f965a12cc356",
+        "ownerName": "Brenden",
+        "wins": 13,
+        "games": 22,
+        "winPct": 0.591,
+        "championships": 0,
+        "appearances": 6
+      },
+      {
+        "ownerId": "cc7c35aa-669c-4730-a0b5-9b9e6837e8fc",
+        "ownerName": "Zakk",
+        "wins": 13,
+        "games": 23,
+        "winPct": 0.565,
+        "championships": 1,
+        "appearances": 4
+      },
+      {
+        "ownerId": "8515684e-7a4d-4aaf-9568-4e7a4dcaaff3",
+        "ownerName": "Nick",
+        "wins": 12,
+        "games": 21,
+        "winPct": 0.571,
+        "championships": 0,
+        "appearances": 3
+      }
+    ],
+    "mostPlayoffAppearances": [
+      {
+        "ownerId": "437742f0-e2a6-4492-b742-f0e2a6c49263",
+        "ownerName": "Kodi",
+        "appearances": 8
+      },
+      {
+        "ownerId": "409f57ce-50f2-41f5-9f57-ce50f201f53b",
+        "ownerName": "Erik",
+        "appearances": 6
+      },
+      {
+        "ownerId": "7001b1f9-65a1-4cc3-81b1-f965a12cc356",
+        "ownerName": "Brenden",
+        "appearances": 6
+      },
+      {
+        "ownerId": "7407050f-8994-489c-bdab-99c4f96ad05a",
+        "ownerName": "chaz",
+        "appearances": 5
+      },
+      {
+        "ownerId": "cc7c35aa-669c-4730-a0b5-9b9e6837e8fc",
+        "ownerName": "Zakk",
+        "appearances": 4
+      }
+    ],
+    "bestPlayoffWinPct": [
+      {
+        "ownerId": "3ac69504-ba45-4937-8695-04ba45e93721",
+        "ownerName": "derek",
+        "wins": 9,
+        "games": 9,
+        "winPct": 1.0,
+        "championships": 1,
+        "appearances": 1
+      },
+      {
+        "ownerId": "437742f0-e2a6-4492-b742-f0e2a6c49263",
+        "ownerName": "Kodi",
+        "wins": 19,
+        "games": 24,
+        "winPct": 0.792,
+        "championships": 5,
+        "appearances": 8
+      },
+      {
+        "ownerId": "42618749-4674-4b0b-a187-4946747b0b51",
+        "ownerName": "andrew",
+        "wins": 6,
+        "games": 9,
+        "winPct": 0.667,
+        "championships": 0,
+        "appearances": 1
+      },
+      {
+        "ownerId": "9dd74b55-4a1a-4e39-974b-554a1a7e39d1",
+        "ownerName": "Cole",
+        "wins": 2,
+        "games": 3,
+        "winPct": 0.667,
+        "championships": 0,
+        "appearances": 1
+      },
+      {
+        "ownerId": "7407050f-8994-489c-bdab-99c4f96ad05a",
+        "ownerName": "chaz",
+        "wins": 15,
+        "games": 24,
+        "winPct": 0.625,
+        "championships": 1,
+        "appearances": 5
+      }
+    ]
+  },
+  "draft": {
+    "note": "Draft pick value (steal/bust) needs full player season points and is not computed yet.",
+    "picksTracked": 1792
+  }
+}
