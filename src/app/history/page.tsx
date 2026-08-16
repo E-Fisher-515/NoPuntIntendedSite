@@ -1,7 +1,7 @@
+import { HistoryClient } from "@/components/HistoryClient";
 import { PageShell } from "@/components/PageShell";
 import { SectionHeader } from "@/components/SectionHeader";
-import { Timeline } from "@/components/Timeline";
-import { archiveReady, getTimeline } from "@/lib/archive";
+import { archiveReady, getEditorialFile, getEspnTimeline } from "@/lib/archive";
 
 export default function HistoryPage() {
   if (!archiveReady()) {
@@ -11,15 +11,5 @@ export default function HistoryPage() {
       </PageShell>
     );
   }
-  const events = getTimeline();
-  return (
-    <PageShell>
-      <SectionHeader
-        eyebrow="League history"
-        title="The timeline"
-        lede="Championships and founding dates come from ESPN. Editorial events can be added in content/timeline.json."
-      />
-      <Timeline events={events} />
-    </PageShell>
-  );
+  return <HistoryClient espnEvents={getEspnTimeline()} initial={getEditorialFile()} />;
 }

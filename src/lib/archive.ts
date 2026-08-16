@@ -1,7 +1,9 @@
 import { readFileSync, existsSync } from "fs";
 import { join } from "path";
+import { emptyEditorial, normalizeEditorial } from "./editorial";
 import type {
   Award,
+  Editorial,
   HofInductee,
   LeagueArchive,
   Manager,
@@ -46,13 +48,23 @@ export function getRecords(): Record<string, Record<string, unknown[] | Record<s
   return readJson(join(archiveDir, "records.json"));
 }
 
+export function getEditorialFile(): Editorial {
+  const path = join(process.cwd(), "public", "editorial.json");
+  if (!existsSync(path)) return emptyEditorial();
+  return normalizeEditorial(readJson(path));
+}
+
+export function getEspnAwards(): Award[] {
+  return existsSync(join(archiveDir, "awards.json")) ? readJson(join(archiveDir, "awards.json")) : [];
+}
+
 export function getAwards(): Award[] {
-  const generated: Award[] = existsSync(join(archiveDir, "awards.json"))
-    ? readJson(join(archiveDir, "awards.json"))
-    : [];
+  const generated = getEspnAwards();
   const customPath = join(contentDir, "awards.json");
   const custom: Award[] = existsSync(customPath) ? readJson(customPath) : [];
-  return [...generated, ...custom].sort((a, b) => b.year - a.year || a.name.localeCompare(b.name));
+  return [...generated, ...getEditorialFile().customAwards, ...custom].sort(
+    (a, b) => b.year - a.year || a.name.localeCompare(b.name),
+  );
 }
 
 export function getPredictions(): Predictions {
@@ -60,23 +72,29 @@ export function getPredictions(): Predictions {
 }
 
 export function getHallOfFame(): HofInductee[] {
+  const fromEditorial = getEditorialFile().hallOfFame;
+  if (fromEditorial.length) return fromEditorial;
   const path = join(contentDir, "hall-of-fame.json");
   return existsSync(path) ? readJson(path) : [];
 }
 
 export function getEditorialTimeline(): TimelineEvent[] {
+  const fromEditorial = getEditorialFile().timeline;
+  if (fromEditorial.length) return fromEditorial;
   const path = join(contentDir, "timeline.json");
   return existsSync(path) ? readJson(path) : [];
 }
 
 export function getConstitution(): string {
+  const fromEditorial = getEditorialFile().constitution;
+  if (fromEditorial && fromEditorial !== emptyEditorial().constitution) return fromEditorial;
   const path = join(contentDir, "constitution.md");
-  return existsSync(path) ? readFileSync(path, "utf-8") : "Constitution has not been published yet.";
+  return existsSync(path) ? readFileSync(path, "utf-8") : fromEditorial;
 }
 
-export function getTimeline(): TimelineEvent[] {
+export function getEspnTimeline(): TimelineEvent[] {
   const league = getLeague();
-  const auto: TimelineEvent[] = [
+  return [
     {
       year: Math.min(...league.seasons),
       title: "League founded",
@@ -86,11 +104,14 @@ export function getTimeline(): TimelineEvent[] {
     ...league.championships.map((champ) => ({
       year: champ.year,
       title: `${champ.ownerName} wins the championship`,
-      body: `${champ.teamName} finishes ${champ.record}${
+      body: `${champ.ownerName} · ${champ.teamName} · ${champ.year} finishes ${champ.record}${
         champ.runnerUpName ? `, defeating ${champ.runnerUpName}` : ""
       }.`,
       source: "espn" as const,
     })),
   ];
-  return [...auto, ...getEditorialTimeline()].sort((a, b) => a.year - b.year);
+}
+
+export function getTimeline(): TimelineEvent[] {
+  return [...getEspnTimeline(), ...getEditorialTimeline()].sort((a, b) => a.year - b.year);
 }

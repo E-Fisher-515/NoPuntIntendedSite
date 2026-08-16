@@ -184,6 +184,7 @@ export type TimelineEvent = {
 
 export type HofInductee = {
   id: string;
+  managerId?: string;
   name: string;
   inductionYear: number;
   championships: number;
@@ -192,3 +193,30 @@ export type HofInductee = {
   description: string;
   moments: string[];
 };
+
+export type BannerSettings = {
+  enabled: boolean;
+  label: string;
+  target: string;
+  message: string;
+};
+
+export type Editorial = {
+  banner: BannerSettings;
+  constitution: string;
+  hallOfFame: HofInductee[];
+  rejectedHofIds: string[];
+  timeline: TimelineEvent[];
+  customAwards: Award[];
+};
+
+export type HofSuggestion = {
+  managerId: string;
+  name: string;
+  championships: number;
+  seasonsPlayed: number;
+  winPct: number;
+  careerRecord: string;
+  reasons: string[];
+};
+

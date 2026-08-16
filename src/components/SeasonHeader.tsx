@@ -1,5 +1,5 @@
 import type { SeasonArchive } from "@/lib/types";
-import { points, recordLine } from "@/lib/format";
+import { identity, points, recordLine } from "@/lib/format";
 
 export function SeasonHeader({ season }: { season: SeasonArchive }) {
   const headline = season.complete ? season.champion : season.currentLeader;
@@ -7,8 +7,9 @@ export function SeasonHeader({ season }: { season: SeasonArchive }) {
     <section className="border border-rule bg-forest px-6 py-8 text-cream">
       <p className="text-[11px] uppercase tracking-[0.28em] text-gold">{season.year} season</p>
       <h1 className="mt-2 font-serif text-5xl">{season.complete ? "Champion" : "League leader"}</h1>
-      <p className="mt-3 font-serif text-3xl text-gold">{headline?.ownerName ?? "TBD"}</p>
-      <p className="text-cream/70">{headline?.teamName}</p>
+      <p className="mt-3 font-serif text-3xl text-gold">
+        {headline ? identity(headline.ownerName, headline.teamName, season.year) : "TBD"}
+      </p>
       {headline ? (
         <dl className="mt-6 flex flex-wrap gap-8 text-sm">
           <div>

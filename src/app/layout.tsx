@@ -1,6 +1,9 @@
 import type { Metadata } from "next";
 import { Newsreader, Source_Sans_3 } from "next/font/google";
+import { SiteBanner } from "@/components/SiteBanner";
+import { SiteFooter } from "@/components/SiteFooter";
 import { SiteHeader } from "@/components/SiteHeader";
+import { getEditorialFile } from "@/lib/archive";
 import "./globals.css";
 
 const newsreader = Newsreader({
@@ -25,14 +28,14 @@ export const metadata: Metadata = {
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
+  const editorial = getEditorialFile();
   return (
     <html lang="en" className={`${newsreader.variable} ${sourceSans.variable} h-full antialiased`}>
       <body className="min-h-full bg-cream font-sans text-ink">
+        <SiteBanner initial={editorial} />
         <SiteHeader />
         <main className="flex-1">{children}</main>
-        <footer className="border-t border-rule px-4 py-6 text-center text-xs uppercase tracking-[0.18em] text-ink/50">
-          No Punt Intended · Official League Archive · Data from ESPN Fantasy
-        </footer>
+        <SiteFooter />
       </body>
     </html>
   );

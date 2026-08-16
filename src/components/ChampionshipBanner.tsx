@@ -23,12 +23,12 @@ export function ChampionshipBanner({ championships }: Props) {
           <Link
             key={champ.year}
             href={`/seasons/${champ.year}`}
-            className="min-w-[160px] shrink-0 border-r border-gold/20 px-5 py-4 text-cream transition-colors hover:bg-forest"
+            className="min-w-[180px] shrink-0 border-r border-gold/20 px-5 py-4 text-cream transition-colors hover:bg-forest"
           >
             <p className="font-sans text-[11px] uppercase tracking-[0.22em] text-gold">{champ.year}</p>
             <p className="mt-2 font-serif text-lg leading-tight">Champion</p>
             <p className="mt-1 text-sm text-cream/90">{champ.ownerName}</p>
-            <p className="text-xs text-cream/60">{champ.teamName}</p>
+            <p className="text-xs text-cream/60">{champ.teamName} · {champ.year}</p>
             <p className="mt-2 text-[11px] uppercase tracking-wider text-gold/80">{champ.record}</p>
           </Link>
         ))}

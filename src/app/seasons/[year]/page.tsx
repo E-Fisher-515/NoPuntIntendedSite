@@ -8,6 +8,8 @@ import { SectionHeader } from "@/components/SectionHeader";
 import { StandingsTable } from "@/components/StandingsTable";
 import { StatCard } from "@/components/StatCard";
 import { archiveReady, getLeague, getMatchups, getSeason } from "@/lib/archive";
+import { identity } from "@/lib/format";
+import { findSeasonTeam, teamIdentity } from "@/lib/lookups";
 
 export function generateStaticParams() {
   if (!archiveReady()) return [];
@@ -23,10 +25,18 @@ export default async function SeasonPage({ params }: { params: Promise<{ year: s
   const season = getSeason(year);
   const matchups = getMatchups(year);
   const notables = season.notables as {
-    highestScoringWeek?: { teamName: string; points: number; week: number };
-    lowestScoringWeek?: { teamName: string; points: number; week: number };
-    biggestBlowout?: { teamName: string; opponentName: string; margin: number; week: number };
-    closestMatchup?: { homeTeamName: string; awayTeamName: string; homeScore: number; awayScore: number; week: number };
+    highestScoringWeek?: { teamName: string; teamId?: number; points: number; week: number };
+    lowestScoringWeek?: { teamName: string; teamId?: number; points: number; week: number };
+    biggestBlowout?: { teamName: string; teamId?: number; opponentName: string; margin: number; week: number };
+    closestMatchup?: {
+      homeTeamName: string;
+      awayTeamName: string;
+      homeTeamId?: number;
+      awayTeamId?: number;
+      homeScore: number;
+      awayScore: number;
+      week: number;
+    };
   };
   const weeks = [...new Set(matchups.map((matchup) => matchup.week))].sort((a, b) => a - b);
 
@@ -36,25 +46,41 @@ export default async function SeasonPage({ params }: { params: Promise<{ year: s
       <SeasonSelector years={league.seasons} current={year} />
       <section className="mt-10">
         <SectionHeader title="Standings" />
-        <StandingsTable teams={season.teams} />
+        <StandingsTable teams={season.teams} year={year} />
       </section>
       <section className="mt-10 grid gap-4 md:grid-cols-2">
         <StatCard
           label="Highest scoring team (week)"
           value={notables.highestScoringWeek ? String(notables.highestScoringWeek.points) : "—"}
-          detail={notables.highestScoringWeek ? `${notables.highestScoringWeek.teamName} · Week ${notables.highestScoringWeek.week}` : undefined}
+          detail={
+            notables.highestScoringWeek
+              ? `${teamIdentity(season.teams, year, notables.highestScoringWeek)} · Week ${notables.highestScoringWeek.week}`
+              : undefined
+          }
         />
         <StatCard
           label="Lowest scoring team (week)"
           value={notables.lowestScoringWeek ? String(notables.lowestScoringWeek.points) : "—"}
-          detail={notables.lowestScoringWeek ? `${notables.lowestScoringWeek.teamName} · Week ${notables.lowestScoringWeek.week}` : undefined}
+          detail={
+            notables.lowestScoringWeek
+              ? `${teamIdentity(season.teams, year, notables.lowestScoringWeek)} · Week ${notables.lowestScoringWeek.week}`
+              : undefined
+          }
         />
         <StatCard
           label="Biggest blowout"
           value={notables.biggestBlowout ? String(notables.biggestBlowout.margin) : "—"}
           detail={
             notables.biggestBlowout
-              ? `Week ${notables.biggestBlowout.week}: ${notables.biggestBlowout.teamName} over ${notables.biggestBlowout.opponentName}`
+              ? `Week ${notables.biggestBlowout.week}: ${teamIdentity(season.teams, year, notables.biggestBlowout)} over ${
+                  findSeasonTeam(season.teams, undefined, notables.biggestBlowout.opponentName)
+                    ? identity(
+                        findSeasonTeam(season.teams, undefined, notables.biggestBlowout.opponentName)?.ownerName,
+                        notables.biggestBlowout.opponentName,
+                        year,
+                      )
+                    : notables.biggestBlowout.opponentName
+                }`
               : undefined
           }
         />
@@ -67,7 +93,15 @@ export default async function SeasonPage({ params }: { params: Promise<{ year: s
           }
           detail={
             notables.closestMatchup
-              ? `Week ${notables.closestMatchup.week}: ${notables.closestMatchup.homeTeamName} vs ${notables.closestMatchup.awayTeamName}`
+              ? `Week ${notables.closestMatchup.week}: ${identity(
+                  findSeasonTeam(season.teams, notables.closestMatchup.homeTeamId, notables.closestMatchup.homeTeamName)?.ownerName,
+                  notables.closestMatchup.homeTeamName,
+                  year,
+                )} vs ${identity(
+                  findSeasonTeam(season.teams, notables.closestMatchup.awayTeamId, notables.closestMatchup.awayTeamName)?.ownerName,
+                  notables.closestMatchup.awayTeamName,
+                  year,
+                )}`
               : undefined
           }
         />
@@ -85,7 +119,7 @@ export default async function SeasonPage({ params }: { params: Promise<{ year: s
               {matchups
                 .filter((matchup) => matchup.week === week)
                 .map((matchup) => (
-                  <MatchupCard key={`${matchup.homeTeamId}-${matchup.awayTeamId}`} matchup={matchup} />
+                  <MatchupCard key={`${matchup.homeTeamId}-${matchup.awayTeamId}`} matchup={matchup} teams={season.teams} />
                 ))}
             </div>
           </div>

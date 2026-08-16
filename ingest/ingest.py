@@ -183,17 +183,27 @@ def notables_from_matchups(matchups: list[dict], teams: list[dict]) -> dict:
     combined_high = max(played, key=lambda m: m["combined"])
     combined_low = min(played, key=lambda m: m["combined"])
 
+    def owner_for(team_id: int) -> str:
+        for team in teams:
+            if team.get("teamId") == team_id:
+                return team.get("ownerName") or ""
+        return ""
+
     def side(matchup: dict, which: str) -> dict:
         high_home = matchup["homeScore"] >= matchup["awayScore"]
         if which == "high":
             use_home = high_home
         else:
             use_home = not high_home if matchup["homeScore"] != matchup["awayScore"] else True
+        team_id = matchup["homeTeamId"] if use_home else matchup["awayTeamId"]
+        opp_id = matchup["awayTeamId"] if use_home else matchup["homeTeamId"]
         return {
             "teamName": matchup["homeTeamName"] if use_home else matchup["awayTeamName"],
-            "teamId": matchup["homeTeamId"] if use_home else matchup["awayTeamId"],
+            "teamId": team_id,
+            "ownerName": owner_for(team_id),
             "points": matchup["homeScore"] if use_home else matchup["awayScore"],
             "opponentName": matchup["awayTeamName"] if use_home else matchup["homeTeamName"],
+            "opponentOwner": owner_for(opp_id),
             "opponentPoints": matchup["awayScore"] if use_home else matchup["homeScore"],
             "week": matchup["week"],
         }
@@ -211,6 +221,10 @@ def notables_from_matchups(matchups: list[dict], teams: list[dict]) -> dict:
             "week": closest["week"],
             "homeTeamName": closest["homeTeamName"],
             "awayTeamName": closest["awayTeamName"],
+            "homeTeamId": closest["homeTeamId"],
+            "awayTeamId": closest["awayTeamId"],
+            "homeOwnerName": owner_for(closest["homeTeamId"]),
+            "awayOwnerName": owner_for(closest["awayTeamId"]),
             "homeScore": closest["homeScore"],
             "awayScore": closest["awayScore"],
             "margin": closest["margin"],
@@ -677,9 +691,9 @@ def build_awards(year_payloads: list[dict]) -> list[dict]:
                     "name": "Biggest Blowout",
                     "category": "matchup",
                     "source": "espn",
-                    "winnerName": blow["teamName"],
-                    "winnerId": None,
-                    "detail": f"Week {blow['week']}: {blow['points']}-{blow['opponentPoints']} (margin {blow['margin']})",
+                    "winnerName": blow.get("ownerName") or blow["teamName"],
+                    "winnerId": next((t.get("ownerId") for t in season.get("teams", []) if t.get("teamId") == blow.get("teamId")), None),
+                    "detail": f"{blow.get('ownerName') or ''} · {blow['teamName']} · {year} Week {blow['week']}: {blow['points']}-{blow['opponentPoints']} (margin {blow['margin']})".strip(" ·"),
                 }
             )
         if notables.get("closestMatchup"):
@@ -691,9 +705,9 @@ def build_awards(year_payloads: list[dict]) -> list[dict]:
                     "name": "Closest Game",
                     "category": "matchup",
                     "source": "espn",
-                    "winnerName": f"{close['homeTeamName']} vs {close['awayTeamName']}",
+                    "winnerName": f"{close.get('homeOwnerName') or close['homeTeamName']} vs {close.get('awayOwnerName') or close['awayTeamName']}",
                     "winnerId": None,
-                    "detail": f"Week {close['week']}: {close['homeScore']}-{close['awayScore']}",
+                    "detail": f"{close['homeTeamName']} vs {close['awayTeamName']} · {year} Week {close['week']}: {close['homeScore']}-{close['awayScore']}",
                 }
             )
     return awards

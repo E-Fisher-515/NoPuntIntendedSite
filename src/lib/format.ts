@@ -32,3 +32,9 @@ export function ordinal(n: number): string {
       return `${n}th`;
   }
 }
+
+export function identity(ownerName: string | null | undefined, teamName: string | null | undefined, year?: number | string | null): string {
+  const parts = [ownerName, teamName, year != null && year !== "" ? String(year) : null].filter(Boolean);
+  return parts.join(" · ") || "—";
+}
+

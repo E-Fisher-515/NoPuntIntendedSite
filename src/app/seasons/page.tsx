@@ -28,7 +28,7 @@ export default function SeasonsIndexPage() {
               <p className="font-serif text-3xl text-forest">{year}</p>
               <p className="mt-2 text-sm text-ink/70">
                 {champ
-                  ? `Champion · ${champ.ownerName}`
+                  ? `Champion · ${champ.ownerName} · ${champ.teamName} · ${year}`
                   : year === league.currentSeason
                     ? "In progress"
                     : "See season page"}

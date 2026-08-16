@@ -23,9 +23,21 @@ Open [http://localhost:3000](http://localhost:3000).
 | Page | Source |
 | --- | --- |
 | Standings, scores, championships, records | ESPN (`espn-api`) |
-| Hall of Fame, constitution, extra timeline events, custom awards | `content/` JSON and markdown |
+| Hall of Fame, constitution, countdown banner, extra timeline events, custom awards | `public/editorial.json`, edited from `/admin` |
 
 Secrets never ship in the Next.js bundle. Commit derived JSON in `data/archive/` so the public site can build without cookies.
+
+## Commissioner admin
+
+The public site is static GitHub Pages, so editorial edits are saved with a GitHub token (Contents write on this repo). Open the discreet **Commissioner** link in the footer, paste a PAT, and edit:
+
+- Countdown banner (draft day, playoffs, or off)
+- Constitution
+- Hall of Fame suggestions, approvals, and rejections
+- Timeline notes
+- Custom awards
+
+The token stays in sessionStorage in that browser only. Do not commit tokens or `.env`.
 
 ## Refreshing data
 

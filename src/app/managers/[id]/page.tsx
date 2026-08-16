@@ -74,7 +74,7 @@ export default async function ManagerPage({ params }: { params: Promise<{ id: st
             value={manager.highestWeek ? String(manager.highestWeek.points) : "—"}
             detail={
               manager.highestWeek
-                ? `${manager.highestWeek.year} Week ${manager.highestWeek.week} vs ${manager.highestWeek.opponentName}`
+                ? `${manager.name} · ${manager.highestWeek.teamName} · ${manager.highestWeek.year} Week ${manager.highestWeek.week} vs ${manager.highestWeek.opponentName}`
                 : undefined
             }
           />
@@ -83,7 +83,7 @@ export default async function ManagerPage({ params }: { params: Promise<{ id: st
             value={manager.lowestWeek ? String(manager.lowestWeek.points) : "—"}
             detail={
               manager.lowestWeek
-                ? `${manager.lowestWeek.year} Week ${manager.lowestWeek.week} vs ${manager.lowestWeek.opponentName}`
+                ? `${manager.name} · ${manager.lowestWeek.teamName} · ${manager.lowestWeek.year} Week ${manager.lowestWeek.week} vs ${manager.lowestWeek.opponentName}`
                 : undefined
             }
           />

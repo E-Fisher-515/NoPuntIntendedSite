@@ -4,7 +4,8 @@ import { SectionHeader } from "@/components/SectionHeader";
 import { StandingsTable } from "@/components/StandingsTable";
 import { StatCard } from "@/components/StatCard";
 import { archiveReady, getLeague, getSeason } from "@/lib/archive";
-import { points, recordLine } from "@/lib/format";
+import { identity, points, recordLine } from "@/lib/format";
+import { teamIdentity } from "@/lib/lookups";
 
 export default function HomePage() {
   if (!archiveReady()) {
@@ -20,13 +21,12 @@ export default function HomePage() {
 
   const league = getLeague();
   const current = getSeason(league.currentSeason);
+  const year = league.currentSeason;
   const leader = current.complete ? current.champion : current.currentLeader;
-  const pfLeader = current.teams.reduce((best, team) =>
-    team.pointsFor > best.pointsFor ? team : best
-  );
+  const pfLeader = current.teams.reduce((best, team) => (team.pointsFor > best.pointsFor ? team : best));
   const bestRecord = [...current.teams].sort((a, b) => b.wins - a.wins || b.pointsFor - a.pointsFor)[0];
   const notables = current.notables as {
-    highestScoringWeek?: { teamName: string; points: number; week: number };
+    highestScoringWeek?: { teamName: string; teamId?: number; points: number; week: number };
   };
 
   return (
@@ -39,11 +39,11 @@ export default function HomePage() {
           A long-running fantasy football league with champions, records, rivalries, and lore — not another ESPN clone.
         </p>
         <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-          <StatCard label="Current season" value={String(league.currentSeason)} />
+          <StatCard label="Current season" value={String(year)} />
           <StatCard
             label={current.complete ? "Current champion" : "Current leader"}
             value={leader?.ownerName ?? "TBD"}
-            detail={leader?.teamName}
+            detail={leader ? identity(leader.ownerName, leader.teamName, year) : undefined}
           />
           <StatCard label="Seasons" value={String(league.seasonCount)} />
           <StatCard label="Managers" value={String(league.managerCount)} />
@@ -51,29 +51,29 @@ export default function HomePage() {
           <StatCard label="League size" value={`${league.teamCount} teams`} />
         </div>
         <section className="mt-14">
-          <SectionHeader eyebrow="This season" title="League at a glance" />
+          <SectionHeader eyebrow={`${year} season`} title="League at a glance" />
           <div className="mb-8 grid gap-4 md:grid-cols-3">
             <StatCard
               label="Points leader"
               value={pfLeader.ownerName}
-              detail={`${points(pfLeader.pointsFor)} PF`}
+              detail={`${identity(pfLeader.ownerName, pfLeader.teamName, year)} · ${points(pfLeader.pointsFor)} PF`}
             />
             <StatCard
               label="Best record"
               value={bestRecord.ownerName}
-              detail={recordLine(bestRecord.wins, bestRecord.losses, bestRecord.ties)}
+              detail={`${identity(bestRecord.ownerName, bestRecord.teamName, year)} · ${recordLine(bestRecord.wins, bestRecord.losses, bestRecord.ties)}`}
             />
             <StatCard
               label="Highest week"
               value={notables.highestScoringWeek ? String(notables.highestScoringWeek.points) : "—"}
               detail={
                 notables.highestScoringWeek
-                  ? `${notables.highestScoringWeek.teamName} · Week ${notables.highestScoringWeek.week}`
+                  ? `${teamIdentity(current.teams, year, notables.highestScoringWeek)} · Week ${notables.highestScoringWeek.week}`
                   : "Not yet archived"
               }
             />
           </div>
-          <StandingsTable teams={current.teams} />
+          <StandingsTable teams={current.teams} year={year} />
         </section>
       </PageShell>
     </div>

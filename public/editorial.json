@@ -1,0 +1,13 @@
+{
+  "banner": {
+    "enabled": false,
+    "label": "Draft day",
+    "target": "2026-09-06T17:00:00-05:00",
+    "message": "Countdown to the offline draft"
+  },
+  "constitution": "# Constitution of No Punt Intended\n\nThis page is the league's official rules document. Scoring, roster size, playoff format, and FAAB settings below are filled from ESPN where the archive has them. Editorial sections should be updated by the commissioner.\n\n## Format & Roster\n\nLeague size, starter slots, and bench size are defined in ESPN league settings and ingested each season.\n\n## Scoring\n\nThe archive stores the ESPN scoring type for each season. Exact point values live in ESPN until they are copied here.\n\n## Waivers\n\nIf FAAB is enabled for a season, the acquisition budget is recorded on that season page.\n\n## Trades\n\nTrade deadline and veto rules are governed in ESPN. Record any house rules here.\n\n## Draft\n\nThe league drafts offline. ESPN draft boards are not the official record and are not published on this site.\n\n## Playoffs\n\nPlayoff team count and regular-season length are ingested from ESPN. Championship, runner-up, and third place are taken from ESPN final standings \u2014 not invented.\n\n## Keeper Rules\n\nAdd keeper eligibility, round penalties, and max keepers here.\n\n## Tiebreakers\n\nESPN seeding tiebreakers apply unless the league votes otherwise.\n\n## League Governance\n\nCommissioner: listed in the newsletter config. Amendments should be dated and added to the History timeline.\n",
+  "hallOfFame": [],
+  "rejectedHofIds": [],
+  "timeline": [],
+  "customAwards": []
+}

@@ -27,7 +27,10 @@ export function PlayoffBracket({
     <div>
       {finishers.length ? (
         <p className="mb-4 text-sm text-ink/70">
-          Finals inferred from ESPN finish: {finishers.map((team) => `${team.finalStanding}. ${team.ownerName}`).join(" · ")}
+          Finals inferred from ESPN finish:{" "}
+          {finishers
+            .map((team) => `${team.finalStanding}. ${team.ownerName} · ${team.teamName}`)
+            .join(" · ")}
         </p>
       ) : null}
       <div className="grid gap-4 md:grid-cols-2">
@@ -36,7 +39,7 @@ export function PlayoffBracket({
             <h3 className="mb-2 text-[11px] uppercase tracking-[0.18em] text-gold-muted">Playoff week {week}</h3>
             <div className="grid gap-2">
               {games.map((game) => (
-                <MatchupCard key={`${game.week}-${game.homeTeamId}-${game.awayTeamId}`} matchup={game} />
+                <MatchupCard key={`${game.week}-${game.homeTeamId}-${game.awayTeamId}`} matchup={game} teams={teams} />
               ))}
             </div>
           </section>
