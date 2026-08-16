@@ -20,14 +20,13 @@ export default function RecordsPage() {
   const rec = records.records ?? {};
   const matchups = records.matchups ?? {};
   const playoffs = records.playoffs ?? {};
-  const draft = records.draft ?? {};
 
   return (
     <PageShell>
       <SectionHeader
         eyebrow="All-time"
         title="Record book"
-        lede="Computed from archived ESPN matchups and standings. Draft steal/bust math is deferred until player season points are stored."
+        lede="Computed from archived ESPN matchups and standings."
       />
       <h2 className="mb-6 font-serif text-3xl text-forest">Scoring</h2>
       <RecordTable
@@ -216,11 +215,6 @@ export default function RecordsPage() {
         ]}
         rows={rowsOf(playoffs.bestPlayoffWinPct)}
       />
-      <h2 className="mb-6 font-serif text-3xl text-forest">Draft</h2>
-      <p className="border border-dashed border-rule px-4 py-6 text-sm text-ink/70">
-        {(draft as { note?: string }).note ||
-          "Best/worst draft, steal, and bust require player season points and are not computed yet."}
-      </p>
     </PageShell>
   );
 }

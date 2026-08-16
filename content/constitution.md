@@ -20,7 +20,7 @@ Trade deadline and veto rules are governed in ESPN. Record any house rules here.
 
 ## Draft
 
-Draft type, keeper count, and pick order are ESPN settings. Keeper count appears on each season page when available.
+The league drafts offline. ESPN draft boards are not the official record and are not published on this site.
 
 ## Playoffs
 

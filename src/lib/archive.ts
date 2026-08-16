@@ -2,7 +2,6 @@ import { readFileSync, existsSync } from "fs";
 import { join } from "path";
 import type {
   Award,
-  DraftPick,
   HofInductee,
   LeagueArchive,
   Manager,
@@ -33,10 +32,6 @@ export function getSeason(year: number): SeasonArchive {
 
 export function getMatchups(year: number): Matchup[] {
   return readJson(join(archiveDir, "matchups", `${year}.json`));
-}
-
-export function getDraft(year: number): DraftPick[] {
-  return readJson(join(archiveDir, "drafts", `${year}.json`));
 }
 
 export function getManagers(): Manager[] {

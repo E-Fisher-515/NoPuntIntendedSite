@@ -1054,9 +1054,5 @@
         "appearances": 5
       }
     ]
-  },
-  "draft": {
-    "note": "Draft pick value (steal/bust) needs full player season points and is not computed yet.",
-    "picksTracked": 1792
   }
 }

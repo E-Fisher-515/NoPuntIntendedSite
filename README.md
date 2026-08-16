@@ -1,6 +1,6 @@
 # No Punt Intended — League Archive
 
-Official digital archive for the **No Punt Intended** fantasy football league. Championship banners, manager careers, the record book, drafts, and season history are generated from ESPN — the same source as the weekly newsletter.
+Official digital archive for the **No Punt Intended** fantasy football league. Championship banners, manager careers, the record book, and season history are generated from ESPN — the same source as the weekly newsletter.
 
 This is not an ESPN clone. It is the league's record book.
 
@@ -22,7 +22,7 @@ Open [http://localhost:3000](http://localhost:3000).
 
 | Page | Source |
 | --- | --- |
-| Standings, scores, championships, records, drafts | ESPN (`espn-api`) |
+| Standings, scores, championships, records | ESPN (`espn-api`) |
 | Hall of Fame, constitution, extra timeline events, custom awards | `content/` JSON and markdown |
 
 Secrets never ship in the Next.js bundle. Commit derived JSON in `data/archive/` so the public site can build without cookies.

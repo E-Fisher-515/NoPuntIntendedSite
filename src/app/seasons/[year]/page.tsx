@@ -93,7 +93,7 @@ export default async function SeasonPage({ params }: { params: Promise<{ year: s
       </section>
       <p className="mt-8 text-xs text-ink/40">
         Regular season: {season.regularSeasonWeeks} weeks · Playoff teams: {season.playoffTeamCount} ·
-        Scoring type: {season.scoringType || "ESPN"} · Keepers: {season.keeperCount}
+        Scoring type: {season.scoringType || "ESPN"}
       </p>
     </PageShell>
   );

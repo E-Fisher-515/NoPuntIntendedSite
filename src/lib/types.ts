@@ -143,23 +143,6 @@ export type Manager = {
   headToHead: HeadToHead[];
 };
 
-export type DraftPick = {
-  year: number;
-  overall: number;
-  round: number;
-  roundPick: number;
-  teamId: number | null;
-  teamName: string;
-  ownerId: string | null;
-  ownerName: string;
-  playerId: number | null;
-  playerName: string;
-  position: string;
-  nflTeam: string;
-  keeper: boolean;
-  bidAmount: number | null;
-};
-
 export type Award = {
   id: string;
   year: number;

@@ -20,7 +20,6 @@ load_dotenv(ROOT / ".env")
 ARCHIVE = ROOT / "data" / "archive"
 SEASONS_DIR = ARCHIVE / "seasons"
 MATCHUPS_DIR = ARCHIVE / "matchups"
-DRAFTS_DIR = ARCHIVE / "drafts"
 
 
 def env(name: str, default: str | None = None) -> str:
@@ -258,58 +257,6 @@ def championship_from_teams(teams: list[dict], matchups: list[dict], complete: b
     }
 
 
-def draft_player_info(league: League, player_ids: list[int]) -> dict:
-    info_by_id: dict = {}
-    unique = [pid for pid in dict.fromkeys(player_ids) if pid]
-    chunk = 40
-    for start in range(0, len(unique), chunk):
-        batch = unique[start : start + chunk]
-        try:
-            result = league.player_info(playerId=batch)
-        except Exception:
-            continue
-        players = result if isinstance(result, list) else [result]
-        for player in players:
-            if player is None:
-                continue
-            info_by_id[getattr(player, "playerId", None)] = player
-    return info_by_id
-
-
-def draft_payload(league: League, year: int, owner_by_team: dict[int, dict | None]) -> list[dict]:
-    raw_picks = list(league.draft or [])
-    info_by_id = {}
-    picks = []
-    for index, pick in enumerate(raw_picks, start=1):
-        team = getattr(pick, "team", None)
-        team_id = getattr(team, "team_id", None) if team else None
-        owner = owner_by_team.get(team_id) if team_id else None
-        player_id = getattr(pick, "playerId", None)
-        player_name = getattr(pick, "playerName", "") or ""
-        info = info_by_id.get(player_id)
-        position = getattr(info, "position", "") if info else ""
-        pro_team = getattr(info, "proTeam", "") if info else ""
-        picks.append(
-            {
-                "year": year,
-                "overall": index,
-                "round": int(getattr(pick, "round_num", 0) or 0),
-                "roundPick": int(getattr(pick, "round_pick", 0) or 0),
-                "teamId": team_id,
-                "teamName": getattr(team, "team_name", "") if team else "",
-                "ownerId": owner["id"] if owner else None,
-                "ownerName": owner["name"] if owner else "Unknown",
-                "playerId": player_id,
-                "playerName": player_name,
-                "position": position,
-                "nflTeam": pro_team,
-                "keeper": bool(getattr(pick, "keeper_status", False)),
-                "bidAmount": getattr(pick, "bid_amount", None),
-            }
-        )
-    return picks
-
-
 def write_json(path: Path, payload) -> None:
     path.parent.mkdir(parents=True, exist_ok=True)
     path.write_text(json.dumps(payload, indent=2), encoding="utf-8")
@@ -321,11 +268,9 @@ def ingest_year(league_id: int, year: int, espn_s2: str, swid: str) -> dict:
     settings = league.settings
     reg_season_count = int(getattr(settings, "reg_season_count", 14) or 14)
     complete = season_complete(league.teams)
-    owners_by_team: dict[int, dict | None] = {}
     teams = []
     for team in league.teams:
         owner = owner_record(getattr(team, "owners", []) or [])
-        owners_by_team[team.team_id] = owner
         teams.append(team_payload(team, owner))
     teams.sort(key=lambda t: t["finalStanding"] or 99)
     matchups = matchups_from_teams(league.teams, year, reg_season_count)
@@ -352,16 +297,13 @@ def ingest_year(league_id: int, year: int, espn_s2: str, swid: str) -> dict:
         **placement,
         "weeklyMatchupCount": {str(week): len(games) for week, games in weekly.items()},
     }
-    drafts = draft_payload(league, year, owners_by_team)
     write_json(SEASONS_DIR / f"{year}.json", season)
     write_json(MATCHUPS_DIR / f"{year}.json", matchups)
-    write_json(DRAFTS_DIR / f"{year}.json", drafts)
-    print(f"  {year}: {len(teams)} teams, {len(matchups)} matchups, {len(drafts)} draft picks")
+    print(f"  {year}: {len(teams)} teams, {len(matchups)} matchups")
     return {
         "year": year,
         "season": season,
         "matchups": matchups,
-        "drafts": drafts,
         "previousSeasons": list(getattr(league, "previousSeasons", []) or []),
     }
 
@@ -677,10 +619,6 @@ def build_records(year_payloads: list[dict], managers: list[dict]) -> dict:
                 for m in sorted(managers, key=lambda m: m["playoffAppearances"], reverse=True)[:5]
             ],
             "bestPlayoffWinPct": top([row for row in playoff_rows if row["games"] >= 3], "winPct"),
-        },
-        "draft": {
-            "note": "Draft pick value (steal/bust) needs full player season points and is not computed yet.",
-            "picksTracked": sum(len(p["drafts"]) for p in year_payloads),
         },
     }
 
