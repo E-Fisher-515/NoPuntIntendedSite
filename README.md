@@ -43,7 +43,17 @@ Re-run after the NFL week turns, then commit updated `data/archive/` files.
 
 ## Public site
 
-GitHub Pages (after the first Actions deploy):
+GitHub Pages is built and deployed by `.github/workflows/deploy-pages.yml` on
+every push to `main` (or via manual "Run workflow" dispatch). It runs
+`npm ci`, builds with `GITHUB_PAGES=true` (static export to `out/`), and
+publishes that artifact.
+
+**One-time repo setting:** in GitHub, go to Settings → Pages and set
+"Build and deployment" → Source to **GitHub Actions** (not the legacy
+"Deploy from a branch" / `gh-pages` option). Without this the workflow will
+build successfully but Pages won't serve its output.
+
+Site URL:
 
 https://e-fisher-515.github.io/NoPuntIntendedSite/
 
