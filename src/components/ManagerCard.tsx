@@ -48,7 +48,7 @@ export function ManagerCard({
           <dd>{manager.averageFinish ?? "—"}</dd>
         </div>
       </dl>
-      {rival ? (
+      {rival && !rival.unpaired ? (
         <p className="mt-4 text-sm text-ink/70">
           Suggested rival: <span className="text-forest">{rival.right.name}</span>
         </p>

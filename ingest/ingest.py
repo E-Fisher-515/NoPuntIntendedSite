@@ -87,7 +87,15 @@ def team_payload(team, owner: dict | None) -> dict:
 
 
 def matchups_from_teams(teams: list, year: int, reg_season_count: int) -> list[dict]:
-    """Build unique weekly matchups from each team's schedule/scores."""
+    """Build unique weekly matchups from each team's schedule/scores.
+
+    Future/undecided weeks (outcome "U", 0-0) are preserved as scheduled
+    matchups with null scores and winner=None rather than dropped, so a
+    mid-season 2026 repull keeps the rest of the season's schedule instead
+    of only ever showing played weeks. Every downstream consumer already
+    filters on a truthy `winner`, so this does not change any
+    completed-season stat.
+    """
     seen: set[tuple[int, int, int]] = set()
     matchups: list[dict] = []
     by_id = {team.team_id: team for team in teams}
@@ -114,20 +122,23 @@ def matchups_from_teams(teams: list, year: int, reg_season_count: int) -> list[d
             away = opp if team.team_id == home_id else team
             home_index = index
             away_index = index
-            home_score = round2(home.scores[home_index] if home_index < len(home.scores) else 0)
-            away_score = round2(away.scores[away_index] if away_index < len(away.scores) else 0)
+            raw_home = home.scores[home_index] if home_index < len(home.scores) else 0
+            raw_away = away.scores[away_index] if away_index < len(away.scores) else 0
+            home_score = round2(raw_home)
+            away_score = round2(raw_away)
+            week = index + 1
+            is_undecided = False
             if home_score == 0 and away_score == 0:
                 home_outcome = outcomes[index] if index < len(outcomes) else "U"
-                if home_outcome == "U":
-                    continue
-            week = index + 1
+                is_undecided = home_outcome == "U"
             winner = None
-            if home_score > away_score:
-                winner = "home"
-            elif away_score > home_score:
-                winner = "away"
-            elif home_score or away_score:
-                winner = "tie"
+            if not is_undecided:
+                if home_score > away_score:
+                    winner = "home"
+                elif away_score > home_score:
+                    winner = "away"
+                elif home_score or away_score:
+                    winner = "tie"
             matchups.append(
                 {
                     "year": year,
@@ -138,10 +149,17 @@ def matchups_from_teams(teams: list, year: int, reg_season_count: int) -> list[d
                     "awayTeamId": away.team_id,
                     "homeTeamName": home.team_name,
                     "awayTeamName": away.team_name,
-                    "homeScore": home_score,
-                    "awayScore": away_score,
-                    "combined": round2(home_score + away_score),
-                    "margin": round2(abs(home_score - away_score)),
+                    # Future/undecided matchups keep numeric 0 here (not null)
+                    # to preserve the Matchup contract in src/lib/types.ts,
+                    # which every renderer (MatchupCard, season/bracket pages)
+                    # relies on being a plain number. `winner=None` is the
+                    # single source of truth for "not yet played" -- callers
+                    # must check that (via schedule.isFutureMatchup or an
+                    # explicit `winner` check), never infer it from a 0 score.
+                    "homeScore": 0 if is_undecided else home_score,
+                    "awayScore": 0 if is_undecided else away_score,
+                    "combined": 0 if is_undecided else round2(home_score + away_score),
+                    "margin": 0 if is_undecided else round2(abs(home_score - away_score)),
                     "winner": winner,
                 }
             )
@@ -149,27 +167,54 @@ def matchups_from_teams(teams: list, year: int, reg_season_count: int) -> list[d
     return matchups
 
 
+def fetch_full_scoreboard(league: League) -> list:
+    """Fetch every week's matchups in a single call.
+
+    league.scoreboard(week) always requests the same full `mMatchupScore`
+    payload from ESPN and filters client-side by matchupPeriodId, so calling
+    it once per week (as the previous implementation did) makes N identical
+    HTTP requests for one season's data. This fetches that same payload
+    exactly once and reuses espn_api's own Matchup wiring to build the
+    full-season list, matching what N calls to league.scoreboard() would
+    have returned.
+    """
+    from espn_api.football.matchup import Matchup as ApiMatchup
+
+    data = league.espn_request.league_get(params={"view": "mMatchupScore"})
+    schedule = data.get("schedule", [])
+    games = [ApiMatchup(item) for item in schedule]
+    team_by_id = {team.team_id: team for team in league.teams}
+    for game, raw in zip(games, schedule):
+        game.home_team = team_by_id.get(game._home_team_id, game._home_team_id)
+        game.away_team = team_by_id.get(game._away_team_id, game._away_team_id)
+        # Matchup doesn't carry its own week; pull it back off the raw
+        # schedule entry so callers can group by week.
+        game.matchup_period_id = raw.get("matchupPeriodId")
+    return games
+
+
 def enrich_matchups_from_scoreboard(league: League, matchups: list[dict]) -> None:
-    weeks = {item["week"] for item in matchups}
+    """Tag isPlayoff/matchupType from ESPN's own scoreboard, one API call total."""
     by_key = {(item["week"], item["homeTeamId"], item["awayTeamId"]): item for item in matchups}
     by_key_rev = {(item["week"], item["awayTeamId"], item["homeTeamId"]): item for item in matchups}
-    for week in sorted(weeks):
-        try:
-            board = league.scoreboard(week)
-        except Exception:
+    try:
+        games = fetch_full_scoreboard(league)
+    except Exception as exc:
+        print(f"  scoreboard enrichment skipped ({league.year}): {exc}", file=sys.stderr)
+        return
+    for game in games:
+        week = getattr(game, "matchup_period_id", None)
+        home = getattr(game, "home_team", None)
+        away = getattr(game, "away_team", None)
+        if week is None or not home or not away or not hasattr(home, "team_id"):
             continue
-        for game in board:
-            home = getattr(game, "home_team", None)
-            away = getattr(game, "away_team", None)
-            if not home or not away or not hasattr(home, "team_id"):
-                continue
-            item = by_key.get((week, home.team_id, away.team_id)) or by_key_rev.get(
-                (week, home.team_id, away.team_id)
-            )
-            if not item:
-                continue
-            item["isPlayoff"] = bool(getattr(game, "is_playoff", item["isPlayoff"]))
-            item["matchupType"] = getattr(game, "matchup_type", item["matchupType"]) or item["matchupType"]
+        item = by_key.get((week, home.team_id, away.team_id)) or by_key_rev.get(
+            (week, home.team_id, away.team_id)
+        )
+        if not item:
+            continue
+        item["isPlayoff"] = bool(getattr(game, "is_playoff", item["isPlayoff"]))
+        item["matchupType"] = getattr(game, "matchup_type", item["matchupType"]) or item["matchupType"]
 
 
 def notables_from_matchups(matchups: list[dict], teams: list[dict]) -> dict:
@@ -293,10 +338,15 @@ def championship_rosters(league: League, placement: dict, teams: list[dict]) -> 
     matchup = placement.get("championshipMatchup")
     if not matchup:
         return None
+    if not matchup.get("winner"):
+        # Scheduled but not yet played (mid-playoffs repull) -- there is no
+        # winner/loser to report yet, so skip rather than guess from a
+        # falsy `winner`.
+        return None
     try:
         boxes = league.box_scores(int(matchup["week"]))
     except Exception as exc:
-        print(f"  championship roster skipped: {exc}")
+        print(f"  championship roster skipped: {exc}", file=sys.stderr)
         return None
     target = {matchup["homeTeamId"], matchup["awayTeamId"]}
     for box in boxes:
@@ -337,6 +387,21 @@ def write_json(path: Path, payload) -> None:
     path.write_text(json.dumps(payload, indent=2), encoding="utf-8")
 
 
+def warn_ownerless_teams(teams: list[dict], year: int) -> None:
+    """Ownerless teams get ownerId=None and are silently dropped from
+    managers.json / head-to-head stats downstream (keyed by ownerId). That's
+    unavoidable without an owner to key on, but it should never happen
+    quietly -- surface it so a bad repull is caught immediately.
+    """
+    ownerless = [team["teamName"] for team in teams if not team.get("ownerId")]
+    if ownerless:
+        print(
+            f"  WARNING {year}: {len(ownerless)} team(s) with no owner on record "
+            f"(excluded from managers/head-to-head): {', '.join(ownerless)}",
+            file=sys.stderr,
+        )
+
+
 def ingest_year(league_id: int, year: int, espn_s2: str, swid: str) -> dict:
     print(f"Fetching {year}...")
     league = League(league_id=league_id, year=year, espn_s2=espn_s2, swid=swid, fetch_league=True)
@@ -348,6 +413,7 @@ def ingest_year(league_id: int, year: int, espn_s2: str, swid: str) -> dict:
         owner = owner_record(getattr(team, "owners", []) or [])
         teams.append(team_payload(team, owner))
     teams.sort(key=lambda t: t["finalStanding"] or 99)
+    warn_ownerless_teams(teams, year)
     matchups = matchups_from_teams(league.teams, year, reg_season_count)
     enrich_matchups_from_scoreboard(league, matchups)
     notables = notables_from_matchups(matchups, teams)
@@ -862,7 +928,7 @@ def main() -> None:
             try:
                 payloads.append(ingest_year(league_id, year, espn_s2, swid))
             except Exception as exc:
-                print(f"  skipped {year}: {exc}")
+                print(f"  skipped {year}: {exc}", file=sys.stderr)
 
     payloads.sort(key=lambda p: p["year"])
     managers = build_managers(payloads)

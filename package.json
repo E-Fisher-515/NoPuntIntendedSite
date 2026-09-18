@@ -7,7 +7,8 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint",
-    "ingest": "python ingest/ingest.py"
+    "ingest": "python ingest/ingest.py",
+    "test:rivalries": "tsc -p src/lib/__tests__/tsconfig.test.json && node .test-build/src/lib/__tests__/rivalries.test.js && node .test-build/src/lib/__tests__/schedule.test.js"
   },
   "dependencies": {
     "next": "16.3.1",
