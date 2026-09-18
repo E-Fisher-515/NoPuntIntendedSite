@@ -1,11 +1,13 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { PageShell } from "@/components/PageShell";
+import { ScheduleContext } from "@/components/ScheduleContext";
 import { SectionHeader } from "@/components/SectionHeader";
 import { StatCard } from "@/components/StatCard";
-import { archiveReady, getAllMatchups, getAllSeasons, getLeague, getManager, getManagers } from "@/lib/archive";
+import { archiveReady, getAllMatchups, getAllSeasons, getLeague, getManager, getManagers, getSeason } from "@/lib/archive";
 import { pct, playoffResult, points, recordLine } from "@/lib/format";
 import { rivalryFor, buildRivalries } from "@/lib/rivalries";
+import { currentAndNextMatchup } from "@/lib/schedule";
 
 export function generateStaticParams() {
   if (!archiveReady()) return [];
@@ -24,6 +26,11 @@ export default async function ManagerPage({ params }: { params: Promise<{ id: st
     buildRivalries(all, league.championships, getAllSeasons(), getAllMatchups(), league.currentSeason),
     manager.id,
   );
+  const currentSeasonRow = manager.seasons.find((season) => season.year === league.currentSeason);
+  const currentWeekNumber = currentSeasonRow ? getSeason(league.currentSeason).currentWeek : undefined;
+  const schedule = currentSeasonRow
+    ? currentAndNextMatchup(getAllMatchups(), currentSeasonRow.teamId, all, currentWeekNumber)
+    : { current: null, next: null };
 
   return (
     <PageShell>
@@ -97,7 +104,8 @@ export default async function ManagerPage({ params }: { params: Promise<{ id: st
           <StatCard label="Worst finish" value={manager.worstFinish ? String(manager.worstFinish) : "—"} />
         </div>
       </section>
-      {suggested ? (
+      <ScheduleContext current={schedule.current} next={schedule.next} />
+      {suggested && !suggested.unpaired ? (
         <section className="mt-12">
           <h2 className="mb-4 font-serif text-3xl text-forest">Suggested rival</h2>
           <article className="border border-rule p-6">

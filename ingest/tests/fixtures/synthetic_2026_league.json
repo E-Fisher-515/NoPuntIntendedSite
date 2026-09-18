@@ -1,0 +1,82 @@
+{
+  "id": 999999,
+  "seasonId": 2026,
+  "scoringPeriodId": 3,
+  "status": {
+    "currentMatchupPeriod": 3,
+    "firstScoringPeriod": 1,
+    "finalScoringPeriod": 17,
+    "latestScoringPeriod": 3,
+    "previousSeasons": [2024, 2025]
+  },
+  "settings": {
+    "name": "Synthetic Test League",
+    "size": 4,
+    "scheduleSettings": {
+      "matchupPeriodCount": 3,
+      "matchupPeriods": {"1": [1], "2": [2], "3": [3]},
+      "playoffTeamCount": 2,
+      "playoffSeedingRule": "TOTAL_POINTS_SCORED",
+      "divisions": [{"id": 0, "name": "Only"}]
+    },
+    "tradeSettings": {"vetoVotesRequired": 4},
+    "draftSettings": {"keeperCount": 0},
+    "scoringSettings": {
+      "matchupTieRule": "NONE",
+      "playoffMatchupTieRule": "NONE",
+      "playoffSeedingRule": "TOTAL_POINTS_SCORED",
+      "scoringType": "H2H_POINTS",
+      "scoringItems": []
+    },
+    "acquisitionSettings": {"isUsingAcquisitionBudget": false},
+    "rosterSettings": {"lineupSlotCounts": {}}
+  },
+  "members": [
+    {"id": "{AAA}", "displayName": "alice", "firstName": "Alice", "lastName": "A"},
+    {"id": "{BBB}", "displayName": "bob", "firstName": "Bob", "lastName": "B"}
+  ],
+  "teams": [
+    {
+      "id": 1, "abbrev": "AAA", "name": "Alice Team", "divisionId": 0,
+      "record": {"overall": {"wins": 2, "losses": 0, "ties": 0, "pointsFor": 220.5, "pointsAgainst": 180.0, "streakLength": 2, "streakType": "WIN"}},
+      "playoffSeed": 1, "rankCalculatedFinal": 0, "owners": ["{AAA}"],
+      "currentSimulationResults": {"playoffPct": 0.87},
+      "roster": {"entries": []}
+    },
+    {
+      "id": 2, "abbrev": "BBB", "name": "Bob Team", "divisionId": 0,
+      "record": {"overall": {"wins": 0, "losses": 2, "ties": 0, "pointsFor": 150.0, "pointsAgainst": 220.5, "streakLength": 2, "streakType": "LOSS"}},
+      "playoffSeed": 4, "rankCalculatedFinal": 0, "owners": ["{BBB}"],
+      "currentSimulationResults": {"playoffPct": 0.10},
+      "roster": {"entries": []}
+    },
+    {
+      "id": 3, "abbrev": "CCC", "name": "Carol Team", "divisionId": 0,
+      "record": {"overall": {"wins": 1, "losses": 1, "ties": 0, "pointsFor": 200.0, "pointsAgainst": 190.0, "streakLength": 1, "streakType": "WIN"}},
+      "playoffSeed": 2, "rankCalculatedFinal": 0, "owners": [],
+      "currentSimulationResults": {"playoffPct": 0.55},
+      "roster": {"entries": []}
+    },
+    {
+      "id": 4, "abbrev": "DDD", "name": "Dan Team", "divisionId": 0,
+      "record": {"overall": {"wins": 1, "losses": 1, "ties": 0, "pointsFor": 190.0, "pointsAgainst": 195.0, "streakLength": 1, "streakType": "LOSS"}},
+      "playoffSeed": 3, "rankCalculatedFinal": 0, "owners": [],
+      "currentSimulationResults": {"playoffPct": 0.48},
+      "roster": {"entries": []}
+    }
+  ],
+  "schedule": [
+    {"id": 0, "matchupPeriodId": 1, "winner": "HOME",
+     "home": {"teamId": 1, "totalPoints": 110.0}, "away": {"teamId": 2, "totalPoints": 90.0}},
+    {"id": 1, "matchupPeriodId": 1, "winner": "HOME",
+     "home": {"teamId": 3, "totalPoints": 100.0}, "away": {"teamId": 4, "totalPoints": 95.0}},
+    {"id": 2, "matchupPeriodId": 2, "winner": "HOME",
+     "home": {"teamId": 1, "totalPoints": 110.5}, "away": {"teamId": 4, "totalPoints": 95.0}},
+    {"id": 3, "matchupPeriodId": 2, "winner": "AWAY",
+     "home": {"teamId": 2, "totalPoints": 60.0}, "away": {"teamId": 3, "totalPoints": 100.0}},
+    {"id": 4, "matchupPeriodId": 3, "winner": "UNDECIDED",
+     "home": {"teamId": 1, "totalPoints": 0.0}, "away": {"teamId": 3, "totalPoints": 0.0}},
+    {"id": 5, "matchupPeriodId": 3, "winner": "UNDECIDED",
+     "home": {"teamId": 2, "totalPoints": 0.0}, "away": {"teamId": 4, "totalPoints": 0.0}}
+  ]
+}

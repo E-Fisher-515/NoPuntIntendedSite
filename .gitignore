@@ -12,6 +12,11 @@
 
 # testing
 /coverage
+/.test-build/
+
+# local reference projects; never include them in this site's commits
+/espn-api/
+/fantasy-newsletter/
 
 # next.js
 /.next/

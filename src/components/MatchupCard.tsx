@@ -1,6 +1,7 @@
 import type { Matchup, TeamSeason } from "@/lib/types";
 import { identity, points } from "@/lib/format";
 import { teamById } from "@/lib/lookups";
+import { isFutureMatchup } from "@/lib/schedule";
 
 export function MatchupCard({
   matchup,
@@ -17,6 +18,7 @@ export function MatchupCard({
 }) {
   const homeWon = matchup.winner === "home";
   const awayWon = matchup.winner === "away";
+  const scheduled = isFutureMatchup(matchup);
   const homeName = homeOwner || (teams ? teamById(teams, matchup.homeTeamId)?.ownerName : "") || "";
   const awayName = awayOwner || (teams ? teamById(teams, matchup.awayTeamId)?.ownerName : "") || "";
   const year = showYear ? matchup.year : undefined;
@@ -26,16 +28,17 @@ export function MatchupCard({
         {showYear ? `${matchup.year} · ` : ""}
         Week {matchup.week}
         {matchup.isPlayoff ? " · Playoff" : ""}
+        {scheduled ? " · Scheduled" : ""}
       </p>
       <div className="mt-2 grid grid-cols-[1fr_auto] gap-2 text-sm">
         <span className={homeWon ? "font-semibold text-forest" : ""}>
           {identity(homeName, matchup.homeTeamName, year)}
         </span>
-        <span className={homeWon ? "font-semibold" : "text-ink/60"}>{points(matchup.homeScore)}</span>
+        <span className={homeWon ? "font-semibold" : "text-ink/60"}>{scheduled ? "TBD" : points(matchup.homeScore)}</span>
         <span className={awayWon ? "font-semibold text-forest" : ""}>
           {identity(awayName, matchup.awayTeamName, year)}
         </span>
-        <span className={awayWon ? "font-semibold" : "text-ink/60"}>{points(matchup.awayScore)}</span>
+        <span className={awayWon ? "font-semibold" : "text-ink/60"}>{scheduled ? "TBD" : points(matchup.awayScore)}</span>
       </div>
     </article>
   );

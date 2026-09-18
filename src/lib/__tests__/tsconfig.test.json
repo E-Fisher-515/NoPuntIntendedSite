@@ -1,0 +1,13 @@
+{
+  "compilerOptions": {
+    "target": "ES2020",
+    "module": "commonjs",
+    "moduleResolution": "node",
+    "esModuleInterop": true,
+    "strict": true,
+    "skipLibCheck": true,
+    "outDir": "../../../.test-build",
+    "rootDir": "../../.."
+  },
+  "include": ["../rivalries.ts", "../rivalryScoring.ts", "../rivalryHistory.ts", "../schedule.ts", "../types.ts", "../format.ts", "../lookups.ts", "./rivalries.test.ts", "./schedule.test.ts"]
+}

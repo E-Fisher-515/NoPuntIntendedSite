@@ -12,6 +12,9 @@ const eslintConfig = defineConfig([
     "out/**",
     "build/**",
     "next-env.d.ts",
+    // Generated CommonJS output from the isolated test:rivalries tsc build
+    // (see src/lib/__tests__/tsconfig.test.json outDir). Not source code.
+    ".test-build/**",
   ]),
 ]);
 
