@@ -1,8 +1,9 @@
 import { PageShell } from "@/components/PageShell";
 import { PredictionTable } from "@/components/PredictionTable";
 import { SectionHeader } from "@/components/SectionHeader";
-import { archiveReady, getPredictions } from "@/lib/archive";
-import { identity } from "@/lib/format";
+import { TeamProjectionCard } from "@/components/TeamProjectionCard";
+import { archiveReady, getManagers, getPredictions, getSeason } from "@/lib/archive";
+import { buildTeamProjections } from "@/lib/projections";
 
 export default function PredictionsPage() {
   if (!archiveReady()) {
@@ -13,32 +14,50 @@ export default function PredictionsPage() {
     );
   }
   const predictions = getPredictions();
+  const season = getSeason(predictions.season);
+  const projections = buildTeamProjections(season, getManagers());
+  const championRows = projections.map((projection) => ({
+    ownerId: projection.ownerId,
+    ownerName: projection.ownerName,
+    teamName: projection.teamName,
+    pct: projection.championPct,
+  }));
+  const playoffRows = projections.map((projection) => ({
+    ownerId: projection.ownerId,
+    ownerName: projection.ownerName,
+    teamName: projection.teamName,
+    pct: projection.playoffPct,
+  }));
+
   return (
     <PageShell>
-      <SectionHeader eyebrow={`${predictions.season} outlook`} title="Predictions" lede={predictions.note} />
+      <SectionHeader
+        eyebrow={`${predictions.season} outlook`}
+        title="Predictions"
+        lede="A numbers-first forecast with enough honesty to be entertaining. These projections update whenever the ESPN archive is refreshed."
+      />
       {predictions.complete ? (
         <p className="border border-rule px-4 py-8 text-ink/70">{predictions.note}</p>
       ) : (
         <>
-          <PredictionTable title="Projected champion" rows={predictions.champion.slice(0, 8)} year={predictions.season} />
-          <PredictionTable title="Playoff odds" rows={predictions.playoff} year={predictions.season} />
+          <PredictionTable title="Projected champion" rows={championRows} year={predictions.season} />
+          <PredictionTable title="Playoff odds" rows={playoffRows} year={predictions.season} />
           <section>
-            <h3 className="mb-4 font-serif text-2xl text-forest">Projected standings</h3>
+            <h2 className="mb-4 font-serif text-3xl text-forest">Projected final order</h2>
             <ol className="border border-rule">
-              {predictions.standings.map((row) => (
-                <li
-                  key={row.ownerId ?? row.teamName}
-                  className="flex justify-between border-t border-rule px-4 py-2 first:border-t-0"
-                >
-                  <span>
-                    {row.projectedSeed}. {identity(row.ownerName, row.teamName, predictions.season)}
-                  </span>
-                  <span className="text-sm text-ink/60">
-                    {row.inPlayoffPicture ? "In the picture" : "Outside looking in"}
-                  </span>
+              {projections.map((projection) => (
+                <li key={projection.ownerId ?? projection.teamName} className="flex items-center justify-between gap-4 border-t border-rule px-4 py-3 first:border-t-0">
+                  <span><strong>{projection.projectedFinish}.</strong> {projection.ownerName} · {projection.teamName}</span>
+                  <span className="text-sm text-ink/60">{projection.record}</span>
                 </li>
               ))}
             </ol>
+          </section>
+          <section className="mt-12">
+            <h2 className="mb-4 font-serif text-3xl text-forest">Team-by-team outlook</h2>
+            <div className="grid gap-6">
+              {projections.map((projection) => <TeamProjectionCard key={projection.ownerId ?? projection.teamName} projection={projection} />)}
+            </div>
           </section>
         </>
       )}

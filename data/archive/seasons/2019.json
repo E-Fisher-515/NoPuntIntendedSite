@@ -464,6 +464,12 @@
       "score": 140.92,
       "players": [
         {
+          "name": "Matt Ryan",
+          "slot": "QB",
+          "position": "QB",
+          "points": 17.52
+        },
+        {
           "name": "Joe Mixon",
           "slot": "RB",
           "position": "RB",
@@ -474,30 +480,6 @@
           "slot": "RB",
           "position": "RB",
           "points": 22.8
-        },
-        {
-          "name": "Matt Ryan",
-          "slot": "QB",
-          "position": "QB",
-          "points": 17.52
-        },
-        {
-          "name": "George Kittle",
-          "slot": "TE",
-          "position": "TE",
-          "points": 16.3
-        },
-        {
-          "name": "Russell Gage",
-          "slot": "RB/WR/TE",
-          "position": "WR",
-          "points": 13.8
-        },
-        {
-          "name": "Buccaneers D/ST",
-          "slot": "D/ST",
-          "position": "D/ST",
-          "points": 13.0
         },
         {
           "name": "Kenny Golladay",
@@ -512,10 +494,28 @@
           "points": 7.7
         },
         {
+          "name": "George Kittle",
+          "slot": "TE",
+          "position": "TE",
+          "points": 16.3
+        },
+        {
+          "name": "Russell Gage",
+          "slot": "RB/WR/TE",
+          "position": "WR",
+          "points": 13.8
+        },
+        {
           "name": "Nick Folk",
           "slot": "K",
           "position": "K",
           "points": 6.0
+        },
+        {
+          "name": "Buccaneers D/ST",
+          "slot": "D/ST",
+          "position": "D/ST",
+          "points": 13.0
         },
         {
           "name": "Jared Goff",
@@ -568,10 +568,10 @@
       "score": 138.18,
       "players": [
         {
-          "name": "Davante Adams",
-          "slot": "WR",
-          "position": "WR",
-          "points": 22.3
+          "name": "Drew Lock",
+          "slot": "QB",
+          "position": "QB",
+          "points": 11.98
         },
         {
           "name": "David Montgomery",
@@ -580,22 +580,28 @@
           "points": 20.3
         },
         {
-          "name": "Ravens D/ST",
-          "slot": "D/ST",
-          "position": "D/ST",
-          "points": 20.0
-        },
-        {
           "name": "Ryquell Armstead",
           "slot": "RB",
           "position": "RB",
           "points": 19.5
         },
         {
+          "name": "Davante Adams",
+          "slot": "WR",
+          "position": "WR",
+          "points": 22.3
+        },
+        {
           "name": "Christian Kirk",
           "slot": "WR",
           "position": "WR",
           "points": 13.6
+        },
+        {
+          "name": "Travis Kelce",
+          "slot": "TE",
+          "position": "TE",
+          "points": 5.4
         },
         {
           "name": "Randall Cobb",
@@ -610,16 +616,10 @@
           "points": 12.0
         },
         {
-          "name": "Drew Lock",
-          "slot": "QB",
-          "position": "QB",
-          "points": 11.98
-        },
-        {
-          "name": "Travis Kelce",
-          "slot": "TE",
-          "position": "TE",
-          "points": 5.4
+          "name": "Ravens D/ST",
+          "slot": "D/ST",
+          "position": "D/ST",
+          "points": 20.0
         },
         {
           "name": "Kyler Murray",

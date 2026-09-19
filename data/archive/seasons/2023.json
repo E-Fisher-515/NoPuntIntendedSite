@@ -470,28 +470,22 @@
           "points": 28.44
         },
         {
-          "name": "Amon-Ra St. Brown",
-          "slot": "WR",
-          "position": "WR",
-          "points": 22.1
-        },
-        {
           "name": "Aaron Jones",
           "slot": "RB",
           "position": "RB",
           "points": 17.0
         },
         {
+          "name": "Amon-Ra St. Brown",
+          "slot": "WR",
+          "position": "WR",
+          "points": 22.1
+        },
+        {
           "name": "Michael Pittman Jr.",
           "slot": "WR",
           "position": "WR",
           "points": 9.6
-        },
-        {
-          "name": "Jake Moody",
-          "slot": "K",
-          "position": "K",
-          "points": 9.0
         },
         {
           "name": "Gerald Everett",
@@ -506,16 +500,22 @@
           "points": 3.4
         },
         {
-          "name": "Eagles D/ST",
-          "slot": "D/ST",
-          "position": "D/ST",
-          "points": 3.0
-        },
-        {
           "name": "AJ Dillon",
           "slot": "RB/WR/TE",
           "position": "RB",
           "points": 2.7
+        },
+        {
+          "name": "Jake Moody",
+          "slot": "K",
+          "position": "K",
+          "points": 9.0
+        },
+        {
+          "name": "Eagles D/ST",
+          "slot": "D/ST",
+          "position": "D/ST",
+          "points": 3.0
         },
         {
           "name": "Khalil Herbert",
@@ -542,12 +542,6 @@
           "points": 5.0
         },
         {
-          "name": "Mark Andrews",
-          "slot": "IR",
-          "position": "TE",
-          "points": 0.0
-        },
-        {
           "name": "Christian Kirk",
           "slot": "BE",
           "position": "WR",
@@ -564,6 +558,12 @@
           "slot": "BE",
           "position": "WR",
           "points": 0.0
+        },
+        {
+          "name": "Mark Andrews",
+          "slot": "IR",
+          "position": "TE",
+          "points": 0.0
         }
       ]
     },
@@ -574,16 +574,34 @@
       "score": 99.76,
       "players": [
         {
-          "name": "Harrison Butker",
-          "slot": "K",
-          "position": "K",
-          "points": 24.0
-        },
-        {
           "name": "Baker Mayfield",
           "slot": "QB",
           "position": "QB",
           "points": 19.26
+        },
+        {
+          "name": "Rachaad White",
+          "slot": "RB",
+          "position": "RB",
+          "points": 8.6
+        },
+        {
+          "name": "Adam Thielen",
+          "slot": "WR",
+          "position": "WR",
+          "points": 9.8
+        },
+        {
+          "name": "Ja'Marr Chase",
+          "slot": "WR",
+          "position": "WR",
+          "points": 7.1
+        },
+        {
+          "name": "Cole Kmet",
+          "slot": "TE",
+          "position": "TE",
+          "points": 0.0
         },
         {
           "name": "David Montgomery",
@@ -598,34 +616,16 @@
           "points": 11.5
         },
         {
-          "name": "Adam Thielen",
-          "slot": "WR",
-          "position": "WR",
-          "points": 9.8
-        },
-        {
-          "name": "Rachaad White",
-          "slot": "RB",
-          "position": "RB",
-          "points": 8.6
-        },
-        {
-          "name": "Ja'Marr Chase",
-          "slot": "WR",
-          "position": "WR",
-          "points": 7.1
+          "name": "Harrison Butker",
+          "slot": "K",
+          "position": "K",
+          "points": 24.0
         },
         {
           "name": "Rams D/ST",
           "slot": "D/ST",
           "position": "D/ST",
           "points": 7.0
-        },
-        {
-          "name": "Cole Kmet",
-          "slot": "TE",
-          "position": "TE",
-          "points": 0.0
         },
         {
           "name": "Kyler Murray",
@@ -664,15 +664,15 @@
           "points": 2.0
         },
         {
-          "name": "Anthony Richardson",
-          "slot": "IR",
-          "position": "QB",
-          "points": 0.0
-        },
-        {
           "name": "Hunter Henry",
           "slot": "BE",
           "position": "TE",
+          "points": 0.0
+        },
+        {
+          "name": "Anthony Richardson",
+          "slot": "IR",
+          "position": "QB",
           "points": 0.0
         }
       ]

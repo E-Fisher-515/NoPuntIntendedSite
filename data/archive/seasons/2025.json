@@ -464,22 +464,16 @@
       "score": 140.17,
       "players": [
         {
-          "name": "Chase Brown",
-          "slot": "RB/WR/TE",
-          "position": "RB",
-          "points": 32.1
-        },
-        {
           "name": "Tyler Shough",
           "slot": "QB",
           "position": "QB",
           "points": 28.92
         },
         {
-          "name": "Seahawks D/ST",
-          "slot": "D/ST",
-          "position": "D/ST",
-          "points": 15.35
+          "name": "Bucky Irving",
+          "slot": "RB",
+          "position": "RB",
+          "points": 8.3
         },
         {
           "name": "Amon-Ra St. Brown",
@@ -488,22 +482,22 @@
           "points": 14.8
         },
         {
+          "name": "Nico Collins",
+          "slot": "WR",
+          "position": "WR",
+          "points": 8.7
+        },
+        {
           "name": "Juwan Johnson",
           "slot": "TE",
           "position": "TE",
           "points": 13.5
         },
         {
-          "name": "Ka'imi Fairbairn",
-          "slot": "K",
-          "position": "K",
-          "points": 10.0
-        },
-        {
-          "name": "Nico Collins",
-          "slot": "WR",
-          "position": "WR",
-          "points": 8.7
+          "name": "Chase Brown",
+          "slot": "RB/WR/TE",
+          "position": "RB",
+          "points": 32.1
         },
         {
           "name": "Woody Marks",
@@ -512,10 +506,16 @@
           "points": 8.5
         },
         {
-          "name": "Bucky Irving",
-          "slot": "RB",
-          "position": "RB",
-          "points": 8.3
+          "name": "Ka'imi Fairbairn",
+          "slot": "K",
+          "position": "K",
+          "points": 10.0
+        },
+        {
+          "name": "Seahawks D/ST",
+          "slot": "D/ST",
+          "position": "D/ST",
+          "points": 15.35
         },
         {
           "name": "Parker Washington",
@@ -580,22 +580,22 @@
           "points": 31.1
         },
         {
-          "name": "Steelers D/ST",
-          "slot": "D/ST",
-          "position": "D/ST",
-          "points": 15.0
-        },
-        {
           "name": "Jauan Jennings",
           "slot": "WR",
           "position": "WR",
           "points": 12.2
         },
         {
-          "name": "Chris Boswell",
-          "slot": "K",
-          "position": "K",
-          "points": 7.0
+          "name": "DeVonta Smith",
+          "slot": "WR",
+          "position": "WR",
+          "points": 4.5
+        },
+        {
+          "name": "Taysom Hill",
+          "slot": "TE",
+          "position": "TE",
+          "points": 0.0
         },
         {
           "name": "Mark Andrews",
@@ -610,16 +610,16 @@
           "points": 5.6
         },
         {
-          "name": "DeVonta Smith",
-          "slot": "WR",
-          "position": "WR",
-          "points": 4.5
+          "name": "Chris Boswell",
+          "slot": "K",
+          "position": "K",
+          "points": 7.0
         },
         {
-          "name": "Taysom Hill",
-          "slot": "TE",
-          "position": "TE",
-          "points": 0.0
+          "name": "Steelers D/ST",
+          "slot": "D/ST",
+          "position": "D/ST",
+          "points": 15.0
         },
         {
           "name": "Devin Singletary",
