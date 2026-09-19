@@ -1,7 +1,7 @@
 {
   "id": 167449,
   "name": "No Punt Intended",
-  "currentSeason": 2025,
+  "currentSeason": 2026,
   "seasons": [
     2018,
     2019,
@@ -10,11 +10,12 @@
     2022,
     2023,
     2024,
-    2025
+    2025,
+    2026
   ],
-  "seasonCount": 8,
+  "seasonCount": 9,
   "managerCount": 24,
-  "gamesPlayed": 932,
+  "gamesPlayed": 1030,
   "teamCount": 14,
   "currentChampion": {
     "year": 2025,
@@ -29,26 +30,26 @@
     "championshipScore": "140.17-128.12"
   },
   "currentLeader": {
-    "teamId": 3,
-    "teamName": "Alaina's Team",
-    "abbrev": "KMB",
-    "logoUrl": "https://mystique-api.fantasy.espn.com/apis/v1/domains/lm/images/0293bb10-bb96-11f0-90f7-112fa0f42e74",
-    "ownerId": "437742f0-e2a6-4492-b742-f0e2a6c49263",
-    "ownerName": "Kodi",
-    "wins": 7,
-    "losses": 7,
+    "teamId": 16,
+    "teamName": "Duiiii dont know Jim",
+    "abbrev": "IOWA",
+    "logoUrl": "https://mystique-api.fantasy.espn.com/apis/v1/domains/lm/images/70a399d0-aaf7-11f1-96ea-97f590071d69",
+    "ownerId": "409f57ce-50f2-41f5-9f57-ce50f201f53b",
+    "ownerName": "Erik",
+    "wins": 1,
+    "losses": 0,
     "ties": 0,
-    "pointsFor": 1852.99,
-    "pointsAgainst": 1875.92,
-    "standing": 6,
+    "pointsFor": 179.72,
+    "pointsAgainst": 84.76,
+    "standing": 1,
     "finalStanding": 1,
-    "playoffPct": 0.0,
-    "trades": 6,
-    "acquisitions": 51,
-    "drops": 51,
+    "playoffPct": 66.42,
+    "trades": 1,
+    "acquisitions": 4,
+    "drops": 3,
     "division": "MidWest"
   },
-  "generatedAt": "2026-08-16T22:13:04.729684+00:00",
+  "generatedAt": "2026-09-19T00:32:16.738385+00:00",
   "championships": [
     {
       "year": 2018,

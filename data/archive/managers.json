@@ -115,18 +115,32 @@
         "playoff": true,
         "champion": true,
         "logoUrl": "https://mystique-api.fantasy.espn.com/apis/v1/domains/lm/images/0293bb10-bb96-11f0-90f7-112fa0f42e74"
+      },
+      {
+        "year": 2026,
+        "teamId": 3,
+        "teamName": "Chig Happens...",
+        "wins": 0,
+        "losses": 1,
+        "ties": 0,
+        "pointsFor": 105.27,
+        "pointsAgainst": 130.72,
+        "finish": 10,
+        "playoff": false,
+        "champion": false,
+        "logoUrl": "https://mystique-api.fantasy.espn.com/apis/v1/domains/lm/images/2141e6b0-ab26-11f1-8b95-b1e59b7020ef"
       }
     ],
     "championships": 5,
     "runnerUp": 0,
     "playoffAppearances": 8,
     "wins": 70,
-    "losses": 40,
+    "losses": 41,
     "ties": 0,
-    "pointsFor": 14338.45,
-    "pointsAgainst": 13034.22,
+    "pointsFor": 14443.72,
+    "pointsAgainst": 13164.94,
     "bestFinish": 1,
-    "worstFinish": 6,
+    "worstFinish": 10,
     "highestWeek": {
       "year": 2020,
       "week": 2,
@@ -143,9 +157,9 @@
     },
     "winStreak": 9,
     "loseStreak": 3,
-    "winPct": 0.636,
-    "seasonsPlayed": 8,
-    "averageFinish": 2.75,
+    "winPct": 0.631,
+    "seasonsPlayed": 9,
+    "averageFinish": 3.56,
     "headToHead": [
       {
         "opponentId": "096ba945-afc2-4e5f-aba9-45afc2fe5f89",
@@ -258,7 +272,7 @@
       {
         "opponentId": "c40204e1-163d-4d61-8204-e1163ded61c8",
         "wins": 3,
-        "losses": 1,
+        "losses": 2,
         "ties": 0
       },
       {
@@ -403,16 +417,30 @@
         "playoff": false,
         "champion": false,
         "logoUrl": "https://g.espncdn.com/lm-static/ffl/images/default_logos/20.svg"
+      },
+      {
+        "year": 2026,
+        "teamId": 9,
+        "teamName": "Silver Bullet",
+        "wins": 1,
+        "losses": 0,
+        "ties": 0,
+        "pointsFor": 132.76,
+        "pointsAgainst": 93.25,
+        "finish": 5,
+        "playoff": true,
+        "champion": false,
+        "logoUrl": "https://g.espncdn.com/lm-static/ffl/images/default_logos/20.svg"
       }
     ],
     "championships": 1,
     "runnerUp": 1,
-    "playoffAppearances": 5,
-    "wins": 64,
+    "playoffAppearances": 6,
+    "wins": 65,
     "losses": 46,
     "ties": 0,
-    "pointsFor": 13527.12,
-    "pointsAgainst": 12787.89,
+    "pointsFor": 13659.88,
+    "pointsAgainst": 12881.14,
     "bestFinish": 1,
     "worstFinish": 10,
     "highestWeek": {
@@ -431,9 +459,9 @@
     },
     "winStreak": 8,
     "loseStreak": 5,
-    "winPct": 0.582,
-    "seasonsPlayed": 8,
-    "averageFinish": 6.25,
+    "winPct": 0.586,
+    "seasonsPlayed": 9,
+    "averageFinish": 6.11,
     "headToHead": [
       {
         "opponentId": "096ba945-afc2-4e5f-aba9-45afc2fe5f89",
@@ -563,7 +591,7 @@
       },
       {
         "opponentId": "f0778442-346f-483c-863b-b747e000a428",
-        "wins": 9,
+        "wins": 10,
         "losses": 5,
         "ties": 0
       },
@@ -621,16 +649,30 @@
         "playoff": false,
         "champion": false,
         "logoUrl": "https://mystique-api.fantasy.espn.com/apis/v1/domains/lm/images/c5eafad0-8750-11f0-89de-d1ac062a5dc6"
+      },
+      {
+        "year": 2026,
+        "teamId": 18,
+        "teamName": "SUPER SMASH BURROWS",
+        "wins": 1,
+        "losses": 0,
+        "ties": 0,
+        "pointsFor": 142.21,
+        "pointsAgainst": 97.64,
+        "finish": 4,
+        "playoff": true,
+        "champion": false,
+        "logoUrl": "https://mystique-api.fantasy.espn.com/apis/v1/domains/lm/images/3e1f3880-aca9-11f1-9537-5bd778d76252"
       }
     ],
     "championships": 1,
     "runnerUp": 0,
-    "playoffAppearances": 1,
-    "wins": 19,
+    "playoffAppearances": 2,
+    "wins": 20,
     "losses": 23,
     "ties": 0,
-    "pointsFor": 4640.16,
-    "pointsAgainst": 4884.62,
+    "pointsFor": 4782.37,
+    "pointsAgainst": 4982.26,
     "bestFinish": 1,
     "worstFinish": 8,
     "highestWeek": {
@@ -649,9 +691,9 @@
     },
     "winStreak": 4,
     "loseStreak": 4,
-    "winPct": 0.452,
-    "seasonsPlayed": 3,
-    "averageFinish": 5.67,
+    "winPct": 0.465,
+    "seasonsPlayed": 4,
+    "averageFinish": 5.25,
     "headToHead": [
       {
         "opponentId": "096ba945-afc2-4e5f-aba9-45afc2fe5f89",
@@ -733,7 +775,7 @@
       },
       {
         "opponentId": "cc7c35aa-669c-4730-a0b5-9b9e6837e8fc",
-        "wins": 2,
+        "wins": 3,
         "losses": 3,
         "ties": 0
       },
@@ -861,16 +903,30 @@
         "playoff": true,
         "champion": false,
         "logoUrl": "https://g.espncdn.com/lm-static/logo-packs/ffl/TeamKinny-MartinLaksman/TeamKinny-03.svg"
+      },
+      {
+        "year": 2026,
+        "teamId": 10,
+        "teamName": "La-Torta is Warr-en",
+        "wins": 0,
+        "losses": 1,
+        "ties": 0,
+        "pointsFor": 97.64,
+        "pointsAgainst": 142.21,
+        "finish": 12,
+        "playoff": false,
+        "champion": false,
+        "logoUrl": "https://mystique-api.fantasy.espn.com/apis/v1/domains/lm/images/05a09340-af75-11f1-9aad-97daa98feb61"
       }
     ],
     "championships": 1,
     "runnerUp": 0,
     "playoffAppearances": 4,
     "wins": 49,
-    "losses": 61,
+    "losses": 62,
     "ties": 0,
-    "pointsFor": 12746.32,
-    "pointsAgainst": 12626.55,
+    "pointsFor": 12843.96,
+    "pointsAgainst": 12768.76,
     "bestFinish": 1,
     "worstFinish": 14,
     "highestWeek": {
@@ -889,9 +945,9 @@
     },
     "winStreak": 8,
     "loseStreak": 8,
-    "winPct": 0.445,
-    "seasonsPlayed": 8,
-    "averageFinish": 7.88,
+    "winPct": 0.441,
+    "seasonsPlayed": 9,
+    "averageFinish": 8.33,
     "headToHead": [
       {
         "opponentId": "096ba945-afc2-4e5f-aba9-45afc2fe5f89",
@@ -908,7 +964,7 @@
       {
         "opponentId": "3ac69504-ba45-4937-8695-04ba45e93721",
         "wins": 3,
-        "losses": 2,
+        "losses": 3,
         "ties": 0
       },
       {
@@ -1409,17 +1465,31 @@
         "playoff": true,
         "champion": false,
         "logoUrl": "https://g.espncdn.com/lm-static/logo-packs/core/AnimalHeads/animal_heads-2.svg"
+      },
+      {
+        "year": 2026,
+        "teamId": 16,
+        "teamName": "Duiiii dont know Jim",
+        "wins": 1,
+        "losses": 0,
+        "ties": 0,
+        "pointsFor": 179.72,
+        "pointsAgainst": 84.76,
+        "finish": 1,
+        "playoff": true,
+        "champion": false,
+        "logoUrl": "https://mystique-api.fantasy.espn.com/apis/v1/domains/lm/images/70a399d0-aaf7-11f1-96ea-97f590071d69"
       }
     ],
     "championships": 0,
     "runnerUp": 1,
-    "playoffAppearances": 6,
-    "wins": 57,
+    "playoffAppearances": 7,
+    "wins": 58,
     "losses": 39,
     "ties": 0,
-    "pointsFor": 11632.81,
-    "pointsAgainst": 11305.71,
-    "bestFinish": 2,
+    "pointsFor": 11812.53,
+    "pointsAgainst": 11390.47,
+    "bestFinish": 1,
     "worstFinish": 14,
     "highestWeek": {
       "year": 2022,
@@ -1437,9 +1507,9 @@
     },
     "winStreak": 9,
     "loseStreak": 5,
-    "winPct": 0.594,
-    "seasonsPlayed": 7,
-    "averageFinish": 6.29,
+    "winPct": 0.598,
+    "seasonsPlayed": 8,
+    "averageFinish": 5.62,
     "headToHead": [
       {
         "opponentId": "096ba945-afc2-4e5f-aba9-45afc2fe5f89",
@@ -1521,7 +1591,7 @@
       },
       {
         "opponentId": "8515684e-7a4d-4aaf-9568-4e7a4dcaaff3",
-        "wins": 5,
+        "wins": 6,
         "losses": 4,
         "ties": 0
       },
@@ -1927,18 +1997,32 @@
         "playoff": true,
         "champion": false,
         "logoUrl": "https://g.espncdn.com/lm-static/logo-packs/ffl/Talent-ChipWass/talent-yates_2.svg"
+      },
+      {
+        "year": 2026,
+        "teamId": 1,
+        "teamName": "Jacobs Got A Warren-t",
+        "wins": 0,
+        "losses": 1,
+        "ties": 0,
+        "pointsFor": 104.61,
+        "pointsAgainst": 116.55,
+        "finish": 11,
+        "playoff": false,
+        "champion": false,
+        "logoUrl": "https://g.espncdn.com/lm-static/logo-packs/ffl/Talent-ChipWass/talent-yates_2.svg"
       }
     ],
     "championships": 0,
     "runnerUp": 1,
     "playoffAppearances": 6,
     "wins": 61,
-    "losses": 49,
+    "losses": 50,
     "ties": 0,
-    "pointsFor": 13331.54,
-    "pointsAgainst": 12927.89,
+    "pointsFor": 13436.15,
+    "pointsAgainst": 13044.44,
     "bestFinish": 2,
-    "worstFinish": 9,
+    "worstFinish": 11,
     "highestWeek": {
       "year": 2019,
       "week": 15,
@@ -1955,9 +2039,9 @@
     },
     "winStreak": 9,
     "loseStreak": 4,
-    "winPct": 0.555,
-    "seasonsPlayed": 8,
-    "averageFinish": 5.38,
+    "winPct": 0.55,
+    "seasonsPlayed": 9,
+    "averageFinish": 6,
     "headToHead": [
       {
         "opponentId": "096ba945-afc2-4e5f-aba9-45afc2fe5f89",
@@ -2022,7 +2106,7 @@
       {
         "opponentId": "66d9a2b1-295f-4994-99a2-b1295f3994c2",
         "wins": 10,
-        "losses": 1,
+        "losses": 2,
         "ties": 0
       },
       {
@@ -2201,18 +2285,32 @@
         "playoff": false,
         "champion": false,
         "logoUrl": "https://mystique-api.fantasy.espn.com/apis/v1/domains/lm/images/e04dbc60-8736-11f0-b6e4-9dd13c0fbbe2"
+      },
+      {
+        "year": 2026,
+        "teamId": 19,
+        "teamName": "Incepcion",
+        "wins": 0,
+        "losses": 1,
+        "ties": 0,
+        "pointsFor": 84.76,
+        "pointsAgainst": 179.72,
+        "finish": 14,
+        "playoff": false,
+        "champion": false,
+        "logoUrl": "https://mystique-api.fantasy.espn.com/apis/v1/domains/lm/images/c3e295e0-aac2-11f1-9537-5bd778d76252"
       }
     ],
     "championships": 0,
     "runnerUp": 0,
     "playoffAppearances": 3,
     "wins": 52,
-    "losses": 44,
+    "losses": 45,
     "ties": 0,
-    "pointsFor": 11852.15,
-    "pointsAgainst": 11273.13,
+    "pointsFor": 11936.91,
+    "pointsAgainst": 11452.85,
     "bestFinish": 3,
-    "worstFinish": 10,
+    "worstFinish": 14,
     "highestWeek": {
       "year": 2020,
       "week": 4,
@@ -2229,9 +2327,9 @@
     },
     "winStreak": 10,
     "loseStreak": 5,
-    "winPct": 0.542,
-    "seasonsPlayed": 7,
-    "averageFinish": 7.29,
+    "winPct": 0.536,
+    "seasonsPlayed": 8,
+    "averageFinish": 8.12,
     "headToHead": [
       {
         "opponentId": "096ba945-afc2-4e5f-aba9-45afc2fe5f89",
@@ -2254,7 +2352,7 @@
       {
         "opponentId": "409f57ce-50f2-41f5-9f57-ce50f201f53b",
         "wins": 4,
-        "losses": 5,
+        "losses": 6,
         "ties": 0
       },
       {
@@ -2918,6 +3016,216 @@
     ]
   },
   {
+    "id": "096ba945-afc2-4e5f-aba9-45afc2fe5f89",
+    "name": "Jacob",
+    "fullName": "Jacob",
+    "seasons": [
+      {
+        "year": 2022,
+        "teamId": 6,
+        "teamName": "Its not  Over",
+        "wins": 2,
+        "losses": 12,
+        "ties": 0,
+        "pointsFor": 1365.02,
+        "pointsAgainst": 1815.82,
+        "finish": 14,
+        "playoff": false,
+        "champion": false,
+        "logoUrl": "https://g.espncdn.com/lm-static/logo-packs/ffl/GridironWarriors-MartinLaksman/warriors-01.svg"
+      },
+      {
+        "year": 2023,
+        "teamId": 6,
+        "teamName": "Can't Pierce the Kupp",
+        "wins": 7,
+        "losses": 7,
+        "ties": 0,
+        "pointsFor": 1593.88,
+        "pointsAgainst": 1623.54,
+        "finish": 12,
+        "playoff": false,
+        "champion": false,
+        "logoUrl": "https://g.espncdn.com/lm-static/logo-packs/ffl/GridironWarriors-MartinLaksman/warriors-01.svg"
+      },
+      {
+        "year": 2024,
+        "teamId": 6,
+        "teamName": "Stroud to be here",
+        "wins": 10,
+        "losses": 4,
+        "ties": 0,
+        "pointsFor": 1654.16,
+        "pointsAgainst": 1649.26,
+        "finish": 7,
+        "playoff": true,
+        "champion": false,
+        "logoUrl": "https://g.espncdn.com/lm-static/logo-packs/ffl/GridironWarriors-MartinLaksman/warriors-01.svg"
+      },
+      {
+        "year": 2025,
+        "teamId": 6,
+        "teamName": "Just Josh",
+        "wins": 7,
+        "losses": 7,
+        "ties": 0,
+        "pointsFor": 1881.08,
+        "pointsAgainst": 1713.44,
+        "finish": 7,
+        "playoff": true,
+        "champion": false,
+        "logoUrl": "https://mystique-api.fantasy.espn.com/apis/v1/domains/lm/images/4abf6380-a075-11f0-90f7-112fa0f42e74"
+      },
+      {
+        "year": 2026,
+        "teamId": 6,
+        "teamName": "Tee Time",
+        "wins": 1,
+        "losses": 0,
+        "ties": 0,
+        "pointsFor": 165.65,
+        "pointsAgainst": 113.91,
+        "finish": 2,
+        "playoff": true,
+        "champion": false,
+        "logoUrl": "https://mystique-api.fantasy.espn.com/apis/v1/domains/lm/images/c41131e0-aac0-11f1-8623-4f919cfbc4d9"
+      }
+    ],
+    "championships": 0,
+    "runnerUp": 0,
+    "playoffAppearances": 3,
+    "wins": 27,
+    "losses": 30,
+    "ties": 0,
+    "pointsFor": 6659.79,
+    "pointsAgainst": 6915.97,
+    "bestFinish": 2,
+    "worstFinish": 14,
+    "highestWeek": {
+      "year": 2025,
+      "week": 10,
+      "teamName": "Just Josh",
+      "points": 197.37,
+      "opponentName": "Alaina's Team"
+    },
+    "lowestWeek": {
+      "year": 2022,
+      "week": 17,
+      "teamName": "Its not  Over",
+      "points": 58.6,
+      "opponentName": "Dsm Tittsburgh "
+    },
+    "winStreak": 4,
+    "loseStreak": 6,
+    "winPct": 0.474,
+    "seasonsPlayed": 5,
+    "averageFinish": 8.4,
+    "headToHead": [
+      {
+        "opponentId": "0c91d8fc-d29d-4f25-9d53-04e3e50afeda",
+        "wins": 0,
+        "losses": 2,
+        "ties": 0
+      },
+      {
+        "opponentId": "3ac69504-ba45-4937-8695-04ba45e93721",
+        "wins": 1,
+        "losses": 2,
+        "ties": 0
+      },
+      {
+        "opponentId": "409f57ce-50f2-41f5-9f57-ce50f201f53b",
+        "wins": 2,
+        "losses": 2,
+        "ties": 0
+      },
+      {
+        "opponentId": "42618749-4674-4b0b-a187-4946747b0b51",
+        "wins": 0,
+        "losses": 2,
+        "ties": 0
+      },
+      {
+        "opponentId": "437742f0-e2a6-4492-b742-f0e2a6c49263",
+        "wins": 1,
+        "losses": 3,
+        "ties": 0
+      },
+      {
+        "opponentId": "4601a707-1ca5-4416-9e3c-9f282205bc36",
+        "wins": 4,
+        "losses": 2,
+        "ties": 0
+      },
+      {
+        "opponentId": "60816921-5c37-4b08-8e26-3f1c500485da",
+        "wins": 3,
+        "losses": 2,
+        "ties": 0
+      },
+      {
+        "opponentId": "66d9a2b1-295f-4994-99a2-b1295f3994c2",
+        "wins": 3,
+        "losses": 4,
+        "ties": 0
+      },
+      {
+        "opponentId": "6d011778-180a-447b-9ca3-012936e0fcef",
+        "wins": 0,
+        "losses": 2,
+        "ties": 0
+      },
+      {
+        "opponentId": "6de0caec-ce8c-42ea-83c1-484450bff7f3",
+        "wins": 1,
+        "losses": 1,
+        "ties": 0
+      },
+      {
+        "opponentId": "7001b1f9-65a1-4cc3-81b1-f965a12cc356",
+        "wins": 1,
+        "losses": 3,
+        "ties": 0
+      },
+      {
+        "opponentId": "7407050f-8994-489c-bdab-99c4f96ad05a",
+        "wins": 3,
+        "losses": 3,
+        "ties": 0
+      },
+      {
+        "opponentId": "8515684e-7a4d-4aaf-9568-4e7a4dcaaff3",
+        "wins": 2,
+        "losses": 3,
+        "ties": 0
+      },
+      {
+        "opponentId": "b4073cf5-bc88-4785-873c-f5bc88c785e6",
+        "wins": 2,
+        "losses": 0,
+        "ties": 0
+      },
+      {
+        "opponentId": "c40204e1-163d-4d61-8204-e1163ded61c8",
+        "wins": 2,
+        "losses": 0,
+        "ties": 0
+      },
+      {
+        "opponentId": "cc7c35aa-669c-4730-a0b5-9b9e6837e8fc",
+        "wins": 2,
+        "losses": 4,
+        "ties": 0
+      },
+      {
+        "opponentId": "f0778442-346f-483c-863b-b747e000a428",
+        "wins": 2,
+        "losses": 3,
+        "ties": 0
+      }
+    ]
+  },
+  {
     "id": "4601a707-1ca5-4416-9e3c-9f282205bc36",
     "name": "Robert",
     "fullName": "Robert",
@@ -3019,16 +3327,30 @@
         "playoff": true,
         "champion": false,
         "logoUrl": "https://g.espncdn.com/lm-static/ffl/images/default_logos/6.svg"
+      },
+      {
+        "year": 2026,
+        "teamId": 8,
+        "teamName": "Robert's Rowdy Team",
+        "wins": 0,
+        "losses": 1,
+        "ties": 0,
+        "pointsFor": 113.91,
+        "pointsAgainst": 165.65,
+        "finish": 9,
+        "playoff": false,
+        "champion": false,
+        "logoUrl": "https://g.espncdn.com/lm-static/ffl/images/default_logos/6.svg"
       }
     ],
     "championships": 0,
     "runnerUp": 1,
     "playoffAppearances": 3,
     "wins": 46,
-    "losses": 50,
+    "losses": 51,
     "ties": 0,
-    "pointsFor": 11057.48,
-    "pointsAgainst": 11308.18,
+    "pointsFor": 11171.39,
+    "pointsAgainst": 11473.83,
     "bestFinish": 2,
     "worstFinish": 13,
     "highestWeek": {
@@ -3047,14 +3369,14 @@
     },
     "winStreak": 4,
     "loseStreak": 5,
-    "winPct": 0.479,
-    "seasonsPlayed": 7,
-    "averageFinish": 8.29,
+    "winPct": 0.474,
+    "seasonsPlayed": 8,
+    "averageFinish": 8.38,
     "headToHead": [
       {
         "opponentId": "096ba945-afc2-4e5f-aba9-45afc2fe5f89",
         "wins": 2,
-        "losses": 3,
+        "losses": 4,
         "ties": 0
       },
       {
@@ -3186,202 +3508,6 @@
     ]
   },
   {
-    "id": "096ba945-afc2-4e5f-aba9-45afc2fe5f89",
-    "name": "Jacob",
-    "fullName": "Jacob",
-    "seasons": [
-      {
-        "year": 2022,
-        "teamId": 6,
-        "teamName": "Its not  Over",
-        "wins": 2,
-        "losses": 12,
-        "ties": 0,
-        "pointsFor": 1365.02,
-        "pointsAgainst": 1815.82,
-        "finish": 14,
-        "playoff": false,
-        "champion": false,
-        "logoUrl": "https://g.espncdn.com/lm-static/logo-packs/ffl/GridironWarriors-MartinLaksman/warriors-01.svg"
-      },
-      {
-        "year": 2023,
-        "teamId": 6,
-        "teamName": "Can't Pierce the Kupp",
-        "wins": 7,
-        "losses": 7,
-        "ties": 0,
-        "pointsFor": 1593.88,
-        "pointsAgainst": 1623.54,
-        "finish": 12,
-        "playoff": false,
-        "champion": false,
-        "logoUrl": "https://g.espncdn.com/lm-static/logo-packs/ffl/GridironWarriors-MartinLaksman/warriors-01.svg"
-      },
-      {
-        "year": 2024,
-        "teamId": 6,
-        "teamName": "Stroud to be here",
-        "wins": 10,
-        "losses": 4,
-        "ties": 0,
-        "pointsFor": 1654.16,
-        "pointsAgainst": 1649.26,
-        "finish": 7,
-        "playoff": true,
-        "champion": false,
-        "logoUrl": "https://g.espncdn.com/lm-static/logo-packs/ffl/GridironWarriors-MartinLaksman/warriors-01.svg"
-      },
-      {
-        "year": 2025,
-        "teamId": 6,
-        "teamName": "Just Josh",
-        "wins": 7,
-        "losses": 7,
-        "ties": 0,
-        "pointsFor": 1881.08,
-        "pointsAgainst": 1713.44,
-        "finish": 7,
-        "playoff": true,
-        "champion": false,
-        "logoUrl": "https://mystique-api.fantasy.espn.com/apis/v1/domains/lm/images/4abf6380-a075-11f0-90f7-112fa0f42e74"
-      }
-    ],
-    "championships": 0,
-    "runnerUp": 0,
-    "playoffAppearances": 2,
-    "wins": 26,
-    "losses": 30,
-    "ties": 0,
-    "pointsFor": 6494.14,
-    "pointsAgainst": 6802.06,
-    "bestFinish": 7,
-    "worstFinish": 14,
-    "highestWeek": {
-      "year": 2025,
-      "week": 10,
-      "teamName": "Just Josh",
-      "points": 197.37,
-      "opponentName": "Alaina's Team"
-    },
-    "lowestWeek": {
-      "year": 2022,
-      "week": 17,
-      "teamName": "Its not  Over",
-      "points": 58.6,
-      "opponentName": "Dsm Tittsburgh "
-    },
-    "winStreak": 4,
-    "loseStreak": 6,
-    "winPct": 0.464,
-    "seasonsPlayed": 4,
-    "averageFinish": 10,
-    "headToHead": [
-      {
-        "opponentId": "0c91d8fc-d29d-4f25-9d53-04e3e50afeda",
-        "wins": 0,
-        "losses": 2,
-        "ties": 0
-      },
-      {
-        "opponentId": "3ac69504-ba45-4937-8695-04ba45e93721",
-        "wins": 1,
-        "losses": 2,
-        "ties": 0
-      },
-      {
-        "opponentId": "409f57ce-50f2-41f5-9f57-ce50f201f53b",
-        "wins": 2,
-        "losses": 2,
-        "ties": 0
-      },
-      {
-        "opponentId": "42618749-4674-4b0b-a187-4946747b0b51",
-        "wins": 0,
-        "losses": 2,
-        "ties": 0
-      },
-      {
-        "opponentId": "437742f0-e2a6-4492-b742-f0e2a6c49263",
-        "wins": 1,
-        "losses": 3,
-        "ties": 0
-      },
-      {
-        "opponentId": "4601a707-1ca5-4416-9e3c-9f282205bc36",
-        "wins": 3,
-        "losses": 2,
-        "ties": 0
-      },
-      {
-        "opponentId": "60816921-5c37-4b08-8e26-3f1c500485da",
-        "wins": 3,
-        "losses": 2,
-        "ties": 0
-      },
-      {
-        "opponentId": "66d9a2b1-295f-4994-99a2-b1295f3994c2",
-        "wins": 3,
-        "losses": 4,
-        "ties": 0
-      },
-      {
-        "opponentId": "6d011778-180a-447b-9ca3-012936e0fcef",
-        "wins": 0,
-        "losses": 2,
-        "ties": 0
-      },
-      {
-        "opponentId": "6de0caec-ce8c-42ea-83c1-484450bff7f3",
-        "wins": 1,
-        "losses": 1,
-        "ties": 0
-      },
-      {
-        "opponentId": "7001b1f9-65a1-4cc3-81b1-f965a12cc356",
-        "wins": 1,
-        "losses": 3,
-        "ties": 0
-      },
-      {
-        "opponentId": "7407050f-8994-489c-bdab-99c4f96ad05a",
-        "wins": 3,
-        "losses": 3,
-        "ties": 0
-      },
-      {
-        "opponentId": "8515684e-7a4d-4aaf-9568-4e7a4dcaaff3",
-        "wins": 2,
-        "losses": 3,
-        "ties": 0
-      },
-      {
-        "opponentId": "b4073cf5-bc88-4785-873c-f5bc88c785e6",
-        "wins": 2,
-        "losses": 0,
-        "ties": 0
-      },
-      {
-        "opponentId": "c40204e1-163d-4d61-8204-e1163ded61c8",
-        "wins": 2,
-        "losses": 0,
-        "ties": 0
-      },
-      {
-        "opponentId": "cc7c35aa-669c-4730-a0b5-9b9e6837e8fc",
-        "wins": 2,
-        "losses": 4,
-        "ties": 0
-      },
-      {
-        "opponentId": "f0778442-346f-483c-863b-b747e000a428",
-        "wins": 2,
-        "losses": 3,
-        "ties": 0
-      }
-    ]
-  },
-  {
     "id": "f0778442-346f-483c-863b-b747e000a428",
     "name": "Dillon",
     "fullName": "Dillon",
@@ -3497,18 +3623,32 @@
         "playoff": true,
         "champion": false,
         "logoUrl": "https://g.espncdn.com/lm-static/ffl/images/default_logos/19.svg"
+      },
+      {
+        "year": 2026,
+        "teamId": 2,
+        "teamName": "Team Lehman",
+        "wins": 0,
+        "losses": 1,
+        "ties": 0,
+        "pointsFor": 93.25,
+        "pointsAgainst": 132.76,
+        "finish": 13,
+        "playoff": false,
+        "champion": false,
+        "logoUrl": "https://g.espncdn.com/lm-static/ffl/images/default_logos/19.svg"
       }
     ],
     "championships": 0,
     "runnerUp": 0,
     "playoffAppearances": 4,
     "wins": 50,
-    "losses": 60,
+    "losses": 61,
     "ties": 0,
-    "pointsFor": 12591.13,
-    "pointsAgainst": 12715.39,
+    "pointsFor": 12684.38,
+    "pointsAgainst": 12848.15,
     "bestFinish": 4,
-    "worstFinish": 12,
+    "worstFinish": 13,
     "highestWeek": {
       "year": 2025,
       "week": 16,
@@ -3525,9 +3665,9 @@
     },
     "winStreak": 5,
     "loseStreak": 5,
-    "winPct": 0.455,
-    "seasonsPlayed": 8,
-    "averageFinish": 8.75,
+    "winPct": 0.45,
+    "seasonsPlayed": 9,
+    "averageFinish": 9.22,
     "headToHead": [
       {
         "opponentId": "096ba945-afc2-4e5f-aba9-45afc2fe5f89",
@@ -3616,7 +3756,7 @@
       {
         "opponentId": "7407050f-8994-489c-bdab-99c4f96ad05a",
         "wins": 5,
-        "losses": 9,
+        "losses": 10,
         "ties": 0
       },
       {
@@ -3771,16 +3911,30 @@
         "playoff": false,
         "champion": false,
         "logoUrl": "https://mystique-api.fantasy.espn.com/apis/v1/domains/lm/images/d733c960-c3ce-11f0-90f7-112fa0f42e74"
+      },
+      {
+        "year": 2026,
+        "teamId": 4,
+        "teamName": "Givin' Out Dak-Shots",
+        "wins": 0,
+        "losses": 1,
+        "ties": 0,
+        "pointsFor": 132.6,
+        "pointsAgainst": 162.76,
+        "finish": 8,
+        "playoff": false,
+        "champion": false,
+        "logoUrl": "https://mystique-api.fantasy.espn.com/apis/v1/domains/lm/images/1039a8b0-ac63-11f1-96ea-97f590071d69"
       }
     ],
     "championships": 0,
     "runnerUp": 1,
     "playoffAppearances": 2,
     "wins": 43,
-    "losses": 53,
+    "losses": 54,
     "ties": 0,
-    "pointsFor": 10785.44,
-    "pointsAgainst": 11501.57,
+    "pointsFor": 10918.04,
+    "pointsAgainst": 11664.33,
     "bestFinish": 2,
     "worstFinish": 14,
     "highestWeek": {
@@ -3799,9 +3953,9 @@
     },
     "winStreak": 6,
     "loseStreak": 8,
-    "winPct": 0.448,
-    "seasonsPlayed": 7,
-    "averageFinish": 9.86,
+    "winPct": 0.443,
+    "seasonsPlayed": 8,
+    "averageFinish": 9.62,
     "headToHead": [
       {
         "opponentId": "096ba945-afc2-4e5f-aba9-45afc2fe5f89",
@@ -3860,7 +4014,7 @@
       {
         "opponentId": "60816921-5c37-4b08-8e26-3f1c500485da",
         "wins": 6,
-        "losses": 3,
+        "losses": 4,
         "ties": 0
       },
       {
@@ -4045,17 +4199,31 @@
         "playoff": false,
         "champion": false,
         "logoUrl": "https://mystique-api.fantasy.espn.com/apis/v1/domains/lm/images/46eb41a0-dc2c-11f0-b1c3-bf61c28fbeb9"
+      },
+      {
+        "year": 2026,
+        "teamId": 15,
+        "teamName": "Njigbas in Paris",
+        "wins": 1,
+        "losses": 0,
+        "ties": 0,
+        "pointsFor": 162.76,
+        "pointsAgainst": 132.6,
+        "finish": 3,
+        "playoff": true,
+        "champion": false,
+        "logoUrl": "https://mystique-api.fantasy.espn.com/apis/v1/domains/lm/images/4c658f90-abe9-11f1-8b95-b1e59b7020ef"
       }
     ],
     "championships": 0,
     "runnerUp": 0,
-    "playoffAppearances": 3,
-    "wins": 42,
+    "playoffAppearances": 4,
+    "wins": 43,
     "losses": 54,
     "ties": 0,
-    "pointsFor": 10726.39,
-    "pointsAgainst": 11387.47,
-    "bestFinish": 4,
+    "pointsFor": 10889.15,
+    "pointsAgainst": 11520.07,
+    "bestFinish": 3,
     "worstFinish": 14,
     "highestWeek": {
       "year": 2022,
@@ -4073,9 +4241,9 @@
     },
     "winStreak": 5,
     "loseStreak": 11,
-    "winPct": 0.438,
-    "seasonsPlayed": 7,
-    "averageFinish": 9.57,
+    "winPct": 0.443,
+    "seasonsPlayed": 8,
+    "averageFinish": 8.75,
     "headToHead": [
       {
         "opponentId": "096ba945-afc2-4e5f-aba9-45afc2fe5f89",
@@ -4169,7 +4337,7 @@
       },
       {
         "opponentId": "b4073cf5-bc88-4785-873c-f5bc88c785e6",
-        "wins": 3,
+        "wins": 4,
         "losses": 6,
         "ties": 0
       },
@@ -4483,16 +4651,30 @@
         "playoff": true,
         "champion": false,
         "logoUrl": "https://g.espncdn.com/lm-static/logo-packs/ffl/AtTheStadium-RobbHarskamp/At_The_Stadium_01.svg"
+      },
+      {
+        "year": 2026,
+        "teamId": 17,
+        "teamName": "Dsm Tittsburgh ",
+        "wins": 1,
+        "losses": 0,
+        "ties": 0,
+        "pointsFor": 116.55,
+        "pointsAgainst": 104.61,
+        "finish": 7,
+        "playoff": true,
+        "champion": false,
+        "logoUrl": "https://g.espncdn.com/lm-static/logo-packs/ffl/AtTheStadium-RobbHarskamp/At_The_Stadium_01.svg"
       }
     ],
     "championships": 0,
     "runnerUp": 2,
-    "playoffAppearances": 2,
-    "wins": 36,
+    "playoffAppearances": 3,
+    "wins": 37,
     "losses": 60,
     "ties": 0,
-    "pointsFor": 10394.64,
-    "pointsAgainst": 11478.03,
+    "pointsFor": 10511.19,
+    "pointsAgainst": 11582.64,
     "bestFinish": 2,
     "worstFinish": 14,
     "highestWeek": {
@@ -4511,9 +4693,9 @@
     },
     "winStreak": 6,
     "loseStreak": 8,
-    "winPct": 0.375,
-    "seasonsPlayed": 7,
-    "averageFinish": 9.71,
+    "winPct": 0.381,
+    "seasonsPlayed": 8,
+    "averageFinish": 9.38,
     "headToHead": [
       {
         "opponentId": "096ba945-afc2-4e5f-aba9-45afc2fe5f89",
@@ -4589,7 +4771,7 @@
       },
       {
         "opponentId": "7001b1f9-65a1-4cc3-81b1-f965a12cc356",
-        "wins": 1,
+        "wins": 2,
         "losses": 10,
         "ties": 0
       },
@@ -4681,17 +4863,31 @@
         "playoff": false,
         "champion": false,
         "logoUrl": "https://cloudfront-us-east-1.images.arcpublishing.com/ajc/SHMWLAEQ7CG3DINWNDXFNVA2IM.jpg"
+      },
+      {
+        "year": 2026,
+        "teamId": 12,
+        "teamName": "Boomstick",
+        "wins": 1,
+        "losses": 0,
+        "ties": 0,
+        "pointsFor": 130.72,
+        "pointsAgainst": 105.27,
+        "finish": 6,
+        "playoff": true,
+        "champion": false,
+        "logoUrl": "https://cloudfront-us-east-1.images.arcpublishing.com/ajc/SHMWLAEQ7CG3DINWNDXFNVA2IM.jpg"
       }
     ],
     "championships": 0,
     "runnerUp": 0,
-    "playoffAppearances": 0,
-    "wins": 10,
+    "playoffAppearances": 1,
+    "wins": 11,
     "losses": 18,
     "ties": 0,
-    "pointsFor": 3116.56,
-    "pointsAgainst": 3280.44,
-    "bestFinish": 9,
+    "pointsFor": 3247.28,
+    "pointsAgainst": 3385.71,
+    "bestFinish": 6,
     "worstFinish": 13,
     "highestWeek": {
       "year": 2024,
@@ -4709,9 +4905,9 @@
     },
     "winStreak": 3,
     "loseStreak": 6,
-    "winPct": 0.357,
-    "seasonsPlayed": 2,
-    "averageFinish": 11,
+    "winPct": 0.379,
+    "seasonsPlayed": 3,
+    "averageFinish": 9.33,
     "headToHead": [
       {
         "opponentId": "096ba945-afc2-4e5f-aba9-45afc2fe5f89",
@@ -4739,7 +4935,7 @@
       },
       {
         "opponentId": "437742f0-e2a6-4492-b742-f0e2a6c49263",
-        "wins": 1,
+        "wins": 2,
         "losses": 3,
         "ties": 0
       },

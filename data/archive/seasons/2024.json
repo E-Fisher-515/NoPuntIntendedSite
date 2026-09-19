@@ -470,10 +470,10 @@
           "points": 41.98
         },
         {
-          "name": "Bucky Irving",
-          "slot": "RB/WR/TE",
+          "name": "De'Von Achane",
+          "slot": "RB",
           "position": "RB",
-          "points": 26.0
+          "points": 5.8
         },
         {
           "name": "A.J. Brown",
@@ -482,28 +482,10 @@
           "points": 12.6
         },
         {
-          "name": "Dolphins D/ST",
-          "slot": "D/ST",
-          "position": "D/ST",
-          "points": 11.0
-        },
-        {
           "name": "Davante Adams",
           "slot": "WR",
           "position": "WR",
           "points": 9.7
-        },
-        {
-          "name": "Joe Mixon",
-          "slot": "RB/WR/TE",
-          "position": "RB",
-          "points": 5.9
-        },
-        {
-          "name": "De'Von Achane",
-          "slot": "RB",
-          "position": "RB",
-          "points": 5.8
         },
         {
           "name": "Jake Ferguson",
@@ -512,10 +494,28 @@
           "points": 2.8
         },
         {
+          "name": "Bucky Irving",
+          "slot": "RB/WR/TE",
+          "position": "RB",
+          "points": 26.0
+        },
+        {
+          "name": "Joe Mixon",
+          "slot": "RB/WR/TE",
+          "position": "RB",
+          "points": 5.9
+        },
+        {
           "name": "Ka'imi Fairbairn",
           "slot": "K",
           "position": "K",
           "points": 0.0
+        },
+        {
+          "name": "Dolphins D/ST",
+          "slot": "D/ST",
+          "position": "D/ST",
+          "points": 11.0
         },
         {
           "name": "Jared Goff",
@@ -554,15 +554,15 @@
           "points": 0.0
         },
         {
-          "name": "Jonathon Brooks",
-          "slot": "IR",
-          "position": "RB",
-          "points": 0.0
-        },
-        {
           "name": "David Njoku",
           "slot": "BE",
           "position": "TE",
+          "points": 0.0
+        },
+        {
+          "name": "Jonathon Brooks",
+          "slot": "IR",
+          "position": "RB",
           "points": 0.0
         }
       ]
@@ -574,16 +574,16 @@
       "score": 94.22,
       "players": [
         {
+          "name": "Mason Rudolph",
+          "slot": "QB",
+          "position": "QB",
+          "points": 12.02
+        },
+        {
           "name": "Saquon Barkley",
           "slot": "RB",
           "position": "RB",
           "points": 21.9
-        },
-        {
-          "name": "Drake London",
-          "slot": "RB/WR/TE",
-          "position": "WR",
-          "points": 20.6
         },
         {
           "name": "Jauan Jennings",
@@ -592,10 +592,10 @@
           "points": 13.7
         },
         {
-          "name": "Mason Rudolph",
-          "slot": "QB",
-          "position": "QB",
-          "points": 12.02
+          "name": "Jaxon Smith-Njigba",
+          "slot": "WR",
+          "position": "WR",
+          "points": 6.2
         },
         {
           "name": "Chig Okonkwo",
@@ -604,22 +604,22 @@
           "points": 10.9
         },
         {
-          "name": "Jaxon Smith-Njigba",
-          "slot": "WR",
+          "name": "Drake London",
+          "slot": "RB/WR/TE",
           "position": "WR",
-          "points": 6.2
-        },
-        {
-          "name": "Brandon McManus",
-          "slot": "K",
-          "position": "K",
-          "points": 5.0
+          "points": 20.6
         },
         {
           "name": "Cooper Kupp",
           "slot": "RB/WR/TE",
           "position": "WR",
           "points": 3.9
+        },
+        {
+          "name": "Brandon McManus",
+          "slot": "K",
+          "position": "K",
+          "points": 5.0
         },
         {
           "name": "Packers D/ST",

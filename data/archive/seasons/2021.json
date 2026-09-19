@@ -464,40 +464,16 @@
       "score": 107.56,
       "players": [
         {
-          "name": "Brandin Cooks",
-          "slot": "RB/WR/TE",
-          "position": "WR",
-          "points": 19.6
-        },
-        {
-          "name": "Saints D/ST",
-          "slot": "D/ST",
-          "position": "D/ST",
-          "points": 17.0
-        },
-        {
-          "name": "Joe Mixon",
-          "slot": "RB",
-          "position": "RB",
-          "points": 15.6
-        },
-        {
-          "name": "Matt Prater",
-          "slot": "K",
-          "position": "K",
-          "points": 15.0
-        },
-        {
           "name": "Jalen Hurts",
           "slot": "QB",
           "position": "QB",
           "points": 12.96
         },
         {
-          "name": "Tyler Conklin",
-          "slot": "TE",
-          "position": "TE",
-          "points": 9.7
+          "name": "Joe Mixon",
+          "slot": "RB",
+          "position": "RB",
+          "points": 15.6
         },
         {
           "name": "CeeDee Lamb",
@@ -512,10 +488,34 @@
           "points": 5.9
         },
         {
+          "name": "Tyler Conklin",
+          "slot": "TE",
+          "position": "TE",
+          "points": 9.7
+        },
+        {
+          "name": "Brandin Cooks",
+          "slot": "RB/WR/TE",
+          "position": "WR",
+          "points": 19.6
+        },
+        {
           "name": "Ronald Jones II",
           "slot": "RB/WR/TE",
           "position": "RB",
           "points": 3.7
+        },
+        {
+          "name": "Matt Prater",
+          "slot": "K",
+          "position": "K",
+          "points": 15.0
+        },
+        {
+          "name": "Saints D/ST",
+          "slot": "D/ST",
+          "position": "D/ST",
+          "points": 17.0
         },
         {
           "name": "Rashaad Penny",
@@ -574,40 +574,10 @@
       "score": 101.76,
       "players": [
         {
-          "name": "Cooper Kupp",
-          "slot": "WR",
-          "position": "WR",
-          "points": 21.5
-        },
-        {
           "name": "Matthew Stafford",
           "slot": "QB",
           "position": "QB",
           "points": 17.26
-        },
-        {
-          "name": "Chris Boswell",
-          "slot": "K",
-          "position": "K",
-          "points": 17.0
-        },
-        {
-          "name": "Keenan Allen",
-          "slot": "WR",
-          "position": "WR",
-          "points": 14.4
-        },
-        {
-          "name": "Tyler Lockett",
-          "slot": "RB/WR/TE",
-          "position": "WR",
-          "points": 12.1
-        },
-        {
-          "name": "Dalton Schultz",
-          "slot": "TE",
-          "position": "TE",
-          "points": 11.4
         },
         {
           "name": "Dalvin Cook",
@@ -616,10 +586,40 @@
           "points": 4.3
         },
         {
+          "name": "Cooper Kupp",
+          "slot": "WR",
+          "position": "WR",
+          "points": 21.5
+        },
+        {
+          "name": "Keenan Allen",
+          "slot": "WR",
+          "position": "WR",
+          "points": 14.4
+        },
+        {
+          "name": "Dalton Schultz",
+          "slot": "TE",
+          "position": "TE",
+          "points": 11.4
+        },
+        {
+          "name": "Tyler Lockett",
+          "slot": "RB/WR/TE",
+          "position": "WR",
+          "points": 12.1
+        },
+        {
           "name": "Marquise Brown",
           "slot": "RB/WR/TE",
           "position": "WR",
           "points": 3.8
+        },
+        {
+          "name": "Chris Boswell",
+          "slot": "K",
+          "position": "K",
+          "points": 17.0
         },
         {
           "name": "Dolphins D/ST",
@@ -652,12 +652,6 @@
           "points": 6.0
         },
         {
-          "name": "Raheem Mostert",
-          "slot": "IR",
-          "position": "RB",
-          "points": 0.0
-        },
-        {
           "name": "Cowboys D/ST",
           "slot": "BE",
           "position": "D/ST",
@@ -666,6 +660,12 @@
         {
           "name": "Cam Akers",
           "slot": "BE",
+          "position": "RB",
+          "points": 0.0
+        },
+        {
+          "name": "Raheem Mostert",
+          "slot": "IR",
           "position": "RB",
           "points": 0.0
         }
