@@ -3,6 +3,7 @@ import { getEditorialFile } from "@/lib/archive";
 import type { NewsletterIssue } from "@/lib/types";
 
 const seeded: NewsletterIssue[] = [
+  { id: "2026-1", year: 2026, week: 1, title: "Week 1 Playbook", path: "/newsletters/2026-week-1.html" },
   { id: "2025-1", year: 2025, week: 1, title: "Week 1 recap", path: "/newsletters/2025-week-1.html" },
   { id: "2025-2", year: 2025, week: 2, title: "Week 2 recap", path: "/newsletters/2025-week-2.html" },
   { id: "2025-3", year: 2025, week: 3, title: "Week 3 recap", path: "/newsletters/2025-week-3.html" },
