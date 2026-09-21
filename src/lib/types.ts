@@ -1,3 +1,5 @@
+import type { TeamProjection } from "./projections";
+
 export type TeamSeason = {
   teamId: number;
   teamName: string;
@@ -195,6 +197,7 @@ export type Predictions = {
   champion: PredictionRow[];
   playoff: PredictionRow[];
   standings: PredictionRow[];
+  projections?: TeamProjection[];
 };
 
 export type TimelineEvent = {

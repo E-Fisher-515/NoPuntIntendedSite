@@ -15,7 +15,7 @@ export default function PredictionsPage() {
   }
   const predictions = getPredictions();
   const season = getSeason(predictions.season);
-  const projections = buildTeamProjections(season, getManagers());
+  const projections = predictions.projections ?? buildTeamProjections(season, getManagers());
   const championRows = projections.map((projection) => ({
     ownerId: projection.ownerId,
     ownerName: projection.ownerName,
@@ -34,8 +34,9 @@ export default function PredictionsPage() {
       <SectionHeader
         eyebrow={`${predictions.season} outlook`}
         title="Predictions"
-        lede="A numbers-first forecast with enough honesty to be entertaining. These projections update whenever the ESPN archive is refreshed."
+        lede="A roster-first forecast built from Draft Sharks rankings, positional fit, and depth. The snapshot is intentionally readable enough to argue about."
       />
+      <p className="border border-rule px-4 py-5 text-sm leading-6 text-ink/70">{predictions.note}</p>
       {predictions.complete ? (
         <p className="border border-rule px-4 py-8 text-ink/70">{predictions.note}</p>
       ) : (
