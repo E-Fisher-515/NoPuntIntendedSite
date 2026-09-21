@@ -398,5 +398,45 @@
     "winnerName": "Jacob vs chaz",
     "winnerId": null,
     "detail": "Just Josh vs Silver Bullet \u00b7 2025 Week 4: 131.36-131.5"
+  },
+  {
+    "id": "mvp-2026",
+    "year": 2026,
+    "name": "Highest Scoring Team",
+    "category": "scoring",
+    "source": "espn",
+    "winnerName": "Erik",
+    "winnerId": "409f57ce-50f2-41f5-9f57-ce50f201f53b",
+    "detail": "179.72 points"
+  },
+  {
+    "id": "best-record-2026",
+    "year": 2026,
+    "name": "Best Regular Season",
+    "category": "record",
+    "source": "espn",
+    "winnerName": "Erik",
+    "winnerId": "409f57ce-50f2-41f5-9f57-ce50f201f53b",
+    "detail": "1-0-0"
+  },
+  {
+    "id": "blowout-2026",
+    "year": 2026,
+    "name": "Biggest Blowout",
+    "category": "matchup",
+    "source": "espn",
+    "winnerName": "Erik",
+    "winnerId": "409f57ce-50f2-41f5-9f57-ce50f201f53b",
+    "detail": "Erik \u00b7 Duiiii dont know Jim \u00b7 2026 Week 1: 179.72-84.76 (margin 94.96)"
+  },
+  {
+    "id": "closest-2026",
+    "year": 2026,
+    "name": "Closest Game",
+    "category": "matchup",
+    "source": "espn",
+    "winnerName": "Brenden vs Marc",
+    "winnerId": null,
+    "detail": "Jacobs Got A Warren-t vs Dsm Tittsburgh  \u00b7 2026 Week 1: 104.61-116.55"
   }
 ]

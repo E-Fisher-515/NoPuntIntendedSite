@@ -464,10 +464,10 @@
       "score": 135.2,
       "players": [
         {
-          "name": "Mike Evans",
-          "slot": "WR",
-          "position": "WR",
-          "points": 53.7
+          "name": "Joe Burrow",
+          "slot": "QB",
+          "position": "QB",
+          "points": 0.0
         },
         {
           "name": "Austin Ekeler",
@@ -476,16 +476,10 @@
           "points": 35.1
         },
         {
-          "name": "Kenneth Walker III",
-          "slot": "RB/WR/TE",
-          "position": "RB",
-          "points": 18.2
-        },
-        {
-          "name": "T.J. Hockenson",
-          "slot": "TE",
-          "position": "TE",
-          "points": 12.9
+          "name": "Mike Evans",
+          "slot": "WR",
+          "position": "WR",
+          "points": 53.7
         },
         {
           "name": "Jaylen Waddle",
@@ -494,10 +488,16 @@
           "points": 8.2
         },
         {
-          "name": "Buccaneers D/ST",
-          "slot": "D/ST",
-          "position": "D/ST",
-          "points": 5.0
+          "name": "T.J. Hockenson",
+          "slot": "TE",
+          "position": "TE",
+          "points": 12.9
+        },
+        {
+          "name": "Kenneth Walker III",
+          "slot": "RB/WR/TE",
+          "position": "RB",
+          "points": 18.2
         },
         {
           "name": "Christian Watson",
@@ -506,16 +506,16 @@
           "points": 2.1
         },
         {
-          "name": "Joe Burrow",
-          "slot": "QB",
-          "position": "QB",
-          "points": 0.0
-        },
-        {
           "name": "Tyler Bass",
           "slot": "K",
           "position": "K",
           "points": 0.0
+        },
+        {
+          "name": "Buccaneers D/ST",
+          "slot": "D/ST",
+          "position": "D/ST",
+          "points": 5.0
         },
         {
           "name": "Kirk Cousins",
@@ -568,34 +568,10 @@
       "score": 85.3,
       "players": [
         {
-          "name": "Cam Akers",
-          "slot": "RB/WR/TE",
-          "position": "RB",
-          "points": 17.3
-        },
-        {
-          "name": "Tyreek Hill",
-          "slot": "WR",
-          "position": "WR",
-          "points": 15.7
-        },
-        {
-          "name": "Giants D/ST",
-          "slot": "D/ST",
-          "position": "D/ST",
-          "points": 15.0
-        },
-        {
-          "name": "James Conner",
-          "slot": "RB/WR/TE",
-          "position": "RB",
-          "points": 14.0
-        },
-        {
-          "name": "Gerald Everett",
-          "slot": "TE",
-          "position": "TE",
-          "points": 10.5
+          "name": "Josh Allen",
+          "slot": "QB",
+          "position": "QB",
+          "points": 0.0
         },
         {
           "name": "Saquon Barkley",
@@ -604,10 +580,34 @@
           "points": 7.3
         },
         {
+          "name": "Tyreek Hill",
+          "slot": "WR",
+          "position": "WR",
+          "points": 15.7
+        },
+        {
           "name": "Tyler Lockett",
           "slot": "WR",
           "position": "WR",
           "points": 3.5
+        },
+        {
+          "name": "Gerald Everett",
+          "slot": "TE",
+          "position": "TE",
+          "points": 10.5
+        },
+        {
+          "name": "Cam Akers",
+          "slot": "RB/WR/TE",
+          "position": "RB",
+          "points": 17.3
+        },
+        {
+          "name": "James Conner",
+          "slot": "RB/WR/TE",
+          "position": "RB",
+          "points": 14.0
         },
         {
           "name": "Jason Sanders",
@@ -616,10 +616,10 @@
           "points": 2.0
         },
         {
-          "name": "Josh Allen",
-          "slot": "QB",
-          "position": "QB",
-          "points": 0.0
+          "name": "Giants D/ST",
+          "slot": "D/ST",
+          "position": "D/ST",
+          "points": 15.0
         },
         {
           "name": "Treylon Burks",

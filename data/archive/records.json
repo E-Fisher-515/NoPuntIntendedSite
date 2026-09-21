@@ -215,27 +215,27 @@
       {
         "ownerId": "437742f0-e2a6-4492-b742-f0e2a6c49263",
         "ownerName": "Kodi",
-        "pointsFor": 14338.45
+        "pointsFor": 14443.72
       },
       {
         "ownerId": "7407050f-8994-489c-bdab-99c4f96ad05a",
         "ownerName": "chaz",
-        "pointsFor": 13527.12
+        "pointsFor": 13659.88
       },
       {
         "ownerId": "7001b1f9-65a1-4cc3-81b1-f965a12cc356",
         "ownerName": "Brenden",
-        "pointsFor": 13331.54
+        "pointsFor": 13436.15
       },
       {
         "ownerId": "cc7c35aa-669c-4730-a0b5-9b9e6837e8fc",
         "ownerName": "Zakk",
-        "pointsFor": 12746.32
+        "pointsFor": 12843.96
       },
       {
         "ownerId": "f0778442-346f-483c-863b-b747e000a428",
         "ownerName": "Dillon",
-        "pointsFor": 12591.13
+        "pointsFor": 12684.38
       }
     ],
     "highestAveragePoints": [
@@ -245,24 +245,24 @@
         "avg": 1831.22
       },
       {
-        "ownerId": "437742f0-e2a6-4492-b742-f0e2a6c49263",
-        "ownerName": "Kodi",
-        "avg": 1792.31
-      },
-      {
-        "ownerId": "8515684e-7a4d-4aaf-9568-4e7a4dcaaff3",
-        "ownerName": "Nick",
-        "avg": 1693.16
-      },
-      {
-        "ownerId": "7407050f-8994-489c-bdab-99c4f96ad05a",
-        "ownerName": "chaz",
-        "avg": 1690.89
-      },
-      {
         "ownerId": "9543a833-9725-43cd-9b3f-e25d1906d097",
         "ownerName": "iowahawkeyes10@icloud.com",
         "avg": 1667.88
+      },
+      {
+        "ownerId": "cb72fd7b-5e5d-478b-9165-9ee9838b119e",
+        "ownerName": "Kasi",
+        "avg": 1662.24
+      },
+      {
+        "ownerId": "6d011778-180a-447b-9ca3-012936e0fcef",
+        "ownerName": "Jared",
+        "avg": 1636.24
+      },
+      {
+        "ownerId": "437742f0-e2a6-4492-b742-f0e2a6c49263",
+        "ownerName": "Kodi",
+        "avg": 1604.86
       }
     ]
   },
@@ -272,62 +272,62 @@
         "ownerId": "437742f0-e2a6-4492-b742-f0e2a6c49263",
         "ownerName": "Kodi",
         "wins": 70,
-        "losses": 40
+        "losses": 41
       },
       {
         "ownerId": "7407050f-8994-489c-bdab-99c4f96ad05a",
         "ownerName": "chaz",
-        "wins": 64,
+        "wins": 65,
         "losses": 46
       },
       {
         "ownerId": "7001b1f9-65a1-4cc3-81b1-f965a12cc356",
         "ownerName": "Brenden",
         "wins": 61,
-        "losses": 49
+        "losses": 50
       },
       {
         "ownerId": "409f57ce-50f2-41f5-9f57-ce50f201f53b",
         "ownerName": "Erik",
-        "wins": 57,
+        "wins": 58,
         "losses": 39
       },
       {
         "ownerId": "8515684e-7a4d-4aaf-9568-4e7a4dcaaff3",
         "ownerName": "Nick",
         "wins": 52,
-        "losses": 44
+        "losses": 45
       }
     ],
     "mostLosses": [
       {
         "ownerId": "cc7c35aa-669c-4730-a0b5-9b9e6837e8fc",
         "ownerName": "Zakk",
-        "losses": 61,
+        "losses": 62,
         "wins": 49
       },
       {
         "ownerId": "f0778442-346f-483c-863b-b747e000a428",
         "ownerName": "Dillon",
-        "losses": 60,
+        "losses": 61,
         "wins": 50
       },
       {
         "ownerId": "66d9a2b1-295f-4994-99a2-b1295f3994c2",
         "ownerName": "Marc",
         "losses": 60,
-        "wins": 36
+        "wins": 37
+      },
+      {
+        "ownerId": "b4073cf5-bc88-4785-873c-f5bc88c785e6",
+        "ownerName": "Ace",
+        "losses": 54,
+        "wins": 43
       },
       {
         "ownerId": "60816921-5c37-4b08-8e26-3f1c500485da",
         "ownerName": "Trent",
         "losses": 54,
-        "wins": 42
-      },
-      {
-        "ownerId": "b4073cf5-bc88-4785-873c-f5bc88c785e6",
-        "ownerName": "Ace",
-        "losses": 53,
         "wins": 43
       }
     ],
@@ -440,109 +440,109 @@
     ],
     "worstRegularSeason": [
       {
-        "year": 2022,
-        "teamId": 6,
-        "teamName": "Its not  Over",
-        "abbrev": "Over",
-        "logoUrl": "https://g.espncdn.com/lm-static/logo-packs/ffl/GridironWarriors-MartinLaksman/warriors-01.svg",
-        "ownerId": "096ba945-afc2-4e5f-aba9-45afc2fe5f89",
-        "ownerName": "Jacob",
-        "wins": 2,
-        "losses": 12,
+        "year": 2026,
+        "teamId": 4,
+        "teamName": "Givin' Out Dak-Shots",
+        "abbrev": "ACE",
+        "logoUrl": "https://mystique-api.fantasy.espn.com/apis/v1/domains/lm/images/1039a8b0-ac63-11f1-96ea-97f590071d69",
+        "ownerId": "b4073cf5-bc88-4785-873c-f5bc88c785e6",
+        "ownerName": "Ace",
+        "wins": 0,
+        "losses": 1,
         "ties": 0,
-        "pointsFor": 1365.02,
-        "pointsAgainst": 1815.82,
-        "standing": 14,
-        "finalStanding": 14,
-        "playoffPct": 0.0,
-        "trades": 5,
-        "acquisitions": 28,
-        "drops": 27,
-        "division": "East"
-      },
-      {
-        "year": 2023,
-        "teamId": 15,
-        "teamName": "Double D's and TD's",
-        "abbrev": "GYAT",
-        "logoUrl": "https://images.onwardstate.com/uploads/2018/06/saquon-body-issue2.jpg",
-        "ownerId": "60816921-5c37-4b08-8e26-3f1c500485da",
-        "ownerName": "Trent",
-        "wins": 2,
-        "losses": 12,
-        "ties": 0,
-        "pointsFor": 1506.9,
-        "pointsAgainst": 1923.86,
-        "standing": 14,
-        "finalStanding": 13,
-        "playoffPct": 0.0,
-        "trades": 9,
-        "acquisitions": 29,
-        "drops": 29,
-        "division": "East"
-      },
-      {
-        "year": 2020,
-        "teamId": 17,
-        "teamName": "Dsm Tittsburgh ",
-        "abbrev": "TITt",
-        "logoUrl": "https://g.espncdn.com/lm-static/logo-packs/ffl/AtTheStadium-RobbHarskamp/At_The_Stadium_01.svg",
-        "ownerId": "66d9a2b1-295f-4994-99a2-b1295f3994c2",
-        "ownerName": "Marc",
-        "wins": 2,
-        "losses": 10,
-        "ties": 0,
-        "pointsFor": 1138.98,
-        "pointsAgainst": 1323.44,
-        "standing": 14,
-        "finalStanding": 14,
-        "playoffPct": 0.0,
+        "pointsFor": 132.6,
+        "pointsAgainst": 162.76,
+        "standing": 8,
+        "finalStanding": 8,
+        "playoffPct": 44.57,
         "trades": 0,
-        "acquisitions": 7,
-        "drops": 6,
-        "division": "East"
+        "acquisitions": 0,
+        "drops": 0,
+        "division": "MidWest"
       },
       {
-        "year": 2018,
-        "teamId": 12,
-        "teamName": "three's a crowd",
-        "abbrev": "STAR",
-        "logoUrl": "",
-        "ownerId": "6d011778-180a-447b-9ca3-012936e0fcef",
-        "ownerName": "Jared",
-        "wins": 3,
-        "losses": 11,
+        "year": 2026,
+        "teamId": 8,
+        "teamName": "Robert's Rowdy Team",
+        "abbrev": "RRT",
+        "logoUrl": "https://g.espncdn.com/lm-static/ffl/images/default_logos/6.svg",
+        "ownerId": "4601a707-1ca5-4416-9e3c-9f282205bc36",
+        "ownerName": "Robert",
+        "wins": 0,
+        "losses": 1,
         "ties": 0,
-        "pointsFor": 1488.12,
-        "pointsAgainst": 1687.84,
-        "standing": 14,
+        "pointsFor": 113.91,
+        "pointsAgainst": 165.65,
+        "standing": 9,
+        "finalStanding": 9,
+        "playoffPct": 44.12,
+        "trades": 0,
+        "acquisitions": 0,
+        "drops": 0,
+        "division": "MidWest"
+      },
+      {
+        "year": 2026,
+        "teamId": 3,
+        "teamName": "Chig Happens...",
+        "abbrev": "KMB",
+        "logoUrl": "https://mystique-api.fantasy.espn.com/apis/v1/domains/lm/images/2141e6b0-ab26-11f1-8b95-b1e59b7020ef",
+        "ownerId": "437742f0-e2a6-4492-b742-f0e2a6c49263",
+        "ownerName": "Kodi",
+        "wins": 0,
+        "losses": 1,
+        "ties": 0,
+        "pointsFor": 105.27,
+        "pointsAgainst": 130.72,
+        "standing": 10,
         "finalStanding": 10,
-        "playoffPct": 0.0,
+        "playoffPct": 37.75,
         "trades": 0,
-        "acquisitions": 21,
-        "drops": 21,
-        "division": "West"
+        "acquisitions": 1,
+        "drops": 1,
+        "division": "MidWest"
       },
       {
-        "year": 2022,
+        "year": 2026,
+        "teamId": 1,
+        "teamName": "Jacobs Got A Warren-t",
+        "abbrev": "CUFF",
+        "logoUrl": "https://g.espncdn.com/lm-static/logo-packs/ffl/Talent-ChipWass/talent-yates_2.svg",
+        "ownerId": "7001b1f9-65a1-4cc3-81b1-f965a12cc356",
+        "ownerName": "Brenden",
+        "wins": 0,
+        "losses": 1,
+        "ties": 0,
+        "pointsFor": 104.61,
+        "pointsAgainst": 116.55,
+        "standing": 11,
+        "finalStanding": 11,
+        "playoffPct": 27.65,
+        "trades": 3,
+        "acquisitions": 3,
+        "drops": 2,
+        "division": "MidWest"
+      },
+      {
+        "year": 2026,
         "teamId": 10,
-        "teamName": "Purple PPR Eaters",
-        "abbrev": "PPE",
-        "logoUrl": "https://i.imgur.com/ZWIu9IU.png",
+        "teamName": "La-Torta is Warr-en",
+        "abbrev": "BCC",
+        "logoUrl": "https://mystique-api.fantasy.espn.com/apis/v1/domains/lm/images/05a09340-af75-11f1-9aad-97daa98feb61",
         "ownerId": "cc7c35aa-669c-4730-a0b5-9b9e6837e8fc",
         "ownerName": "Zakk",
-        "wins": 3,
-        "losses": 11,
+        "wins": 0,
+        "losses": 1,
         "ties": 0,
-        "pointsFor": 1622.4,
-        "pointsAgainst": 1675.5,
-        "standing": 13,
-        "finalStanding": 11,
-        "playoffPct": 0.0,
-        "trades": 3,
-        "acquisitions": 12,
-        "drops": 13,
-        "division": "East"
+        "pointsFor": 97.64,
+        "pointsAgainst": 142.21,
+        "standing": 12,
+        "finalStanding": 12,
+        "playoffPct": 34.65,
+        "trades": 1,
+        "acquisitions": 2,
+        "drops": 1,
+        "division": "MidWest"
       }
     ],
     "longestWinStreak": [
@@ -950,7 +950,7 @@
         "games": 24,
         "winPct": 0.625,
         "championships": 1,
-        "appearances": 5
+        "appearances": 6
       },
       {
         "ownerId": "7001b1f9-65a1-4cc3-81b1-f965a12cc356",
@@ -989,17 +989,17 @@
       {
         "ownerId": "409f57ce-50f2-41f5-9f57-ce50f201f53b",
         "ownerName": "Erik",
+        "appearances": 7
+      },
+      {
+        "ownerId": "7407050f-8994-489c-bdab-99c4f96ad05a",
+        "ownerName": "chaz",
         "appearances": 6
       },
       {
         "ownerId": "7001b1f9-65a1-4cc3-81b1-f965a12cc356",
         "ownerName": "Brenden",
         "appearances": 6
-      },
-      {
-        "ownerId": "7407050f-8994-489c-bdab-99c4f96ad05a",
-        "ownerName": "chaz",
-        "appearances": 5
       },
       {
         "ownerId": "cc7c35aa-669c-4730-a0b5-9b9e6837e8fc",
@@ -1015,7 +1015,7 @@
         "games": 9,
         "winPct": 1.0,
         "championships": 1,
-        "appearances": 1
+        "appearances": 2
       },
       {
         "ownerId": "437742f0-e2a6-4492-b742-f0e2a6c49263",
@@ -1051,7 +1051,7 @@
         "games": 24,
         "winPct": 0.625,
         "championships": 1,
-        "appearances": 5
+        "appearances": 6
       }
     ]
   }
