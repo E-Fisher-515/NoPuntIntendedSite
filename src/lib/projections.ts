@@ -1,4 +1,4 @@
-import type { Manager, SeasonArchive, TeamSeason } from "./types";
+import type { Manager, PredictionContext, SeasonArchive, TeamSeason } from "./types";
 import { recordLine } from "./format";
 
 export type TeamProjection = {
@@ -16,6 +16,8 @@ export type TeamProjection = {
   roast: string;
   projection: string;
   score: number;
+  rosterScore: number;
+  newsNotes: string[];
 };
 
 type TeamMetrics = {
@@ -75,25 +77,30 @@ function roastText(item: TeamMetrics, rank: number, total: number): string {
   return `${team.ownerName} is hovering in the standings' least comfortable middle seat: not safe, not doomed, and absolutely not relaxed.`;
 }
 
-export function buildTeamProjections(season: SeasonArchive, managers: Manager[]): TeamProjection[] {
+export function buildTeamProjections(season: SeasonArchive, managers: Manager[], context?: PredictionContext | null): TeamProjection[] {
   const items = season.teams.map((team) => metrics(team, managers));
   const ppgValues = items.map((item) => item.ppg);
   const marginValues = items.map((item) => item.margin);
   const winValues = items.map((item) => item.winRate);
+  const rosterValues = items.map((item) => context?.rosters[item.team.teamName]?.score ?? 0);
   const playoffTeams = season.playoffTeamCount || Math.ceil(items.length / 2);
 
   const scored = items.map((item) => {
+    const roster = context?.rosters[item.team.teamName];
+    const newsFactor = Math.max(0, 1 - (roster?.newsPenalty ?? 0) / 20);
     const score =
-      percentile(item.winRate, winValues) * 0.4 +
-      percentile(item.ppg, ppgValues) * 0.35 +
-      percentile(item.margin, marginValues) * 0.25;
+      percentile(item.winRate, winValues) * 0.35 +
+      percentile(item.ppg, ppgValues) * 0.25 +
+      percentile(item.margin, marginValues) * 0.15 +
+      percentile(roster?.score ?? 0, rosterValues) * 0.20 +
+      newsFactor * 0.05;
     return { item, score };
   });
   const ordered = scored.slice().sort((a, b) => b.score - a.score || b.item.team.pointsFor - a.item.team.pointsFor);
-  const maxScore = Math.max(...ordered.map((entry) => entry.score), 1);
-
   return ordered.map(({ item, score }, index) => {
     const { team, manager, ppg, papg, margin } = item;
+    const roster = context?.rosters[team.teamName];
+    const newsFactor = Math.max(0, 1 - (roster?.newsPenalty ?? 0) / 20);
     const strengths: string[] = [];
     const weaknesses: string[] = [];
     const rank = index + 1;
@@ -119,13 +126,15 @@ export function buildTeamProjections(season: SeasonArchive, managers: Manager[])
       pointsFor: team.pointsFor,
       pointsAgainst: team.pointsAgainst,
       projectedFinish: rank,
-      championPct: Number((100 * (score / (maxScore * (index + 1)))).toFixed(1)),
-      playoffPct: Number((100 * Math.max(0.05, 1 - index / Math.max(items.length, 1))).toFixed(1)),
+      championPct: Number((100 * score / ordered.reduce((sum, entry) => sum + entry.score, 0)).toFixed(1)),
+      playoffPct: Number((100 * Math.max(0.05, 1 - index / Math.max(items.length, 1)) * newsFactor).toFixed(1)),
       strengths,
       weaknesses,
       roast: roastText(item, rank, items.length),
       projection: projectionText(item, playoffTeams),
       score,
+      rosterScore: roster?.score ?? 0,
+      newsNotes: roster?.newsNotes ?? [],
     };
   });
 }

@@ -200,6 +200,21 @@ export type Predictions = {
   projections?: TeamProjection[];
 };
 
+export type PredictionContext = {
+  season: number;
+  week: number;
+  rosters: Record<string, {
+    score: number;
+    starterScore: number;
+    depthScore: number;
+    topStarters: string[];
+    newsPenalty: number;
+    newsNotes: string[];
+  }>;
+  news: Record<string, { penalty: number; notes: string[] }>;
+  sources: string[];
+};
+
 export type TimelineEvent = {
   year: number;
   title: string;
