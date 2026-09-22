@@ -2,7 +2,7 @@ import { PageShell } from "@/components/PageShell";
 import { PredictionTable } from "@/components/PredictionTable";
 import { SectionHeader } from "@/components/SectionHeader";
 import { TeamProjectionCard } from "@/components/TeamProjectionCard";
-import { archiveReady, getManagers, getPredictions, getSeason } from "@/lib/archive";
+import { archiveReady, getManagers, getPredictionContext, getPredictions, getSeason } from "@/lib/archive";
 import { buildTeamProjections } from "@/lib/projections";
 
 export default function PredictionsPage() {
@@ -15,7 +15,8 @@ export default function PredictionsPage() {
   }
   const predictions = getPredictions();
   const season = getSeason(predictions.season);
-  const projections = predictions.projections ?? buildTeamProjections(season, getManagers());
+  const context = getPredictionContext();
+  const projections = buildTeamProjections(season, getManagers(), context);
   const championRows = projections.map((projection) => ({
     ownerId: projection.ownerId,
     ownerName: projection.ownerName,
@@ -34,9 +35,9 @@ export default function PredictionsPage() {
       <SectionHeader
         eyebrow={`${predictions.season} outlook`}
         title="Predictions"
-        lede="A roster-first forecast built from Draft Sharks rankings, positional fit, and depth. The snapshot is intentionally readable enough to argue about."
+        lede={`A Week ${context?.week ?? season.currentWeek} forecast recalculated from current record, scoring margin, roster strength, and injury/news adjustments. It is intentionally readable enough to argue about.`}
       />
-      <p className="border border-rule px-4 py-5 text-sm leading-6 text-ink/70">{predictions.note}</p>
+      <p className="border border-rule px-4 py-5 text-sm leading-6 text-ink/70">{predictions.note} Roster and news inputs are a dated snapshot, not a promise from the football gods.</p>
       {predictions.complete ? (
         <p className="border border-rule px-4 py-8 text-ink/70">{predictions.note}</p>
       ) : (

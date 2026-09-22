@@ -1,0 +1,231 @@
+{
+  "season": 2026,
+  "week": 2,
+  "rosters": {
+    "La-Torta is Warr-en": {
+      "score": 4136.75,
+      "starterScore": 3379,
+      "depthScore": 757.75,
+      "topStarters": [
+        "QB Jaxson Dart #82 (25)",
+        "RB Omarion Hampton #31 (43)",
+        "WR Drake London #21 (55)"
+      ],
+      "newsPenalty": 0,
+      "newsNotes": []
+    },
+    "Duiiii dont know Jim": {
+      "score": 4118.9,
+      "starterScore": 3435,
+      "depthScore": 683.9,
+      "topStarters": [
+        "QB Jalen Hurts #57 (29)",
+        "RB Derrick Henry #18 (58)",
+        "WR Justin Jefferson #8 (73)"
+      ],
+      "newsPenalty": 0,
+      "newsNotes": []
+    },
+    "Incepcion": {
+      "score": 4101.9,
+      "starterScore": 3348,
+      "depthScore": 753.9,
+      "topStarters": [
+        "QB Lamar Jackson #43 (35)",
+        "RB James Cook III #11 (67)",
+        "WR Garrett Wilson #32 (43)"
+      ],
+      "newsPenalty": 0,
+      "newsNotes": []
+    },
+    "Chig Happens...": {
+      "score": 4067.85,
+      "starterScore": 3371,
+      "depthScore": 696.85,
+      "topStarters": [
+        "QB Kyler Murray #79 (26)",
+        "RB Chase Brown #19 (57)",
+        "WR Amon-Ra St. Brown #7 (85)"
+      ],
+      "newsPenalty": 0,
+      "newsNotes": []
+    },
+    "Silver Bullet": {
+      "score": 4062.85,
+      "starterScore": 3513,
+      "depthScore": 549.85,
+      "topStarters": [
+        "QB Justin Herbert #74 (26)",
+        "RB Javonte Williams #26 (48)",
+        "WR Ja'Marr Chase #3 (94)"
+      ],
+      "newsPenalty": 4,
+      "newsNotes": [
+        "Zay Flowers was reported out for Week 2."
+      ]
+    },
+    "Boomstick": {
+      "score": 4028.15,
+      "starterScore": 3409,
+      "depthScore": 619.15,
+      "topStarters": [
+        "QB Drake Maye #62 (29)",
+        "RB Jonathan Taylor #12 (66)",
+        "WR Nico Collins #23 (52)"
+      ],
+      "newsPenalty": 0,
+      "newsNotes": []
+    },
+    "SUPER SMASH BURROWS": {
+      "score": 4025.65,
+      "starterScore": 3396,
+      "depthScore": 629.65,
+      "topStarters": [
+        "QB Joe Burrow #58 (29)",
+        "RB Bijan Robinson #2 (97)",
+        "WR Chris Olave #15 (59)"
+      ],
+      "newsPenalty": 2,
+      "newsNotes": [
+        "Ladd McConkey was part of the Week 2 injury updates."
+      ]
+    },
+    "Robert's Rowdy Team": {
+      "score": 3954.5,
+      "starterScore": 3370,
+      "depthScore": 584.5,
+      "topStarters": [
+        "QB Patrick Mahomes #85 (24)",
+        "RB Kyren Williams #42 (35)",
+        "WR Puka Nacua #4 (92)"
+      ],
+      "newsPenalty": 3,
+      "newsNotes": [
+        "Puka Nacua is listed among the Week 2 injury updates."
+      ]
+    },
+    "Givin' Out Dak-Shots": {
+      "score": 3882.4,
+      "starterScore": 3307,
+      "depthScore": 575.4,
+      "topStarters": [
+        "QB Caleb Williams #65 (28)",
+        "RB Ashton Jeanty #13 (64)",
+        "WR CeeDee Lamb #9 (71)"
+      ],
+      "newsPenalty": 5,
+      "newsNotes": [
+        "Caleb Williams left Week 2 early with a hamstring injury."
+      ]
+    },
+    "Njigbas in Paris": {
+      "score": 3799.35,
+      "starterScore": 3379,
+      "depthScore": 420.35,
+      "topStarters": [
+        "QB Josh Allen #14 (60)",
+        "RB J.K. Dobbins #103 (20)",
+        "WR Jaxon Smith-Njigba #6 (86)"
+      ],
+      "newsPenalty": 0,
+      "newsNotes": []
+    },
+    "Team Lehman": {
+      "score": 3793.55,
+      "starterScore": 3320,
+      "depthScore": 473.55,
+      "topStarters": [
+        "QB Matthew Stafford #116 (19)",
+        "RB Saquon Barkley #16 (59)",
+        "WR Malik Nabers #17 (58)"
+      ],
+      "newsPenalty": 1,
+      "newsNotes": [
+        "Michael Pittman Jr. was reported out for Week 2; he is rostered as depth here."
+      ]
+    },
+    "Tee Time": {
+      "score": 3673.7,
+      "starterScore": 3253,
+      "depthScore": 420.7,
+      "topStarters": [
+        "QB Trevor Lawrence #78 (26)",
+        "RB Jahmyr Gibbs #1 (100)",
+        "WR Tee Higgins #30 (44)"
+      ],
+      "newsPenalty": 0,
+      "newsNotes": []
+    },
+    "Dsm Tittsburgh ": {
+      "score": 3569.4,
+      "starterScore": 3260,
+      "depthScore": 309.4,
+      "topStarters": [
+        "QB Brock Purdy #70 (27)",
+        "RB Christian McCaffrey #5 (88)",
+        "WR DeVonta Smith #27 (44)"
+      ],
+      "newsPenalty": 0,
+      "newsNotes": []
+    },
+    "Jacobs Got A Warren-t": {
+      "score": 3567,
+      "starterScore": 3014,
+      "depthScore": 553,
+      "topStarters": [
+        "QB Jayden Daniels #195 (7)",
+        "RB De'Von Achane #20 (56)",
+        "WR A.J. Brown #40 (38)"
+      ],
+      "newsPenalty": 5,
+      "newsNotes": [
+        "Jayden Daniels left Week 2 early with an injury.",
+        "A.J. Brown was placed on injured reserve."
+      ]
+    }
+  },
+  "news": {
+    "Givin' Out Dak-Shots": {
+      "penalty": 5,
+      "notes": [
+        "Caleb Williams left Week 2 early with a hamstring injury."
+      ]
+    },
+    "Jacobs Got A Warren-t": {
+      "penalty": 5,
+      "notes": [
+        "Jayden Daniels left Week 2 early with an injury.",
+        "A.J. Brown was placed on injured reserve."
+      ]
+    },
+    "Robert's Rowdy Team": {
+      "penalty": 3,
+      "notes": [
+        "Puka Nacua is listed among the Week 2 injury updates."
+      ]
+    },
+    "Silver Bullet": {
+      "penalty": 4,
+      "notes": [
+        "Zay Flowers was reported out for Week 2."
+      ]
+    },
+    "SUPER SMASH BURROWS": {
+      "penalty": 2,
+      "notes": [
+        "Ladd McConkey was part of the Week 2 injury updates."
+      ]
+    },
+    "Team Lehman": {
+      "penalty": 1,
+      "notes": [
+        "Michael Pittman Jr. was reported out for Week 2; he is rostered as depth here."
+      ]
+    }
+  },
+  "sources": [
+    "https://www.nbcsports.com/fantasy/football/news/2026-nfl-week-2-injury-report-a-j-brown-to-ir-updates-on-ladd-mcconkey-zay-flowers",
+    "https://www.fantasypros.com/2026/09/top-5-fantasy-football-takeaways-surprises-disappointments-week-2-2026/",
+    "https://www.fantasylife.com/articles/fantasy/caleb-williams-jayden-daniels-injury-updates-plus-more-week-2-fantasy-football-news"
+  ]
+}

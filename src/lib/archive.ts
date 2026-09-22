@@ -9,6 +9,7 @@ import type {
   Manager,
   Matchup,
   Predictions,
+  PredictionContext,
   SeasonArchive,
   TimelineEvent,
 } from "./types";
@@ -69,6 +70,11 @@ export function getAwards(): Award[] {
 
 export function getPredictions(): Predictions {
   return readJson(join(archiveDir, "predictions.json"));
+}
+
+export function getPredictionContext(): PredictionContext | null {
+  const path = join(archiveDir, "prediction-context.json");
+  return existsSync(path) ? readJson(path) : null;
 }
 
 export function getHallOfFame(): HofInductee[] {

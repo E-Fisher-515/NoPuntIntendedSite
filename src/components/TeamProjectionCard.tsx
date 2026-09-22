@@ -17,6 +17,7 @@ export function TeamProjectionCard({ projection }: { projection: TeamProjection 
         </div>
       </div>
       <p className="mt-4 text-sm leading-6 text-ink/80">{projection.projection}</p>
+      <p className="mt-2 text-xs text-ink/55">Roster strength: {projection.rosterScore ? projection.rosterScore.toFixed(0) : "not available"}</p>
       <div className="mt-4 grid gap-4 sm:grid-cols-2">
         <div>
           <p className="text-[11px] uppercase tracking-[0.16em] text-gold-muted">Strengths</p>
@@ -31,6 +32,7 @@ export function TeamProjectionCard({ projection }: { projection: TeamProjection 
           </ul>
         </div>
       </div>
+      {projection.newsNotes.length ? <p className="mt-4 border-t border-rule pt-3 text-sm text-ink/70"><strong>News watch:</strong> {projection.newsNotes.join(" ")}</p> : null}
       <p className="mt-4 border-t border-rule pt-3 text-sm italic text-forest">Roast: {projection.roast}</p>
     </article>
   );
