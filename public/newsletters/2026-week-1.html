@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fantasy Football Newsletter</title>
+    <style>
+        @media print {
+            body {
+                background: white !important;
+                padding: 0 !important;
+            }
+            .newsletter-container {
+                box-shadow: none !important;
+                margin: 0 !important;
+                max-width: none !important;
+            }
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            margin: 0;
+            padding: 20px;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        .newsletter-container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            color: white;
+            padding: 30px;
+            text-align: center;
+        }
+        
+        @media print {
+            .header {
+                background: #1e3c72 !important;
+                -webkit-print-color-adjust: exact;
+                color-adjust: exact;
+            }
+        }
+        
+        .header h1 {
+            margin: 0;
+            font-size: 2.5em;
+            font-weight: bold;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        
+        .header p {
+            margin: 10px 0 0 0;
+            font-size: 1.2em;
+            opacity: 0.9;
+        }
+        
+        .content {
+            padding: 30px;
+        }
+        
+        .section {
+            margin-bottom: 30px;
+            page-break-inside: avoid;
+        }
+        
+        @media print {
+            .section {
+                page-break-inside: avoid;
+                break-inside: avoid;
+            }
+            h1, h2, h3 {
+                page-break-after: avoid;
+            }
+            .matchup {
+                page-break-inside: avoid;
+            }
+        }
+        
+        .section h2 {
+            color: #1e3c72;
+            font-size: 1.8em;
+            margin-bottom: 15px;
+            border-bottom: 3px solid #667eea;
+            padding-bottom: 10px;
+        }
+        
+        .section h3 {
+            color: #2a5298;
+            font-size: 1.4em;
+            margin: 20px 0 10px 0;
+        }
+        
+        .matchup {
+            background: #f8f9fa;
+            border-left: 4px solid #667eea;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+        
+        .matchup-title {
+            font-weight: bold;
+            font-size: 1.1em;
+            color: #1e3c72;
+            margin-bottom: 5px;
+        }
+        
+        .matchup-commentary {
+            font-style: italic;
+            color: #666;
+            margin: 5px 0;
+        }
+        
+        .matchup-score {
+            font-weight: bold;
+            color: #2a5298;
+        }
+        
+        .highlight-box {
+            background: linear-gradient(135deg, #ffeaa7 0%, #fab1a0 100%);
+            padding: 20px;
+            border-radius: 10px;
+            margin: 15px 0;
+            text-align: center;
+        }
+        
+        .highlight-box h3 {
+            margin: 0 0 10px 0;
+            color: #2d3436;
+        }
+        
+        .highlight-box .score {
+            font-size: 2em;
+            font-weight: bold;
+            color: #e17055;
+        }
+        
+        .player-list {
+            background: #f8f9fa;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 10px 0;
+        }
+        
+        .player-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 8px 0;
+            border-bottom: 1px solid #dee2e6;
+        }
+        
+        .player-item:last-child {
+            border-bottom: none;
+        }
+        
+        .player-name {
+            font-weight: bold;
+            color: #1e3c72;
+        }
+        
+        .player-score {
+            font-weight: bold;
+            color: #e17055;
+        }
+        
+        .power-ranking {
+            background: linear-gradient(135deg, #74b9ff 0%, #0984e3 100%);
+            color: white;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 10px 0;
+        }
+        
+        .power-ranking h4 {
+            margin: 0 0 10px 0;
+            font-size: 1.2em;
+        }
+        
+        .ranking-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 5px 0;
+        }
+        
+        .comedy-section {
+            background: linear-gradient(135deg, #fd79a8 0%, #e84393 100%);
+            color: white;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 15px 0;
+        }
+        
+        .comedy-section h3 {
+            color: white;
+            margin: 0 0 15px 0;
+        }
+        
+        .footer {
+            background: #2d3436;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        
+        .emoji {
+            font-size: 1.2em;
+        }
+        
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin: 20px 0;
+        }
+        
+        .stat-box {
+            background: #f8f9fa;
+            padding: 15px;
+            border-radius: 8px;
+            text-align: center;
+            border: 2px solid #e9ecef;
+        }
+        
+        .stat-box h4 {
+            margin: 0 0 10px 0;
+            color: #1e3c72;
+        }
+        
+        .stat-value {
+            font-size: 1.5em;
+            font-weight: bold;
+            color: #e17055;
+        }
+    </style>
+</head>
+<body>
+    <div class="newsletter-container">
+        <div class="header">
+            <h1>🏈 No Punt Intended - Week 1 Playbook 🏈</h1>
+            <p>Where fantasy football meets real analysis</p>
+        </div>
+        
+        <div class="content">
+            <!-- This will be populated by the Python script -->
+            <div id="newsletter-content"><h1>🏈 <strong>No Punt Intended - Week 1 Playbook</strong> 🏈</h1><br>
+<em>Where fantasy football meets real analysis</em><br>
+<br>
+<div class="section"><h2>🎬 <strong>This Week's Big Storyline</strong></h2><br>
+<br>
+<strong>💥 STATEMENT WIN:</strong> Duiiii dont know Jim made a statement with a 95.0-point victory over Incepcion. This wasn't just a win—it was a message to the rest of the league that Duiiii dont know Jim means business.<br>
+<br>
+<br>
+</div><div class="section"><h2>⚔️ <strong>Game Recaps: The Drama Unfolds</strong></h2><br>
+<br>
+<strong>Erik's Duiiii dont know Jim</strong> @ <strong>Nick's Incepcion</strong><br>
+<em>🏃 ONE-SIDED ROUT!</em> Erik turned this into a complete rout, steamrolling Nick by 95.0 points in a performance that was over before it started. This was less of a game and more of a demonstration of fantasy football dominance. Nick might want to forget this one ever happened. This 95.0-point margin ranks among the largest routs in league history—a truly historic beatdown!<br>
+<strong>Final:</strong> Erik's Duiiii dont know Jim 179.7 - 84.8 Nick's Incepcion<br>
+<br>
+<strong>Jacob's Tee Time</strong> @ <strong>Robert's Robert's Rowdy Team</strong><br>
+<em>🎓 FANTASY CLINIC!</em> Jacob just put on a clinic, teaching Robert a lesson in fantasy football with a 51.7-point victory. This was a masterclass in roster management and player selection. Robert might want to take notes for next time.<br>
+<strong>Final:</strong> Jacob's Tee Time 165.7 - 113.9 Robert's Robert's Rowdy Team<br>
+<br>
+<strong>Zakk's La-Torta is Warr-en</strong> @ <strong>derek's SUPER SMASH BURROWS</strong><br>
+<em>⚔️ EPIC BATTLE!</em> In what will go down as one of the most intense matchups of the season, derek emerged victorious over Zakk by 44.6 points. Both managers brought their A-game, but derek had just enough to secure the win. This is what fantasy football is all about.<br>
+<strong>Final:</strong> derek's SUPER SMASH BURROWS 142.2 - 97.6 Zakk's La-Torta is Warr-en<br>
+<br>
+<strong>Dillon's Team Lehman</strong> @ <strong>chaz's Silver Bullet</strong><br>
+<em>💀 ABSOLUTE DOMINATION!</em> chaz just put on a clinic of epic proportions, completely dismantling Dillon in a 39.5-point beatdown that will be remembered for years. This wasn't just a win—it was a masterclass in fantasy football superiority. Dillon might need therapy after this performance.<br>
+<strong>Final:</strong> chaz's Silver Bullet 132.8 - 93.2 Dillon's Team Lehman<br>
+<br>
+<strong>Ace's Givin' Out Dak-Shots</strong> @ <strong>Trent's Njigbas in Paris</strong><br>
+<em>⚡ SHOCKING UPSET!</em> Trent just delivered the shock of the week, stunning Ace with a 30.2-point victory that nobody saw coming! This is exactly why we love fantasy football—the unexpected always happens. Ace is probably still in disbelief.<br>
+<strong>Final:</strong> Trent's Njigbas in Paris 162.8 - 132.6 Ace's Givin' Out Dak-Shots<br>
+<br>
+<strong>Colby's Boomstick</strong> @ <strong>Kodi's Chig Happens...</strong><br>
+<em>🎉 SURPRISE VICTORY!</em> Colby pulled off a surprise win over Kodi by 25.5 points, proving that in fantasy football, anything can happen. This unexpected result shows why you never count anyone out. Kodi will be looking for answers after this one.<br>
+<strong>Final:</strong> Colby's Boomstick 130.7 - 105.3 Kodi's Chig Happens...<br>
+<br>
+<strong>Marc's Dsm Tittsburgh </strong> @ <strong>Brenden's Jacobs Got A Warren-t</strong><br>
+<em>🎬 HOLLYWOOD COULDN'T WRITE THIS BETTER!</em> In a 11.9-point nail-biter that had everyone on the edge of their seats, Marc pulled off a miraculous victory! This game had more twists than a soap opera, with lead changes that kept fantasy managers refreshing their apps every 30 seconds. Brenden fought valiantly but came up just short in what might be the game of the season.<br>
+<strong>Final:</strong> Marc's Dsm Tittsburgh  116.5 - 104.6 Brenden's Jacobs Got A Warren-t<br>
+<br>
+<br>
+</div><div class="section"><h2>⭐ <strong>Player Spotlights: Heroes and Villains</strong></h2><br>
+<br>
+<strong>🏆 The Heroes (Overperformers):</strong><br>
+<div class="player-item"><span class="player-name">🥇 <strong>Josh Allen</strong> (QB, BUF) - 42.7 points (Projected: 22.6, +20.1)</span></div><br>
+   <em>Trent's Njigbas in Paris got exactly what they needed from this QB</em><br>
+<div class="player-item"><span class="player-name">🥈 <strong>Caleb Williams</strong> (QB, CHI) - 41.3 points (Projected: 19.9, +21.4)</span></div><br>
+   <em>Ace's Givin' Out Dak-Shots got exactly what they needed from this QB</em><br>
+<div class="player-item"><span class="player-name">🥉 <strong>Derrick Henry</strong> (RB, BAL) - 38.3 points (Projected: 17.5, +20.8)</span></div><br>
+   <em>Erik's Duiiii dont know Jim got exactly what they needed from this RB</em><br>
+<br>
+<strong>😤 The Underperformer:</strong><br>
+💔 <strong>Matthew Stafford</strong> (QB) - 4.1 points (Projected: 22.5, -18.4)<br>
+   <em>Dillon's Team Lehman expected more from this QB</em><br>
+<br>
+<strong>😱 The Villain (Bench Blunder):</strong><br>
+💀 <strong>Jalen Coker</strong> (WR) - 36.8 points on the BENCH!<br>
+   <em>Robert's Robert's Rowdy Team could have gained 26.9 points by starting him over Rashee Rice (9.9 points)</em><br>
+<br>
+<br>
+</div><div class="section"><h2>📈 <strong>Trends Watch: The Plot Thickens</strong></h2><br>
+<br>
+<strong>📈 Hot Streaks & Cold Spells:</strong><br>
+<em>The Elite:</em> Erik's Duiiii dont know Jim (179.7 PF), Jacob's Tee Time (165.7 PF), Trent's Njigbas in Paris (162.8 PF)<br>
+<em>The Struggling:</em> Zakk's La-Torta is Warr-en (97.6 PF), Dillon's Team Lehman (93.2 PF), Nick's Incepcion (84.8 PF)<br>
+<br>
+<strong>🍀 Luck Factor Analysis:</strong><br>
+<em>Dominant:</em> Erik's Duiiii dont know Jim is undefeated at 1-0-0 with an impressive 179.7 PPG - they're not just winning, they're dominating!<br>
+<em>Dominant:</em> Jacob's Tee Time is undefeated at 1-0-0 with an impressive 165.7 PPG - they're not just winning, they're dominating!<br>
+<em>Dominant:</em> Trent's Njigbas in Paris is undefeated at 1-0-0 with an impressive 162.8 PPG - they're not just winning, they're dominating!<br>
+<em>Elite:</em> derek's SUPER SMASH BURROWS is undefeated at 1-0-0 with 142.2 PPG - the perfect start to the season!<br>
+<br>
+<br>
+</div><div class="section"><h2>📚 <strong>League History Deep Dive</strong></h2><br>
+<br>
+<strong>📊 This Season vs. League History:</strong><br>
+<em>Above average season!</em> The league is averaging 125.9 PPG per team, which is 9.9 points higher than the historical average of 116.0 PPG. Scoring is up this year!<br>
+<br>
+<strong>🎯 This Week's High Score Context:</strong><br>
+<em>Elite Performance!</em> This week's high score of 179.7 points ranks #15 all-time, putting it in the top 98.5% of all league performances.<br>
+The honor belongs to Erik's Duiiii dont know Jim after dropping 179.7 against Nick's Incepcion (84.8).<br>
+The all-time benchmark is still Dillon's Team Lehman with 209.7 back in Week 16 of 2025 against Jacob's Just Josh (119.3).<br>
+<br>
+<strong>💥 This Week's Beatdown Analysis:</strong><br>
+<em>HISTORIC BEATDOWN!</em> This week featured a 95.0-point margin of victory, which ranks among the largest beatdowns in league history. This kind of domination is rarely seen and will be remembered for years to come!<br>
+<br>
+<strong>📅 Historical Data Scope:</strong><br>
+<em>Analysis based on 4 seasons</em> (2022-2025) with 964 total games analyzed. This gives us a comprehensive view of league trends over time.<br>
+<br>
+</div><div class="section"><h2>🏆 <strong>Power Rankings & Playoff Outlook</strong></h2><br>
+<br>
+<strong>🏆 Power Rankings (Top 5):</strong><br>
+<div class="ranking-item"><span>1.</span> <span><strong>Erik's Duiiii dont know Jim</strong> (1-0-0) - 179.7 PF, +95.0 diff - <em>The Alpha</em></span></div><br>
+<div class="ranking-item"><span>2.</span> <span><strong>Jacob's Tee Time</strong> (1-0-0) - 165.7 PF, +51.7 diff - <em>The Contender</em></span></div><br>
+<div class="ranking-item"><span>3.</span> <span><strong>derek's SUPER SMASH BURROWS</strong> (1-0-0) - 142.2 PF, +44.6 diff - <em>The Dark Horse</em></span></div><br>
+<div class="ranking-item"><span>4.</span> <span><strong>chaz's Silver Bullet</strong> (1-0-0) - 132.8 PF, +39.5 diff</span></div><br>
+<div class="ranking-item"><span>5.</span> <span><strong>Trent's Njigbas in Paris</strong> (1-0-0) - 162.8 PF, +30.2 diff</span></div><br>
+<br>
+<strong>🔮 Playoff Outlook:</strong><br>
+<em>Early season vibes are strong with 1 week in the books. The 7 undefeated teams are setting the pace, while 7 teams are still searching for their first win. With 14 teams fighting for playoff spots, every week matters more than ever.</em><br>
+<br>
+<br>
+</div><div class="section"><h2>🎭 <strong>Comedy Corner: The Roast is Real</strong></h2><br>
+<br>
+<strong>🔥 The Roast Corner:</strong><br>
+<em>Nick's Incepcion</em> just put up a whopping 84.8 points in Week 1. That's not just a bad performance—that's what happens when you draft with your heart instead of your head. Maybe it's time to reconsider that 'gut feeling' strategy?<br>
+<br>
+<strong>😱 Bench Blunder of the Week:</strong><br>
+<em>Ace's Givin' Out Dak-Shots</em> left <strong>Caleb Williams</strong> and his 41.3 points on the bench. That's not just a mistake—that's a masterclass in how to lose a fantasy football game. Maybe next time Ace should try actually looking at their lineup before Sunday?<br>
+<br>
+<strong>🎭 Meme of the Week:</strong><br>
+<em>When you bench a player and they go off for 30+ points</em><br>
+<em>[Insert 'This is Fine' dog meme]</em><br>
+<br>
+<br>
+</div><div class="section"><h2>🔮 <strong>Next Week Preview: The Saga Continues</strong></h2><br>
+<br>
+<strong>🔥 Game of the Week:</strong><br>
+<em>Silver Bullet</em> @ <em>La-Torta is Warr-en</em><br>
+Projected: Silver Bullet 110.0 - 107.4 La-Torta is Warr-en<br>
+<em>This is going to be a nail-biter! Both teams are projected within 5 points of each other.</em><br>
+<br>
+<strong>🎯 Upset Watch:</strong><br>
+<em>The biggest upset potential lies with Tee Time against Njigbas in Paris. With a 52.5-point projected deficit, this could be the week's biggest shocker if the underdog pulls it off.</em><br>
+<br>
+---<br>
+<br>
+🏈 <strong>Until next week, may your lineups be stacked and your opponents be weak!</strong> 🏈</div></div>
+        </div>
+        
+        <div class="footer">
+            <p>This newsletter was automatically generated for your fantasy football enjoyment.</p>
+            <p>🏈 Good luck this week! 🏈</p>
+        </div>
+    </div>
+</body>
+</html>
