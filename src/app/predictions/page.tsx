@@ -35,7 +35,7 @@ export default function PredictionsPage() {
       <SectionHeader
         eyebrow={`${predictions.season} outlook`}
         title="Predictions"
-        lede={`A Week ${context?.week ?? season.currentWeek} forecast recalculated from current record, scoring margin, roster strength, and injury/news adjustments. It is intentionally readable enough to argue about.`}
+        lede={`A Week ${season.currentWeek} forecast recalculated from current record, scoring margin, roster strength, and injury/news adjustments. It is intentionally readable enough to argue about.`}
       />
       <p className="border border-rule px-4 py-5 text-sm leading-6 text-ink/70">{predictions.note} Roster and news inputs are a dated snapshot, not a promise from the football gods.</p>
       {predictions.complete ? (

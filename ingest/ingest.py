@@ -874,7 +874,7 @@ def build_predictions(current: dict) -> dict:
     return {
         "season": current["year"],
         "complete": False,
-        "note": "Simple probabilities from ESPN playoff odds and points scored. Not a scientific forecast.",
+        "note": f"Week {current['season']['currentWeek']} {current['year']} forecast combining current ESPN record, points profile, and playoff odds.",
         "champion": [
             {
                 "ownerId": team["ownerId"],

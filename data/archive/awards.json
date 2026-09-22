@@ -405,9 +405,9 @@
     "name": "Highest Scoring Team",
     "category": "scoring",
     "source": "espn",
-    "winnerName": "Erik",
-    "winnerId": "409f57ce-50f2-41f5-9f57-ce50f201f53b",
-    "detail": "179.72 points"
+    "winnerName": "Trent",
+    "winnerId": "60816921-5c37-4b08-8e26-3f1c500485da",
+    "detail": "325.48 points"
   },
   {
     "id": "best-record-2026",
@@ -415,9 +415,9 @@
     "name": "Best Regular Season",
     "category": "record",
     "source": "espn",
-    "winnerName": "Erik",
-    "winnerId": "409f57ce-50f2-41f5-9f57-ce50f201f53b",
-    "detail": "1-0-0"
+    "winnerName": "Trent",
+    "winnerId": "60816921-5c37-4b08-8e26-3f1c500485da",
+    "detail": "2-0-0"
   },
   {
     "id": "blowout-2026",
@@ -435,8 +435,8 @@
     "name": "Closest Game",
     "category": "matchup",
     "source": "espn",
-    "winnerName": "Brenden vs Marc",
+    "winnerName": "Dillon vs Colby",
     "winnerId": null,
-    "detail": "Jacobs Got A Warren-t vs Dsm Tittsburgh  \u00b7 2026 Week 1: 104.61-116.55"
+    "detail": "Team Lehman vs Boomstick \u00b7 2026 Week 2: 96.53-93.97"
   }
 ]
