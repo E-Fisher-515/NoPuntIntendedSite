@@ -1,7 +1,7 @@
 {
   "season": 2026,
   "complete": false,
-  "note": "2026 preseason roster projection using Draft Sharks 2026 PPR rankings, positional fit, lineup strength, and ranked depth. Rankings are a snapshot, not a scientific forecast.",
+  "note": "Week 2 2026 forecast combining current ESPN record, points profile, roster strength/depth rankings, and current injury/news adjustments.",
   "champion": [
     {
       "ownerId": "cc7c35aa-669c-4730-a0b5-9b9e6837e8fc",
@@ -445,7 +445,7 @@
       "weaknesses": [
         "2 roster spots are outside the captured rankings"
       ],
-      "roast": "This team is built like a competent adult: no fireworks, no obvious disasters, just quietly ruining someone’s playoff hopes.",
+      "roast": "This team is built like a competent adult: no fireworks, no obvious disasters, just quietly ruining someone\u2019s playoff hopes.",
       "projection": "A balanced roster that should rarely be embarrassed. It lacks one overwhelming positional advantage, but there are very few weeks where it has no path to a win.",
       "score": 4028.1499999999996
     },
