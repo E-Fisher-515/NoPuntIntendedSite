@@ -113,11 +113,11 @@
     "awayTeamId": 16,
     "homeTeamName": "Jacobs Got A Warren-t",
     "awayTeamName": "Duiiii dont know Jim",
-    "homeScore": 0,
-    "awayScore": 0,
-    "combined": 0,
-    "margin": 0,
-    "winner": null
+    "homeScore": 107.19,
+    "awayScore": 110.61,
+    "combined": 217.8,
+    "margin": 3.42,
+    "winner": "away"
   },
   {
     "year": 2026,
@@ -128,11 +128,11 @@
     "awayTeamId": 12,
     "homeTeamName": "Team Lehman",
     "awayTeamName": "Boomstick",
-    "homeScore": 0,
-    "awayScore": 0,
-    "combined": 0,
-    "margin": 0,
-    "winner": null
+    "homeScore": 96.53,
+    "awayScore": 93.97,
+    "combined": 190.5,
+    "margin": 2.56,
+    "winner": "home"
   },
   {
     "year": 2026,
@@ -143,11 +143,11 @@
     "awayTeamId": 17,
     "homeTeamName": "Chig Happens...",
     "awayTeamName": "Dsm Tittsburgh ",
-    "homeScore": 0,
-    "awayScore": 0,
-    "combined": 0,
-    "margin": 0,
-    "winner": null
+    "homeScore": 152.3,
+    "awayScore": 143.18,
+    "combined": 295.48,
+    "margin": 9.12,
+    "winner": "home"
   },
   {
     "year": 2026,
@@ -158,11 +158,11 @@
     "awayTeamId": 18,
     "homeTeamName": "Givin' Out Dak-Shots",
     "awayTeamName": "SUPER SMASH BURROWS",
-    "homeScore": 0,
-    "awayScore": 0,
-    "combined": 0,
-    "margin": 0,
-    "winner": null
+    "homeScore": 134.81,
+    "awayScore": 114.73,
+    "combined": 249.54,
+    "margin": 20.08,
+    "winner": "home"
   },
   {
     "year": 2026,
@@ -173,11 +173,11 @@
     "awayTeamId": 15,
     "homeTeamName": "Tee Time",
     "awayTeamName": "Njigbas in Paris",
-    "homeScore": 0,
-    "awayScore": 0,
-    "combined": 0,
-    "margin": 0,
-    "winner": null
+    "homeScore": 114.21,
+    "awayScore": 162.72,
+    "combined": 276.93,
+    "margin": 48.51,
+    "winner": "away"
   },
   {
     "year": 2026,
@@ -188,11 +188,11 @@
     "awayTeamId": 19,
     "homeTeamName": "Robert's Rowdy Team",
     "awayTeamName": "Incepcion",
-    "homeScore": 0,
-    "awayScore": 0,
-    "combined": 0,
-    "margin": 0,
-    "winner": null
+    "homeScore": 123.58,
+    "awayScore": 137.45,
+    "combined": 261.03,
+    "margin": 13.87,
+    "winner": "away"
   },
   {
     "year": 2026,
@@ -203,11 +203,11 @@
     "awayTeamId": 10,
     "homeTeamName": "Silver Bullet",
     "awayTeamName": "La-Torta is Warr-en",
-    "homeScore": 0,
-    "awayScore": 0,
-    "combined": 0,
-    "margin": 0,
-    "winner": null
+    "homeScore": 113.23,
+    "awayScore": 107.43,
+    "combined": 220.66,
+    "margin": 5.8,
+    "winner": "home"
   },
   {
     "year": 2026,

@@ -1,187 +1,187 @@
 {
   "season": 2026,
   "complete": false,
-  "note": "Week 2 2026 forecast combining current ESPN record, points profile, roster strength/depth rankings, and current injury/news adjustments.",
+  "note": "Week 3 2026 forecast combining current ESPN record, points profile, and playoff odds.",
   "champion": [
     {
-      "ownerId": "cc7c35aa-669c-4730-a0b5-9b9e6837e8fc",
-      "ownerName": "Zakk",
-      "teamName": "La-Torta is Warr-en",
-      "pct": 8.8
+      "ownerId": "60816921-5c37-4b08-8e26-3f1c500485da",
+      "ownerName": "Trent",
+      "teamName": "Njigbas in Paris",
+      "pct": 12.7
     },
     {
       "ownerId": "409f57ce-50f2-41f5-9f57-ce50f201f53b",
       "ownerName": "Erik",
       "teamName": "Duiiii dont know Jim",
-      "pct": 8.6
-    },
-    {
-      "ownerId": "8515684e-7a4d-4aaf-9568-4e7a4dcaaff3",
-      "ownerName": "Nick",
-      "teamName": "Incepcion",
-      "pct": 8.5
-    },
-    {
-      "ownerId": "437742f0-e2a6-4492-b742-f0e2a6c49263",
-      "ownerName": "Kodi",
-      "teamName": "Chig Happens...",
-      "pct": 8.2
+      "pct": 12.3
     },
     {
       "ownerId": "7407050f-8994-489c-bdab-99c4f96ad05a",
       "ownerName": "chaz",
       "teamName": "Silver Bullet",
-      "pct": 8.2
-    },
-    {
-      "ownerId": "c40204e1-163d-4d61-8204-e1163ded61c8",
-      "ownerName": "Colby",
-      "teamName": "Boomstick",
-      "pct": 7.9
-    },
-    {
-      "ownerId": "3ac69504-ba45-4937-8695-04ba45e93721",
-      "ownerName": "derek",
-      "teamName": "SUPER SMASH BURROWS",
-      "pct": 7.9
-    },
-    {
-      "ownerId": "4601a707-1ca5-4416-9e3c-9f282205bc36",
-      "ownerName": "Robert",
-      "teamName": "Robert's Rowdy Team",
-      "pct": 7.3
-    },
-    {
-      "ownerId": "b4073cf5-bc88-4785-873c-f5bc88c785e6",
-      "ownerName": "Ace",
-      "teamName": "Givin' Out Dak-Shots",
-      "pct": 6.8
-    },
-    {
-      "ownerId": "60816921-5c37-4b08-8e26-3f1c500485da",
-      "ownerName": "Trent",
-      "teamName": "Njigbas in Paris",
-      "pct": 6.3
-    },
-    {
-      "ownerId": "f0778442-346f-483c-863b-b747e000a428",
-      "ownerName": "Dillon",
-      "teamName": "Team Lehman",
-      "pct": 6.2
+      "pct": 10.7
     },
     {
       "ownerId": "096ba945-afc2-4e5f-aba9-45afc2fe5f89",
       "ownerName": "Jacob",
       "teamName": "Tee Time",
-      "pct": 5.5
+      "pct": 9.6
+    },
+    {
+      "ownerId": "b4073cf5-bc88-4785-873c-f5bc88c785e6",
+      "ownerName": "Ace",
+      "teamName": "Givin' Out Dak-Shots",
+      "pct": 8.2
+    },
+    {
+      "ownerId": "3ac69504-ba45-4937-8695-04ba45e93721",
+      "ownerName": "derek",
+      "teamName": "SUPER SMASH BURROWS",
+      "pct": 8.0
     },
     {
       "ownerId": "66d9a2b1-295f-4994-99a2-b1295f3994c2",
       "ownerName": "Marc",
       "teamName": "Dsm Tittsburgh ",
-      "pct": 4.9
+      "pct": 7.1
+    },
+    {
+      "ownerId": "437742f0-e2a6-4492-b742-f0e2a6c49263",
+      "ownerName": "Kodi",
+      "teamName": "Chig Happens...",
+      "pct": 6.5
+    },
+    {
+      "ownerId": "8515684e-7a4d-4aaf-9568-4e7a4dcaaff3",
+      "ownerName": "Nick",
+      "teamName": "Incepcion",
+      "pct": 5.6
+    },
+    {
+      "ownerId": "c40204e1-163d-4d61-8204-e1163ded61c8",
+      "ownerName": "Colby",
+      "teamName": "Boomstick",
+      "pct": 5.4
+    },
+    {
+      "ownerId": "f0778442-346f-483c-863b-b747e000a428",
+      "ownerName": "Dillon",
+      "teamName": "Team Lehman",
+      "pct": 4.7
+    },
+    {
+      "ownerId": "4601a707-1ca5-4416-9e3c-9f282205bc36",
+      "ownerName": "Robert",
+      "teamName": "Robert's Rowdy Team",
+      "pct": 4.2
+    },
+    {
+      "ownerId": "cc7c35aa-669c-4730-a0b5-9b9e6837e8fc",
+      "ownerName": "Zakk",
+      "teamName": "La-Torta is Warr-en",
+      "pct": 2.9
     },
     {
       "ownerId": "7001b1f9-65a1-4cc3-81b1-f965a12cc356",
       "ownerName": "Brenden",
       "teamName": "Jacobs Got A Warren-t",
-      "pct": 4.9
+      "pct": 2.1
     }
   ],
   "playoff": [
     {
-      "ownerId": "cc7c35aa-669c-4730-a0b5-9b9e6837e8fc",
-      "ownerName": "Zakk",
-      "teamName": "La-Torta is Warr-en",
-      "pct": 96
+      "ownerId": "7407050f-8994-489c-bdab-99c4f96ad05a",
+      "ownerName": "chaz",
+      "teamName": "Silver Bullet",
+      "pct": 78.0
     },
     {
       "ownerId": "409f57ce-50f2-41f5-9f57-ce50f201f53b",
       "ownerName": "Erik",
       "teamName": "Duiiii dont know Jim",
-      "pct": 89.5
-    },
-    {
-      "ownerId": "8515684e-7a4d-4aaf-9568-4e7a4dcaaff3",
-      "ownerName": "Nick",
-      "teamName": "Incepcion",
-      "pct": 83
-    },
-    {
-      "ownerId": "437742f0-e2a6-4492-b742-f0e2a6c49263",
-      "ownerName": "Kodi",
-      "teamName": "Chig Happens...",
-      "pct": 76.5
-    },
-    {
-      "ownerId": "7407050f-8994-489c-bdab-99c4f96ad05a",
-      "ownerName": "chaz",
-      "teamName": "Silver Bullet",
-      "pct": 70
-    },
-    {
-      "ownerId": "c40204e1-163d-4d61-8204-e1163ded61c8",
-      "ownerName": "Colby",
-      "teamName": "Boomstick",
-      "pct": 63.5
-    },
-    {
-      "ownerId": "3ac69504-ba45-4937-8695-04ba45e93721",
-      "ownerName": "derek",
-      "teamName": "SUPER SMASH BURROWS",
-      "pct": 57
-    },
-    {
-      "ownerId": "4601a707-1ca5-4416-9e3c-9f282205bc36",
-      "ownerName": "Robert",
-      "teamName": "Robert's Rowdy Team",
-      "pct": 50.5
-    },
-    {
-      "ownerId": "b4073cf5-bc88-4785-873c-f5bc88c785e6",
-      "ownerName": "Ace",
-      "teamName": "Givin' Out Dak-Shots",
-      "pct": 44
+      "pct": 76.3
     },
     {
       "ownerId": "60816921-5c37-4b08-8e26-3f1c500485da",
       "ownerName": "Trent",
       "teamName": "Njigbas in Paris",
-      "pct": 37.5
-    },
-    {
-      "ownerId": "f0778442-346f-483c-863b-b747e000a428",
-      "ownerName": "Dillon",
-      "teamName": "Team Lehman",
-      "pct": 31
+      "pct": 70.5
     },
     {
       "ownerId": "096ba945-afc2-4e5f-aba9-45afc2fe5f89",
       "ownerName": "Jacob",
       "teamName": "Tee Time",
-      "pct": 24.5
+      "pct": 61.5
+    },
+    {
+      "ownerId": "3ac69504-ba45-4937-8695-04ba45e93721",
+      "ownerName": "derek",
+      "teamName": "SUPER SMASH BURROWS",
+      "pct": 56.2
+    },
+    {
+      "ownerId": "b4073cf5-bc88-4785-873c-f5bc88c785e6",
+      "ownerName": "Ace",
+      "teamName": "Givin' Out Dak-Shots",
+      "pct": 55.0
     },
     {
       "ownerId": "66d9a2b1-295f-4994-99a2-b1295f3994c2",
       "ownerName": "Marc",
       "teamName": "Dsm Tittsburgh ",
-      "pct": 18
+      "pct": 49.0
+    },
+    {
+      "ownerId": "8515684e-7a4d-4aaf-9568-4e7a4dcaaff3",
+      "ownerName": "Nick",
+      "teamName": "Incepcion",
+      "pct": 45.2
+    },
+    {
+      "ownerId": "437742f0-e2a6-4492-b742-f0e2a6c49263",
+      "ownerName": "Kodi",
+      "teamName": "Chig Happens...",
+      "pct": 45.1
+    },
+    {
+      "ownerId": "f0778442-346f-483c-863b-b747e000a428",
+      "ownerName": "Dillon",
+      "teamName": "Team Lehman",
+      "pct": 44.2
+    },
+    {
+      "ownerId": "c40204e1-163d-4d61-8204-e1163ded61c8",
+      "ownerName": "Colby",
+      "teamName": "Boomstick",
+      "pct": 43.2
+    },
+    {
+      "ownerId": "4601a707-1ca5-4416-9e3c-9f282205bc36",
+      "ownerName": "Robert",
+      "teamName": "Robert's Rowdy Team",
+      "pct": 32.1
+    },
+    {
+      "ownerId": "cc7c35aa-669c-4730-a0b5-9b9e6837e8fc",
+      "ownerName": "Zakk",
+      "teamName": "La-Torta is Warr-en",
+      "pct": 25.4
     },
     {
       "ownerId": "7001b1f9-65a1-4cc3-81b1-f965a12cc356",
       "ownerName": "Brenden",
       "teamName": "Jacobs Got A Warren-t",
-      "pct": 12
+      "pct": 18.2
     }
   ],
   "standings": [
     {
-      "ownerId": "cc7c35aa-669c-4730-a0b5-9b9e6837e8fc",
-      "ownerName": "Zakk",
-      "teamName": "La-Torta is Warr-en",
-      "wins": 0,
-      "losses": 1,
-      "pointsFor": 97.64,
+      "ownerId": "60816921-5c37-4b08-8e26-3f1c500485da",
+      "ownerName": "Trent",
+      "teamName": "Njigbas in Paris",
+      "wins": 2,
+      "losses": 0,
+      "pointsFor": 325.48,
       "projectedSeed": 1,
       "inPlayoffPicture": true
     },
@@ -189,50 +189,60 @@
       "ownerId": "409f57ce-50f2-41f5-9f57-ce50f201f53b",
       "ownerName": "Erik",
       "teamName": "Duiiii dont know Jim",
-      "wins": 1,
+      "wins": 2,
       "losses": 0,
-      "pointsFor": 179.72,
+      "pointsFor": 290.33,
       "projectedSeed": 2,
-      "inPlayoffPicture": true
-    },
-    {
-      "ownerId": "8515684e-7a4d-4aaf-9568-4e7a4dcaaff3",
-      "ownerName": "Nick",
-      "teamName": "Incepcion",
-      "wins": 0,
-      "losses": 1,
-      "pointsFor": 84.76,
-      "projectedSeed": 3,
-      "inPlayoffPicture": true
-    },
-    {
-      "ownerId": "437742f0-e2a6-4492-b742-f0e2a6c49263",
-      "ownerName": "Kodi",
-      "teamName": "Chig Happens...",
-      "wins": 0,
-      "losses": 1,
-      "pointsFor": 105.27,
-      "projectedSeed": 4,
       "inPlayoffPicture": true
     },
     {
       "ownerId": "7407050f-8994-489c-bdab-99c4f96ad05a",
       "ownerName": "chaz",
       "teamName": "Silver Bullet",
-      "wins": 1,
+      "wins": 2,
       "losses": 0,
-      "pointsFor": 132.76,
+      "pointsFor": 245.99,
+      "projectedSeed": 3,
+      "inPlayoffPicture": true
+    },
+    {
+      "ownerId": "096ba945-afc2-4e5f-aba9-45afc2fe5f89",
+      "ownerName": "Jacob",
+      "teamName": "Tee Time",
+      "wins": 1,
+      "losses": 1,
+      "pointsFor": 279.86,
+      "projectedSeed": 4,
+      "inPlayoffPicture": true
+    },
+    {
+      "ownerId": "b4073cf5-bc88-4785-873c-f5bc88c785e6",
+      "ownerName": "Ace",
+      "teamName": "Givin' Out Dak-Shots",
+      "wins": 1,
+      "losses": 1,
+      "pointsFor": 267.41,
       "projectedSeed": 5,
       "inPlayoffPicture": true
     },
     {
-      "ownerId": "c40204e1-163d-4d61-8204-e1163ded61c8",
-      "ownerName": "Colby",
-      "teamName": "Boomstick",
+      "ownerId": "66d9a2b1-295f-4994-99a2-b1295f3994c2",
+      "ownerName": "Marc",
+      "teamName": "Dsm Tittsburgh ",
       "wins": 1,
-      "losses": 0,
-      "pointsFor": 130.72,
+      "losses": 1,
+      "pointsFor": 259.73,
       "projectedSeed": 6,
+      "inPlayoffPicture": true
+    },
+    {
+      "ownerId": "437742f0-e2a6-4492-b742-f0e2a6c49263",
+      "ownerName": "Kodi",
+      "teamName": "Chig Happens...",
+      "wins": 1,
+      "losses": 1,
+      "pointsFor": 257.57,
+      "projectedSeed": 7,
       "inPlayoffPicture": true
     },
     {
@@ -240,38 +250,28 @@
       "ownerName": "derek",
       "teamName": "SUPER SMASH BURROWS",
       "wins": 1,
-      "losses": 0,
-      "pointsFor": 142.21,
-      "projectedSeed": 7,
-      "inPlayoffPicture": true
-    },
-    {
-      "ownerId": "4601a707-1ca5-4416-9e3c-9f282205bc36",
-      "ownerName": "Robert",
-      "teamName": "Robert's Rowdy Team",
-      "wins": 0,
       "losses": 1,
-      "pointsFor": 113.91,
+      "pointsFor": 256.94,
       "projectedSeed": 8,
       "inPlayoffPicture": false
     },
     {
-      "ownerId": "b4073cf5-bc88-4785-873c-f5bc88c785e6",
-      "ownerName": "Ace",
-      "teamName": "Givin' Out Dak-Shots",
-      "wins": 0,
+      "ownerId": "c40204e1-163d-4d61-8204-e1163ded61c8",
+      "ownerName": "Colby",
+      "teamName": "Boomstick",
+      "wins": 1,
       "losses": 1,
-      "pointsFor": 132.6,
+      "pointsFor": 224.69,
       "projectedSeed": 9,
       "inPlayoffPicture": false
     },
     {
-      "ownerId": "60816921-5c37-4b08-8e26-3f1c500485da",
-      "ownerName": "Trent",
-      "teamName": "Njigbas in Paris",
+      "ownerId": "8515684e-7a4d-4aaf-9568-4e7a4dcaaff3",
+      "ownerName": "Nick",
+      "teamName": "Incepcion",
       "wins": 1,
-      "losses": 0,
-      "pointsFor": 162.76,
+      "losses": 1,
+      "pointsFor": 222.21,
       "projectedSeed": 10,
       "inPlayoffPicture": false
     },
@@ -279,353 +279,41 @@
       "ownerId": "f0778442-346f-483c-863b-b747e000a428",
       "ownerName": "Dillon",
       "teamName": "Team Lehman",
-      "wins": 0,
+      "wins": 1,
       "losses": 1,
-      "pointsFor": 93.25,
+      "pointsFor": 189.78,
       "projectedSeed": 11,
       "inPlayoffPicture": false
-    },
-    {
-      "ownerId": "096ba945-afc2-4e5f-aba9-45afc2fe5f89",
-      "ownerName": "Jacob",
-      "teamName": "Tee Time",
-      "wins": 1,
-      "losses": 0,
-      "pointsFor": 165.65,
-      "projectedSeed": 12,
-      "inPlayoffPicture": false
-    },
-    {
-      "ownerId": "66d9a2b1-295f-4994-99a2-b1295f3994c2",
-      "ownerName": "Marc",
-      "teamName": "Dsm Tittsburgh ",
-      "wins": 1,
-      "losses": 0,
-      "pointsFor": 116.55,
-      "projectedSeed": 13,
-      "inPlayoffPicture": false
-    },
-    {
-      "ownerId": "7001b1f9-65a1-4cc3-81b1-f965a12cc356",
-      "ownerName": "Brenden",
-      "teamName": "Jacobs Got A Warren-t",
-      "wins": 0,
-      "losses": 1,
-      "pointsFor": 104.61,
-      "projectedSeed": 14,
-      "inPlayoffPicture": false
-    }
-  ],
-  "projections": [
-    {
-      "ownerId": "cc7c35aa-669c-4730-a0b5-9b9e6837e8fc",
-      "ownerName": "Zakk",
-      "teamName": "La-Torta is Warr-en",
-      "record": "0-1-0",
-      "pointsFor": 97.64,
-      "pointsAgainst": 142.21,
-      "projectedFinish": 1,
-      "championPct": 8.8,
-      "playoffPct": 96,
-      "strengths": [
-        "7 projected skill starters rank inside Draft Sharks' top 100",
-        "Best projected starters: Jaxson Dart, Omarion Hampton, Drake London, Tetairoa McMillan",
-        "Depth score of 758 keeps the roster from depending on one lineup"
-      ],
-      "weaknesses": [
-        "1 roster spot is outside the captured rankings"
-      ],
-      "roast": "Everyone else is already writing the collapse story. That is usually how the favorite knows it is the favorite.",
-      "projection": "This is the roster to beat: elite starters, credible flex options, and enough bench strength to survive a bad matchup or two.",
-      "score": 4136.75
-    },
-    {
-      "ownerId": "409f57ce-50f2-41f5-9f57-ce50f201f53b",
-      "ownerName": "Erik",
-      "teamName": "Duiiii dont know Jim",
-      "record": "1-0-0",
-      "pointsFor": 179.72,
-      "pointsAgainst": 84.76,
-      "projectedFinish": 2,
-      "championPct": 8.6,
-      "playoffPct": 89.5,
-      "strengths": [
-        "7 projected skill starters rank inside Draft Sharks' top 100",
-        "Best projected starters: Jalen Hurts, Derrick Henry, Justin Jefferson, DJ Moore",
-        "Depth score of 684 keeps the roster from depending on one lineup"
-      ],
-      "weaknesses": [
-        "1 roster spot is outside the captured rankings"
-      ],
-      "roast": "The roster is good enough to be annoying all season, which is the fantasy equivalent of owning a leaf blower at 7 a.m.",
-      "projection": "A championship-caliber build with fewer obvious leaks than the teams chasing it. The pressure is now on the roster to make the ranking look inevitable.",
-      "score": 4118.9
-    },
-    {
-      "ownerId": "8515684e-7a4d-4aaf-9568-4e7a4dcaaff3",
-      "ownerName": "Nick",
-      "teamName": "Incepcion",
-      "record": "0-1-0",
-      "pointsFor": 84.76,
-      "pointsAgainst": 179.72,
-      "projectedFinish": 3,
-      "championPct": 8.5,
-      "playoffPct": 83,
-      "strengths": [
-        "7 projected skill starters rank inside Draft Sharks' top 100",
-        "Best projected starters: Lamar Jackson, James Cook III, Garrett Wilson, Jaylen Waddle",
-        "Depth score of 754 keeps the roster from depending on one lineup"
-      ],
-      "weaknesses": [
-        "1 roster spot is outside the captured rankings"
-      ],
-      "roast": "A scary amount of talent is packed in here. The only real defense is hoping the lineup decisions become the villain.",
-      "projection": "A dangerous roster with real weekly range. The top-end talent is obvious; the question is whether the supporting cast stays useful when the matchups turn.",
-      "score": 4101.9
-    },
-    {
-      "ownerId": "437742f0-e2a6-4492-b742-f0e2a6c49263",
-      "ownerName": "Kodi",
-      "teamName": "Chig Happens...",
-      "record": "0-1-0",
-      "pointsFor": 105.27,
-      "pointsAgainst": 130.72,
-      "projectedFinish": 4,
-      "championPct": 8.2,
-      "playoffPct": 76.5,
-      "strengths": [
-        "6 projected skill starters rank inside Draft Sharks' top 100",
-        "Best projected starters: Kyler Murray, Chase Brown, Amon-Ra St. Brown, Davante Adams",
-        "Depth score of 697 keeps the roster from depending on one lineup"
-      ],
-      "weaknesses": [
-        "2 roster spots are outside the captured rankings"
-      ],
-      "roast": "The ceiling is real, but so is the risk of turning one bad Sunday into a full parliamentary inquiry.",
-      "projection": "A strong starting group with enough depth to stay relevant. This team can win the league, but it cannot afford the premium players to disappear at once.",
-      "score": 4067.85
-    },
-    {
-      "ownerId": "7407050f-8994-489c-bdab-99c4f96ad05a",
-      "ownerName": "chaz",
-      "teamName": "Silver Bullet",
-      "record": "1-0-0",
-      "pointsFor": 132.76,
-      "pointsAgainst": 93.25,
-      "projectedFinish": 5,
-      "championPct": 8.2,
-      "playoffPct": 70,
-      "strengths": [
-        "6 projected skill starters rank inside Draft Sharks' top 100",
-        "Best projected starters: Justin Herbert, Javonte Williams, Ja'Marr Chase, Zay Flowers",
-        "Depth score of 550 keeps the roster from depending on one lineup"
-      ],
-      "weaknesses": [
-        "2 roster spots are outside the captured rankings"
-      ],
-      "roast": "The stars are excellent. The bench, meanwhile, is asking for thoughts and prayers.",
-      "projection": "The starting lineup is excellent, and the ceiling is enormous. The bench is thinner than the teams above it, so injuries would turn confidence into improvisation quickly.",
-      "score": 4062.85
-    },
-    {
-      "ownerId": "c40204e1-163d-4d61-8204-e1163ded61c8",
-      "ownerName": "Colby",
-      "teamName": "Boomstick",
-      "record": "1-0-0",
-      "pointsFor": 130.72,
-      "pointsAgainst": 105.27,
-      "projectedFinish": 6,
-      "championPct": 7.9,
-      "playoffPct": 63.5,
-      "strengths": [
-        "7 projected skill starters rank inside Draft Sharks' top 100",
-        "Best projected starters: Drake Maye, Jonathan Taylor, Nico Collins, Emeka Egbuka",
-        "Depth score of 619 keeps the roster from depending on one lineup"
-      ],
-      "weaknesses": [
-        "2 roster spots are outside the captured rankings"
-      ],
-      "roast": "This team is built like a competent adult: no fireworks, no obvious disasters, just quietly ruining someone\u2019s playoff hopes.",
-      "projection": "A balanced roster that should rarely be embarrassed. It lacks one overwhelming positional advantage, but there are very few weeks where it has no path to a win.",
-      "score": 4028.1499999999996
-    },
-    {
-      "ownerId": "3ac69504-ba45-4937-8695-04ba45e93721",
-      "ownerName": "derek",
-      "teamName": "SUPER SMASH BURROWS",
-      "record": "1-0-0",
-      "pointsFor": 142.21,
-      "pointsAgainst": 97.64,
-      "projectedFinish": 7,
-      "championPct": 7.9,
-      "playoffPct": 57,
-      "strengths": [
-        "6 projected skill starters rank inside Draft Sharks' top 100",
-        "Best projected starters: Joe Burrow, Bijan Robinson, Chris Olave, Ladd McConkey",
-        "Depth score of 630 keeps the roster from depending on one lineup"
-      ],
-      "weaknesses": [
-        "1 roster spot is outside the captured rankings"
-      ],
-      "roast": "The roster has enough talent to win the league and enough weirdness to make that sentence uncomfortable.",
-      "projection": "High-end talent is doing the heavy lifting, while the depth is more speculative. This team has a championship route, but it is narrower than the ranking suggests.",
-      "score": 4025.6499999999996
     },
     {
       "ownerId": "4601a707-1ca5-4416-9e3c-9f282205bc36",
       "ownerName": "Robert",
       "teamName": "Robert's Rowdy Team",
-      "record": "0-1-0",
-      "pointsFor": 113.91,
-      "pointsAgainst": 165.65,
-      "projectedFinish": 8,
-      "championPct": 7.3,
-      "playoffPct": 50.5,
-      "strengths": [
-        "6 projected skill starters rank inside Draft Sharks' top 100",
-        "Best projected starters: Patrick Mahomes, Kyren Williams, Puka Nacua, Rashee Rice",
-        "Depth score of 584 keeps the roster from depending on one lineup"
-      ],
-      "weaknesses": [
-        "1 roster spot is outside the captured rankings"
-      ],
-      "roast": "A contender with trust issues. Every week will involve staring at the lineup for twelve minutes longer than necessary.",
-      "projection": "The roster has enough star power to make noise, but the weekly floor depends on several players outperforming their sheet position. Volatility is the personality here.",
-      "score": 3954.5
-    },
-    {
-      "ownerId": "b4073cf5-bc88-4785-873c-f5bc88c785e6",
-      "ownerName": "Ace",
-      "teamName": "Givin' Out Dak-Shots",
-      "record": "0-1-0",
-      "pointsFor": 132.6,
-      "pointsAgainst": 162.76,
-      "projectedFinish": 9,
-      "championPct": 6.8,
-      "playoffPct": 44,
-      "strengths": [
-        "6 projected skill starters rank inside Draft Sharks' top 100",
-        "Best projected starters: Caleb Williams, Ashton Jeanty, CeeDee Lamb, DK Metcalf",
-        "Depth score of 575 keeps the roster from depending on one lineup"
-      ],
-      "weaknesses": [
-        "1 roster spot is outside the captured rankings"
-      ],
-      "roast": "The top end is doing a lot of unpaid labor for the middle of this roster.",
-      "projection": "There is a real contender hiding in this roster, especially at the top. The issue is lineup depth: one or two injuries would force the bottom of the rankings into the starting lineup.",
-      "score": 3882.4
-    },
-    {
-      "ownerId": "60816921-5c37-4b08-8e26-3f1c500485da",
-      "ownerName": "Trent",
-      "teamName": "Njigbas in Paris",
-      "record": "1-0-0",
-      "pointsFor": 162.76,
-      "pointsAgainst": 132.6,
-      "projectedFinish": 10,
-      "championPct": 6.3,
-      "playoffPct": 37.5,
-      "strengths": [
-        "4 projected skill starters rank inside Draft Sharks' top 100",
-        "Best projected starters: Josh Allen, J.K. Dobbins, Jaxon Smith-Njigba, Christian Watson",
-        "Depth score of 420 keeps the roster from depending on one lineup"
-      ],
-      "weaknesses": [
-        "4 roster spots are outside the captured rankings"
-      ],
-      "roast": "This team has assembled a beautiful starting lineup and then wandered off before finishing the bench.",
-      "projection": "The talent distribution is lopsided. The best players can win a week by themselves, but the roster needs its mid-tier pieces to become reliable before it looks like a title favorite.",
-      "score": 3799.35
-    },
-    {
-      "ownerId": "f0778442-346f-483c-863b-b747e000a428",
-      "ownerName": "Dillon",
-      "teamName": "Team Lehman",
-      "record": "0-1-0",
-      "pointsFor": 93.25,
-      "pointsAgainst": 132.76,
-      "projectedFinish": 11,
-      "championPct": 6.2,
-      "playoffPct": 31,
-      "strengths": [
-        "5 projected skill starters rank inside Draft Sharks' top 100",
-        "Best projected starters: Matthew Stafford, Saquon Barkley, Malik Nabers, George Pickens",
-        "Depth score of 474 keeps the roster from depending on one lineup"
-      ],
-      "weaknesses": [
-        "2 roster spots are outside the captured rankings"
-      ],
-      "roast": "The roster is one breakout away from being a problem and one injury away from becoming a group project.",
-      "projection": "The top of the roster is better than the overall slot suggests, especially at quarterback and receiver. The flex and bench options are where the team gives back ground.",
-      "score": 3793.55
-    },
-    {
-      "ownerId": "096ba945-afc2-4e5f-aba9-45afc2fe5f89",
-      "ownerName": "Jacob",
-      "teamName": "Tee Time",
-      "record": "1-0-0",
-      "pointsFor": 165.65,
-      "pointsAgainst": 113.91,
-      "projectedFinish": 12,
-      "championPct": 5.5,
-      "playoffPct": 24.5,
-      "strengths": [
-        "6 projected skill starters rank inside Draft Sharks' top 100",
-        "Best projected starters: Trevor Lawrence, Jahmyr Gibbs, Tee Higgins, Parker Washington",
-        "Depth score of 421 keeps the roster from depending on one lineup"
-      ],
-      "weaknesses": [
-        "3 roster spots are outside the captured rankings",
-        "1 projected starter relies on a player outside the top 150"
-      ],
-      "roast": "There is a star here. Unfortunately, the rest of the lineup appears to be treating that star as a substitute teacher.",
-      "projection": "One superstar can keep this team dangerous, but the lineup has too many ranking gaps around that centerpiece. It needs a breakout or two, not just health.",
-      "score": 3673.7
-    },
-    {
-      "ownerId": "66d9a2b1-295f-4994-99a2-b1295f3994c2",
-      "ownerName": "Marc",
-      "teamName": "Dsm Tittsburgh ",
-      "record": "1-0-0",
-      "pointsFor": 116.55,
-      "pointsAgainst": 104.61,
-      "projectedFinish": 13,
-      "championPct": 4.9,
-      "playoffPct": 18,
-      "strengths": [
-        "5 projected skill starters rank inside Draft Sharks' top 100",
-        "Best projected starters: Brock Purdy, Christian McCaffrey, DeVonta Smith, Terry McLaurin",
-        "Depth score of 309 keeps the roster from depending on one lineup"
-      ],
-      "weaknesses": [
-        "2 roster spots are outside the captured rankings"
-      ],
-      "roast": "The ceiling is still alive, but it is currently being held together by one elite player and several optimistic browser tabs.",
-      "projection": "The roster has a legitimate weekly hammer, but the supporting cast is unusually fragile. The path to contention is narrow and depends on the top players staying perfect.",
-      "score": 3569.4
+      "wins": 0,
+      "losses": 2,
+      "pointsFor": 237.49,
+      "projectedSeed": 12,
+      "inPlayoffPicture": false
     },
     {
       "ownerId": "7001b1f9-65a1-4cc3-81b1-f965a12cc356",
       "ownerName": "Brenden",
       "teamName": "Jacobs Got A Warren-t",
-      "record": "0-1-0",
-      "pointsFor": 104.61,
-      "pointsAgainst": 116.55,
-      "projectedFinish": 14,
-      "championPct": 4.9,
-      "playoffPct": 12,
-      "strengths": [
-        "5 projected skill starters rank inside Draft Sharks' top 100",
-        "Best projected starters: Jayden Daniels, De'Von Achane, A.J. Brown, Rome Odunze",
-        "Depth score of 553 keeps the roster from depending on one lineup"
-      ],
-      "weaknesses": [
-        "1 roster spot is outside the captured rankings",
-        "2 projected starters rely on a player outside the top 150"
-      ],
-      "roast": "The waiver wire is not a strategy, but this roster is making a compelling argument that it should be.",
-      "projection": "There are useful pieces here, but too many starter slots rely on players well down the board. This is the clearest rebuild-through-waivers roster in the league.",
-      "score": 3567
+      "wins": 0,
+      "losses": 2,
+      "pointsFor": 211.8,
+      "projectedSeed": 13,
+      "inPlayoffPicture": false
+    },
+    {
+      "ownerId": "cc7c35aa-669c-4730-a0b5-9b9e6837e8fc",
+      "ownerName": "Zakk",
+      "teamName": "La-Torta is Warr-en",
+      "wins": 0,
+      "losses": 2,
+      "pointsFor": 205.07,
+      "projectedSeed": 14,
+      "inPlayoffPicture": false
     }
   ]
 }
