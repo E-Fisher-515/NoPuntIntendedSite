@@ -9,5 +9,5 @@
     "outDir": "../../../.test-build",
     "rootDir": "../../.."
   },
-  "include": ["../rivalries.ts", "../rivalryScoring.ts", "../rivalryHistory.ts", "../schedule.ts", "../types.ts", "../format.ts", "../lookups.ts", "./rivalries.test.ts", "./schedule.test.ts"]
+  "include": ["../rivalries.ts", "../rivalryScoring.ts", "../rivalryHistory.ts", "../schedule.ts", "../projections.ts", "../types.ts", "../format.ts", "../lookups.ts", "./rivalries.test.ts", "./schedule.test.ts", "./projections.test.ts"]
 }

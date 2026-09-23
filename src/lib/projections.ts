@@ -77,6 +77,14 @@ function roastText(item: TeamMetrics, rank: number, total: number): string {
   return `${team.ownerName} is hovering in the standings' least comfortable middle seat: not safe, not doomed, and absolutely not relaxed.`;
 }
 
+function playoffProbability(item: TeamMetrics, rankIndex: number, total: number, newsFactor: number): number {
+  // ESPN exposes a live playoff probability for the current season. Use it
+  // when available instead of turning projected rank into fake certainty.
+  const fallback = 100 * Math.max(0.05, 1 - rankIndex / Math.max(total, 1));
+  const sourceProbability = item.team.playoffPct > 0 ? item.team.playoffPct : fallback;
+  return Number(Math.min(99.9, Math.max(0, sourceProbability * newsFactor)).toFixed(1));
+}
+
 export function buildTeamProjections(season: SeasonArchive, managers: Manager[], context?: PredictionContext | null): TeamProjection[] {
   const items = season.teams.map((team) => metrics(team, managers));
   const ppgValues = items.map((item) => item.ppg);
@@ -127,7 +135,7 @@ export function buildTeamProjections(season: SeasonArchive, managers: Manager[],
       pointsAgainst: team.pointsAgainst,
       projectedFinish: rank,
       championPct: Number((100 * score / ordered.reduce((sum, entry) => sum + entry.score, 0)).toFixed(1)),
-      playoffPct: Number((100 * Math.max(0.05, 1 - index / Math.max(items.length, 1)) * newsFactor).toFixed(1)),
+      playoffPct: playoffProbability(item, index, items.length, newsFactor),
       strengths,
       weaknesses,
       roast: roastText(item, rank, items.length),
